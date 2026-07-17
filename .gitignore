@@ -1,0 +1,7 @@
+.venv/
+*.pdf
+*.txt
+scratch/
+walkthrough.md
+*.log
+.gemini/

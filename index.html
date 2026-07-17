@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Speaking — Practice Kit</title>
+<style>
+  :root{
+    --paper:#eee7d8;
+    --ink:#22303f;
+    --ink-soft:#5a6b7a;
+    --rule:#c9bfa4;
+    --tab-1:#8a5a3f;
+    --tab-2:#3f6e5e;
+    --tab-3:#4a5a8a;
+    --card:#f7f3e8;
+    --err:#b23a3a;
+    --vocab:#3f5e8a;
+    --idiom:#7a3f6e;
+    --good:#2f7a4f;
+    --gen:#8a8578;
+  }
+  
+  body.dark-mode {
+    --paper:#1b1913;
+    --ink:#ede8dc;
+    --ink-soft:#a29988;
+    --rule:#4d4637;
+    --tab-1:#b88363;
+    --tab-2:#569681;
+    --tab-3:#6d7da8;
+    --card:#242017;
+    --err:#d95f5f;
+    --vocab:#6997d3;
+    --idiom:#b56ba7;
+    --good:#4eaf75;
+    --gen:#a29e92;
+  }
+
+  *{box-sizing:border-box;}
+
+  /* Scrollbars styling */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--paper);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--rule);
+    border-radius: 5px;
+    border: 2px solid var(--paper);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--ink-soft);
+  }
+  
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Georgia','Iowan Old Style',serif;
+    padding:32px 16px 80px;
+    min-height:100vh;
+    transition:background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .wrap{max-width:820px;margin:0 auto;}
+  
+  header{
+    border-bottom:3px double var(--ink);
+    padding-bottom:18px;
+    margin-bottom:24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:16px;
+    transition:border-color 0.3s ease;
+  }
+  
+  .kicker{font-family:'Courier New',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);transition:color 0.3s ease;}
+  h1{font-size:34px;margin:6px 0 4px;font-weight:400;}
+  .sub{color:var(--ink-soft);font-size:14px;font-style:italic;transition:color 0.3s ease;}
+
+  .view-switch{display:flex;gap:8px;margin-bottom:24px;}
+  .view-btn{
+    flex:1;font-family:'Courier New',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    padding:12px 14px;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;border-radius:3px;text-align:center;
+    transition:background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
+  .view-btn.active{background:var(--ink);color:var(--paper);}
+  .view{display:none;}
+  .view.active{display:block;}
+
+  .controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+  .controls input[type=text]{
+    flex:1;min-width:180px;font-family:'Courier New',monospace;font-size:13px;
+    padding:9px 12px;border:1px solid var(--rule);background:var(--card);color:var(--ink);border-radius:3px;
+    transition:background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  .controls input[type=text]:focus{
+    outline:none;
+    border-color:var(--ink);
+  }
+  .tab-btn{
+    font-family:'Courier New',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    padding:9px 14px;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;border-radius:3px;
+    transition:background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
+  .tab-btn.active{background:var(--ink);color:var(--paper);}
+
+  section.part{margin-bottom:10px;}
+  section.part[hidden]{display:none;}
+
+  .part-head{display:flex;align-items:baseline;gap:12px;margin:26px 0 14px;}
+  .part-num{font-family:'Courier New',monospace;font-size:12px;font-weight:bold;padding:2px 8px;border-radius:2px;color:var(--paper);transition:background-color 0.3s ease;}
+  .part1 .part-num,.p1 .part-num{background:var(--tab-1);}
+  .part2 .part-num,.p2 .part-num{background:var(--tab-2);}
+  .part3 .part-num,.p3 .part-num{background:var(--tab-3);}
+  .part-title{font-size:20px;}
+  .part-desc{font-size:12.5px;color:var(--ink-soft);margin:-8px 0 16px;font-style:italic;transition:color 0.3s ease;}
+
+  .topic, .cue-card, .band-card{
+    border:1px solid var(--rule);background:var(--card);margin-bottom:14px;border-radius:3px;overflow:hidden;
+    transition:background-color 0.3s ease, border-color 0.3s ease;
+  }
+  .topic-head, .band-head, .skill-card-head{
+    padding:11px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:15px;border-bottom:1px solid transparent;
+    transition:background-color 0.3s ease, border-color 0.3s ease;
+  }
+  .topic-head:hover, .band-head:hover, .skill-card-head:hover{background:rgba(0,0,0,.03);}
+  body.dark-mode .topic-head:hover, body.dark-mode .band-head:hover, body.dark-mode .skill-card-head:hover{background:rgba(255,255,255,.03);}
+  
+  .topic.open .topic-head, .band-card.open .band-head, .cue-card.skill-card.open .skill-card-head{
+    border-bottom-color:var(--rule);
+  }
+  
+  .topic-body, .band-body-wrapper, .skill-body-wrapper {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  }
+  .topic.open .topic-body, .band-card.open .band-body-wrapper, .cue-card.skill-card.open .skill-body-wrapper {
+    max-height: 1500px;
+    opacity: 1;
+  }
+
+  .caret{font-family:'Courier New',monospace;font-size:12px;color:var(--ink-soft);transition:transform .2s ease, color 0.3s ease;}
+  .topic.open .caret, .band-card.open .caret, .cue-card.skill-card.open .caret{transform:rotate(90deg);}
+
+  ol.qlist{list-style:none;counter-reset:q;margin:0;padding:12px 16px 14px;}
+  ol.qlist li{
+    counter-increment:q;position:relative;padding:8px 0 8px 30px;font-size:14.5px;line-height:1.55;border-bottom:1px dashed var(--rule);
+    transition:border-color 0.3s ease;
+  }
+  ol.qlist li:last-child{border-bottom:none;}
+  ol.qlist li::before{content:counter(q,decimal-leading-zero);position:absolute;left:0;top:8px;font-family:'Courier New',monospace;font-size:11px;color:var(--ink-soft);transition:color 0.3s ease;}
+
+  .qa-list li{padding:10px 0 12px 30px;}
+  .qa-row{display:flex;justify-content:space-between;align-items:center;gap:10px;}
+  .qa-q{flex:1;}
+  .ans-toggle{
+    flex-shrink:0;
+    font-family:'Courier New',monospace;font-size:10.5px;letter-spacing:.03em;text-transform:uppercase;
+    color:var(--tab-2);background:none;border:1px solid var(--tab-2);border-radius:11px;
+    padding:5px 10px;cursor:pointer;
+    transition:background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .ans-toggle:hover{background:rgba(63,110,94,.08);}
+  .ans-toggle.open{background:var(--tab-2);color:var(--paper);}
+  
+  .ans-box, .ex-box{
+    display:block;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, padding 0.3s ease, margin 0.3s ease;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    background:rgba(255,255,255,.5);border-left:3px solid var(--tab-2);
+    font-size:13.5px;line-height:1.6;
+  }
+  body.dark-mode .ans-box, body.dark-mode .ex-box{
+    background:rgba(0,0,0,.25);
+  }
+  .ans-box.open, .ex-box.open {
+    max-height: 1200px;
+    opacity: 1;
+    padding: 10px 12px;
+    margin-top: 8px;
+  }
+  .ans-box .ex-label, .ex-box .ex-label{
+    display:block;font-family:'Courier New',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--tab-2);margin-bottom:5px;
+    transition:color 0.3s ease;
+  }
+
+  .cue-card{
+    border:1px solid var(--rule);background:var(--card);border-radius:3px;margin-bottom:14px;padding:16px 18px;
+    transition:background-color 0.3s ease, border-color 0.3s ease;
+  }
+  .cue-title{font-size:15.5px;margin-bottom:8px;}
+  .cue-card ul{margin:0;padding-left:18px;font-size:14px;line-height:1.7;}
+
+  /* Overrides padding specifically for accordion skills cards so header matches other cards */
+  .skill-card {
+    padding: 0 !important;
+  }
+  .skill-card-head {
+    padding: 11px 16px;
+  }
+  .skill-body-wrapper {
+    padding: 0 16px;
+  }
+  .cue-card.skill-card.open .skill-body-wrapper {
+    padding-bottom: 16px;
+  }
+
+  .hidden-by-search{display:none !important;}
+  .count{font-family:'Courier New',monospace;font-size:11px;color:var(--ink-soft);margin-bottom:14px;transition:color 0.3s ease;}
+
+  .ex-toggle{
+    display:inline-flex;align-items:center;gap:6px;
+    margin:12px 0 6px 0;
+    font-family:'Courier New',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--tab-2);cursor:pointer;background:none;border:1px solid var(--tab-2);
+    padding:6px 12px;border-radius:12px;
+    transition:background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .ex-toggle:hover{background:rgba(63,110,94,.08);}
+  .ex-toggle .ex-caret{transition:transform .2s ease;}
+  .ex-toggle.open .ex-caret{transform:rotate(90deg);}
+
+  .formula{
+    font-family:'Courier New',monospace;font-size:14px;background:var(--card);
+    border:1px solid var(--rule);border-radius:3px;padding:12px 16px;margin:12px 0 16px;color:var(--ink);
+    transition:background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
+  .formula b{color:var(--tab-1);transition:color 0.3s ease;}
+  .p2 .formula b{color:var(--tab-2);transition:color 0.3s ease;}
+  .p3 .formula b{color:var(--tab-3);transition:color 0.3s ease;}
+
+  .steps{counter-reset:s;margin:0 0 16px;padding:0;list-style:none;}
+  .steps li{
+    counter-increment:s;position:relative;padding:8px 0 8px 34px;font-size:14.5px;line-height:1.55;border-bottom:1px dashed var(--rule);
+    transition:border-color 0.3s ease;
+  }
+  .steps li:last-child{border-bottom:none;}
+  .steps li::before{
+    content:counter(s);position:absolute;left:0;top:8px;width:22px;height:22px;
+    border:1px solid var(--ink);border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-family:'Courier New',monospace;font-size:11px;
+    transition:border-color 0.3s ease, color 0.3s ease;
+  }
+
+  .example{
+    background:var(--card);border-left:3px solid var(--ink-soft);padding:12px 16px;margin:14px 0;font-size:14px;font-style:italic;line-height:1.6;
+    transition:background-color 0.3s ease, border-color 0.3s ease;
+  }
+  .example .label{
+    display:block;font-family:'Courier New',monospace;font-style:normal;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:5px;
+    transition:color 0.3s ease;
+  }
+
+  .tip{font-size:13px;color:var(--ink-soft);margin:10px 0 0;padding-left:2px;transition:color 0.3s ease;}
+  .tip::before{content:"→ ";font-family:'Courier New',monospace;}
+
+  .band-body{padding:0 16px 16px 16px;}
+  
+  .answer-text{
+    font-size:14.5px;line-height:1.85;
+    background:rgba(255,255,255,.45);
+    border-left:3px solid var(--ink-soft);
+    padding:14px 16px;margin-bottom:14px;
+    transition:background-color 0.3s ease, border-color 0.3s ease;
+  }
+  body.dark-mode .answer-text{
+    background:rgba(0,0,0,.2);
+  }
+  .qcontext{
+    font-family:'Courier New',monospace;font-size:12px;color:var(--ink-soft);
+    margin-bottom:14px;padding:8px 12px;background:rgba(0,0,0,.03);border-radius:3px;
+    transition:color 0.3s ease, background-color 0.3s ease;
+  }
+  body.dark-mode .qcontext{
+    background:rgba(255,255,255,.03);
+  }
+
+  /* legend */
+  .legend{
+    display:flex;flex-wrap:wrap;gap:10px 18px;
+    font-size:12px;margin-bottom:20px;
+    padding:12px 14px;border:1px solid var(--rule);border-radius:3px;background:var(--card);
+    transition:background-color 0.3s ease, border-color 0.3s ease;
+  }
+  .legend-item{display:flex;align-items:center;gap:6px;}
+  .legend-swatch{
+    display:inline-block;width:22px;height:0;border-bottom-width:3px;border-bottom-style:solid;
+    transition:border-color 0.3s ease;
+  }
+  .legend .sw-err{border-color:var(--err);}
+  .legend .sw-vocab{border-bottom-style:dotted;border-color:var(--vocab);}
+  .legend .sw-idiom{border-bottom-style:double;border-width:0 0 4px 0;border-color:var(--idiom);}
+  .legend .sw-good{border-color:var(--good);}
+  .legend .sw-gen{border-bottom-style:dashed;border-color:var(--gen);}
+
+  /* inline annotation marks */
+  .an{padding:0 1px;transition:border-color 0.3s ease;}
+  .an-err{border-bottom:2px solid var(--err);text-decoration:none;}
+  .an-vocab{border-bottom:2px dotted var(--vocab);text-decoration:none;}
+  .an-idiom{border-bottom:3px double var(--idiom);text-decoration:none;}
+  .an-good{border-bottom:2px solid var(--good);text-decoration:none;}
+  sup.ref{font-size:10px;font-weight:bold;margin-left:1px;font-style:normal;transition:color 0.3s ease;}
+  sup.ref-err{color:var(--err);}
+  sup.ref-vocab{color:var(--vocab);}
+  sup.ref-idiom{color:var(--idiom);}
+  sup.ref-good{color:var(--good);}
+
+  /* Pattern highlights - thicker and with light tint for extra clarity */
+  .pat-step1{
+    border-bottom:3px solid var(--tab-1);
+    background-color:rgba(138, 90, 63, 0.05);
+    text-decoration:none;
+    padding-bottom:1.5px;
+    transition:border-color 0.3s ease, background-color 0.3s ease;
+  }
+  .pat-step2{
+    border-bottom:3px dashed var(--tab-2);
+    background-color:rgba(63, 110, 94, 0.05);
+    text-decoration:none;
+    padding-bottom:1.5px;
+    transition:border-color 0.3s ease, background-color 0.3s ease;
+  }
+  .pat-step3{
+    border-bottom:3px dotted var(--tab-3);
+    background-color:rgba(74, 90, 138, 0.05);
+    text-decoration:none;
+    padding-bottom:1.5px;
+    transition:border-color 0.3s ease, background-color 0.3s ease;
+  }
+
+  /* Detailed explanation below underlined sentences */
+  .pat-bd-wrap {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--rule);
+    font-size: 12px;
+    line-height: 1.5;
+    transition: border-color 0.3s ease;
+  }
+  .pat-bd-item {
+    margin-bottom: 6px;
+    padding-left: 14px;
+    position: relative;
+  }
+  .pat-bd-item:last-child {
+    margin-bottom: 0;
+  }
+  .pat-bd-item::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: bold;
+  }
+  .bd-step1 { color: var(--tab-1); }
+  .bd-step2 { color: var(--tab-2); }
+  .bd-step3 { color: var(--tab-3); }
+  
+  body.dark-mode .bd-step1 { color: var(--tab-1); }
+  body.dark-mode .bd-step2 { color: var(--tab-2); }
+  body.dark-mode .bd-step3 { color: var(--tab-3); }
+
+  /* notes list under each answer */
+  .notes{list-style:none;margin:0;padding:0;font-size:13px;}
+  .notes li{
+    position:relative;padding:5px 0 5px 24px;line-height:1.55;border-bottom:1px dashed var(--rule);
+    transition:border-color 0.3s ease;
+  }
+  .notes li:last-child{border-bottom:none;}
+  .notes li .num{
+    position:absolute;left:0;top:5px;
+    font-family:'Courier New',monospace;font-size:11px;font-weight:bold;
+    width:16px;
+    transition:color 0.3s ease;
+  }
+  .notes li.n-err .num{color:var(--err);}
+  .notes li.n-vocab .num{color:var(--vocab);}
+  .notes li.n-idiom .num{color:var(--idiom);}
+  .notes li.n-good .num{color:var(--good);}
+  .notes li.n-gen .num{color:var(--gen);}
+  .notes li .tag{
+    font-family:'Courier New',monospace;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;
+    padding:1px 6px;border-radius:8px;color:#fff;margin-right:6px;display:inline-block;
+    transition:background-color 0.3s ease;
+  }
+  .notes li.n-err .tag{background:var(--err);}
+  .notes li.n-vocab .tag{background:var(--vocab);}
+  .notes li.n-idiom .tag{background:var(--idiom);}
+  .notes li.n-good .tag{background:var(--good);}
+  .notes li.n-gen .tag{background:var(--gen);}
+
+  /* skills view */
+  .skills-intro{
+    font-size:13px;color:var(--ink-soft);margin-bottom:20px;line-height:1.65;padding:12px 14px;border:1px solid var(--rule);border-radius:3px;background:var(--card);
+    transition:background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
+  .skills-group-head{
+    font-family:'Courier New',monospace;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin:26px 0 12px;border-bottom:1px dashed var(--rule);padding-bottom:6px;
+    transition:border-color 0.3s ease, color 0.3s ease;
+  }
+  .skill-card .cue-title{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:0;}
+  .skill-num{font-family:'Courier New',monospace;font-size:11px;font-weight:bold;padding:2px 8px;border-radius:2px;color:var(--paper);transition:background-color 0.3s ease, color 0.3s ease;}
+  .skill-num.grp-p1{background:var(--tab-1);}
+  .skill-num.grp-p2{background:var(--tab-2);}
+  .skill-num.grp-p3{background:var(--tab-3);}
+  .skill-num.grp-gen{background:var(--vocab);}
+  .skill-criterion{
+    font-family:'Courier New',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);border:1px solid var(--rule);padding:2px 8px;border-radius:10px;
+    transition:border-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* sub detail details box styles - adjusted to blend cleanly */
+  .skill-details {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 12px 0;
+    border-top: 1px dashed var(--rule);
+    border-bottom: 1px dashed var(--rule);
+    padding: 12px 0;
+    transition: border-color 0.3s ease, color 0.3s ease;
+  }
+  .skill-details ul {
+    margin: 8px 0;
+    padding-left: 20px;
+  }
+  .skill-details ul li {
+    margin-bottom: 4px;
+  }
+  .skill-details table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 12.5px;
+  }
+  .skill-details th, .skill-details td {
+    border: 1px solid var(--rule);
+    padding: 6px 8px;
+    text-align: left;
+    transition: border-color 0.3s ease;
+  }
+  .skill-details th {
+    background: rgba(0,0,0,0.03);
+    font-weight: bold;
+  }
+  body.dark-mode .skill-details th {
+    background: rgba(255,255,255,0.03);
+  }
+  .skill-details b {
+    color: var(--ink);
+  }
+
+  /* Nested list adjustments for skills guide wrapper */
+  .skill-body-wrapper ol.qlist {
+    padding: 12px 0 0 0;
+  }
+
+  footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--rule);font-size:12px;color:var(--ink-soft);font-style:italic;transition:border-color 0.3s ease, color 0.3s ease;}
+
+  @media (max-width: 600px){
+    body{padding:20px 12px 60px;}
+    h1{font-size:26px;}
+    .sub{font-size:13px;}
+    .kicker{font-size:10px;}
+    .view-switch{flex-direction:column;}
+    .view-btn{padding:11px 12px;font-size:11px;}
+    .controls{flex-direction:column;}
+    .controls input[type=text]{width:100%;}
+    .controls .tab-btn{flex:1 1 auto;text-align:center;}
+    .part-head{flex-wrap:wrap;gap:8px;margin:20px 0 10px;}
+    .part-title{font-size:17px;}
+    .part-desc{font-size:12px;margin-top:-4px;}
+    .topic-head{padding:10px 12px;font-size:14px;}
+    ol.qlist{padding:12px 12px 14px;}
+    ol.qlist li{font-size:13.5px;padding-left:26px;}
+    .cue-card{padding:13px 14px;}
+    .cue-title{font-size:14.5px;}
+    .cue-card ul{font-size:13.5px;}
+    .formula{font-size:12.5px;padding:10px 12px;}
+    .steps li{font-size:13.5px;padding-left:30px;}
+    .steps li::before{width:19px;height:19px;font-size:10px;}
+    .example{font-size:13px;padding:10px 12px;}
+    .tip{font-size:12px;}
+    footer{font-size:11px;}
+    .band-head{padding:10px 12px;flex-wrap:wrap;}
+    .band-badge{font-size:10px;padding:2px 7px;}
+    .band-desc{font-size:11.5px;}
+    .band-body{padding:0 12px 14px;}
+    .answer-text{font-size:13.5px;padding:11px 12px;line-height:1.75;}
+    .qcontext{font-size:11px;padding:7px 10px;}
+    .legend{font-size:11px;padding:10px 12px;gap:8px 14px;}
+    .notes{font-size:12px;}
+
+    .qa-row{flex-wrap:wrap;gap:6px;}
+    .qa-q{font-size:13.5px;}
+    .ans-toggle{font-size:9.5px;padding:4px 9px;}
+    .ans-box{font-size:12.5px;padding:9px 10px;}
+    .ex-toggle{font-size:10px;padding:5px 10px;margin:0 12px 12px;}
+    .ex-box{font-size:12.5px;margin:0 12px 14px;padding:10px 12px;}
+
+    .skills-intro{font-size:12px;padding:10px 12px;}
+    .skills-group-head{font-size:11px;margin:20px 0 10px;}
+    .skill-card{padding:13px 14px;}
+    header {flex-direction: column; align-items: stretch; gap: 8px;}
+    #theme-toggle {align-self: flex-start;}
+  }
+
+  @media (max-width: 380px){
+    h1{font-size:22px;}
+    .part-title{font-size:15.5px;}
+    .part-num{font-size:10.5px;padding:2px 6px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div>
+      <div class="kicker">Speaking Test — Practice Kit</div>
+      <h1>IELTS Speaking Practice Kit</h1>
+      <div class="sub">Question bank + answer patterns + annotated band examples</div>
+    </div>
+    <button id="theme-toggle" class="tab-btn" style="margin-top:10px; display:inline-flex; align-items:center; gap:6px;">🌙 Dark Mode</button>
+  </header>
+
+  <div class="view-switch">
+    <button class="view-btn active" data-view="patterns">Answer Patterns</button>
+    <button class="view-btn" data-view="bank">Question Bank</button>
+    <button class="view-btn" data-view="examples">Band Examples</button>
+    <button class="view-btn" data-view="skills">Speaking Skills Guide (1-19)</button>
+  </div>
+
+  <!-- ============ PATTERNS VIEW ============ -->
+  <div class="view active" id="view-patterns">
+
+    <section class="p1">
+      <div class="part-head"><span class="part-num">PART 1</span><span class="part-title">Short Familiar Questions</span></div>
+      <div class="formula"><b>Point → Extend → Example</b> (3–4 sentences max)</div>
+      <ol class="steps">
+        <li><b>Point:</b> answer the question directly, no dodging.</li>
+        <li><b>Extend:</b> add one reason, feeling, or detail (why / how / when).</li>
+        <li><b>Example (optional):</b> one short concrete instance if it fits naturally.</li>
+      </ol>
+      <div class="example">
+        <span class="label">Example — "Do you enjoy your work?"</span>
+        "No, not really. I struggle with the technical math side, so I lean on AI tools a lot to get through my tasks."
+      </div>
+      <p class="tip">Longer isn't better here — 20–30 seconds is the target. Over-explaining reads as memorized.</p>
+    </section>
+
+    <section class="p2">
+      <div class="part-head"><span class="part-num">PART 2</span><span class="part-title">Cue Card (Long Turn)</span></div>
+      <div class="formula"><b>Intro → Bullet-by-bullet → Closing</b> (fill the full ~2 minutes)</div>
+      <ol class="steps">
+        <li><b>Intro (1 sentence):</b> name the person/place/thing right away.</li>
+        <li><b>Work through every bullet point in order</b> — don't skip any.</li>
+        <li>For each bullet, add <b>one personal detail or feeling</b> so it doesn't sound like a list.</li>
+        <li><b>Closing (1 sentence):</b> tie it back to why it still matters now.</li>
+      </ol>
+      <div class="example">
+        <span class="label">Example — closing line</span>
+        "That's why this project still matters to me today — it's the proof I can build something real on my own."
+      </div>
+      <p class="tip">Running out of things to say before time's up? Go back and elaborate one bullet further — never go silent.</p>
+    </section>
+
+    <section class="p3">
+      <div class="part-head"><span class="part-num">PART 3</span><span class="part-title">Discussion Questions</span></div>
+      <div class="formula"><b>Opinion → Reasoning → Example / Counterpoint</b></div>
+      <ol class="steps">
+        <li><b>Opinion:</b> take a clear stance immediately — don't hedge from the start.</li>
+        <li><b>Reasoning:</b> explain <em>why</em> ("because...").</li>
+        <li><b>Example or nuance:</b> a real-world instance, or acknowledge the other side.</li>
+      </ol>
+      <div class="example">
+        <span class="label">Example — "Will AI replace jobs?"</span>
+        "I think AI will replace some jobs, but not eliminate them entirely. Repetitive tasks are most at risk, but roles that need judgment — like AI engineering itself, ironically — still need humans to interpret the output."
+      </div>
+      <p class="tip">Showing you can see two sides scores higher than a flat yes/no. Nuance signals band 7+ thinking.</p>
+    </section>
+
+  </div>
+
+  <!-- ============ QUESTION BANK VIEW ============ -->
+  <div class="view" id="view-bank">
+
+    <div class="controls">
+      <input type="text" id="search" placeholder="cari topik atau keyword... (mis. 'work', 'technology', 'hometown')">
+      <button class="tab-btn active" data-part="all">All</button>
+      <button class="tab-btn" data-part="part1">Part 1</button>
+      <button class="tab-btn" data-part="part2">Part 2</button>
+      <button class="tab-btn" data-part="part3">Part 3</button>
+    </div>
+
+    <!-- Colored Underline Legend -->
+    <div class="legend pat-legend" style="margin-bottom:20px;">
+      <div class="kicker" style="width:100%;margin-bottom:6px;">Answer Highlights &amp; Vocabulary Guide</div>
+      <div style="width:100%; display:flex; flex-wrap:wrap; gap:10px 18px; margin-bottom:8px;">
+        <span class="legend-item"><span class="pat-step1" style="display:inline-block;width:22px;height:0;border-bottom-width:2.5px;border-bottom-style:solid;margin-right:4px;"></span> Step 1: Point / Intro / Opinion</span>
+        <span class="legend-item"><span class="pat-step2" style="display:inline-block;width:22px;height:0;border-bottom-width:2.5px;border-bottom-style:dashed;margin-right:4px;"></span> Step 2: Extend / Bullets / Reasoning</span>
+        <span class="legend-item"><span class="pat-step3" style="display:inline-block;width:22px;height:0;border-bottom-width:2.5px;border-bottom-style:dotted;margin-right:4px;"></span> Step 3: Example / Closing / Nuance</span>
+      </div>
+      <div style="width:100%; border-top:1px dashed var(--rule); padding-top:8px; display:flex; flex-wrap:wrap; gap:10px 18px;">
+        <span class="legend-item"><span class="legend-swatch sw-vocab"></span> precise vocabulary</span>
+        <span class="legend-item"><span class="legend-swatch sw-idiom"></span> idiomatic / figurative</span>
+      </div>
+    </div>
+
+    <div class="count" id="count"></div>
+
+    <section class="part part1" data-part="part1">
+      <div class="part-head"><span class="part-num">PART 1</span><span class="part-title">Introduction &amp; Familiar Topics</span></div>
+      <div class="part-desc">4–5 minutes · short personal questions, 20–30 sec answers each</div>
+      <div id="part1-list"></div>
+    </section>
+
+    <section class="part part2" data-part="part2">
+      <div class="part-head"><span class="part-num">PART 2</span><span class="part-title">Cue Card (Long Turn)</span></div>
+      <div class="part-desc">1 min prep · 1–2 min monologue</div>
+      <div id="part2-list"></div>
+    </section>
+
+    <section class="part part3" data-part="part3">
+      <div class="part-head"><span class="part-num">PART 3</span><span class="part-title">Two-Way Discussion</span></div>
+      <div class="part-desc">4–5 minutes · abstract, analytical, tied to Part 2 theme</div>
+      <div id="part3-list"></div>
+    </section>
+
+  </div>
+
+  <!-- ============ BAND EXAMPLES VIEW ============ -->
+  <div class="view" id="view-examples">
+
+    <div class="legend">
+      <span class="legend-item"><span class="legend-swatch sw-err"></span> error / weak choice</span>
+      <span class="legend-item"><span class="legend-swatch sw-vocab"></span> precise vocabulary</span>
+      <span class="legend-item"><span class="legend-swatch sw-idiom"></span> idiomatic / figurative</span>
+      <span class="legend-item"><span class="legend-swatch sw-good"></span> strong cohesion</span>
+      <span class="legend-item"><span class="legend-swatch sw-gen"></span> general remark</span>
+    </div>
+
+    <!-- PART 1 -->
+    <section class="part1">
+      <div class="part-head"><span class="part-num">PART 1</span><span class="part-title">Sample Answers by Band</span></div>
+      <div class="qcontext">Question: "Do you enjoy your work?"</div>
+
+      <div class="band-card" data-band="6">
+        <div class="band-head" onclick="toggleBand(this)">
+          <div class="band-head-left"><span class="band-badge band-6">BAND 6</span><span class="band-desc">basic, some errors</span></div>
+          <span class="caret">▶</span>
+        </div>
+        <div class="band-body-wrapper">
+          <div class="band-body">
+            <div class="answer-text">Yes, I enjoy my work, but sometimes it is difficult for me. I work <span class="an an-err">as AI engineer</span><sup class="ref ref-err">1</sup> and I use many AI tools <span class="an an-err">for finish</span><sup class="ref ref-err">2</sup> my task. I like it because I can learn new things <span class="an an-err">everyday</span><sup class="ref ref-err">3</sup>.</div>
+            <ol class="notes">
+              <li class="n-err"><span class="num">1</span><span class="tag">error</span>Missing article — should be <i>"as an AI engineer."</i></li>
+              <li class="n-err"><span class="num">2</span><span class="tag">error</span>Wrong verb form after preposition — should be <i>"to finish."</i></li>
+              <li class="n-err"><span class="num">3</span><span class="tag">error</span><i>"Everyday"</i> is an adjective; the adverbial form needed here is two words — <i>"every day."</i></li>
+              <li class="n-gen"><span class="num">·</span><span class="tag">general</span>"Enjoy," "like," and "difficult" repeat with no synonym variation — this caps the vocabulary score even though meaning is clear.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="band-card" data-band="7">
+        <div class="band-head" onclick="toggleBand(this)">
+          <div class="band-head-left"><span class="band-badge band-7">BAND 7</span><span class="band-desc">flexible, minor slips</span></div>
+          <span class="caret">▶</span>
+        </div>
+        <div class="band-body-wrapper">
+          <div class="band-body">
+            <div class="answer-text"><span class="an an-good">On the whole</span><sup class="ref ref-good">1</sup>, yes — I do enjoy it, <span class="an an-good">although the technical side can be quite challenging</span><sup class="ref ref-good">2</sup> for me. I work as an AI engineer, and I <span class="an an-vocab">rely heavily on</span><sup class="ref ref-vocab">3</sup> AI tools to get through some of the more difficult tasks. <span class="an an-good">What I really like is that</span><sup class="ref ref-good">4</sup> I'm constantly learning something new.</div>
+            <ol class="notes">
+              <li class="n-good"><span class="num">1</span><span class="tag">cohesion</span>Opens with a natural discourse marker instead of a flat "yes" — signals more control than Band 6.</li>
+              <li class="n-good"><span class="num">2</span><span class="tag">cohesion</span>An "although" clause handled cleanly shows comfort with complex sentence structure.</li>
+              <li class="n-vocab"><span class="num">3</span><span class="tag">vocab</span><i>"Rely heavily on"</i> is more precise and natural than "use a lot."</li>
+              <li class="n-good"><span class="num">4</span><span class="tag">cohesion</span>A cleft sentence ("What I really like is...") adds variety instead of just starting with "I like."</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="band-card" data-band="8">
+        <div class="band-head" onclick="toggleBand(this)">
+          <div class="band-head-left"><span class="band-badge band-8">BAND 8</span><span class="band-desc">natural, idiomatic</span></div>
+          <span class="caret">▶</span>
+        </div>
+        <div class="band-body-wrapper">
+          <div class="band-body">
+            <div class="answer-text">Genuinely, yes, though it's <span class="an an-idiom">a mixed bag</span><sup class="ref ref-idiom">1</sup>. The maths-heavy side of AI engineering <span class="an an-vocab">isn't really my strength</span><sup class="ref ref-vocab">2</sup>, so I've come to depend quite a lot on AI tools themselves to <span class="an an-idiom">bridge that gap</span><sup class="ref ref-idiom">3</sup> — <span class="an an-good">which is a bit ironic, if you think about it</span><sup class="ref ref-good">4</sup>. But overall, the constant learning curve is what keeps me engaged.</div>
+            <ol class="notes">
+              <li class="n-idiom"><span class="num">1</span><span class="tag">idiom</span><i>"A mixed bag"</i> — natural idiom used accurately, not just inserted for effect.</li>
+              <li class="n-vocab"><span class="num">2</span><span class="tag">vocab</span>A tactful, softer way to admit a weakness than "I'm bad at" — shows register awareness.</li>
+              <li class="n-idiom"><span class="num">3</span><span class="tag">idiom</span><i>"Bridge that gap"</i> — figurative language deployed with precision.</li>
+              <li class="n-good"><span class="num">4</span><span class="tag">cohesion</span>This self-aware aside signals real-time reflective thinking rather than a rehearsed script — a key Band 8 marker.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="band-card" data-band="9">
+        <div class="band-head" onclick="toggleBand(this)">
+          <div class="band-head-left"><span class="band-badge band-9">BAND 9</span><span class="band-desc">native-like precision</span></div>
+          <span class="caret">▶</span>
+        </div>
+        <div class="band-body-wrapper">
+          <div class="band-body">
+            <div class="answer-text"><span class="an an-good">Honestly?</span><sup class="ref ref-good">1</sup> It's a mixed bag. I wouldn't say the <span class="an an-vocab">technical rigour</span><sup class="ref ref-vocab">2</sup> comes naturally to me — the maths side, especially — but I've <span class="an an-idiom">leaned into</span><sup class="ref ref-idiom">3</sup> using AI tools to close that gap, <span class="an an-good">which, admittedly,</span><sup class="ref ref-good">4</sup> is a little ironic given the field I'm in. That said, the constant <span class="an an-vocab">intellectual stretch</span><sup class="ref ref-vocab">5</sup> is exactly what <span class="an an-idiom">keeps me hooked</span><sup class="ref ref-idiom">6</sup>.</div>
+            <ol class="notes">
+              <li class="n-good"><span class="num">1</span><span class="tag">cohesion</span>A one-word rhetorical opener — a natural spoken-English habit that's very hard to fake or memorize.</li>
+              <li class="n-vocab"><span class="num">2</span><span class="tag">vocab</span><i>"Technical rigour"</i> — precise, register-appropriate academic vocabulary.</li>
+              <li class="n-idiom"><span class="num">3</span><span class="tag">idiom</span><i>"Leaned into"</i> — natural phrasal verb, used with full control.</li>
+              <li class="n-good"><span class="num">4</span><span class="tag">cohesion</span>The embedded qualifier <i>"which, admittedly,"</i> shows total ease with complex clause structures.</li>
+              <li class="n-vocab"><span class="num">5</span><span class="tag">vocab</span><i>"Intellectual stretch"</i> — vivid, precise phrasing over a generic word like "challenge."</li>
+              <li class="n-idiom"><span class="num">6</span><span class="tag">idiom</span><i>"Keeps me hooked"</i> — natural idiomatic closing that ties the tone together.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============ SPEAKING SKILLS GUIDE VIEW ============ -->
+  <div class="view" id="view-skills">
+
+    <div class="skills-intro">
+      This guide contains all <strong>19 Speaking Skills</strong> from the Barron's IELTS reference book, organized by test parts. The sections cover introduction strategies, cue card structuring (including note-taking models), Part 3 conceptual depth, and general intonation/rhythm policies. Toggle any skill to view comprehensive rules and custom practice questions.
+    </div>
+
+    <!-- Skill Filter Controls -->
+    <div class="controls">
+      <input type="text" id="skills-search" placeholder="cari skill... (mis. 'intonation', 'stress', 'opinion')">
+      <button class="tab-btn active" data-skill-part="all">All</button>
+      <button class="tab-btn" data-skill-part="part1">Part 1</button>
+      <button class="tab-btn" data-skill-part="part2">Part 2</button>
+      <button class="tab-btn" data-skill-part="part3">Part 3</button>
+      <button class="tab-btn" data-skill-part="gen">General</button>
+    </div>
+
+    <div class="count" id="skills-count">19 skills shown</div>
+
+    <div class="skills-section-wrapper" data-sec-part="part1">
+      <div class="skills-group-head">Part 1: Introduction and Interview (Skill 1)</div>
+      <div id="skills-p1-list"></div>
+    </div>
+
+    <div class="skills-section-wrapper" data-sec-part="part2">
+      <div class="skills-group-head">Part 2: Long Turn / Cue Card (Skills 2-9)</div>
+      <div id="skills-p2-list"></div>
+    </div>
+
+    <div class="skills-section-wrapper" data-sec-part="part3">
+      <div class="skills-group-head">Part 3: Discussion (Skills 10-13)</div>
+      <div id="skills-p3-list"></div>
+    </div>
+
+    <div class="skills-section-wrapper" data-sec-part="gen">
+      <div class="skills-group-head">General Speaking Skills: Fluency &amp; Pronunciation (Skills 14-19)</div>
+      <div id="skills-gen-list"></div>
+    </div>
+
+  </div>
+
+  <footer>Answer Patterns = struktur jawaban. Question Bank = bank soal buat latihan. Band Examples = contoh + anotasi kata per level. Speaking Skills = teknik lintas-part dari buku Barron's. Toggle di atas buat pindah tab.</footer>
+</div>
+
+<script>
+function toggleBand(headEl){
+  headEl.parentElement.classList.toggle('open');
+}
+
+const PART1 = [
+  {topic:"Work / Study", qas:[
+    {q:"Do you work or are you a student?", a:"<span class='pat-step1'>I work — I'm not a student anymore.</span> <span class='pat-step2'>I graduated <span class='an an-vocab' data-note='fairly recently: quite a short time ago (precise adverbial qualifier).'>fairly recently</span></span> <span class='pat-step3'>and moved straight into a <span class='an an-vocab' data-note='technical role: a job requiring specialized scientific or practical skills.'>technical role</span>.</span>"},
+    {q:"What do you do exactly?", a:"<span class='pat-step1'>I'm an AI engineer,</span> <span class='pat-step2'>so I mainly build and test <span class='an an-vocab' data-note='AI-powered features: software functionalities driven by artificial intelligence algorithms.'>AI-powered features</span>,</span> <span class='pat-step3'>like systems that answer questions automatically.</span>"},
+    {q:"Why did you choose that job/field?", a:"<span class='pat-step1'>I chose it because I wanted to work with technology that actually solves real problems,</span> <span class='pat-step2'>rather than just focusing on things</span> <span class='pat-step3'>that are <span class='an an-vocab' data-note='purely academic: completely theoretical and not practical.'>purely academic</span> or theoretical.</span>"},
+    {q:"Do you enjoy your work? Why or why not?", a:"<span class='pat-step1'>Not every part, honestly.</span> <span class='pat-step2'>The maths-heavy side <span class='an an-vocab' data-note='not my strength: a softer, professional way to describe a weakness.'>isn\'t really my strength</span>,</span> <span class='pat-step3'>so I <span class='an an-idiom' data-note='lean on: depend on or rely heavily on something for support.'>lean on</span> AI tools a lot to get through those tasks.</span>"},
+    {q:"What are your responsibilities?", a:"<span class='pat-step1'>My main responsibility is building and testing features,</span> <span class='pat-step2'>and making sure the system behaves reliably</span> <span class='pat-step3'>before it reaches real users.</span>"},
+    {q:"Is it easy to get a job in your field in your country?", a:"<span class='pat-step1'>Not particularly — it\'s <span class='an an-vocab' data-note='fairly competitive: requiring high effort to succeed against rival candidates.'>fairly competitive</span> for <span class='an an-vocab' data-note='fresh graduates: people who have very recently completed their university degrees.'>fresh graduates</span>,</span> <span class='pat-step2'>but demand is growing quickly,</span> <span class='pat-step3'>so there\'s room if you keep learning.</span>"},
+    {q:"Would you like to change your job in the future?", a:"<span class='pat-step1'>Not the field itself,</span> <span class='pat-step2'>but I\'d like to move into more advanced work,</span> <span class='pat-step3'>like systems where multiple <span class='an an-vocab' data-note='AI agents: autonomous software entities that perform tasks using AI models.'>AI agents</span> work together.</span>"}
+  ]},
+  {topic:"Hometown", qas:[
+    {q:"Where is your hometown?", a:"<span class='pat-step1'>My hometown is Yogyakarta,</span> <span class='pat-step2'>which is a city in Central Java.</span> <span class='pat-step3'>It\'s known as a <span class='an an-vocab' data-note='major cultural hub: a central city renowned for its rich history, arts, and traditions.'>major cultural hub</span>.</span>"},
+    {q:"What's it like there?", a:"<span class='pat-step1'>It\'s a mix of <span class='an an-vocab' data-note='vibrant student energy: lively, active atmosphere created by a large youth and student population.'>vibrant student energy</span> and traditional culture —</span> <span class='pat-step2'>lots of universities, but also historic temples and markets nearby,</span> <span class='pat-step3'>so there\'s always something to do.</span>"},
+    {q:"What do you like most about your hometown?", a:"<span class='pat-step1'>I like the balance of the city —</span> <span class='pat-step2'>it\'s lively enough to never feel boring,</span> <span class='pat-step3'>but calmer and cheaper than a city like Jakarta.</span>"},
+    {q:"Has your hometown changed much recently?", a:"<span class='pat-step1'>Yes, quite a bit —</span> <span class='pat-step2'>a lot more cafes and co-working spaces have opened</span> <span class='pat-step3'>as young people move there to study or work remotely.</span>"},
+    {q:"Would you recommend it to visitors?", a:"<span class='pat-step1'>Definitely, I would recommend it.</span> <span class='pat-step2'>It is especially great for the local food</span> <span class='pat-step3'>and the historic temples just outside the city.</span>"},
+    {q:"Do you plan to keep living there in the future?", a:"<span class='pat-step1'>I\'m not sure forever,</span> <span class='pat-step2'>but it\'ll always feel like home,</span> <span class='pat-step3'>even if I eventually move elsewhere for work.</span>"}
+  ]},
+  {topic:"Technology", qas:[
+    {q:"Do you use your phone a lot every day?", a:"<span class='pat-step1'>Yes, probably too much if I\'m honest —</span> <span class='pat-step2'>it\'s basically <span class='an an-idiom' data-note='attached to my hand: an idiomatic exaggeration meaning using the phone constantly.'>attached to my hand</span> throughout the day</span> <span class='pat-step3'>since I check it for work updates constantly.</span>"},
+    {q:"What apps do you use most?", a:"<span class='pat-step1'>Mostly messaging apps and LinkedIn,</span> <span class='pat-step2'>as well as a few development tools,</span> <span class='pat-step3'>since I need to coordinate with my tech teams.</span>"},
+    {q:"How has technology changed the way you work?", a:"<span class='pat-step1'>It\'s changed it completely —</span> <span class='pat-step2'>I use AI assistants for almost everything now,</span> <span class='pat-step3'>from writing <span class='an an-vocab' data-note='boilerplate code: standard, repetitive code sections that can be reused with minimal change.'>boilerplate code</span> to organizing my thoughts.</span>"},
+    {q:"Do you think you rely on technology too much?", a:"<span class='pat-step1'>Probably, yes.</span> <span class='pat-step2'>Sometimes I reach for an AI tool</span> <span class='pat-step3'>before trying to <span class='an an-vocab' data-note='figure out: to solve or understand a problem through reasoning.'>figure out</span> the coding problem myself.</span>"},
+    {q:"What new technology would you like to try?", a:"<span class='pat-step1'>I\'d like to try more advanced multi-agent AI systems,</span> <span class='pat-step2'>specifically setups that can deploy code automatically,</span> <span class='pat-step3'>as it would speed up my project workflow.</span>"}
+  ]},
+  {topic:"Reading", qas:[
+    {q:"Do you like reading?", a:"<span class='pat-step1'>I do,</span> <span class='pat-step2'>although these days I read more technical articles</span> <span class='pat-step3'>than actual fiction or novels.</span>"},
+    {q:"What kind of books do you read?", a:"<span class='pat-step1'>When I do read for fun, I lean toward nonfiction —</span> <span class='pat-step2'>mostly technology or personal development topics,</span> <span class='pat-step3'>like biographies of founders.</span>"},
+    {q:"Did you read a lot as a child?", a:"<span class='pat-step1'>Not really, to be honest —</span> <span class='pat-step2'>I was much more interested in playing games,</span> <span class='pat-step3'>and the habit of reading only came later.</span>"},
+    {q:"Do you prefer physical books or e-books?", a:"<span class='pat-step1'>E-books, definitely.</span> <span class='pat-step2'>Mainly because I can carry my whole library on my phone,</span> <span class='pat-step3'>which makes reading during commutes <span class='an an-vocab' data-note='very easy: simple, straightforward, and requiring minimal effort.'>very easy</span>.</span>"},
+    {q:"Do you think reading habits are changing?", a:"<span class='pat-step1'>Definitely —</span> <span class='pat-step2'>people are shifting toward shorter, more digestible content,</span> <span class='pat-step3'>like blogs or summaries, instead of full books.</span>"}
+  ]},
+  {topic:"Free time / Hobbies", qas:[
+    {q:"What do you do in your free time?", a:"<span class='pat-step1'>I actually build small software projects for fun —</span> <span class='pat-step2'>it\'s a mix of hobby and skill-building for me,</span> <span class='pat-step3'>like creating automation scripts.</span>"},
+    {q:"Is this hobby popular in your country?", a:"<span class='pat-step1'>It\'s becoming more popular,</span> <span class='pat-step2'>especially among young people trying to break into tech</span> <span class='pat-step3'>without a formal computer science degree.</span>"},
+    {q:"How did you get interested in it?", a:"<span class='pat-step1'>I got into it <span class='an an-vocab' data-note='out of necessity: done because it was needed or required rather than just for fun.'>out of necessity</span> at first,</span> <span class='pat-step2'>when I needed to automate some boring file uploads,</span> <span class='pat-step3'>and it slowly turned into something I genuinely enjoy.</span>"},
+    {q:"Do you think it\'s important to have a hobby?", a:"<span class='pat-step1'>Yes, absolutely.</span> <span class='pat-step2'>It is especially important to have one that gives you a sense of progress</span> <span class='pat-step3'>outside of direct work pressure.</span>"},
+    {q:"Have your hobbies changed since you were a child?", a:"<span class='pat-step1'>A lot —</span> <span class='pat-step2'>they\'re much more focused and purposeful now,</span> <span class='pat-step3'>compared to just playing outside when I was young.</span>"}
+  ]},
+  {topic:"Social Media", qas:[
+    {q:"Do you use social media?", a:"<span class='pat-step1'>Yes, fairly regularly,</span> <span class='pat-step2'>though I try to limit my screen time</span> <span class='pat-step3'>so it doesn\'t distract me from coding.</span>"},
+    {q:"Which platform do you use most?", a:"<span class='pat-step1'>LinkedIn, mostly,</span> <span class='pat-step2'>since I\'m actively building a <span class='an an-vocab' data-note='professional presence: a visible, respectable reputation in a professional field.'>professional presence</span>,</span> <span class='pat-step3'>sharing updates about my software projects.</span>"},
+    {q:"What do you usually post?", a:"<span class='pat-step1'>Mostly projects I\'m working on or things I\'m learning,</span> <span class='pat-step2'>like code snippets or design problems I\'ve solved,</span> <span class='pat-step3'>to show my development journey.</span>"},
+    {q:"Do you think social media is good or bad for people?", a:"<span class='pat-step1'>It\'s a <span class='an an-idiom' data-note='mixed bag: a collection of items or outcomes of different or conflicting types.'>mixed bag</span> —</span> <span class='pat-step2'>great for opportunities and professional connection,</span> <span class='pat-step3'>but it can be a huge time sink if you\'re not intentional.</span>"},
+    {q:"How much time do you spend on it daily?", a:"<span class='pat-step1'>Around one to two hours,</span> <span class='pat-step2'>which I\'m trying to be more mindful of,</span> <span class='pat-step3'>especially during working hours.</span>"}
+  ]},
+  {topic:"Weather / Seasons", qas:[
+    {q:"What\'s the weather like in your country?", a:"<span class='pat-step1'>It\'s tropical,</span> <span class='pat-step2'>so we really only have two seasons — dry and rainy —</span> <span class='pat-step3'>rather than four distinct ones like in Europe.</span>"},
+    {q:"What\'s your favorite season?", a:"<span class='pat-step1'>Probably the dry season,</span> <span class='pat-step2'>just because it\'s easier to plan outdoor activities</span> <span class='pat-step3'>without worrying about sudden tropical downpours.</span>"},
+    {q:"Does weather affect your mood?", a:"<span class='pat-step1'>A bit, yes.</span> <span class='pat-step2'>Grey, rainy days make it harder for me to feel motivated</span> <span class='pat-step3'>to go out or work on side projects.</span>"},
+    {q:"How do people in your country deal with hot weather?", a:"<span class='pat-step1'>Mostly through air conditioning or fans,</span> <span class='pat-step2'>and by timing activities to avoid the hottest part of the afternoon,</span> <span class='pat-step3'>staying indoors when possible.</span>"}
+  ]},
+  {topic:"Food / Cooking", qas:[
+    {q:"Do you like cooking?", a:"<span class='pat-step1'>I enjoy it occasionally,</span> <span class='pat-step2'>though I wouldn\'t call myself particularly skilled</span> <span class='pat-step3'>since I usually stick to simple recipes.</span>"},
+    {q:"What\'s your favorite dish?", a:"<span class='pat-step1'>Probably nasi goreng — fried rice.</span> <span class='pat-step2'>It\'s simple,</span> <span class='pat-step3'>but there\'s something comforting about how customizable it is.</span>"},
+    {q:"Do you prefer eating at home or eating out?", a:"<span class='pat-step1'>At home most of the time,</span> <span class='pat-step2'>mainly because it\'s healthier and cheaper,</span> <span class='pat-step3'>plus I can control the ingredients.</span>"},
+    {q:"Has your diet changed over the years?", a:"<span class='pat-step1'>A bit —</span> <span class='pat-step2'>I try to eat more balanced meals now,</span> <span class='pat-step3'>especially since my work as an engineer is quite sedentary.</span>"}
+  ]},
+  {topic:"English Learning", qas:[
+    {q:"Why are you learning English?", a:"<span class='pat-step1'>Mainly to strengthen my career prospects,</span> <span class='pat-step2'>since a lot of global AI and tech roles</span> <span class='pat-step3'>expect strong English communication.</span>"},
+    {q:"How long have you been studying it?", a:"<span class='pat-step1'>I\'ve had a basic foundation for years,</span> <span class='pat-step2'>but I\'ve been studying more seriously for the past few months</span> <span class='pat-step3'>to prepare for this specific speaking test.</span>"},
+    {q:"What\'s the most difficult part for you?", a:"<span class='pat-step1'>Speaking fluently under pressure —</span> <span class='pat-step2'>I tend to overthink my grammar mid-sentence,</span> <span class='pat-step3'>which causes me to hesitate.</span>"},
+    {q:"How do you practice outside of class?", a:"<span class='pat-step1'>Through public speaking sessions</span> <span class='pat-step2'>and by using English daily in my actual work,</span> <span class='pat-step3'>like writing documentation or code comments.</span>"},
+    {q:"Do you think English is important for your career?", a:"<span class='pat-step1'>Definitely —</span> <span class='pat-step2'>most of the remote roles I\'m targeting</span> <span class='pat-step3'>expect confident spoken English.</span>"}
+  ]}
+];
+
+const PART2 = [
+  {title:"Describe a skill you learned that helped you in your career",
+   points:["What the skill is","How you learned it","When you use it","Why it has been useful"],
+   example:"<span class='pat-step1'>I\'d like to talk about <span class='an an-vocab' data-note='prompt engineering: the practice of refining queries to elicit optimal responses from AI systems.'>prompt engineering</span> — basically, the skill of communicating effectively with AI models to get useful, accurate results.</span> <span class='pat-step2'>I learned it mostly through <span class='an an-vocab' data-note='hands-on: involving direct practical experience rather than theoretical study.'>hands-on</span> trial and error during my internship, where I had to get an AI system to follow strict rules around confidence and accuracy. I use this skill almost every day now, whether I\'m debugging an AI pipeline or building my own side projects. It\'s been incredibly useful because it\'s become a genuine <span class='an an-vocab' data-note='differentiator: a unique feature or skill that sets a candidate apart from others.'>differentiator</span> for me in job interviews — a lot of companies are looking for people who can actually work effectively with AI tools, not just use them casually.</span> <span class='pat-step3'>That\'s why I consider it one of the most valuable skills I\'ve picked up recently.</span>"},
+  {title:"Describe a project you worked on that you are proud of",
+   points:["What the project was","What your role was","What challenges you faced","Why you are proud of it"],
+   example:"<span class='pat-step1'>One project I\'m genuinely proud of is TRAIN-O, a <span class='an an-vocab' data-note='full-stack: involving development of both frontend user interface and backend database systems.'>full-stack</span> digital upskilling platform I built for construction workers.</span> <span class='pat-step2'>I was the <span class='an an-vocab' data-note='sole developer: the single person responsible for writing all code in a project.'>sole developer</span>, handling everything from the front end in Vue to the back end in Node.js. The biggest challenge was that I don\'t come from a classical software engineering background, so I ended up directing an AI coding assistant almost like a technical partner, guiding the architecture decisions myself. Getting 281 automated tests to pass felt like real validation that the system was solid, not just functional.</span> <span class='pat-step3'>It matters to me because it reframed how I see myself — less as someone who can\'t code, and more as someone who can build real applications.</span>"},
+  {title:"Describe a person who has influenced you a lot",
+   points:["Who this person is","How you know them","What they have done","Why they influenced you"],
+   example:"<span class='pat-step1'>I\'d like to talk about my senior engineer during my internship, who I\'ll call Kak Zuhra.</span> <span class='pat-step2'>I worked directly under her on an AI product, and she was the one who first showed me how to approach technical problems <span class='an an-vocab' data-note='methodically: done in a systematic, orderly, and step-by-step manner.'>methodically</span> instead of panicking when something broke. What influenced me most was how patiently she handed over <span class='an an-vocab' data-note='ownership: taking full personal responsibility and leadership for a task or codebase module.'>ownership</span> of a difficult module when a teammate suddenly left, trusting that I could figure it out. That experience taught me to trust my own problem-solving more,</span> <span class='pat-step3'>and it\'s shaped how confident I feel tackling unfamiliar technical challenges today.</span>"},
+  {title:"Describe a time you had to learn something new quickly",
+   points:["What you had to learn","Why you had to learn it fast","How you learned it","How you felt afterwards"],
+   example:"<span class='pat-step1'>This happened during my internship when a teammate left the company and I suddenly had to take over an entire module called Context Linker, with no <span class='an an-vocab' data-note='handover: the transfer of project tasks, code explanation, and duties from one developer to another.'>handover</span> at all.</span> <span class='pat-step2'>I had maybe a few days to understand the existing codebase before it became my responsibility. I learned it by reading through the code line by line, testing pieces myself, and asking <span class='an an-vocab' data-note='targeted questions: highly specific, precise queries directed at resolving exact technical doubts.'>targeted questions</span> rather than trying to understand everything at once.</span> <span class='pat-step3'>Afterwards, I actually felt a strange mix of exhaustion and pride — it was stressful, but it proved to me that I could adapt under pressure when there wasn\'t a choice.</span>"},
+  {title:"Describe a piece of technology you use often",
+   points:["What it is","How you use it","How long you've had it","How it has changed your life"],
+   example:"<span class='pat-step1'>I\'d like to talk about Claude Code, an AI coding assistant I use almost daily.</span> <span class='pat-step2'>I use it to build entire applications, sometimes running multiple AI <span class='an an-vocab' data-note='subagents: secondary AI processes spawned by a main AI controller to solve specific tasks.'>subagents</span> in parallel to handle different parts of a project at once. I\'ve been using it seriously for the past several months, and it\'s completely changed how I approach building software — I think more like an architect directing a team now, rather than someone writing every line manually.</span> <span class='pat-step3'>It\'s also changed my confidence; I used to think I wasn\'t \'technical enough,\' but now I see myself as someone who can genuinely <span class='an an-vocab' data-note='ship: to release a finished software product to live, actual users.'>ship</span> real products.</span>"},
+  {title:"Describe a decision that was difficult to make",
+   points:["What the decision was","Why it was difficult","Who helped you decide","What the outcome was"],
+   example:"<span class='pat-step1'>A difficult decision I had to make was whether to keep pursuing more interviews after several rejections, or pause and rebuild my approach entirely.</span> <span class='pat-step2'>It was hard because each rejection made me question whether I was targeting the right roles at all. Reflecting honestly on patterns from past interviews helped me decide — noticing that I tended to over-explain answers and hesitate on multi-part questions.</span> <span class='pat-step3'>In the end, I chose to pause briefly, work specifically on those weaknesses, and then return to interviewing with a clearer strategy, which felt like the right call in hindsight.</span>"},
+  {title:"Describe a job you would like to do in the future",
+   points:["What the job is","What skills it needs","Why you want to do it","How you plan to get there"],
+   example:"<span class='pat-step1'>I\'d like to eventually work as a senior AI engineer specializing in multi-agent systems — AI setups where several models coordinate to complete complex tasks.</span> <span class='pat-step2'>It requires strong skills in orchestration, prompt design, and system architecture, not just coding ability. I want to do this because I\'m already drawn to that kind of work in my personal projects, and I find the coordination problem genuinely fascinating.</span> <span class='pat-step3'>To get there, I\'m building side projects that use these exact techniques, while continuing to apply for roles that let me grow those skills professionally.</span>"},
+  {title:"Describe a place you would like to visit",
+   points:["Where it is","Why you want to go there","What you would do there","Who you would go with"],
+   example:"<span class='pat-step1'>I\'d love to visit Tokyo in Japan someday.</span> <span class='pat-step2'>I\'m drawn to it because of the contrast it offers — incredibly advanced technology existing right alongside centuries-old traditions. If I went, I\'d want to explore the tech districts, but also visit quieter, more traditional neighborhoods to get a fuller picture of the culture.</span> <span class='pat-step3'>I think I\'d want to go with a close friend rather than alone, so we could compare our impressions of such a different environment as we experienced it together.</span>"},
+  {title:"Describe an app or website that you find useful",
+   points:["What it is","What it's used for","When you first used it","Why you find it useful"],
+   example:"<span class='pat-step1'>I\'d like to talk about NotebookLM, a tool I use for generating and organizing content ideas.</span> <span class='pat-step2'>I use it mainly for research and scripting for a content channel I run on the side. I started using it a few months ago when I was looking for a faster way to turn raw source material into structured scripts.</span> <span class='pat-step3'>I find it useful because it saves me hours of manual work, letting me focus on the creative decisions instead of the repetitive parts of content production.</span>"},
+  {title:"Describe a time you helped someone solve a problem",
+   points:["Who you helped","What the problem was","How you helped","How they reacted"],
+   example:"<span class='pat-step1'>I once helped a friend who was trying to automate parts of her small thrift shop business on Instagram.</span> <span class='pat-step2'>The problem was that she was manually handling every order and message, which was eating up all her time. I proposed a simple automation and order-management approach using tools she could realistically maintain herself, rather than something overly complex.</span> <span class='pat-step3'>She reacted really positively, mainly because I focused on what was practical for her situation instead of just showing off technical possibilities she\'d never actually use.</span>"}
+];
+
+const PART3 = [
+  {topic:"Careers & Work", qas:[
+    {q:"How has the job market changed in the last 10 years in your country?", a:"<span class='pat-step1'>It's shifted heavily toward digital and tech skills.</span> <span class='pat-step2'>Traditional roles are declining as companies automate workflows,</span> <span class='pat-step3'>and positions like AI engineering, which barely existed a decade ago, are now mainstream.</span>"},
+    {q:"Do you think artificial intelligence will replace many jobs?", a:"<span class='pat-step1'>I think 'replace' is the wrong frame — it's more <span class='an an-vocab' data-note='disruption at the task level: changes that alter specific duties and roles rather than completely eliminating jobs.'>disruption at the task level</span>.</span> <span class='pat-step2'>Repetitive work is genuinely at risk because algorithms process data faster,</span> <span class='pat-step3'>but roles needing trust or judgement, like medicine or teaching, are much harder to automate.</span>"},
+    {q:"Is it better to be an expert in one field or have broad skills?", a:"<span class='pat-step1'>In general, having broad, adaptable skills is more valuable today.</span> <span class='pat-step2'>In fast-changing fields like tech, static expertise can <span class='an an-vocab' data-note='become obsolete: grow out-of-date or no longer useful due to technological progress.'>become obsolete</span> within a few years.</span> <span class='pat-step3'>Being a <span class='an an-idiom' data-note='T-shaped professional: a person who has deep expertise in one specific area combined with broad general capabilities.'>T-shaped professional</span> allows you to specialize while pivoting when the industry shifts.</span>"},
+    {q:"What qualities make someone successful at work?", a:"<span class='pat-step1'>Adaptability and the willingness to keep learning are the most critical factors.</span> <span class='pat-step2'>Technical skill alone becomes outdated fast due to rapid innovation.</span> <span class='pat-step3'>Those who actively seek out new challenges and update their knowledge stay relevant.</span>"},
+    {q:"Do you think young people today have unrealistic career expectations?", a:"<span class='pat-step1'>In many cases, yes, that seems to be the trend.</span> <span class='pat-step2'>Social media channels tend to showcase only the highlight reels of success and wealth, which distorts reality.</span> <span class='pat-step3'>This can make entry-level roles feel disappointing, even though they are essential building blocks.</span>"}
+  ]},
+  {topic:"Technology & Society", qas:[
+    {q:"How has technology changed communication between people?", a:"<span class='pat-step1'>It's made communication faster but arguably shallower.</span> <span class='pat-step2'>Quick text messages have replaced a lot of sustained, in-depth conversation.</span> <span class='pat-step3'>For example, colleagues might slack each other brief updates rather than having a proper discussion.</span>"},
+    {q:"Do you think people are becoming too dependent on technology?", a:"<span class='pat-step1'>I think it's less about the technology itself and more about intentionality.</span> <span class='pat-step2'>The same smartphone can boost your productivity through coding tools or become a source of constant distraction.</span> <span class='pat-step3'>It ultimately depends on whether you control the tool or let it control you.</span>"},
+    {q:"What are the disadvantages of AI in the workplace?", a:"<span class='pat-step1'>One real risk is <span class='an an-vocab' data-note='false confidence: excessive trust in automated answers without verification.'>false confidence</span> in automated outputs.</span> <span class='pat-step2'>People often trust AI answers without properly verifying the underlying data or logic.</span> <span class='pat-step3'>This can lead to severe errors, particularly in fields that require high technical accuracy.</span>"},
+    {q:"Should governments regulate new technology more strictly?", a:"<span class='pat-step1'>To some extent, yes, especially around data privacy and AI safety.</span> <span class='pat-step2'>Without rules, companies might prioritize profits over user security.</span> <span class='pat-step3'>However, overregulation must be avoided so that it doesn't stifle genuine technical innovation.</span>"},
+    {q:"How might technology change education in the future?", a:"<span class='pat-step1'>I think personalized, AI-assisted learning will become much more common.</span> <span class='pat-step2'>Traditional classes force everyone to go at the same pace, which doesn't suit everyone.</span> <span class='pat-step3'>Adaptive software can dynamically adjust difficulty based on a student's performance in real time.</span>"}
+  ]},
+  {topic:"Education", qas:[
+    {q:"Do you think traditional education prepares people well for real jobs?", a:"<span class='pat-step1'>It gives a solid theoretical foundation, but often lags behind how fast industries move.</span> <span class='pat-step2'>A university syllabus might take years to update,</span> <span class='pat-step3'>whereas tech tools and frameworks change every few months, leaving graduates unprepared.</span>"},
+    {q:"Should schools teach more practical/technical skills?", a:"<span class='pat-step1'>Yes, I think balancing theory with hands-on, practical skills is essential.</span> <span class='pat-step2'>Teaching students how to build real things, like coding simple programs or budgeting, builds confidence.</span> <span class='pat-step3'>This prepares them much better for the realities of the working world than rote memorization.</span>"},
+    {q:"What's the value of learning things that aren't directly useful for a career?", a:"<span class='pat-step1'>It builds broader thinking skills and creativity, which are highly transferable.</span> <span class='pat-step2'>For instance, learning philosophy teaches you how to construct logical arguments,</span> <span class='pat-step3'>which indirectly makes you a better system architect or programmer.</span>"},
+    {q:"How important is self-directed learning compared to formal education?", a:"<span class='pat-step1'>Extremely important, particularly in fast-moving fields.</span> <span class='pat-step2'>A lot of what I use daily, I picked up through online tutorials and side projects,</span> <span class='pat-step3'>rather than from standard university lectures.</span>"}
+  ]},
+  {topic:"Social Media & Communication", qas:[
+    {q:"How has social media changed the way people build relationships?", a:"<span class='pat-step1'>It has made our networks broader but often less deep.</span> <span class='pat-step2'>We can maintain loose contact with hundreds of people across the globe,</span> <span class='pat-step3'>but it reduces the time and energy we invest in close, face-to-face friendships.</span>"},
+    {q:"Do you think online communication is replacing face-to-face interaction?", a:"<span class='pat-step1'>Not entirely, but it has changed the default way we interact.</span> <span class='pat-step2'>People often message first instead of considering meeting in person,</span> <span class='pat-step3'>which can make physical get-togethers feel less frequent.</span>"},
+    {q:"What are the risks of young people using social media too much?", a:"<span class='pat-step1'>The main risk is self-worth becoming tied to online validation.</span> <span class='pat-step2'>When youth measure their value by likes and comments, it can lead to anxiety.</span> <span class='pat-step3'>They end up comparing their everyday life to other people's curated highlights.</span>"},
+    {q:"Should there be an age limit for social media use?", a:"<span class='pat-step1'>I think some kind of limit makes sense to protect younger children.</span> <span class='pat-step2'>Their cognitive development isn't ready to handle addictive algorithms or cyberbullying.</span> <span class='pat-step3'>However, enforcing it consistently is genuinely difficult in practice.</span>"}
+  ]},
+  {topic:"Environment & Society", qas:[
+    {q:"What can individuals do to help protect the environment?", a:"<span class='pat-step1'>Small, consistent habits help, like reducing waste.</span> <span class='pat-step2'>Things like recycling and conserving energy are good personal practices,</span> <span class='pat-step3'>though the biggest impact really comes when these habits scale to systemic change.</span>"},
+    {q:"Do you think companies should be more responsible for environmental damage?", a:"<span class='pat-step1'>Absolutely, because they are the largest contributors to pollution.</span> <span class='pat-step2'>Individual efforts alone cannot offset industrial-scale emissions and plastic waste.</span> <span class='pat-step3'>Therefore, corporate accountability is crucial for any real progress.</span>"},
+    {q:"How can governments encourage more sustainable behaviour?", a:"<span class='pat-step1'>Through policy incentives and strict regulation.</span> <span class='pat-step2'>If governments subsidize green energy and tax carbon emissions,</span> <span class='pat-step3'>they make the sustainable choice the most economical one for both companies and citizens.</span>"}
+  ]},
+  {topic:"Learning & Skills", qas:[
+    {q:"Why do some people find it hard to learn new skills as adults?", a:"<span class='pat-step1'>There's an ego cost to being a beginner again.</span> <span class='pat-step2'>Unlike children, adults are often afraid of looking incompetent or failing,</span> <span class='pat-step3'>which prevents them from taking the initial steps in learning something like coding.</span>"},
+    {q:"Is it more important to learn quickly or learn deeply?", a:"<span class='pat-step1'>Deep learning is far more important in the long run.</span> <span class='pat-step2'>Shallow learning might help you pass an exam or build a simple template,</span> <span class='pat-step3'>but it falls apart the moment you encounter an unfamiliar or complex system bug.</span>"},
+    {q:"How does motivation affect the speed of learning?", a:"<span class='pat-step1'>It has a massive impact on efficiency.</span> <span class='pat-step2'>I learn dramatically faster when a skill is tied to a project I actually need to build,</span> <span class='pat-step3'>rather than just studying it abstractly for a certificate.</span>"},
+    {q:"Do you think self-taught skills are as valuable as formally certified ones?", a:"<span class='pat-step1'>Yes, as long as you can demonstrate tangible results.</span> <span class='pat-step2'>In fields like software development, your portfolio and code quality</span> <span class='pat-step3'>matter far more to employers than a formal certificate.</span>"}
+  ]}
+];
+
+// All 19 Speaking Skills structured in detail
+const SPEAKING_SKILLS_P1 = [
+  {
+    number: 1,
+    title: "Talking About Yourself",
+    note: "Protects <b>Fluency & Coherence</b>. You will be asked questions about your everyday life, home, hometown, work/studies, or hobbies. Avoid short phrases. Prepare descriptive lists to add details spontaneously.",
+    details: `
+      <b>Key Topics & Sub-Details:</b>
+      <ul>
+        <li><b>Home & Hometown:</b> Describe the type of building (flat, house), sizes, rooms, balconies, and surrounding streets (narrow, tree-lined). Focus on adjectives: <i>spacious, airy, narrow, lively, tranquil</i>.</li>
+        <li><b>Occupation or School:</b> Mention specific daily tasks, working with senior staff, years in the role, assignments, and future research goals (bachelor's, master's, or doctorate degree).</li>
+        <li><b>Hobbies:</b> Detail the frequency, who you do it with, whether you belong to a club, and why you are interested in it (passion, learning curve, stress relief).</li>
+      </ul>
+      <b>Barron's Location Word List (Prepositions &amp; Adjectives):</b>
+      <table>
+        <tr><th>Place Noun</th><th>Preposition</th><th>Descriptive Adjective</th></tr>
+        <tr><td>kitchen</td><td>behind</td><td>airy</td></tr>
+        <tr><td>section/area</td><td>beside</td><td>narrow</td></tr>
+        <tr><td>grocery store</td><td>on the corner of / across from</td><td>old/new</td></tr>
+        <tr><td>park</td><td>at the end of</td><td>lots of</td></tr>
+        <tr><td>post office</td><td>facing</td><td>a lot of</td></tr>
+        <tr><td>department store</td><td>in back/front/middle of</td><td>big</td></tr>
+        <tr><td>taxi stand/rank</td><td>left-hand/right-hand side</td><td>busy</td></tr>
+        <tr><td>clothing store</td><td>near</td><td>spacious</td></tr>
+        <tr><td>dry cleaner</td><td>next to</td><td>convenient</td></tr>
+        <tr><td>park / window</td><td>overlooking</td><td>scenic / green</td></tr>
+      </table>
+    `,
+    items: [
+      {q: "Where are you currently living?", a: "I live in a high-rise apartment on the edge of Jakarta. It has a tiny balcony overlooking a very busy street, but it's close to public transit so I can easily go anywhere."},
+      {q: "What do you do for a living?", a: "I work as a software developer at a logistics firm. I've been there for two years, and my main duty is building database tools to help coordinate warehouse inventory."},
+      {q: "Do you have any hobbies that you do regularly?", a: "Yes, I enjoy playing badminton. I play with coworkers twice a week after work. It's a great way to stay active and get together with friends in a non-work environment."}
+    ]
+  }
+];
+
+const SPEAKING_SKILLS_P2 = [
+  {
+    number: 2,
+    title: "Organizing a Topic (1-Min Note Taking)",
+    note: "Protects <b>Fluency & Coherence</b>. The task card lists guidelines. Use the 1-minute prep time to write keyword outlines. You MUST address every question on the card.",
+    details: `
+      <b>Note-Taking Rules:</b>
+      <ul>
+        <li>Write short notes/keywords on paper, not full sentences.</li>
+        <li>Use categories from the task card (Type/Location, Specific details, When/Why, Comparison).</li>
+        <li>Keep your talk cohesive by preparing a clear sequence of events.</li>
+      </ul>
+      <b>Outline Template Model:</b>
+      <table>
+        <tr><th>Cue Question</th><th>Keyword Note</th></tr>
+        <tr><td>Where & Type</td><td>Yogyakarta, cultural hub, traditional and modern mix</td></tr>
+        <tr><td>What to see</td><td>Historic temples, vibrant local markets, coffee shops</td></tr>
+        <tr><td>When & Why</td><td>Three months ago, remote work getaway and family visit</td></tr>
+        <tr><td>Comparison</td><td>Calmer and cheaper than Jakarta, friendlier pace</td></tr>
+      </table>
+    `,
+    items: [
+      {q: "Topic: Describe a city you visited recently.", a: "Notes outline: <br><b>City:</b> Yogyakarta. <br><b>Where/Type:</b> Central Java, cultural & education hub. <br><b>What:</b> Temples, batik galleries, local street food. <br><b>When/Why:</b> Last month, remote work trip. <br><b>Comparison:</b> Cheaper and friendlier pace than Jakarta."},
+      {q: "Topic: Describe a software tool you use daily.", a: "Notes outline: <br><b>Tool:</b> VS Code. <br><b>Where/Type:</b> Code editor, highly customizable. <br><b>What:</b> Extensions, terminal, debugger window. <br><b>When/Why:</b> Throughout the day to write and debug scripts. <br><b>Comparison:</b> Faster and lighter than heavy IDEs."}
+    ]
+  },
+  {
+    number: 3,
+    title: "Discussing a Topic (Main Idea + Details)",
+    note: "Protects <b>Fluency & Coherence</b>. In Part 2/3, structure your speech by stating a clear main idea followed by 2-3 concrete supporting details.",
+    details: `
+      <b>Structuring Method:</b>
+      <ul>
+        <li><b>Main Idea:</b> Direct topic sentence addressing the examiner's prompt.</li>
+        <li><b>Supporting Detail 1:</b> Give a specific reason or explanation.</li>
+        <li><b>Supporting Detail 2:</b> Add a contrast, detail, or secondary benefit.</li>
+        <li><b>Supporting Detail 3:</b> A brief example or outcome.</li>
+      </ul>
+    `,
+    items: [
+      {q: "Prompt: Compare remote work to office work.", a: "<b>Main Idea:</b> Working remotely is far more efficient than going to an office. <br><b>Detail 1:</b> It eliminates a two-hour daily commute. <br><b>Detail 2:</b> I can set up a quiet workspace tailored to my focus needs. <br><b>Detail 3:</b> I've saved money on transport and meals, which reduces stress."},
+      {q: "Prompt: Explain why your favorite programming language is popular.", a: "<b>Main Idea:</b> Python is popular due to its simplicity and readability. <br><b>Detail 1:</b> The syntax is close to plain English, which makes it easy to learn. <br><b>Detail 2:</b> It has a massive ecosystem of libraries for data analysis and AI. <br><b>Detail 3:</b> Large tech companies back it, ensuring continuous updates."}
+    ]
+  },
+  {
+    number: 4,
+    title: "Verb Tenses",
+    note: "Protects <b>Grammatical Range & Accuracy</b>. Listen carefully to whether the prompt asks about a past event, current situation, or future plan, and adjust your tenses accordingly.",
+    details: `
+      <b>Verb Tense Matrix:</b>
+      <table>
+        <tr><th>Tense</th><th>Form</th><th>Barron's Example Pattern</th></tr>
+        <tr><td>Simple Past</td><td>Subject + V2</td><td>Last summer, we <b>went</b> to the museum.</td></tr>
+        <tr><td>Past Continuous</td><td>was/were + V-ing</td><td>When we left the office, it <b>was raining</b>.</td></tr>
+        <tr><td>Past Perfect</td><td>had + V3</td><td>By the time we arrived, the system <b>had crashed</b>.</td></tr>
+        <tr><td>Simple Present</td><td>Subject + V1 (s/es)</td><td>This application <b>appears</b> to run smoothly now.</td></tr>
+        <tr><td>Present Continuous</td><td>am/is/are + V-ing</td><td>Teams <b>are working</b> on the release right now.</td></tr>
+        <tr><td>Present Perfect</td><td>has/have + V3</td><td>We <b>have deployed</b> three features this week.</td></tr>
+      </table>
+    `,
+    items: [
+      {q: "Practice: Talk about a bug you fixed in the past. (Identify tenses)", a: "Yesterday, while I <b>was running</b> tests, I <b>noticed</b> a database error. I realized a colleague <b>had committed</b> the wrong file. I <b>fixed</b> the line, and now the server <b>runs</b> correctly."},
+      {q: "Practice: Talk about a tool you have used for years.", a: "I <b>have used</b> Git for about four years now. I first <b>learned</b> it during university. Since then, it <b>has helped</b> me manage version history on every project. Currently, I <b>am using</b> it on my team's repositories."}
+    ]
+  },
+  {
+    number: 5,
+    title: "Sequence (Transition Words)",
+    note: "Protects <b>Fluency & Coherence</b>. Use transition words to make a sequence of events clear and easy to follow. This is crucial for Part 2 cue cards and process descriptions.",
+    details: `
+      <b>Sequence Transition Words:</b>
+      <ul>
+        <li><b>Starting:</b> <i>First, initially, to begin with, to start.</i></li>
+        <li><b>Continuing:</b> <i>Then, after that, next, as soon as, by the time.</i></li>
+        <li><b>Closing:</b> <i>Finally, in the end, eventually, ultimately.</i></li>
+      </ul>
+      <span class='tip'>Tip: Do not reuse 'and then' repeatedly. Vary with 'as soon as' or 'by the time' to show grammatical flexibility.</span>
+    `,
+    items: [
+      {q: "Practice: Describe your daily workflow using sequence words.", a: "<b>First</b>, I check my email and review outstanding code changes. <b>As soon as</b> the team alignment meeting finishes, I begin coding. <b>Then</b>, after lunch, I run tests. <b>Finally</b>, I commit my work before ending the day."},
+      {q: "Practice: Describe how you fixed a server outage.", a: "<b>Initially</b>, the monitoring tool alerted us of a crash. <b>Before</b> restarting the server, I checked the logs. <b>As soon as</b> I found the bottleneck, I patched the file. <b>Eventually</b>, the server stabilized, and the system was fully recovered."}
+    ]
+  },
+  {
+    number: 6,
+    title: "Comparing and Contrasting",
+    note: "Protects <b>Fluency & Coherence</b>. You will often be asked to compare two choices, cities, or eras. Use specific comparison and contrast structures instead of simple sentences.",
+    details: `
+      <b>Useful Phrase Reference:</b>
+      <table>
+        <tr><th>Comparison (Similarities)</th><th>Contrast (Differences)</th></tr>
+        <tr><td>similar to, like, the same as</td><td>different from, on the other hand</td></tr>
+        <tr><td>both... and..., also, as...as</td><td>although, even though, but, however</td></tr>
+        <tr><td>similarly, likewise</td><td>less / more... than, whereas</td></tr>
+      </table>
+    `,
+    items: [
+      {q: "Practice: Compare coding in Java versus Python.", a: "Java is statically typed, <b>whereas</b> Python is dynamic, making the latter much faster for prototyping. <b>Although</b> Java requires more verbose syntax, it provides better compile-time safety. <b>However</b>, <b>both</b> languages are widely supported in the industry."},
+      {q: "Practice: Compare physical books with e-readers.", a: "An e-reader is <b>different from</b> a physical book because it stores thousands of files. <b>On the other hand</b>, physical books do not require battery power. While <b>both</b> display text, e-readers are <b>more</b> convenient for travel."}
+    ]
+  },
+  {
+    number: 7,
+    title: "Cause and Effect",
+    note: "Protects <b>Fluency & Coherence</b>. When answering 'why' questions, explain the cause and the resulting effect clearly using logical connectors.",
+    details: `
+      <b>Useful Cause/Effect Connectors:</b>
+      <ul>
+        <li><b>Introducing Cause:</b> <i>because (of), since, another reason is, due to.</i></li>
+        <li><b>Introducing Effect:</b> <i>that's why, so, as a result, for this reason, consequently.</i></li>
+      </ul>
+    `,
+    items: [
+      {q: "Practice: Why did you decide to learn coding?", a: "I decided to learn coding <b>because</b> I wanted to build practical tools. <b>Since</b> software jobs are in high demand, it also offered strong career prospects. <b>That's why</b> I spent months studying online tutorials."},
+      {q: "Practice: Why is testing code important?", a: "Testing code is crucial <b>since</b> unnoticed bugs can crash production databases. <b>As a result</b>, failing to test leads to loss of client trust. <b>For this reason</b>, my team enforces strict automated testing guidelines."}
+    ]
+  },
+  {
+    number: 8,
+    title: "Describing (Activities or Events)",
+    note: "Protects <b>Vocabulary & Fluency</b>. When describing activities or events in Part 2, do not just list them. Think of interesting details to share (e.g. how long it took, why you liked it, or what it involved).",
+    details: `
+      <b>Elaborating on Activities:</b>
+      <ul>
+        <li><b>Avoid Listing:</b> "I went to a museum. I looked at exhibits and had a snack." (Too simple, limits vocabulary/fluency score).</li>
+        <li><b>Elaborate:</b> Explain <i>how long it took</i>, <i>why you liked it</i>, or <i>what it involved</i>.</li>
+      </ul>
+      <b>Example from Barron's:</b><br>
+      Topic: A museum you visited recently<br>
+      Activities: (1) looked at exhibits, (2) watched a movie, (3) had a snack<br>
+      Description: <i>"We spent about an hour looking at exhibits about ships and whaling. Then we watched a short but interesting movie that showed how ships were built. After that, we were tired, so we had some snacks in the museum café and looked at the view of the harbor."</i>
+    `,
+    items: [
+      {q: "Topic: A trip you took recently. <br>Question: Describe some things you did on your trip.", a: "<b>Activities:</b> (1) visited historical temples, (2) took scenic photos, (3) tried local street food.<br><b>Description:</b> We spent the morning visiting historical temples in Yogyakarta. After that, we took some scenic photos of the mountain landscapes. Finally, we tried local street food at a night market, which was a delicious culinary experience."},
+      {q: "Topic: A party you attended recently. <br>Question: Describe some activities that took place at the party.", a: "<b>Activities:</b> (1) chatted with old friends, (2) played board games, (3) shared a large birthday cake.<br><b>Description:</b> When I arrived, I spent some time chatting with old friends. Later, we played a few competitive board games. In the evening, the host cut a large chocolate cake, and we all shared a slice."},
+      {q: "Topic: A holiday you enjoy. <br>Question: Describe some things you do to celebrate this holiday.", a: "<b>Activities:</b> (1) clean and decorate the house, (2) cook a large family dinner, (3) exchange gifts in the evening.<br><b>Description:</b> To celebrate, we typically clean the entire house and put up lights. Then we spend the afternoon cooking a massive dinner for our relatives. In the evening, we gather around the living room to exchange gifts."}
+    ]
+  },
+  {
+    number: 9,
+    title: "Responding to Follow-up Questions",
+    note: "Protects <b>Fluency & Coherence</b>. At the end of Part 2, the examiner will ask quick follow-up questions. Answer directly, using conversational markers to state your perspective.",
+    details: `
+      <b>Useful Phrases for Sharing Perspectives:</b>
+      <ul>
+        <li><i>As far as I'm concerned, personally, to my mind.</i></li>
+        <li><i>According to my point of view, I believe that, I assume.</i></li>
+        <li><i>The main advantage/disadvantage of this is...</i></li>
+      </ul>
+    `,
+    items: [
+      {q: "Examiner: Do you think everyone should learn to code?", a: "<b>As far as I'm concerned</b>, no. While basic computer literacy is essential, programming requires a level of logic and patience that doesn't appeal to everyone. <b>Personally, I think</b> people should focus on skills that align with their strengths."},
+      {q: "Examiner: Is remote work suitable for fresh graduates?", a: "<b>To my mind</b>, it has disadvantages. Fresh graduates need constant mentorship, which is harder to get remotely. <b>I believe that</b> a hybrid setup is much better for their career development."}
+    ]
+  }
+];
+
+const SPEAKING_SKILLS_P3 = [
+  {
+    number: 10,
+    title: "Explaining an Issue in Depth",
+    note: "Protects <b>Fluency & Coherence</b>. In Part 3, structure your ideas in terms of a main idea with supporting details using analytical transition phrases.",
+    details: `
+      <b>Useful Transition Words for Depth:</b>
+      <ul>
+        <li><b>Examples:</b> <i>for example, for instance, such as, to illustrate.</i></li>
+        <li><b>Clarification:</b> <i>that is, in other words, to put it another way.</i></li>
+      </ul>
+    `,
+    items: [
+      {q: "Question: What is the main benefit of automated testing?", a: "The main benefit is reliability. <b>In other words</b>, automated tests catch errors without human fatigue. <b>For instance</b>, a script can run hundreds of edge cases in seconds, ensuring new code doesn't break existing databases."},
+      {q: "Question: Why do companies invest in database security?", a: "They do so to prevent catastrophic data breaches. <b>That is</b>, security protocols protect sensitive user details. <b>To illustrate</b>, a leakage of passwords can destroy a firm's reputation and lead to severe financial penalties."}
+    ]
+  },
+  {
+    number: 11,
+    title: "Describing an Issue in Depth",
+    note: "Protects <b>Vocabulary & Coherence</b>. Use addition and frequency markers to build structured, multi-dimensional descriptions of complex issues.",
+    details: `
+      <b>Useful Addition & Frequency Markers:</b>
+      <ul>
+        <li><b>Addition:</b> <i>also, additionally, in addition, another, likewise.</i></li>
+        <li><b>Frequency/Generalization:</b> <i>usually, first, generally, typically, ordinarily, otherwise.</i></li>
+      </ul>
+    `,
+    items: [
+      {q: "Question: How do tech companies promote innovation?", a: "They <b>generally</b> allocate dedicated time for side projects. <b>In addition</b>, they organize internal hackathons. <b>Another</b> common approach is providing budgets for online training, which keeps developer skills sharp."},
+      {q: "Question: What challenges do remote teams face?", a: "Remote teams <b>typically</b> struggle with project sync issues. <b>Additionally</b>, casual team communication is reduced. <b>Otherwise</b>, if managers do not establish clear documentation, tasks can overlap and cause confusion."}
+    ]
+  },
+  {
+    number: 12,
+    title: "Comparing and Contrasting an Issue in Depth",
+    note: "Protects <b>Fluency & Coherence</b>. You will be asked to compare abstract concepts in Part 3. Use comparative and contrastive transition words to organize your argument.",
+    details: `
+      <b>Analytical Comparison/Contrast Words:</b>
+      <ul>
+        <li><b>Comparison:</b> <i>similar to, also, like, the same as, both, similarly, likewise.</i></li>
+        <li><b>Contrast:</b> <i>different from, although, on the other hand, but, however, whereas.</i></li>
+      </ul>
+    `,
+    items: [
+      {q: "Question: How will online learning compare to classroom learning in the future?", a: "I think they will be <b>both similar to</b> and <b>different from</b> each other. They will share <b>similar content</b>, like standard curricula. <b>However</b>, online systems will be <b>much more</b> interactive, utilizing personalized AI tutors, <b>whereas</b> physical classrooms will focus on social development."},
+      {q: "Question: Compare the roles of engineers and managers in a project.", a: "Engineers focus on technical implementation, <b>different from</b> managers who oversee schedules and client communication. <b>Although both</b> aim to deliver a project, the engineer deals with code quality, <b>on the other hand</b>, the manager handles team resource alignment."}
+    ]
+  },
+  {
+    number: 13,
+    title: "Giving an In-Depth Opinion",
+    note: "Protects <b>Coherence & Accuracy</b>. Do not just say 'I think'. Use a range of expressions to state your stance, then back it up with supporting points.",
+    details: `
+      <b>Stance-Stating Phrases:</b>
+      <ul>
+        <li><i>I tend to think, to my mind, to my way of thinking.</i></li>
+        <li><i>From my point of view, in my opinion, if I had to choose.</i></li>
+        <li><i>I agree/disagree that, I believe that.</i></li>
+      </ul>
+    `,
+    items: [
+      {q: "Question: Should companies be allowed to track user browsing history?", a: "<b>To my mind</b>, this should be heavily restricted. <b>From my point of view</b>, user privacy is a basic right. While companies claim tracking improves recommendation engines, <b>in my opinion</b>, users should actively opt-in before any data is stored."},
+      {q: "Question: Should coding be a mandatory subject in elementary schools?", a: "<b>To my way of thinking</b>, yes. <b>I tend to think</b> that early exposure builds analytical thinking. <b>If I had to choose</b>, I would focus on visual programming languages that teach basic logic without complex syntax."}
+    ]
+  }
+];
+
+const SPEAKING_SKILLS_GEN = [
+  {
+    number: 14,
+    title: "Asking for Clarification",
+    note: "Protects <b>Fluency & Coherence</b>. If a question is unclear, ask the examiner to clarify rather than guessing — it buys thinking time and prevents irrelevant answers.",
+    details: `
+      <b>Barron's Sub-Details (4 Clarification Areas):</b>
+      <ul>
+        <li><b>Clarifying Meaning:</b> <i>"Sorry, could you explain what you mean by...?"</i></li>
+        <li><b>Clarifying Scope:</b> <i>"Do you mean my country specifically, or...?"</i></li>
+        <li><b>Clarifying Level of Detail:</b> <i>"Should I explain in detail, or speak generally?"</i></li>
+        <li><b>Defining a Term:</b> <i>"Just to check, are you referring to...?"</i></li>
+      </ul>
+    `,
+    items: [
+      {q: "Describe a framework you use to organize your tasks.", a: "Sorry, do you mean a software programming framework, or a mental model for productivity?"},
+      {q: "How has automation impacted employment in your region?", a: "Could you clarify if you mean the impact on engineering roles specifically, or job opportunities in general?"},
+      {q: "Talk about an authority figure you respect.", a: "Just to check, do you mean a manager I've worked under directly, or a well-known industry leader?"},
+      {q: "What is the most significant bottleneck in modern systems?", a: "Sorry, would you like me to focus on computational bottlenecks, or human team communication bottlenecks?"},
+      {q: "Describe a location where you feel most productive.", a: "Do you mean a physical office environment, or is it okay if I discuss a virtual/remote setup?"}
+    ]
+  },
+  {
+    number: 15,
+    title: "Delay Tactics",
+    note: "Protects <b>Fluency & Coherence</b>. Silence costs points. Use paraphrasing or filler expressions to keep speaking while organizing your thoughts.",
+    details: `
+      <b>Barron's Sub-Details (Filler Expressions):</b>
+      <ul>
+        <li><i>"That's an interesting question..."</i></li>
+        <li><i>"I've never thought about that before, but..."</i></li>
+        <li><i>"That's a complicated issue, but if I had to say..."</i></li>
+        <li><i>"There are a lot of different reasons/ways to answer that..."</i></li>
+      </ul>
+    `,
+    items: [
+      {q: "What programming language do you prefer for quick prototypes?", a: "Let's see, which language do I choose when I need to build something fast... that's a good question. I'd have to say Python..."},
+      {q: "Do you think artificial general intelligence will be achieved soon?", a: "That's a fascinating and highly debated question. I haven't formed a single definitive view on it, but I'd say..."},
+      {q: "How do technology teams in your country handle remote coordination?", a: "There are actually a variety of approaches companies take, but from my experience, the most common is..."},
+      {q: "Should tech companies bear responsibility for algorithmic bias?", a: "That is a highly complex ethical issue, but if I had to share my perspective on it..."},
+      {q: "What is a major technical challenge you've changed your mind about?", a: "Let me think about a specific instance where I shifted my perspective... yes, I think a good example would be..."}
+    ]
+  },
+  {
+    number: 16,
+    title: "Avoiding Short Answers",
+    note: "Protects <b>Fluency & Coherence</b>. Yes/no questions are a trap. Always expand your answer in the same breath by stating a reason, detail, or contrast.",
+    details: `
+      <b>Barron's Expansion Strategy:</b>
+      <ul>
+        <li><b>Avoid:</b> "No." / "Yes."</li>
+        <li><b>Restatement:</b> Restate the question in a full sentence.</li>
+        <li><b>Elaborate:</b> Immediately add <i>because</i>, <i>since</i>, or a contrasting detail.</li>
+      </ul>
+    `,
+    items: [
+      {q: "Do you enjoy working in open-office layouts?", a: "No, not at all, because I find the constant visual distractions make it extremely difficult to focus on deep programming tasks."},
+      {q: "Have you ever deployed code that crashed in production?", a: "Yes, I actually did once early in my career, although we resolved it within minutes because our monitoring tools caught the error immediately."},
+      {q: "Is debugging code difficult for you?", a: "Sometimes, yes — tracking down logical errors can be quite time-consuming, whereas syntax issues are caught instantly by my compiler."},
+      {q: "Do you use keyboard shortcuts frequently?", a: "Absolutely — I find they speed up my workflow significantly, allowing me to navigate my editor without reaching for the mouse."},
+      {q: "Would you recommend a bootcamp to someone starting in software engineering?", a: "Yes, definitely, but only if they supplement it with independent projects, since bootcamps alone often miss deep computer science fundamentals."}
+    ]
+  },
+  {
+    number: 17,
+    title: "Word Families & Stress Shift",
+    note: "Protects <b>Pronunciation</b>. Stress often shifts when words change grammatical forms. Getting this wrong can make words unrecognizable.",
+    details: `
+      <b>Stress Shift Rules:</b>
+      <ul>
+        <li><b>No stress shift:</b> Suffixes like <i>-able, -ive, -ful, -ment, -ize, -ly</i> (e.g. <b>com</b>fort ➔ <b>com</b>fortable, support ➔ supportive).</li>
+        <li><b>Shift to preceding syllable:</b> Suffixes like <i>-ity, -ic, -ify, -ical, -ian</i> (e.g. <b>al</b>cohol ➔ alco<b>hol</b>ic, solid ➔ so<b>lid</b>ify).</li>
+        <li><b>Shift to first syllable of suffix:</b> Suffixes like <i>-ation, -ition, -ution</i> (e.g. com<b>bine</b> ➔ combi<b>na</b>tion).</li>
+      </ul>
+      <b>Barron's Word Families Table (Stressed Syllable in Bold):</b>
+      <table>
+        <tr><th>Root / Verb</th><th>Noun (thing/person)</th><th>Adjective</th><th>Adverb</th></tr>
+        <tr><td><b>pol</b>itics</td><td>pol-i-<b>ti</b>-cian</td><td>po-<b>lit</b>-i-cal</td><td>po-<b>lit</b>-i-cal-ly</td></tr>
+        <tr><td>im-<b>ag</b>-ine</td><td>im-ag-i-<b>na</b>-tion</td><td>im-<b>ag</b>-i-na-tive</td><td>im-<b>ag</b>-i-na-tive-ly</td></tr>
+        <tr><td><b>beau</b>-ty / <b>beau</b>-ti-fy</td><td><b>beau</b>-ty</td><td><b>beau</b>-ti-ful</td><td><b>beau</b>-ti-ful-ly</td></tr>
+        <tr><td>a-<b>gree</b></td><td>a-<b>gree</b>-ment</td><td>a-<b>gree</b>-a-ble</td><td>a-<b>gree</b>-a-bly</td></tr>
+        <tr><td><b>ac</b>-id / a-<b>cid</b>-i-fy</td><td>a-<b>cid</b>-i-ty</td><td>a-<b>cid</b>-ic</td><td><b>ac</b>-id-ly</td></tr>
+        <tr><td><b>quote</b></td><td>quo-<b>ta</b>-tion</td><td><b>quo</b>-ta-ble</td><td>-</td></tr>
+        <tr><td><b>act</b></td><td>ac-<b>tiv</b>-i-ty</td><td><b>ac</b>-tive</td><td><b>ac</b>-tive-ly</td></tr>
+        <tr><td><b>en</b>-er-gize</td><td><b>en</b>-er-gy</td><td>en-er-<b>get</b>-ic</td><td>en-er-<b>get</b>-i-cal-ly</td></tr>
+        <tr><td><b>civ</b>-i-lize</td><td>ci-<b>vil</b>-i-ty</td><td><b>civ</b>-il</td><td><b>civ</b>-il-ly</td></tr>
+        <tr><td><b>rare</b> / <b>rar</b>-e-fy</td><td><b>rar</b>-i-ty</td><td><b>rare</b></td><td><b>rare</b>-ly</td></tr>
+      </table>
+    `,
+    items: [
+      {q: "politics (noun) → politician (person) → political (adjective)", a: "<b>POL</b>-i-tics ➔ pol-i-<b>TI</b>-cian ➔ po-<b>LIT</b>-i-cal <br><span class='tip'>Notice how the stress shifts across the three forms as suffixes are added.</span>"},
+      {q: "economy (noun) → economic (adjective) → economically (adverb)", a: "e-<b>CON</b>-o-my ➔ ec-o-<b>NOM</b>-ic ➔ ec-o-<b>NOM</b>-ic-al-ly <br><span class='tip'>The stress shifts to the syllable immediately preceding '-ic' and stays there.</span>"},
+      {q: "analyze (verb) → analysis (noun) → analytical (adjective)", a: "<b>AN</b>-a-lyze ➔ a-<b>NAL</b>-y-sis ➔ an-a-<b>LYT</b>-i-cal <br><span class='tip'>Three distinct stress points in this very common research family.</span>"},
+      {q: "produce (verb) → product (noun) → productivity (noun)", a: "pro-<b>DUCE</b> ➔ <b>PROD</b>-uct ➔ prod-uc-<b>TIV</b>-i-ty <br><span class='tip'>The verb has stress on the second syllable, while the nouns shift stress.</span>"},
+      {q: "integrate (verb) → integrity (noun) → integration (noun)", a: "<b>IN</b>-te-grate ➔ in-<b>TEG</b>-ri-ty ➔ in-te-<b>GRA</b>-tion <br><span class='tip'>Stress shifts depending on the suffix added (to the preceding syllable for '-ity', and to the suffix itself for '-ation').</span>"}
+    ]
+  },
+  {
+    number: 18,
+    title: "Sentence Stress & Rhythm",
+    note: "Protects <b>Pronunciation</b>. Stress content words (nouns, main verbs, adjectives) and reduce function words (prepositions, articles, pronouns) to create a stress-timed rhythm.",
+    details: `
+      <b>Stressed vs. Reduced Words:</b>
+      <ul>
+        <li><b>Stressed (Content):</b> Nouns, main verbs, adjectives, question words (e.g. <i>moved, Jakarta, look, better, jobs</i>).</li>
+        <li><b>Reduced (Function):</b> Articles, prepositions, pronouns, auxiliaries (e.g. <i>the, to, for, my, was, has</i>).</li>
+      </ul>
+    `,
+    items: [
+      {q: "I moved to Jakarta to look for better job opportunities.", a: "I <b>MOVED</b> to <b>JA-KAR-TA</b> to look for <b>BET-TER JOB OP-POR-TU-NI-TIES</b>. <br><span class='tip'>Stressed words are verbs, nouns, and adjectives. 'to', 'for' are reduced.</span>"},
+      {q: "My manager gave me more responsibility after the first project.", a: "My <b>MAN-A-GER GAVE</b> me <b>MORE RE-SPON-SI-BIL-I-TY</b> after the <b>FIRST PRO-JECT</b>. <br><span class='tip'>Stressed words carry the core message: manager, gave, more, responsibility, first, project.</span>"},
+      {q: "The interview process took almost two months to finish.", a: "The <b>IN-TER-VIEW PRO-CESS TOOK</b> almost <b>TWO MONTHS</b> to <b>FIN-ISH</b>. <br><span class='tip'>Stress lands on the noun phrase, verb, amount, and final verb.</span>"},
+      {q: "I usually practice speaking English with a private tutor.", a: "I <b>US-U-AL-LY PRAC-TICE SPEAK-ING EN-GLISH</b> with a <b>PRI-VATE TU-TOR</b>. <br><span class='tip'>Stressed words: usually, practice, speaking, English, private, tutor.</span>"},
+      {q: "Learning to code changed the way I think about problems.", a: "<b>LEARN-ING</b> to <b>CODE CHANGED</b> the way I <b>THINK</b> about <b>PROB-LEMS</b>. <br><span class='tip'>Stressed: learning, code, changed, think, problems.</span>"}
+    ]
+  },
+  {
+    number: 19,
+    title: "Lists and Intonation",
+    note: "Protects <b>Pronunciation</b>. When listing items, raise your pitch on each item and lower it on the final one to signal completion.",
+    details: `
+      <b>Intonation Patterns:</b>
+      <ul>
+        <li><b>Rising Pitch (↗):</b> Used on all items except the last, showing the list is incomplete.</li>
+        <li><b>Falling Pitch (↘):</b> Used on the final item, signaling closure to the examiner.</li>
+      </ul>
+    `,
+    items: [
+      {q: "In my free time I like reading, coding, and hiking.", a: "...I like reading ↗, coding ↗, and hiking ↘. <br><span class='tip'>Pitch goes up on reading and coding, and down on hiking to show the list is done.</span>"},
+      {q: "A good AI engineer needs curiosity, patience, and strong communication skills.", a: "...needs curiosity ↗, patience ↗, and strong communication skills ↘. <br><span class='tip'>Rise on curiosity and patience, fall on skills.</span>"},
+      {q: "My hometown is known for its food, its temples, and its friendly people.", a: "...known for its food ↗, its temples ↗, and its friendly people ↘. <br><span class='tip'>Rise on food and temples, fall on people.</span>"},
+      {q: "I practice English at work, in interviews, and in casual conversations.", a: "...at work ↗, in interviews ↗, and in casual conversations ↘. <br><span class='tip'>Rise on work and interviews, fall on conversations.</span>"},
+      {q: "The job market now values adaptability, technical skill, and the ability to keep learning.", a: "...values adaptability ↗, technical skill ↗, and the ability to keep learning ↘. <br><span class='tip'>Rise on adaptability and skill, fall on learning.</span>"}
+    ]
+  }
+];
+
+function processAnswerContent(htmlStr) {
+  const temp = document.createElement('div');
+  temp.innerHTML = htmlStr;
+  
+  const annotations = temp.querySelectorAll('.an');
+  let vocabList = '';
+  let count = 1;
+  
+  annotations.forEach(an => {
+    const note = an.getAttribute('data-note');
+    if (note) {
+      const typeClass = an.classList.contains('an-vocab') ? 'n-vocab' : an.classList.contains('an-idiom') ? 'n-idiom' : 'n-good';
+      const label = an.classList.contains('an-vocab') ? 'vocab' : an.classList.contains('an-idiom') ? 'idiom' : 'collocation';
+      const refClass = an.classList.contains('an-vocab') ? 'ref-vocab' : an.classList.contains('an-idiom') ? 'ref-idiom' : 'ref-good';
+      
+      // Append the superscript inside the document
+      const sup = document.createElement('sup');
+      sup.className = `ref ${refClass}`;
+      sup.textContent = count;
+      an.appendChild(sup);
+      
+      vocabList += `<li class="${typeClass}"><span class="num">${count}</span><span class="tag">${label}</span> ${note}</li>`;
+      count++;
+    }
+  });
+  
+  return {
+    processedHtml: temp.innerHTML,
+    vocabListHtml: vocabList ? `<div style="margin-top:10px; padding-top:8px; border-top:1px dashed var(--rule);"><span class="ex-label" style="font-size:9px; color:var(--ink-soft); margin-bottom:5px; display:block;">Key Vocabulary</span><ul class="notes">${vocabList}</ul></div>` : ''
+  };
+}
+
+function generatePatternBreakdown(htmlStr, part) {
+
+  const temp = document.createElement('div');
+  temp.innerHTML = htmlStr;
+  
+  let breakdown = '';
+  const step1 = temp.querySelector('.pat-step1');
+  const step2 = temp.querySelector('.pat-step2');
+  const step3 = temp.querySelector('.pat-step3');
+  
+  let label1 = 'Point / Direct Answer';
+  let label2 = 'Extend / Reason / Detail';
+  let label3 = 'Example / Closing Detail';
+  
+  if (part === 'part2') {
+    label1 = 'Intro / General Topic';
+    label2 = 'Cue Card Specific Bullets';
+    label3 = 'Closing Point / Personal Value';
+  } else if (part === 'part3') {
+    label1 = 'Opinion / Core Thesis';
+    label2 = 'Reasoning / Deep Explanation';
+    label3 = 'Example / Nuance / Counterpoint';
+  }
+  
+  if (step1) {
+    breakdown += `<div class="pat-bd-item bd-step1"><b>Step 1 (${label1}):</b> ${step1.innerHTML}</div>`;
+  }
+  if (step2) {
+    breakdown += `<div class="pat-bd-item bd-step2"><b>Step 2 (${label2}):</b> ${step2.innerHTML}</div>`;
+  }
+  if (step3) {
+    breakdown += `<div class="pat-bd-item bd-step3"><b>Step 3 (${label3}):</b> ${step3.innerHTML}</div>`;
+  }
+  
+  if (breakdown) {
+    return `<div class="pat-bd-wrap">${breakdown}</div>`;
+  }
+  return '';
+}
+
+function escapeAttribute(str) {
+  if (!str) return '';
+  return str
+    .replace(/<[^>]*>/g, ' ') // strip HTML tags
+    .replace(/"/g, '&quot;')  // escape double quotes
+    .replace(/'/g, '&#39;')   // escape single quotes
+    .trim();
+}
+
+function renderSkillCard(s, groupClass){
+  const itemsHtml = s.items.map((item,i)=>`
+    <li>
+      <div class="qa-row">
+        <span class="qa-q">${item.q}</span>
+        <button class="ans-toggle" onclick="toggleAnswer(event, this)">Show answer</button>
+      </div>
+      <div class="ans-box"><span class="ex-label">Model Practice</span>${item.a}</div>
+    </li>`).join('');
+  const safeBody = escapeAttribute(`${s.note} ${s.details}`);
+  return `
+    <div class="cue-card skill-card" data-title="${s.title.toLowerCase()}" data-body="${safeBody.toLowerCase()}">
+      <div class="skill-card-head" onclick="toggleSkill(this)" style="cursor:pointer; display:flex; justify-content:space-between; align-items:center; width:100%;">
+        <div class="cue-title" style="margin:0; flex:1; display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+          <span class="skill-num ${groupClass}">SKILL ${s.number}</span>
+          <strong>${s.title}</strong>
+          <span class="skill-criterion">${s.number <= 3 || (s.number >= 10 && s.number <= 16) ? 'Fluency &amp; Coherence' : (s.number >= 4 && s.number <= 9) ? 'Grammar &amp; Vocab' : 'Pronunciation'}</span>
+        </div>
+        <span class="caret">▶</span>
+      </div>
+      <div class="skill-body-wrapper">
+        <p class="tip" style="margin-top:14px;">${s.note}</p>
+        <div class="skill-details">
+          ${s.details}
+        </div>
+        <ol class="qlist qa-list" style="padding-top:0; padding-bottom:0;">${itemsHtml}</ol>
+      </div>
+    </div>`;
+}
+
+function renderSkills(){
+  document.getElementById('skills-p1-list').innerHTML =
+    SPEAKING_SKILLS_P1.map(s=>renderSkillCard(s,'grp-p1')).join('');
+  document.getElementById('skills-p2-list').innerHTML =
+    SPEAKING_SKILLS_P2.map(s=>renderSkillCard(s,'grp-p2')).join('');
+  document.getElementById('skills-p3-list').innerHTML =
+    SPEAKING_SKILLS_P3.map(s=>renderSkillCard(s,'grp-p3')).join('');
+  document.getElementById('skills-gen-list').innerHTML =
+    SPEAKING_SKILLS_GEN.map(s=>renderSkillCard(s,'grp-gen')).join('');
+  
+  filterSkills();
+}
+
+function renderBank(){
+  const p1 = document.getElementById('part1-list');
+  const p2 = document.getElementById('part2-list');
+  const p3 = document.getElementById('part3-list');
+
+  function renderTopicWithQA(t, partName){
+    const qaHtml = t.qas.map((item,i)=>{
+      const bd = generatePatternBreakdown(item.a, partName);
+      const vocabData = processAnswerContent(item.a);
+      return `
+      <li>
+        <div class="qa-row">
+          <span class="qa-q">${item.q}</span>
+          <button class="ans-toggle" onclick="toggleAnswer(event, this)">Show answer</button>
+        </div>
+        <div class="ans-box">
+          <span class="ex-label">Sample answer</span>
+          <div>${vocabData.processedHtml}</div>
+          ${bd}
+          ${vocabData.vocabListHtml}
+        </div>
+      </li>`;
+    }).join('');
+    const safeBody = escapeAttribute(t.topic + ' ' + t.qas.map(x=>x.q+' '+x.a).join(' '));
+    return `
+    <div class="topic" data-title="${t.topic.toLowerCase()}" data-body="${safeBody.toLowerCase()}">
+      <div class="topic-head" onclick="toggle(this)">
+        <span>${t.topic}</span><span class="caret">▶</span>
+      </div>
+      <div class="topic-body">
+        <ol class="qlist qa-list">${qaHtml}</ol>
+      </div>
+    </div>`;
+  }
+
+  p1.innerHTML = PART1.map(t => renderTopicWithQA(t, 'part1')).join('');
+
+  p2.innerHTML = PART2.map(c=>{
+    const bd = generatePatternBreakdown(c.example, 'part2');
+    const vocabData = processAnswerContent(c.example);
+    const safeBody = escapeAttribute(c.title + ' ' + c.points.join(' ') + ' ' + c.example);
+    return `
+    <div class="cue-card" data-title="${c.title.toLowerCase()}" data-body="${safeBody.toLowerCase()}">
+      <div class="cue-title"><strong>${c.title}</strong></div>
+      <ul>${c.points.map(p=>`<li>${p}</li>`).join('')}</ul>
+      <button class="ex-toggle" onclick="toggleExample(event, this)"><span class="ex-caret">▶</span> Show full sample answer</button>
+      <div class="ex-box">
+        <span class="ex-label">Full sample answer (2-min monologue)</span>
+        <div>${vocabData.processedHtml}</div>
+        ${bd}
+        ${vocabData.vocabListHtml}
+      </div>
+    </div>`;
+  }).join('');
+
+  p3.innerHTML = PART3.map(t => renderTopicWithQA(t, 'part3')).join('');
+
+  updateCount();
+}
+
+function toggleAnswer(event, btn){
+  if(event) event.stopPropagation();
+  btn.classList.toggle('open');
+  const box = btn.parentElement.nextElementSibling;
+  box.classList.toggle('open');
+  btn.textContent = box.classList.contains('open') ? 'Hide answer' : 'Show answer';
+}
+
+function toggleExample(event, btn){
+  if(event) event.stopPropagation();
+  btn.classList.toggle('open');
+  const box = btn.nextElementSibling;
+  box.classList.toggle('open');
+  btn.lastChild.textContent = box.classList.contains('open') ? ' Hide full sample answer' : ' Show full sample answer';
+}
+
+function toggle(headEl){
+  headEl.parentElement.classList.toggle('open');
+}
+
+function toggleSkill(headEl){
+  headEl.parentElement.classList.toggle('open');
+}
+
+function updateCount(){
+  const visible = document.querySelectorAll('#view-bank .topic:not(.hidden-by-search), #view-bank .cue-card:not(.hidden-by-search)');
+  document.getElementById('count').textContent = visible.length + ' items shown';
+}
+
+document.getElementById('search').addEventListener('input', (e)=>{
+  const q = e.target.value.trim().toLowerCase();
+  document.querySelectorAll('#view-bank .topic, #view-bank .cue-card').forEach(el=>{
+    const match = !q || el.dataset.title.includes(q) || el.dataset.body.includes(q);
+    el.classList.toggle('hidden-by-search', !match);
+    if(match && q) el.classList.add('open');
+  });
+  updateCount();
+});
+
+document.querySelectorAll('.controls .tab-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    if (btn.hasAttribute('data-part')) {
+      document.querySelectorAll('.controls .tab-btn[data-part]').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const part = btn.dataset.part;
+      document.querySelectorAll('#view-bank section.part').forEach(sec=>{
+        sec.hidden = (part!=='all' && sec.dataset.part!==part);
+      });
+      updateCount();
+    }
+  });
+});
+
+document.querySelectorAll('.view-switch .view-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.view-switch .view-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+    document.getElementById('view-' + btn.dataset.view).classList.add('active');
+  });
+});
+
+// Skills Search and Category Filter
+const skillsSearch = document.getElementById('skills-search');
+const skillPartBtns = document.querySelectorAll('[data-skill-part]');
+
+function filterSkills() {
+  const query = skillsSearch.value.trim().toLowerCase();
+  
+  let activePart = 'all';
+  skillPartBtns.forEach(btn => {
+    if (btn.classList.contains('active')) {
+      activePart = btn.dataset.skillPart;
+    }
+  });
+
+  document.querySelectorAll('.skills-section-wrapper').forEach(wrapper => {
+    const isCorrectPart = (activePart === 'all' || wrapper.dataset.secPart === activePart);
+    let visibleCardsCount = 0;
+    
+    wrapper.querySelectorAll('.skill-card').forEach(card => {
+      const matchQuery = !query || card.dataset.title.includes(query) || card.dataset.body.includes(query);
+      card.classList.toggle('hidden-by-search', !matchQuery);
+      if (matchQuery && query) {
+        card.classList.add('open');
+      }
+      if (matchQuery) {
+        visibleCardsCount++;
+      }
+    });
+
+    wrapper.style.display = (isCorrectPart && visibleCardsCount > 0) ? 'block' : 'none';
+  });
+
+  let displayedCount = 0;
+  document.querySelectorAll('#view-skills .skills-section-wrapper').forEach(w => {
+    if (w.style.display !== 'none') {
+      displayedCount += w.querySelectorAll('.skill-card:not(.hidden-by-search)').length;
+    }
+  });
+  document.getElementById('skills-count').textContent = displayedCount + ' skills shown';
+}
+
+skillsSearch.addEventListener('input', filterSkills);
+
+skillPartBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    skillPartBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filterSkills();
+  });
+});
+
+// Theme Toggle
+const themeToggle = document.getElementById('theme-toggle');
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  const isDark = document.body.classList.contains('dark-mode');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  themeToggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+});
+
+// Load saved theme
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+  document.body.classList.add('dark-mode');
+  themeToggle.textContent = '☀️ Light Mode';
+} else {
+  themeToggle.textContent = '🌙 Dark Mode';
+}
+
+renderBank();
+renderSkills();
+</script>
+</body>
+</html>
