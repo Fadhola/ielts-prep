@@ -351,6 +351,45 @@
     font-weight: bold;
   }
 
+  /* Custom Colored Underline & Sub-annotations */
+  .annotation-wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    vertical-align: middle;
+    margin: 2px 2px;
+  }
+  
+  .underlined-mark {
+    font-weight: bold;
+    display: inline;
+    padding-bottom: 1px;
+  }
+  
+  .underlined-mark.line-orange {
+    border-bottom: 2px solid var(--tab-1);
+  }
+  .underlined-mark.line-green {
+    border-bottom: 2px solid var(--tab-2);
+  }
+  .underlined-mark.line-blue {
+    border-bottom: 2px solid var(--tab-3);
+  }
+  
+  .annotation-sub {
+    font-family: 'Courier New', monospace;
+    font-size: 9px;
+    line-height: 1.1;
+    margin-top: 2px;
+    font-style: italic;
+    white-space: nowrap;
+    opacity: 0.9;
+  }
+  
+  .annotation-sub.text-orange { color: var(--tab-1); }
+  .annotation-sub.text-green { color: var(--tab-2); }
+  .annotation-sub.text-blue { color: var(--tab-3); }
+
   @media (max-width: 600px){
     body{padding:72px 12px 60px;}
     h1{font-size:26px;}
@@ -403,34 +442,34 @@
     
     <div class="passage-block">
       <div class="passage-title">Part 1 Dialogue: Apartment Rental & Client Intake</div>
-      <div class="passage-text" style="font-family: 'Courier New', monospace; font-size: 13.5px; background: rgba(0,0,0,0.02); padding: 12px; border-left: 2px solid var(--tab-3);">
-        <b>Agent:</b> Good morning, elite real estate solutions. How may I assist you today?<br><b>Client:</b> Yes, hello. I was calling to inquire if you have any one-bedroom flats available in the downtown sector?<br><b>Agent:</b> We certainly do. I have two spacious apartments facing the central park. May I take down your full name first?<br><b>Client:</b> Yes, it is James Kingston. I will spell that for you: <u><b>K-I-N-G-S-T-O-N</b></u>.<br><b>Agent:</b> Thank you, James. And what is your primary contact number?<br><b>Client:</b> My home phone is 721-0584, but I am usually at the office. You can reach me there at <u><b>721-1127</b></u>. That is double one-two-seven at the end.<br><b>Agent:</b> Got it. Do you require parking or basement storage?<br><b>Client:</b> Yes, I definitely need a secure <u><b>garage</b></u> space for my car, and a lockable storage cage in the <u><b>basement</b></u>.
+      <div class="passage-text" style="font-family: 'Courier New', monospace; font-size: 13.5px; background: rgba(0,0,0,0.02); padding: 12px; border-left: 2px solid var(--tab-3); line-height: 1.85;">
+        <b>Agent:</b> Good morning, elite real estate solutions. How may I assist you today?<br><b>Client:</b> Yes, hello. I was calling to inquire if you have any one-bedroom flats available in the downtown sector?<br><b>Agent:</b> We certainly do. I have two spacious apartments facing the central park. May I take down your full name first?<br><b>Client:</b> Yes, it is James Kingston. I will spell that for you: <span class='annotation-wrapper'><span class='underlined-mark line-green'>K-I-N-G-S-T-O-N</span><span class='annotation-sub text-green'>Section 1 Spelling Answer</span></span>.<br><b>Agent:</b> Thank you, James. And what is your primary contact number?<br><b>Client:</b> My home phone is 721-0584, but I am usually at the office. You can reach me there at <span class='annotation-wrapper'><span class='underlined-mark line-orange'>721-1127</span><span class='annotation-sub text-orange'>Work contact number</span></span>. That is double one-two-seven at the end.<br><b>Agent:</b> Got it. Do you require parking or basement storage?<br><b>Client:</b> Yes, I definitely need a secure <span class='annotation-wrapper'><span class='underlined-mark line-blue'>garage</span><span class='annotation-sub text-blue'>Type of parking space</span></span> space for my car, and a lockable storage cage in the <span class='annotation-wrapper'><span class='underlined-mark line-green'>basement.</span><span class='annotation-sub text-green'>Storage facility location</span></span>
       </div>
-      <div class="tip" style="margin-top: 12px;">Spelling Key: <u>K-I-N-G-S-T-O-N</u>. Key Numbers: Work phone is <u>721-1127</u>. Renter requests a <u>garage</u> parking space and <u>basement</u> storage.</div>
+      <div class="tip" style="margin-top: 12px;">Spelling Key: K-I-N-G-S-T-O-N. Key Numbers: Work phone is 721-1127. Renter requests a garage parking space and basement storage.</div>
     </div>
     
     <div class="passage-block">
       <div class="passage-title">Part 2 Monologue: Campus Library Orientation Tour</div>
-      <div class="passage-text" style="font-family: 'Courier New', monospace; font-size: 13.5px; background: rgba(0,0,0,0.02); padding: 12px; border-left: 2px solid var(--tab-3);">
-        <b>Guide:</b> Welcome to the university library orientation. The library is <u><b>closed every Wednesday morning</b></u> for staff training, but open at all other times. On the corner of our entry street, you will notice the student grocery store. Directly facing it, <u><b>across from the grocery store</b></u>, is our printing and binding office. <u><b>Next to the printing office</b></u> is the library's main clothing repository and locker area where you must deposit all bags. For a low monthly fee of <u><b>five pounds</b></u>, you can also rent a private research cubicle on the third floor.
+      <div class="passage-text" style="font-family: 'Courier New', monospace; font-size: 13.5px; background: rgba(0,0,0,0.02); padding: 12px; border-left: 2px solid var(--tab-3); line-height: 1.85;">
+        <b>Guide:</b> Welcome to the university library orientation. The library is <span class='annotation-wrapper'><span class='underlined-mark line-orange'>closed every Wednesday morning</span><span class='annotation-sub text-orange'>Regular closure schedule</span></span> for staff training, but open at all other times. On the corner of our entry street, you will notice the student grocery store. Directly facing it, <span class='annotation-wrapper'><span class='underlined-mark line-green'>across from the grocery store</span><span class='annotation-sub text-green'>Print shop layout location</span></span>, is our printing and binding office. <span class='annotation-wrapper'><span class='underlined-mark line-blue'>Next to the printing office</span><span class='annotation-sub text-blue'>Locker area placement</span></span> is the library's main clothing repository and locker area where you must deposit all bags. For a low monthly fee of five pounds, you can also rent a private research cubicle on the third floor.
       </div>
-      <div class="tip" style="margin-top: 12px;">Relative Directions: Printing office is <u>across from</u> grocery store. Locker area is <u>next to</u> the printing office. Schedule: Closed <u>Wednesday mornings</u>.</div>
+      <div class="tip" style="margin-top: 12px;">Relative Directions: Printing office is across from grocery store. Locker area is next to the printing office. Schedule: Closed Wednesday mornings.</div>
     </div>
     
     <div class="passage-block">
       <div class="passage-title">Part 3 Group Discussion: Final Thesis Project Outline</div>
-      <div class="passage-text" style="font-family: 'Courier New', monospace; font-size: 13.5px; background: rgba(0,0,0,0.02); padding: 12px; border-left: 2px solid var(--tab-3);">
-        <b>Professor:</b> So, Sarah, how is your final biology project coming along? You look a bit nervous.<br><b>Sarah:</b> (Sighs) Well, I was <u><b>extremely anxious</b></u> when I began reading the guidelines last week. But after discussing it with Tom, I feel much more <u><b>relieved</b></u>. My study compares the behavior of crows and chimps.<br><b>Professor:</b> Excellent. Remember, chimps are highly social, <u><b>whereas</b></u> crows are more solitary tool-users. Your project must classify the behaviors into three categories: <u><b>tool manufacturing</b></u>, <u><b>communication signals</b></u>, and <u><b>nesting styles</b></u>.
+      <div class="passage-text" style="font-family: 'Courier New', monospace; font-size: 13.5px; background: rgba(0,0,0,0.02); padding: 12px; border-left: 2px solid var(--tab-3); line-height: 1.85;">
+        <b>Professor:</b> So, Sarah, how is your final biology project coming along? You look a bit nervous.<br><b>Sarah:</b> (Sighs) Well, I was <span class='annotation-wrapper'><span class='underlined-mark line-orange'>extremely anxious</span><span class='annotation-sub text-orange'>Initial emotional state</span></span> when I began reading the guidelines last week. But after discussing it with Tom, I feel much more <span class='annotation-wrapper'><span class='underlined-mark line-green'>relieved.</span><span class='annotation-sub text-green'>Current emotional state</span></span> My study compares the behavior of crows and chimps.<br><b>Professor:</b> Excellent. Remember, chimps are highly social, whereas crows are more solitary tool-users. Your project must classify the behaviors into three categories: <span class='annotation-wrapper'><span class='underlined-mark line-blue'>tool manufacturing</span><span class='annotation-sub text-blue'>Classification Category 1</span></span>, <span class='annotation-wrapper'><span class='underlined-mark line-green'>communication signals</span><span class='annotation-sub text-green'>Classification Category 2</span></span>, and nesting styles.
       </div>
-      <div class="tip" style="margin-top: 12px;">Emotions: Initially <u>anxious</u>, now <u>relieved</u>. Contrast: Chimps are social <u>whereas</u> crows are solitary. Classification categories: <u>Tool manufacturing</u>, <u>communication signals</u>, and <u>nesting styles</u>.</div>
+      <div class="tip" style="margin-top: 12px;">Emotions: Initially anxious, now relieved. Contrast: Chimps are social whereas crows are solitary. Classification categories: Tool manufacturing, communication signals, and nesting styles.</div>
     </div>
     
     <div class="passage-block">
       <div class="passage-title">Part 4 Lecture: The Evolution of Hunter-Gatherer Societies</div>
-      <div class="passage-text" style="font-family: 'Courier New', monospace; font-size: 13.5px; background: rgba(0,0,0,0.02); padding: 12px; border-left: 2px solid var(--tab-3);">
-        <b>Lecturer:</b> Good afternoon. Today we examine early social structures. <u><b>Initially</b></u>, humans survived as nomadic bands, traveling constantly to follow migrating herds. <u><b>Subsequently</b></u>, with the discovery of grain storage, they established sedentary settlements. <u><b>As a result of</b></u> this sedentary transition, populations grew rapidly, leading to the rise of specialized labor and social hierarchies that replaced the original egalitarian system.
+      <div class="passage-text" style="font-family: 'Courier New', monospace; font-size: 13.5px; background: rgba(0,0,0,0.02); padding: 12px; border-left: 2px solid var(--tab-3); line-height: 1.85;">
+        <b>Lecturer:</b> Good afternoon. Today we examine early social structures. <span class='annotation-wrapper'><span class='underlined-mark line-orange'>Initially</span><span class='annotation-sub text-orange'>First time sequence point</span></span>, humans survived as nomadic bands, traveling constantly to follow migrating herds. <span class='annotation-wrapper'><span class='underlined-mark line-green'>Subsequently</span><span class='annotation-sub text-green'>Second time sequence point</span></span>, with the discovery of grain storage, they established sedentary settlements. <span class='annotation-wrapper'><span class='underlined-mark line-blue'>As a result of</span><span class='annotation-sub text-blue'>Cause-and-effect link</span></span> this sedentary transition, populations grew rapidly, leading to the rise of specialized labor and social hierarchies that replaced the original egalitarian system.
       </div>
-      <div class="tip" style="margin-top: 12px;">Chronology Order: <u>Nomadic bands</u> -> Grain storage discovery -> <u>Sedentary settlements</u>. Cause-and-Effect: <u>Sedentary transition</u> caused population growth, leading to hierarchies.</div>
+      <div class="tip" style="margin-top: 12px;">Chronology Order: Nomadic bands -> Grain storage discovery -> Sedentary settlements. Cause-and-Effect: Sedentary transition caused population growth, leading to hierarchies.</div>
     </div>
     
   </div>
@@ -530,7 +569,7 @@ const SKILLS_DATA = [
     "items": [
       {
         "q": "Speaker: 'We have garage parking spaces available for a low monthly fee... and storage areas in the basement.' What is the speaker's job?",
-        "a": "<span class='pat-step1'>Identify context: rent, parking, basement storage.</span> <span class='pat-step2'>Infer role:</span> <span class='pat-step3'><u>The speaker is an apartment house manager or leasing agent.</u></span>"
+        "a": "<span class='pat-step1'>Identify context: rent, parking, basement storage.</span> <span class='pat-step2'>Infer role:</span> <span class='pat-step3'>The speaker is an apartment house manager or leasing agent.</span>"
       }
     ]
   },
@@ -542,7 +581,7 @@ const SKILLS_DATA = [
     "items": [
       {
         "q": "Audio: 'Our office number is seven-two-one, double one-two-seven.' Write down the phone number.",
-        "a": "<span class='pat-step1'>Listen to chunk 1: 'seven-two-one' -> 721.</span> <span class='pat-step2'>Listen to chunk 2: 'double one' -> 11.</span> <span class='pat-step3'>Listen to chunk 3: 'two-seven' -> 27. Number: <u>721-1127</u>.</span>"
+        "a": "<span class='pat-step1'>Listen to chunk 1: 'seven-two-one' -> 721.</span> <span class='pat-step2'>Listen to chunk 2: 'double one' -> 11.</span> <span class='pat-step3'>Listen to chunk 3: 'two-seven' -> 27. Number: 721-1127.</span>"
       }
     ]
   },
@@ -554,7 +593,7 @@ const SKILLS_DATA = [
     "items": [
       {
         "q": "Audio: 'My name is Kingston. James Kingston. That's K-I-N-G-S-T-O-N.' Write down the spelling.",
-        "a": "<span class='pat-step1'>Listen to ejaan: K - I - N - G - S - T - O - N.</span> <span class='pat-step2'>Combine:</span> <span class='pat-step3'><u>Kingston</u>.</span>"
+        "a": "<span class='pat-step1'>Listen to ejaan: K - I - N - G - S - T - O - N.</span> <span class='pat-step2'>Combine:</span> <span class='pat-step3'>Kingston.</span>"
       }
     ]
   },
@@ -566,7 +605,7 @@ const SKILLS_DATA = [
     "items": [
       {
         "q": "Audio: 'The room is fifty square meters.' Question: 'How big is the room? 15 or 50?'",
-        "a": "<span class='pat-step1'>Listen to syllable stress: 'FIF-ty' has stress at the start.</span> <span class='pat-step2'>Compare context: '15' would be 'fif-TEEN'.</span> <span class='pat-step3'>Answer: <u>50</u>.</span>"
+        "a": "<span class='pat-step1'>Listen to syllable stress: 'FIF-ty' has stress at the start.</span> <span class='pat-step2'>Compare context: '15' would be 'fif-TEEN'.</span> <span class='pat-step3'>Answer: 50.</span>"
       }
     ]
   },
@@ -578,7 +617,7 @@ const SKILLS_DATA = [
     "items": [
       {
         "q": "Audio: 'On the corner of my street there is a grocery store. Across from that, there is a dry cleaner. Next to the dry cleaner is a clothing store.' Where is the clothing store?",
-        "a": "<span class='pat-step1'>Trace landmark 1: Grocery store is on the corner.</span> <span class='pat-step2'>Trace landmark 2: Dry cleaner is across from grocery store.</span> <span class='pat-step3'>Trace clothing store: Next to dry cleaner (so it is also <u>across the street from the grocery store</u>).</span>"
+        "a": "<span class='pat-step1'>Trace landmark 1: Grocery store is on the corner.</span> <span class='pat-step2'>Trace landmark 2: Dry cleaner is across from grocery store.</span> <span class='pat-step3'>Trace clothing store: Next to dry cleaner (so it is also across the street from the grocery store).</span>"
       }
     ]
   },
@@ -590,7 +629,7 @@ const SKILLS_DATA = [
     "items": [
       {
         "q": "Audio: 'The first bus leaves the station at 6:45 a.m., but that is the express bus. The local bus leaves 30 minutes later.' When does the local bus leave?",
-        "a": "<span class='pat-step1'>Base time: Express bus at 6:45 a.m.</span> <span class='pat-step2'>Add duration: Local bus is 30 minutes later.</span> <span class='pat-step3'>Calculate: 6:45 + 30 mins = 7:15 a.m. Answer: <u>7:15 a.m.</u></span>"
+        "a": "<span class='pat-step1'>Base time: Express bus at 6:45 a.m.</span> <span class='pat-step2'>Add duration: Local bus is 30 minutes later.</span> <span class='pat-step3'>Calculate: 6:45 + 30 mins = 7:15 a.m. Answer: 7:15 a.m.</span>"
       }
     ]
   },
@@ -602,7 +641,7 @@ const SKILLS_DATA = [
     "items": [
       {
         "q": "Audio: 'I try to visit the library every day to study, but with my busy class schedule, I only get there twice a week.' How often does the speaker visit the library?",
-        "a": "<span class='pat-step1'>Analyze: Speaker wants to go every day (intent).</span> <span class='pat-step2'>Extract reality: 'only get there twice a week'.</span> <span class='pat-step3'>Answer: <u>Twice a week / Two times a week.</u></span>"
+        "a": "<span class='pat-step1'>Analyze: Speaker wants to go every day (intent).</span> <span class='pat-step2'>Extract reality: 'only get there twice a week'.</span> <span class='pat-step3'>Answer: Twice a week / Two times a week.</span>"
       }
     ]
   },
@@ -614,7 +653,7 @@ const SKILLS_DATA = [
     "items": [
       {
         "q": "Question: 'Is the exercise room free for members?' Audio: 'Is it included in the rent? No, it\u2019s available for a small extra fee.' Answer the question.",
-        "a": "<span class='pat-step1'>Listen to terms: 'small extra fee'.</span> <span class='pat-step2'>Compare synonym: 'free' would mean no fee.</span> <span class='pat-step3'>Answer: <u>No (there is an extra fee).</u></span>"
+        "a": "<span class='pat-step1'>Listen to terms: 'small extra fee'.</span> <span class='pat-step2'>Compare synonym: 'free' would mean no fee.</span> <span class='pat-step3'>Answer: No (there is an extra fee).</span>"
       }
     ]
   },
@@ -626,7 +665,7 @@ const SKILLS_DATA = [
     "items": [
       {
         "q": "Audio: (Sighs) 'Even though I was nervous when I first walked into the examination room, the examiner put me at ease.' How did the speaker feel initially?",
-        "a": "<span class='pat-step1'>Listen to initial emotion: 'nervous'.</span> <span class='pat-step2'>Identify change: 'put me at ease' (relieved).</span> <span class='pat-step3'>Initial feeling: <u>Nervous / Anxious</u>.</span>"
+        "a": "<span class='pat-step1'>Listen to initial emotion: 'nervous'.</span> <span class='pat-step2'>Identify change: 'put me at ease' (relieved).</span> <span class='pat-step3'>Initial feeling: Nervous / Anxious.</span>"
       }
     ]
   },
@@ -638,7 +677,7 @@ const SKILLS_DATA = [
     "items": [
       {
         "q": "Audio: 'As a result of this increase in blood flow, the system is unable to function effectively.' What is the cause of the system failure?",
-        "a": "<span class='pat-step1'>Identify connector: 'As a result of...'.</span> <span class='pat-step2'>Extract the cause following the connector: 'increase in blood flow'.</span> <span class='pat-step3'>Answer: <u>Increase in blood flow / Blood flow increase.</u></span>"
+        "a": "<span class='pat-step1'>Identify connector: 'As a result of...'.</span> <span class='pat-step2'>Extract the cause following the connector: 'increase in blood flow'.</span> <span class='pat-step3'>Answer: Increase in blood flow / Blood flow increase.</span>"
       }
     ]
   },
@@ -650,7 +689,7 @@ const SKILLS_DATA = [
     "items": [
       {
         "q": "Audio: 'Dormitories are for full-time students. Apartments, on the other hand, are best suited for married couples.' Classify apartments.",
-        "a": "<span class='pat-step1'>Categorize dorms: Full-time students.</span> <span class='pat-step2'>Categorize apartments: Married couples.</span> <span class='pat-step3'>Classification of apartments: <u>Best suited for married couples.</u></span>"
+        "a": "<span class='pat-step1'>Categorize dorms: Full-time students.</span> <span class='pat-step2'>Categorize apartments: Married couples.</span> <span class='pat-step3'>Classification of apartments: Best suited for married couples.</span>"
       }
     ]
   },
@@ -662,7 +701,7 @@ const SKILLS_DATA = [
     "items": [
       {
         "q": "Audio: 'The university campus has many older brick buildings, whereas the new library is a modern concrete structure.' Compare the campus and library.",
-        "a": "<span class='pat-step1'>Identify campus buildings: Older, brick.</span> <span class='pat-step2'>Identify library: Modern, concrete.</span> <span class='pat-step3'>Contrast: <u>Campus buildings are old/brick; library is new/concrete.</u></span>"
+        "a": "<span class='pat-step1'>Identify campus buildings: Older, brick.</span> <span class='pat-step2'>Identify library: Modern, concrete.</span> <span class='pat-step3'>Contrast: Campus buildings are old/brick; library is new/concrete.</span>"
       }
     ]
   },
@@ -674,7 +713,7 @@ const SKILLS_DATA = [
     "items": [
       {
         "q": "Audio: 'All students are allowed to park in the garage, except for freshmen.' Can freshmen park in the garage?",
-        "a": "<span class='pat-step1'>Listen to restriction: 'except for freshmen'.</span> <span class='pat-step2'>Apply rule: Freshmen are excluded.</span> <span class='pat-step3'>Answer: <u>No (freshmen are not allowed).</u></span>"
+        "a": "<span class='pat-step1'>Listen to restriction: 'except for freshmen'.</span> <span class='pat-step2'>Apply rule: Freshmen are excluded.</span> <span class='pat-step3'>Answer: No (freshmen are not allowed).</span>"
       }
     ]
   },
@@ -686,7 +725,7 @@ const SKILLS_DATA = [
     "items": [
       {
         "q": "Audio: 'Initially, the land was used for farming. Subsequently, a local businessman bought it and built an airport.' Order the uses.",
-        "a": "<span class='pat-step1'>Initial use: Farming.</span> <span class='pat-step2'>Subsequent use: Airport.</span> <span class='pat-step3'>Chronological order: <u>1. Farming -> 2. Airport.</u></span>"
+        "a": "<span class='pat-step1'>Initial use: Farming.</span> <span class='pat-step2'>Subsequent use: Airport.</span> <span class='pat-step3'>Chronological order: 1. Farming -> 2. Airport.</span>"
       }
     ]
   }

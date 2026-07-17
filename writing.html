@@ -351,6 +351,45 @@
     font-weight: bold;
   }
 
+  /* Custom Colored Underline & Sub-annotations */
+  .annotation-wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    vertical-align: middle;
+    margin: 2px 2px;
+  }
+  
+  .underlined-mark {
+    font-weight: bold;
+    display: inline;
+    padding-bottom: 1px;
+  }
+  
+  .underlined-mark.line-orange {
+    border-bottom: 2px solid var(--tab-1);
+  }
+  .underlined-mark.line-green {
+    border-bottom: 2px solid var(--tab-2);
+  }
+  .underlined-mark.line-blue {
+    border-bottom: 2px solid var(--tab-3);
+  }
+  
+  .annotation-sub {
+    font-family: 'Courier New', monospace;
+    font-size: 9px;
+    line-height: 1.1;
+    margin-top: 2px;
+    font-style: italic;
+    white-space: nowrap;
+    opacity: 0.9;
+  }
+  
+  .annotation-sub.text-orange { color: var(--tab-1); }
+  .annotation-sub.text-green { color: var(--tab-2); }
+  .annotation-sub.text-blue { color: var(--tab-3); }
+
   @media (max-width: 600px){
     body{padding:72px 12px 60px;}
     h1{font-size:26px;}
@@ -407,14 +446,14 @@
         
         <b>Introduction:</b><br>
         1. <i>Paraphrase Statement:</i> State the controversial topic in your own words (e.g., 'Some assert that...').<br>
-        2. <i>Thesis Statement:</i> State your clear position (e.g., '<u>I completely agree with this proposal because...</u>').<br><br>
+        2. <i>Thesis Statement:</i> State your clear position (e.g., 'I completely agree with this proposal because...').<br><br>
         <b>Body Paragraph 1 (Reason 1):</b><br>
         - <i>Point:</i> State the first reason supporting your position.<br>
         - <i>Explain:</i> Elaborate on how/why this is the case.<br>
         - <i>Example:</i> Give a concrete instance or study proving your point.<br>
         - <i>Link:</i> Re-align back to your thesis.<br><br>
         <b>Body Paragraph 2 (Reason 2):</b><br>
-        - <i>Point:</i> State the second reason (e.g., '<u>Furthermore, it is clear that...</u>').<br>
+        - <i>Point:</i> State the second reason (e.g., 'Furthermore, it is clear that...').<br>
         - <i>Explain:</i> Elaborate and provide logical support.<br>
         - <i>Example:</i> Give a factual example.<br>
         - <i>Link:</i> Re-align.<br><br>
@@ -451,9 +490,9 @@
       <div class="passage-text" style="line-height: 1.7;">
         
         <b>Paragraph 1: Introduction</b><br>
-        - <i>Sentence:</i> Paraphrase the graph prompt (e.g., '<u>The line graph depicts the volume of... between [Year] and [Year] in [Location].</u>'). Include units.<br><br>
+        - <i>Sentence:</i> Paraphrase the graph prompt (e.g., 'The line graph depicts the volume of... between [Year] and [Year] in [Location].'). Include units.<br><br>
         <b>Paragraph 2: Overview</b><br>
-        - <i>Sentence 1:</i> Identify the main overall trend (e.g., '<u>Overall, the sales of [Product A] experienced an upward trend, whereas [Product B] dropped.</u>').<br>
+        - <i>Sentence 1:</i> Identify the main overall trend (e.g., 'Overall, the sales of [Product A] experienced an upward trend, whereas [Product B] dropped.').<br>
         - <i>Sentence 2:</i> Highlight the peak or the most dramatic change. *Do not write specific numbers here.*<br><br>
         <b>Paragraph 3: Body Paragraph 1 (Category A Detail)</b><br>
         - Report starting numbers, progress, and end points for the first category. Group similar trends together.<br><br>
@@ -469,11 +508,11 @@
         
         <b>Salutation:</b> Dear Sir or Madam, (or Dear Mr./Ms. [Surname] if known)<br><br>
         <b>Paragraph 1: Purpose of the letter</b><br>
-        - State clearly why you are writing (e.g., '<u>I am writing to bring to your attention a serious issue regarding...</u>').<br><br>
+        - State clearly why you are writing (e.g., 'I am writing to bring to your attention a serious issue regarding...').<br><br>
         <b>Paragraph 2: Detailed explanation of the problem (Bullet 1 & 2)</b><br>
-        - Outline the exact problem, when it occurred, and how it is affecting you (e.g., '<u>The central heating system has failed, resulting in freezing...</u>').<br><br>
+        - Outline the exact problem, when it occurred, and how it is affecting you (e.g., 'The central heating system has failed, resulting in freezing...').<br><br>
         <b>Paragraph 3: Proposed solution and action request (Bullet 3)</b><br>
-        - State what action you expect (e.g., '<u>Therefore, I request that a technician be dispatched immediately...</u>').<br><br>
+        - State what action you expect (e.g., 'Therefore, I request that a technician be dispatched immediately...').<br><br>
         <b>Sign-off & Closing:</b><br>
         - I look forward to your prompt response.<br>
         - Yours faithfully, (use if starting Dear Sir/Madam) OR Yours sincerely, (use if you know their name)<br>
@@ -490,8 +529,8 @@
     <div class="passage-block">
       <div class="passage-title">Sample 1 (Task 2): Discussion Essay - Free University Tuition</div>
       <div style="font-size: 13px; font-family: 'Courier New', monospace; margin-bottom: 8px; color: var(--ink-soft);">PROMPT: Some people think that university education should be free for all students. Discuss both views and give your opinion.</div>
-      <div class="passage-text" style="font-style: italic; background: rgba(0,0,0,0.01); padding: 12px; border-left: 2px solid var(--tab-2);">
-        It is often argued whether higher education should be fully funded by governments or paid for by the students themselves. In my opinion, while tertiary education is expensive, making it free is crucial for social mobility and national economic development.<br><br><u>On the one hand</u>, tuition fees ensure that universities are well-funded. When students pay, institutions have more capital to invest in top-tier research facilities and recruit high-quality professors. For instance, in countries with high tuition like the US, universities dominate global research rankings. <u>However</u>, this system excludes talented low-income youth.<br><br><u>On the other hand</u>, free university education promotes equal opportunity. If access depends solely on academic merit rather than financial wealth, society benefits from a highly skilled workforce. For example, Scandinavian countries offer free tuition and have high levels of innovation. <u>To sum up</u>, I believe that university education should be free, as the long-term societal and economic benefits far outweigh the funding costs.
+      <div class="passage-text" style="font-style: italic; background: rgba(0,0,0,0.01); padding: 12px; border-left: 2px solid var(--tab-2); line-height: 1.85;">
+        It is often argued whether higher education should be fully funded by governments or paid for by the students themselves. In my opinion, while tertiary education is expensive, making it free is crucial for social mobility and economic development.<br><br><span class='annotation-wrapper'><span class='underlined-mark line-orange'>On the one hand</span><span class='annotation-sub text-orange'>Paragraph transition view A</span></span>, tuition fees ensure that universities are well-funded. When students pay, institutions have more capital to invest in top-tier research facilities and recruit high-quality professors. For instance, in countries with high tuition like the US, universities dominate global research rankings. <span class='annotation-wrapper'><span class='underlined-mark line-green'>However</span><span class='annotation-sub text-green'>Concession contrast connector</span></span>, this system excludes talented low-income youth.<br><br><span class='annotation-wrapper'><span class='underlined-mark line-blue'>On the other hand</span><span class='annotation-sub text-blue'>Paragraph transition view B</span></span>, free university education promotes equal opportunity. If access depends solely on academic merit rather than financial wealth, society benefits from a highly skilled workforce. For example, Scandinavian countries offer free tuition and have high levels of innovation. <span class='annotation-wrapper'><span class='underlined-mark line-orange'>To sum up</span><span class='annotation-sub text-orange'>Conclusion signpost</span></span>, I believe that university education should be free, as the long-term societal and economic benefits far outweigh the funding costs.
       </div>
       <div class="tip" style="border-left-color: var(--tab-2); color: var(--good);"><b>Band 9.0 Evaluation & Analysis:</b><br><ul><li><b>Task Response:</b> Completely addresses both sides of the argument and gives a clear opinion. Ideas are fully developed with examples.</li><li><b>Coherence & Cohesion:</b> Paragraphs flow logically. Uses transition markers (*On the one hand, Conversely, For instance, To sum up*) effectively.</li><li><b>Lexical Resource:</b> High-quality vocabulary used accurately (*tertiary education, social mobility, academic merit, innovate*).</li><li><b>Grammar:</b> Error-free range of structures including conditionals and relative clauses.</li></ul></div>
     </div>
@@ -499,8 +538,8 @@
     <div class="passage-block">
       <div class="passage-title">Sample 2 (Task 1 Academic): Bar Chart Report - Pupil Expenditures</div>
       <div style="font-size: 13px; font-family: 'Courier New', monospace; margin-bottom: 8px; color: var(--ink-soft);">PROMPT: The bar chart compares the average annual expenditure per pupil in three different school levels in the UK between 2000 and 2015.</div>
-      <div class="passage-text" style="font-style: italic; background: rgba(0,0,0,0.01); padding: 12px; border-left: 2px solid var(--tab-2);">
-        The bar chart illustrates the average annual spending per student across primary, secondary, and tertiary levels of education in the United Kingdom over a fifteen-year period from 2000 to 2015.<br><br><u>Overall</u>, it is clear that secondary schools received the highest funding per pupil throughout the entire period, while primary schools consistently received the lowest. Additionally, expenditures for primary and secondary education experienced overall growth, whereas spending on tertiary education declined.<br><br>Regarding primary education, average spending <u>stood at</u> £3,000 per pupil in 2000, <u>before rising steadily to reach</u> £4,500 in 2015. Similarly, funding for secondary school pupils climbed from £5,000 in 2000 to peak at £6,800 in 2010, before leveling off at £6,500 at the end of the period.<br><br><u>In contrast</u>, tertiary education saw a different trend. Spending initially stood at £6,000 per student in 2000, which was higher than primary levels. <u>However</u>, it subsequently fell to £4,800 in 2010, before registering a minor recovery to end at £5,200 in 2015.
+      <div class="passage-text" style="font-style: italic; background: rgba(0,0,0,0.01); padding: 12px; border-left: 2px solid var(--tab-2); line-height: 1.85;">
+        The bar chart illustrates the average annual spending per student across primary, secondary, and tertiary levels of education in the United Kingdom over a fifteen-year period from 2000 to 2015.<br><br><span class='annotation-wrapper'><span class='underlined-mark line-orange'>Overall</span><span class='annotation-sub text-orange'>Overview signpost</span></span>, it is clear that secondary schools received the highest funding per pupil throughout the entire period, while primary schools consistently received the lowest. Additionally, expenditures for primary and secondary education experienced overall growth, whereas spending on tertiary education declined.<br><br>Regarding primary education, average spending <span class='annotation-wrapper'><span class='underlined-mark line-green'>stood at</span><span class='annotation-sub text-green'>Preposition for static figure</span></span> £3,000 per pupil in 2000, <span class='annotation-wrapper'><span class='underlined-mark line-blue'>before rising steadily to reach</span><span class='annotation-sub text-blue'>Describes progressive upward change</span></span> £4,500 in 2015. Similarly, funding for secondary school pupils climbed from £5,000 in 2000 to peak at £6,800 in 2010, before leveling off at £6,500 at the end of the period.<br><br><span class='annotation-wrapper'><span class='underlined-mark line-orange'>In contrast</span><span class='annotation-sub text-orange'>Contrast transition link</span></span>, tertiary education saw a different trend. Spending initially stood at £6,000 per student in 2000, which was higher than primary levels. <span class='annotation-wrapper'><span class='underlined-mark line-green'>However</span><span class='annotation-sub text-green'>Contrast sentence connector</span></span>, it subsequently fell to £4,800 in 2010, before registering a minor recovery to end at £5,200 in 2015.
       </div>
       <div class="tip" style="border-left-color: var(--tab-2); color: var(--good);"><b>Band 9.0 Evaluation & Analysis:</b><br><ul><li><b>Task Achievement:</b> Accurate overview statement summarizing major trends. Key comparisons are made with precise numbers and years.</li><li><b>Cohesion:</b> Paragraph structures are logical. Transitions like *Overall*, *Similarly*, *In contrast*, and *Subsequently* guide the reader.</li><li><b>Vocabulary:</b> High precision (*per student, expenditure, leveled off, minor recovery*).</li></ul></div>
     </div>
@@ -508,8 +547,8 @@
     <div class="passage-block">
       <div class="passage-title">Sample 3 (Task 1 GT): Formal Complaint Letter - Water Leak</div>
       <div style="font-size: 13px; font-family: 'Courier New', monospace; margin-bottom: 8px; color: var(--ink-soft);">PROMPT: Write a letter to your landlord complaining about a water leak in your apartment. Explain the problem, tell him what needs fixing, and request action.</div>
-      <div class="passage-text" style="font-style: italic; background: rgba(0,0,0,0.01); padding: 12px; border-left: 2px solid var(--tab-2);">
-        Dear Mr. Davies,<br><br>I am writing to <u>bring to your immediate attention</u> a serious water leakage issue in the kitchen of my apartment, which is Unit 4B.<br><br>The leak began yesterday afternoon, following heavy rainfall. Water is actively dripping from the ceiling directly above the stove area, causing significant pooling on the floor. <u>Furthermore</u>, the dampness is causing the plaster on the ceiling to crack and peel, which poses a safety hazard. I have had to turn off the overhead light fixtures in the kitchen to prevent an electrical short-circuit.<br><br><u>Therefore</u>, I request that you dispatch a professional plumber to repair the roof or pipes immediately to prevent further structural damage. I also request your approval to have the kitchen ceiling replastered once the leak is sealed.<br><br>I look forward to your prompt response and action on this matter.<br><br>Yours sincerely,<br>James Kingston
+      <div class="passage-text" style="font-style: italic; background: rgba(0,0,0,0.01); padding: 12px; border-left: 2px solid var(--tab-2); line-height: 1.85;">
+        Dear Mr. Davies,<br><br>I am writing to <span class='annotation-wrapper'><span class='underlined-mark line-orange'>bring to your immediate attention</span><span class='annotation-sub text-orange'>Polite formal complaint opening</span></span> a serious water leakage issue in the kitchen of my apartment, which is Unit 4B.<br><br>The leak began yesterday afternoon, following heavy rainfall. Water is actively dripping from the ceiling directly above the stove area, causing significant pooling on the floor. <span class='annotation-wrapper'><span class='underlined-mark line-green'>Furthermore</span><span class='annotation-sub text-green'>Adding secondary complaint detail</span></span>, the dampness is causing the plaster on the ceiling to crack and peel, which poses a safety hazard. I have had to turn off the overhead light fixtures in the kitchen to prevent an electrical short-circuit.<br><br><span class='annotation-wrapper'><span class='underlined-mark line-blue'>Therefore</span><span class='annotation-sub text-blue'>Transition stating request action</span></span>, I request that you dispatch a professional plumber to repair the roof or pipes immediately to prevent further structural damage. I also request your approval to have the kitchen ceiling replastered once the leak is sealed.<br><br>I look forward to your prompt response and action on this matter.<br><br>Yours sincerely,<br>James Kingston
       </div>
       <div class="tip" style="border-left-color: var(--tab-2); color: var(--good);"><b>Band 9.0 Evaluation & Analysis:</b><br><ul><li><b>Task Achievement:</b> Covers all three bullet points in detail. Tone is consistently formal and polite.</li><li><b>Coherence:</b> Divided into three distinct paragraphs matching the purpose, detail, and request layout.</li><li><b>Vocabulary:</b> Appropriate formal letters vocabulary (*bring to your attention, significant pooling, safety hazard, dispatch*).</li></ul></div>
     </div>
@@ -527,7 +566,7 @@ const SKILLS_DATA = [
     "number": 1,
     "title": "Determining the Task (Task 1 Academic)",
     "note": "Initial Phase. Analyze the chart, graph, table, or map to identify what key information you must summarize.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Read the prompt carefully to see what graphic is presented (bar chart, line graph, pie chart, table, or diagram).</li>\n          <li>Identify the time period (past, present, or future) to select the correct grammatical verb tenses.</li>\n          <li>Look for the units of measurement (percentages, millions of dollars, tons) to report figures accurately.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Prompt:</i> 'The bar chart shows average spending per pupil in 2000-2015.'<br>\n        - <i>Analysis:</i> The task requires describing expenditures, using <u>past tense</u> verbs (e.g., <u>decreased</u>, <u>rose</u>, <u>fluctuated</u>) because the timeframe is in the past.\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Read the prompt carefully to see what graphic is presented (bar chart, line graph, pie chart, table, or diagram).</li>\n          <li>Identify the time period (past, present, or future) to select the correct grammatical verb tenses.</li>\n          <li>Look for the units of measurement (percentages, millions of dollars, tons) to report figures accurately.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Prompt:</i> 'The bar chart shows average spending per pupil in 2000-2015.'<br>\n        - <i>Analysis:</i> The task requires describing expenditures, using <span class='annotation-wrapper'><span class='underlined-mark line-orange'>past tense</span><span class='annotation-sub text-orange'>Select correct tense based on years</span></span> verbs (e.g., primary spending <u>decreased</u>, <u>rose</u>, <u>fluctuated</u>) because the timeframe is in the past.\n      ",
     "items": [
       {
         "q": "Prompt: 'The bar chart shows average spending per pupil in 2000-2015.' What is the task and tense?",
@@ -539,11 +578,11 @@ const SKILLS_DATA = [
     "number": 2,
     "title": "Determining the Topic (Task 1 Academic)",
     "note": "Formulates the Overview. Define the main subject, variables, and categories of the graphic to paraphrase in your intro.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Determine the topic by looking at the graphic's title and axis labels.</li>\n          <li>Paraphrase the prompt using synonyms to write your first introduction sentence.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Original:</i> 'The table shows the percentage of students passing a math test.'<br>\n        - <i>Paraphrased:</i> '<u>The table illustrates the proportion of pupils who successfully passed a mathematics examination...</u>' (using synonyms like <u>illustrates</u>, <u>proportion of pupils</u>, <u>mathematics examination</u>).\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Determine the topic by looking at the graphic's title and axis labels.</li>\n          <li>Paraphrase the prompt using synonyms to write your first introduction sentence.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Original:</i> 'The table shows the percentage of students passing a math test.'<br>\n        - <i>Paraphrased:</i> '<span class='annotation-wrapper'><span class='underlined-mark line-green'>The table illustrates the proportion of pupils who successfully passed a mathematics examination...</span><span class='annotation-sub text-green'>Paraphrased Introduction</span></span>' (using synonyms like <u>illustrates</u>, <u>proportion of pupils</u>, <u>mathematics examination</u>).\n      ",
     "items": [
       {
         "q": "Paraphrase: 'The table shows the percentage of students passing a math test in three different schools.'",
-        "a": "<span class='pat-step1'>Replace 'table shows': 'The table illustrates...'</span> <span class='pat-step2'>Replace 'percentage of students passing': '...the proportion of pupils who successfuly passed...'</span> <span class='pat-step3'>Paraphrased: '<u>The table illustrates the proportion of pupils who successfully passed a mathematics examination across three distinct educational institutions.</u>'</span>"
+        "a": "<span class='pat-step1'>Replace 'table shows': 'The table illustrates...'</span> <span class='pat-step2'>Replace 'percentage of students passing': '...the proportion of pupils who successfuly passed...'</span> <span class='pat-step3'>Paraphrased: 'The table illustrates the proportion of pupils who successfully passed a mathematics examination across three distinct educational institutions.'</span>"
       }
     ]
   },
@@ -551,11 +590,11 @@ const SKILLS_DATA = [
     "number": 3,
     "title": "Making Comparisons (Task 1 Academic)",
     "note": "Scores Task Achievement. Group similar data together and highlight the highest, lowest, or most dramatic trends.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Do not list every data point sequentially. Group data into high, medium, and low categories.</li>\n          <li>Use comparative structures (*higher than, double, in contrast, similarly*).</li>\n          <li>Highlight the peak (highest point) and the trough (lowest point).</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Data:</i> Primary primary spending rose from $3k to $4k, while tertiary fell from $6k to $4.8k.<br>\n        - <i>Comparison:</i> '<u>While expenditures for primary pupils grew steadily, funding allocated for tertiary education experienced a notable decline...</u>' (contrasting trends using <u>while</u>).\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Do not list every data point sequentially. Group data into high, medium, and low categories.</li>\n          <li>Use comparative structures (*higher than, double, in contrast, similarly*).</li>\n          <li>Highlight the peak (highest point) and the trough (lowest point).</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Data:</i> Primary spending rose from $3k to $4k, while tertiary fell from $6k to $4.8k.<br>\n        - <i>Comparison:</i> '<span class='annotation-wrapper'><span class='underlined-mark line-blue'>While expenditures for primary pupils grew steadily, funding allocated for tertiary education experienced a notable decline...</span><span class='annotation-sub text-blue'>Contrast structure linking two trends</span></span>' (contrasting trends using <u>while</u>).\n      ",
     "items": [
       {
         "q": "Chart data: Cafeteria spending was $50 per student in 2000, and fell to $10 in 2015. Write a comparison sentence.",
-        "a": "<span class='pat-step1'>Compare start and end: $50 in 2000 vs $10 in 2015.</span> <span class='pat-step2'>Use comparative verbs: 'fell dramatically', 'a five-fold decrease'.</span> <span class='pat-step3'>Write: '<u>Spending on cafeteria services fell dramatically from $50 per student in 2000 to a mere $10 in 2015, representing a five-fold decrease.</u>'</span>"
+        "a": "<span class='pat-step1'>Compare start and end: $50 in 2000 vs $10 in 2015.</span> <span class='pat-step2'>Use comparative verbs: 'fell dramatically', 'a five-fold decrease'.</span> <span class='pat-step3'>Write: 'Spending on cafeteria services fell dramatically from $50 per student in 2000 to a mere $10 in 2015, representing a five-fold decrease.'</span>"
       }
     ]
   },
@@ -575,11 +614,11 @@ const SKILLS_DATA = [
     "number": 5,
     "title": "Writing the Introduction (Task 1 Academic)",
     "note": "First Impression. Paraphrase the prompt using synonyms and state what the graphic compares.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Paraphrase the original sentence. Replace words like *gives information about* with *provides data on*.</li>\n          <li>Include the geographical area (e.g., in the UK) and the timeframe (e.g., between 2005 and 2010).</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Original:</i> 'The chart shows the number of tourists visiting three cities.'<br>\n        - <i>Introduction:</i> '<u>The bar chart compares the volume of international tourists who visited three distinct cities...</u>'\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Paraphrase the original sentence. Replace words like *gives information about* with *provides data on*.</li>\n          <li>Include the geographical area (e.g., in the UK) and the timeframe (e.g., between 2005 and 2010).</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Original:</i> 'The chart shows the number of tourists visiting three cities.'<br>\n        - <i>Introduction:</i> '<span class='annotation-wrapper'><span class='underlined-mark line-orange'>The bar chart compares the volume of international tourists who visited three distinct cities...</span><span class='annotation-sub text-orange'>Polished intro paraphrase</span></span>'\n      ",
     "items": [
       {
         "q": "Prompt: 'The chart shows the number of tourists visiting three different cities in Europe from 2010 to 2020.' Write the introduction.",
-        "a": "<span class='pat-step1'>Paraphrase nouns and verbs: 'chart shows' -> 'bar chart compares'.</span> <span class='pat-step2'>Paraphrase time: 'from 2010 to 2020' -> 'over a decade starting in 2010'.</span> <span class='pat-step3'>Introduction: '<u>The bar chart compares the volume of international tourists who visited three distinct European cities over a decade starting in 2010.</u>'</span>"
+        "a": "<span class='pat-step1'>Paraphrase nouns and verbs: 'chart shows' -> 'bar chart compares'.</span> <span class='pat-step2'>Paraphrase time: 'from 2010 to 2020' -> 'over a decade starting in 2010'.</span> <span class='pat-step3'>Introduction: 'The bar chart compares the volume of international tourists who visited three distinct European cities over a decade starting in 2010.'</span>"
       }
     ]
   },
@@ -587,11 +626,11 @@ const SKILLS_DATA = [
     "number": 6,
     "title": "Writing the Paragraphs (Task 1 Academic)",
     "note": "Body Paragraph Development. Report detailed data points, values, and trends accurately with cohesive transition markers.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Use transition words to compare data groups (*in terms of, regarding, as for, on the other hand*).</li>\n          <li>Present exact data values in brackets or using prepositions (e.g., \"...stood at 45% in 2008\").</li>\n          <li>Vary your vocabulary for describing change (*dropped, fell, surged, plateaued*).</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Data:</i> Primary Primary spending stood at 15% in 2000, then rose to 35% in 2010.<br>\n        - <i>Description:</i> '<u>Regarding primary levels, expenditures stood at 15% in 2000 before rising significantly to hit 35% in 2010.</u>'\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Use transition words to compare data groups (*in terms of, regarding, as for, on the other hand*).</li>\n          <li>Present exact data values in brackets or using prepositions (e.g., \"...stood at 45% in 2008\").</li>\n          <li>Vary your vocabulary for describing change (*dropped, fell, surged, plateaued*).</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Data:</i> Primary spending stood at 15% in 2000, then rose to 35% in 2010.<br>\n        - <i>Description:</i> '<span class='annotation-wrapper'><span class='underlined-mark line-green'>Regarding primary levels, expenditures stood at 15% in 2000 before rising significantly to hit 35% in 2010.</span><span class='annotation-sub text-green'>Prepositional detail structure</span></span>'\n      ",
     "items": [
       {
         "q": "Write a body paragraph sentence stating that school library spending was at 15% in 2000, then rose to 35% in 2010.",
-        "a": "<span class='pat-step1'>State initial value: 'library spending stood at 15% in 2000'.</span> <span class='pat-step2'>State change: 'before rising significantly'.</span> <span class='pat-step3'>Combine: '<u>Regarding school expenditures, funding allocated for library resources stood at 15% in 2000, before rising significantly to hit 35% in 2010.</u>'</span>"
+        "a": "<span class='pat-step1'>State initial value: 'library spending stood at 15% in 2000'.</span> <span class='pat-step2'>State change: 'before rising significantly'.</span> <span class='pat-step3'>Combine: 'Regarding school expenditures, funding allocated for library resources stood at 15% in 2000, before rising significantly to hit 35% in 2010.'</span>"
       }
     ]
   },
@@ -599,11 +638,11 @@ const SKILLS_DATA = [
     "number": 7,
     "title": "Writing the Conclusion (Task 1 Academic)",
     "note": "Completes Task 1. Restate the main overview trend clearly and briefly in 1-2 final sentences.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Summarize the core takeaways. A formal 'Conclusion' is optional if you already have an Overview, but a short summary sentence wraps up the essay nicely.</li>\n          <li>Do not introduce any new numbers or data points in the concluding sentence.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Summary:</i> '<u>In conclusion, the data shows a major shift in national power generation, with clean energy sources gradually replacing fossil fuels over the period.</u>'\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Summarize the core takeaways. A formal 'Conclusion' is optional if you already have an Overview, but a short summary sentence wraps up the essay nicely.</li>\n          <li>Do not introduce any new numbers or data points in the concluding sentence.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Summary:</i> '<span class='annotation-wrapper'><span class='underlined-mark line-blue'>In conclusion, the data shows a major shift in national power generation, with clean energy sources gradually replacing fossil fuels over the period.</span><span class='annotation-sub text-blue'>Summary of core trends without numbers</span></span>'\n      ",
     "items": [
       {
         "q": "Write a concluding sentence for a chart showing a transition from fossil fuels to renewable energy.",
-        "a": "<span class='pat-step1'>Identify major shift: Fossil fuels down, renewables up.</span> <span class='pat-step2'>Avoid numbers.</span> <span class='pat-step3'>Write: '<u>In conclusion, the data shows a major shift in national power generation, with clean energy sources gradually replacing fossil fuels over the period.</u>'</span>"
+        "a": "<span class='pat-step1'>Identify major shift: Fossil fuels down, renewables up.</span> <span class='pat-step2'>Avoid numbers.</span> <span class='pat-step3'>Write: 'In conclusion, the data shows a major shift in national power generation, with clean energy sources gradually replacing fossil fuels over the period.'</span>"
       }
     ]
   },
@@ -611,11 +650,11 @@ const SKILLS_DATA = [
     "number": 8,
     "title": "Determining the Task (Task 1 General Training)",
     "note": "For GT Letters. Identify if the letter is formal, semi-formal, or informal, and check the 3 bullet points you must cover.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Determine the letter tone: <b>Formal</b> (to a landlord, employer, company), <b>Informal</b> (to a friend, family member).</li>\n          <li>Address style: Formal letters start with \"Dear Sir or Madam\"; informal start with \"Dear [Friend's Name]\".</li>\n          <li>Highlight the 3 bullet prompts. You must write at least 50 words on EACH bullet to score Band 7+.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Prompt:</i> 'Write a letter to your landlord complaining about a leak.'<br>\n        - <i>Analysis:</i> Tone is <u>Formal</u>. Salutation: <u>Dear Mr. [Surname]</u> or <u>Dear Sir/Madam</u>. Purpose: <u>To bring to your attention a serious water leakage...</u>\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Determine the letter tone: <b>Formal</b> (to a landlord, employer, company), <b>Informal</b> (to a friend, family member).</li>\n          <li>Address style: Formal letters start with \"Dear Sir or Madam\"; informal start with \"Dear [Friend's Name]\".</li>\n          <li>Highlight the 3 bullet prompts. You must write at least 50 words on EACH bullet to score Band 7+.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Prompt:</i> 'Write a letter to your landlord complaining about a leak.'<br>\n        - <i>Analysis:</i> Tone is <u>Formal</u>. Salutation: <span class='annotation-wrapper'><span class='underlined-mark line-orange'>Dear Mr. [Surname]</span><span class='annotation-sub text-orange'>Formal Salutation</span></span> or <u>Dear Sir/Madam</u>. Purpose: <u>To bring to your attention a serious water leakage...</u>\n      ",
     "items": [
       {
         "q": "Prompt: 'Write a letter to your landlord complaining about a leak. Explain the problem, tell him what needs fixing, and request action.' Determine the tone and opening.",
-        "a": "<span class='pat-step1'>Tone: Formal (communication with landlord).</span> <span class='pat-step2'>Opening: 'Dear Mr. [Landlord's Surname]' or 'Dear Sir/Madam'.</span> <span class='pat-step3'>Statement of purpose: '<u>I am writing to bring to your attention a serious water leakage problem in my apartment.</u>'</span>"
+        "a": "<span class='pat-step1'>Tone: Formal (communication with landlord).</span> <span class='pat-step2'>Opening: 'Dear Mr. [Landlord's Surname]' or 'Dear Sir/Madam'.</span> <span class='pat-step3'>Statement of purpose: 'I am writing to bring to your attention a serious water leakage problem in my apartment.'</span>"
       }
     ]
   },
@@ -635,11 +674,11 @@ const SKILLS_DATA = [
     "number": 10,
     "title": "Brainstorming Ideas (Task 1 General Training)",
     "note": "Letter Details. Generate specific request details, dates, and names for each of the letter's 3 prompts.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Generate realistic details for your requests: dates, exact times, items, prices.</li>\n          <li>For informal letters, use conversational, friendly anecdotes. For formal, keep descriptions precise and transactional.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Request:</i> '<u>Therefore, I request a complete reimbursement of the purchase price, which stands at $1,200, as soon as possible.</u>'\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Generate realistic details for your requests: dates, exact times, items, prices.</li>\n          <li>For informal letters, use conversational, friendly anecdotes. For formal, keep descriptions precise and transactional.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Request:</i> '<span class='annotation-wrapper'><span class='underlined-mark line-green'>Therefore, I request a complete reimbursement of the purchase price, which stands at $1,200, as soon as possible.</span><span class='annotation-sub text-green'>Polite yet firm request</span></span>'\n      ",
     "items": [
       {
         "q": "Write a request sentence to a company asking for a full refund for a broken laptop.",
-        "a": "<span class='pat-step1'>State the request clearly: 'ask for a full refund'.</span> <span class='pat-step2'>Keep it formal: 'request a complete reimbursement'.</span> <span class='pat-step3'>Write: '<u>Therefore, I request a complete reimbursement of the purchase price, which stands at $1,200, as soon as possible.</u>'</span>"
+        "a": "<span class='pat-step1'>State the request clearly: 'ask for a full refund'.</span> <span class='pat-step2'>Keep it formal: 'request a complete reimbursement'.</span> <span class='pat-step3'>Write: 'Therefore, I request a complete reimbursement of the purchase price, which stands at $1,200, as soon as possible.'</span>"
       }
     ]
   },
@@ -659,11 +698,11 @@ const SKILLS_DATA = [
     "number": 12,
     "title": "Writing the Introduction (Task 1 General Training)",
     "note": "Letter Opening. Learn the standard opening phrases to state your letter's objective immediately.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Open formal letters with: \"I am writing to complain about...\", \"I am writing to express my dissatisfaction with...\".</li>\n          <li>Open informal letters with: \"I hope you are doing well.\", \"It was great to hear from you.\"</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Opening:</i> '<u>I am writing to formally request a transfer from my current night shift assignment to the morning shift, starting next month.</u>'\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Open formal letters with: \"I am writing to complain about...\", \"I am writing to express my dissatisfaction with...\".</li>\n          <li>Open informal letters with: \"I hope you are doing well.\", \"It was great to hear from you.\"</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Opening:</i> '<span class='annotation-wrapper'><span class='underlined-mark line-blue'>I am writing to formally request a transfer from my current night shift assignment to the morning shift, starting next month.</span><span class='annotation-sub text-blue'>Direct statement of intent</span></span>'\n      ",
     "items": [
       {
         "q": "Write a formal introduction for a letter requesting a change of work shift.",
-        "a": "<span class='pat-step1'>State the action: 'I am writing to request...'.</span> <span class='pat-step2'>State the details: 'change my current shift assignment'.</span> <span class='pat-step3'>Write: '<u>I am writing to formally request a transfer from my current night shift assignment to the morning shift, starting next month.</u>'</span>"
+        "a": "<span class='pat-step1'>State the action: 'I am writing to request...'.</span> <span class='pat-step2'>State the details: 'change my current shift assignment'.</span> <span class='pat-step3'>Write: 'I am writing to formally request a transfer from my current night shift assignment to the morning shift, starting next month.'</span>"
       }
     ]
   },
@@ -671,11 +710,11 @@ const SKILLS_DATA = [
     "number": 13,
     "title": "Writing the Paragraphs (Task 1 General Training)",
     "note": "GT Body development. Use appropriate formal or informal cohesive links to detail your story.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Use paragraphs to separate different topics (1 paragraph for explaining the situation, 1 for your request).</li>\n          <li>Use formal transition words: *Furthermore, Consequently, However, In light of this*.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Detail:</i> '<u>The central heating system broke down last Friday. Consequently, temperatures inside the flat have dropped to unsafe levels, making it freezing and uninhabitable...</u>'\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Use paragraphs to separate different topics (1 paragraph for explaining the situation, 1 for your request).</li>\n          <li>Use formal transition words: *Furthermore, Consequently, However, In light of this*.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Detail:</i> '<span class='annotation-wrapper'><span class='underlined-mark line-orange'>The central heating system broke down last Friday. Consequently, temperatures inside the flat have dropped to unsafe levels, making it freezing and uninhabitable...</span><span class='annotation-sub text-orange'>Problem statement linked to consequence</span></span>'\n      ",
     "items": [
       {
         "q": "Write a complaint paragraph detailing a broken heating system in winter.",
-        "a": "<span class='pat-step1'>State the problem: Heater broke down.</span> <span class='pat-step2'>Explain consequence: Flat is freezing, unsafe for kids.</span> <span class='pat-step3'>Write: '<u>The central heating system broke down last Friday. Consequently, temperatures inside the flat have dropped to unsafe levels, making it freezing and uninhabitable for my children.</u>'</span>"
+        "a": "<span class='pat-step1'>State the problem: Heater broke down.</span> <span class='pat-step2'>Explain consequence: Flat is freezing, unsafe for kids.</span> <span class='pat-step3'>Write: 'The central heating system broke down last Friday. Consequently, temperatures inside the flat have dropped to unsafe levels, making it freezing and uninhabitable for my children.'</span>"
       }
     ]
   },
@@ -683,11 +722,11 @@ const SKILLS_DATA = [
     "number": 14,
     "title": "Writing the Conclusion (Task 1 General Training)",
     "note": "Letter Closing. Request a specific action or response, and sign off using the correct greeting.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>End with a call to action: \"I urge you to look into this matter immediately\", \"Please let me know if this date works for you\".</li>\n          <li>Ensure your sign-off aligns with your salutation.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Closing:</i> '<u>I appreciate your prompt attention to this matter and hope to receive a full refund shortly. Yours sincerely, [Name].</u>'\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>End with a call to action: \"I urge you to look into this matter immediately\", \"Please let me know if this date works for you\".</li>\n          <li>Ensure your sign-off aligns with your salutation.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Closing:</i> '<span class='annotation-wrapper'><span class='underlined-mark line-green'>I appreciate your prompt attention to this matter and hope to receive a full refund shortly. Yours sincerely, [Name].</span><span class='annotation-sub text-green'>Polite closing formula</span></span>'\n      ",
     "items": [
       {
         "q": "Write a concluding paragraph for a complaint letter to a hotel manager.",
-        "a": "<span class='pat-step1'>Request action: Refund or compensation.</span> <span class='pat-step2'>Polite closing: 'appreciate your attention'.</span> <span class='pat-step3'>Write: '<u>I appreciate your prompt attention to this matter and hope to receive a full refund shortly. Yours sincerely, [Name].</u>'</span>"
+        "a": "<span class='pat-step1'>Request action: Refund or compensation.</span> <span class='pat-step2'>Polite closing: 'appreciate your attention'.</span> <span class='pat-step3'>Write: 'I appreciate your prompt attention to this matter and hope to receive a full refund shortly. Yours sincerely, [Name].'</span>"
       }
     ]
   },
@@ -695,7 +734,7 @@ const SKILLS_DATA = [
     "number": 15,
     "title": "Determining the Task (Task 2 Essay)",
     "note": "Essay Core. Identify the essay type: Agree/Disagree, Discussion (Both views), Problem/Solution, or Double Question.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Analyze the essay question keywords. \"To what extent do you agree?\" is an Agree/Disagree essay. \"Discuss both views and give your opinion\" requires balancing both sides.</li>\n          <li>Highlight the core topics to ensure you do not wander off-topic.</li>\n        </ul>\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Analyze the essay question keywords. \"To what extent do you agree?\" is an Agree/Disagree essay. \"Discuss both views and give your opinion\" requires balancing both sides.</li>\n          <li>Highlight the core topics to ensure you do not wander off-topic (which drops your Task Response score to Band 5).</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Prompt: 'Some people think university education should be free. Others argue that students should pay tuition. Discuss both views.' Determine the essay type and task.",
@@ -707,11 +746,11 @@ const SKILLS_DATA = [
     "number": 16,
     "title": "Developing a Thesis Statement (Task 2)",
     "note": "Scores Coherence & Cohesion. Write a 1-sentence answer to the essay prompt to present your position clearly.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>The <b>Thesis Statement</b> is the most important sentence in your essay. It must answer the prompt directly and show your main stance.</li>\n          <li>Place the thesis statement at the end of your introductory paragraph.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Thesis:</i> '<u>I believe that school homework should be completely banned because it causes excessive stress for young students and reduces their necessary leisure time.</u>'\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>The <b>Thesis Statement</b> is the most important sentence in your essay. It must answer the prompt directly and show your main stance.</li>\n          <li>Place the thesis statement at the end of your introductory paragraph.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Thesis:</i> '<span class='annotation-wrapper'><span class='underlined-mark line-blue'>I believe that school homework should be completely banned because it causes excessive stress for young students and reduces their necessary leisure time.</span><span class='annotation-sub text-blue'>Stance + 2 supporting sub-reasons</span></span>'\n      ",
     "items": [
       {
         "q": "Write a thesis statement for: 'Should homework be banned in schools?' (Position: Ban it).",
-        "a": "<span class='pat-step1'>Identify position: Ban homework.</span> <span class='pat-step2'>State the reason: Causes stress, limits free time.</span> <span class='pat-step3'>Thesis: '<u>I believe that school homework should be completely banned because it causes excessive stress for young students and reduces their necessary leisure time.</u>'</span>"
+        "a": "<span class='pat-step1'>Identify position: Ban homework.</span> <span class='pat-step2'>State the reason: Causes stress, limits free time.</span> <span class='pat-step3'>Thesis: 'I believe that school homework should be completely banned because it causes excessive stress for young students and reduces their necessary leisure time.'</span>"
       }
     ]
   },
@@ -731,11 +770,11 @@ const SKILLS_DATA = [
     "number": 18,
     "title": "Writing the Introduction (Task 2)",
     "note": "Essay Opening. Paraphrase the prompt in 1-2 sentences and end with your clear thesis statement.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Sentence 1: Background sentence (paraphrase the general topic prompt).</li>\n          <li>Sentence 2: Thesis statement (your direct response/opinion).</li>\n          <li>Avoid using template sentences like \"This essay will discuss...\" as they sound generic and lower your lexical resource score.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Introduction:</i> '<u>It is often argued that state budgets should prioritize the arts over scientific research. In my opinion, I strongly disagree with this view, as scientific advancements play a far more vital role in national development.</u>'\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Sentence 1: Background sentence (paraphrase the general topic prompt).</li>\n          <li>Sentence 2: Thesis statement (your direct response/opinion).</li>\n          <li>Avoid using template sentences like \"This essay will discuss...\" as they sound generic and lower your lexical resource score.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Introduction:</i> '<span class='annotation-wrapper'><span class='underlined-mark line-orange'>It is often argued that state budgets should prioritize the arts over scientific research. In my opinion, I strongly disagree with this view, as scientific advancements play a far more vital role in national development.</span><span class='annotation-sub text-orange'>Polished Introduction Outline</span></span>'\n      ",
     "items": [
       {
         "q": "Write an introduction for: 'Governments should invest in art rather than science.' (Disagree).",
-        "a": "<span class='pat-step1'>Paraphrase topic: It is often argued whether state funding should prioritize artistic projects over scientific research.</span> <span class='pat-step2'>Thesis: I disagree and believe scientific funding is far more critical for society.</span> <span class='pat-step3'>Intro: '<u>It is often argued that state budgets should prioritize the arts over scientific research. In my opinion, I strongly disagree with this view, as scientific advancements play a far more vital role in national development.</u>'</span>"
+        "a": "<span class='pat-step1'>Paraphrase topic: It is often argued whether state funding should prioritize artistic projects over scientific research.</span> <span class='pat-step2'>Thesis: I disagree and believe scientific funding is far more critical for society.</span> <span class='pat-step3'>Intro: 'It is often argued that state budgets should prioritize the arts over scientific research. In my opinion, I strongly disagree with this view, as scientific advancements play a far more vital role in national development.'</span>"
       }
     ]
   },
@@ -743,7 +782,7 @@ const SKILLS_DATA = [
     "number": 19,
     "title": "Writing the Paragraphs (Task 2)",
     "note": "Body Paragraph Logic. Build each paragraph using the PEEL method: Point, Explanation, Example, Link.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li><b>Point:</b> State the main argument sentence.</li>\n          <li><b>Explanation:</b> Explain why/how (2-3 sentences).</li>\n          <li><b>Example:</b> Give a concrete example (from studies, news, or history).</li>\n          <li><b>Link:</b> Wrap up by linking back to your main thesis position.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Paragraph:</i> '<u>Online learning is highly flexible. Because students can study at their own pace, working professionals can watch recorded lectures at night. For instance, a recent survey... Therefore, this flexibility leads to higher access...</u>'\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li><b>Point:</b> State the main argument sentence.</li>\n          <li><b>Explanation:</b> Explain why/how (2-3 sentences).</li>\n          <li><b>Example:</b> Give a concrete example (from studies, news, or history).</li>\n          <li><b>Link:</b> Wrap up by linking back to your main thesis position.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Paragraph:</i> '<span class='annotation-wrapper'><span class='underlined-mark line-green'>Online learning is highly flexible. Because students can study at their own pace, working professionals can watch recorded lectures at night. For instance, a recent survey... Therefore, this flexibility leads to higher access...</span><span class='annotation-sub text-green'>PEEL Body Paragraph Paragraph</span></span>'\n      ",
     "items": [
       {
         "q": "Write a body paragraph point showing that online education is flexible, using PEEL.",
@@ -755,11 +794,11 @@ const SKILLS_DATA = [
     "number": 20,
     "title": "Writing the Conclusion (Task 2)",
     "note": "Completes Essay. Summarize the main points and restate your thesis in 2 final sentences.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Summarize: Restate your main arguments from Body 1 & 2 in a fresh way (paraphrased).</li>\n          <li>Opinion: Restate your final stance clearly.</li>\n          <li>Never introduce a completely new idea or argument in the conclusion.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Conclusion:</i> '<u>In conclusion, it is clear that while digital devices connect us globally, they often make us isolated locally. I believe that moderation is key to maintaining healthy face-to-face relationships.</u>'\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Summarize: Restate your main arguments from Body 1 & 2 in a fresh way (paraphrased).</li>\n          <li>Opinion: Restate your final stance clearly.</li>\n          <li>Never introduce a completely new idea or argument in the conclusion.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Conclusion:</i> '<span class='annotation-wrapper'><span class='underlined-mark line-blue'>In conclusion, it is clear that while digital devices connect us globally, they often make us isolated locally. I believe that moderation is key to maintaining healthy face-to-face relationships.</span><span class='annotation-sub text-blue'>Summary + Recommendation</span></span>'\n      ",
     "items": [
       {
         "q": "Write a conclusion for an essay arguing that technology has made us more isolated.",
-        "a": "<span class='pat-step1'>Start with transition: 'In conclusion...'.</span> <span class='pat-step2'>Summarize: Technology limits physical interactions.</span> <span class='pat-step3'>Write: '<u>In conclusion, it is clear that while digital devices connect us globally, they often make us isolated locally. I believe that moderation is key to maintaining healthy face-to-face relationships.</u>'</span>"
+        "a": "<span class='pat-step1'>Start with transition: 'In conclusion...'.</span> <span class='pat-step2'>Summarize: Technology limits physical interactions.</span> <span class='pat-step3'>Write: 'In conclusion, it is clear that while digital devices connect us globally, they often make us isolated locally. I believe that moderation is key to maintaining healthy face-to-face relationships.'</span>"
       }
     ]
   }

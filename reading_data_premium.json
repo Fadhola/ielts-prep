@@ -4,11 +4,11 @@
       "number": 1,
       "title": "Using the First Paragraph to Make Predictions",
       "note": "Protects Reading Speed & Comprehension. Skim the introductory paragraph to identify the thesis statement and predict the passage theme.",
-      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Always read the first paragraph (introduction) first. It introduces the main topic and context of the passage.</li>\n          <li>Locate the <b>Thesis Statement</b>\u2014usually the first or last sentence of the introduction\u2014which states the main point of the entire text.</li>\n          <li>Use this thesis to predict the overall layout, content, and arguments that will follow in the body paragraphs.</li>\n        </ul>\n        <b>Key Vocabulary & Patterns:</b>\n        <table>\n          <tr>\n            <th>English Pattern</th>\n            <th>Type / Role</th>\n            <th>Arti (Indonesian)</th>\n            <th>Usage Context &amp; Explanation</th>\n          </tr>\n          <tr>\n            <td><b>thesis statement</b></td>\n            <td>Noun Phrase</td>\n            <td>pernyataan tesis / ide pokok</td>\n            <td>Kalimat kunci yang merangkum inti seluruh bacaan. Biasanya ada di akhir paragraf pertama.</td>\n          </tr>\n          <tr>\n            <td><b>make predictions</b></td>\n            <td>Verb Phrase</td>\n            <td>membuat prediksi / perkiraan</td>\n            <td>Menebak isi paragraf berikutnya berdasarkan kalimat pengantar untuk menghemat waktu baca.</td>\n          </tr>\n          <tr>\n            <td><b>introductory paragraph</b></td>\n            <td>Noun Phrase</td>\n            <td>paragraf pembuka / pengantar</td>\n            <td>Paragraf pertama yang membangun latar belakang topik (background context).</td>\n          </tr>\n        </table>\n      ",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Always read the first paragraph (introduction) first. It introduces the main topic and context of the passage.</li>\n          <li>Locate the <b>Thesis Statement</b>\u2014usually the first or last sentence of the introduction\u2014which states the main point of the entire text.</li>\n          <li>Use this thesis to predict the overall layout, content, and arguments that will follow in the body paragraphs.</li>\n        </ul>\n        <b>Key Vocabulary & Patterns:</b>\n        <table>\n          <tr>\n            <th>English Pattern</th>\n            <th>Type / Role</th>\n            <th>Arti (Indonesian)</th>\n            <th>Usage Context &amp; Explanation</th>\n          </tr>\n          <tr>\n            <td><b>thesis statement</b></td>\n            <td>Noun Phrase</td>\n            <td>pernyataan tesis / ide pokok</td>\n            <td>Kalimat kunci yang merangkum inti seluruh bacaan. Biasanya ada di akhir paragraf pertama.</td>\n          </tr>\n          <tr>\n            <td><b>make predictions</b></td>\n            <td>Verb Phrase</td>\n            <td>membuat prediksi / perkiraan</td>\n            <td>Menebak isi paragraf berikutnya berdasarkan kalimat pengantar untuk menghemat waktu baca.</td>\n          </tr>\n        </table>\n      ",
       "items": [
         {
           "q": "Identify the thesis statement: 'Observations of different species of birds, both in the wild and in captivity, have shown a great deal of evidence of high levels of avian intelligence.' What is the predicted topic?",
-          "a": "<span class='pat-step1'>Thesis statement is the entire sentence.</span> <span class='pat-step2'>The predicted topic is:</span> <span class='pat-step3'><u>The passage will describe scientific experiments and behavior proving how smart birds are.</u></span>"
+          "a": "<span class='pat-step1'>Thesis statement is the entire sentence.</span> <span class='pat-step2'>The predicted topic is:</span> <span class='pat-step3'>The passage will describe scientific experiments and behavior proving how smart birds are.</span>"
         }
       ]
     },
@@ -20,7 +20,7 @@
       "items": [
         {
           "q": "Identify the topic sentence: 'To combat excessive thoughts and impulses, most OCD sufferers perform certain repetitive rituals that they believe will relieve their anxiety.' Predict the paragraph's details.",
-          "a": "<span class='pat-step1'>Topic sentence: First sentence.</span> <span class='pat-step2'>Prediction:</span> <span class='pat-step3'><u>The paragraph will detail the specific repetitive rituals (checking, washing, counting) performed by OCD sufferers.</u></span>"
+          "a": "<span class='pat-step1'>Topic sentence: First sentence.</span> <span class='pat-step2'>Prediction:</span> <span class='pat-step3'>The paragraph will detail the specific repetitive rituals (checking, washing, counting) performed by OCD sufferers.</span>"
         }
       ]
     },
@@ -32,7 +32,7 @@
       "items": [
         {
           "q": "In a paragraph about Zulu beadwork being communication: 'Beads are used to make items for personal adornment, home decoration, and as a language to send status messages.' What are the supporting details?",
-          "a": "<span class='pat-step1'>Main idea: Zulu beadwork is a form of communication.</span> <span class='pat-step2'>Supporting details:</span> <span class='pat-step3'><u>1) Items for personal adornment. 2) Home decoration. 3) Language to send status/relationship messages.</u></span>"
+          "a": "<span class='pat-step1'>Main idea: Zulu beadwork is a form of communication.</span> <span class='pat-step2'>Supporting details:</span> <span class='pat-step3'>1) Items for personal adornment. 2) Home decoration. 3) Language to send status/relationship messages.</span>"
         }
       ]
     },
@@ -44,7 +44,7 @@
       "items": [
         {
           "q": "Question: 'On what date did Portuguese explorers arrive in KwaZulu-Natal?' What are the keywords to scan?",
-          "a": "<span class='pat-step1'>Keywords: 'Portuguese explorers', 'arrive', 'KwaZulu-Natal'.</span> <span class='pat-step2'>Scan the text for these words or dates like '1497'.</span> <span class='pat-step3'>Found sentence: 'Portuguese explorers gave this region when they arrived in 1497.' Answer: <u>1497</u>.</span>"
+          "a": "<span class='pat-step1'>Keywords: 'Portuguese explorers', 'arrive', 'KwaZulu-Natal'.</span> <span class='pat-step2'>Scan the text for these words or dates like '1497'.</span> <span class='pat-step3'>Found sentence: 'Portuguese explorers gave this region when they arrived in 1497.' Answer: 1497.</span>"
         }
       ]
     },
@@ -56,7 +56,7 @@
       "items": [
         {
           "q": "Paragraph A discusses how people think colorblindness means seeing no color, but explains it is actually difficulty distinguishing shades. Headings options: 'i. Complete Blindness', 'ii. What Is Colorblindness?', 'iii. Genetic Causes'. Select the best heading.",
-          "a": "<span class='pat-step1'>Analyze: Paragraph defines and corrects misconceptions about colorblindness.</span> <span class='pat-step2'>Compare headings: 'ii' represents the definition.</span> <span class='pat-step3'>Correct heading: <u>ii. What Is Colorblindness?</u>. 'i' is a distractor.</span>"
+          "a": "<span class='pat-step1'>Analyze: Paragraph defines and corrects misconceptions about colorblindness.</span> <span class='pat-step2'>Compare headings: 'ii' represents the definition.</span> <span class='pat-step3'>Correct heading: ii. What Is Colorblindness?. 'i' is a distractor.</span>"
         }
       ]
     },
@@ -68,7 +68,7 @@
       "items": [
         {
           "q": "You see a document with headers: 'Beginning French, Intermediate French, Advanced Spanish' along with times like '4:00-6:00 p.m.' and Mr. Sato. Predict the text type.",
-          "a": "<span class='pat-step1'>Examine elements: Class names, times, names of people.</span> <span class='pat-step2'>Identify:</span> <span class='pat-step3'><u>This is a Course Description / Class Schedule text type.</u></span>"
+          "a": "<span class='pat-step1'>Examine elements: Class names, times, names of people.</span> <span class='pat-step2'>Identify:</span> <span class='pat-step3'>This is a Course Description / Class Schedule text type.</span>"
         }
       ]
     },
@@ -80,7 +80,7 @@
       "items": [
         {
           "q": "Ad text: 'locker rooms are closed every Wednesday afternoon. Nonmembers may purchase a one-day pass.' Question: 'When can you not access the locker rooms?' Scan for the answer.",
-          "a": "<span class='pat-step1'>Locate keywords: 'locker rooms', 'closed'.</span> <span class='pat-step2'>Scan and find: 'closed every Wednesday afternoon'.</span> <span class='pat-step3'>Answer: <u>Wednesday afternoon</u>.</span>"
+          "a": "<span class='pat-step1'>Locate keywords: 'locker rooms', 'closed'.</span> <span class='pat-step2'>Scan and find: 'closed every Wednesday afternoon'.</span> <span class='pat-step3'>Answer: Wednesday afternoon.</span>"
         }
       ]
     },
@@ -92,7 +92,7 @@
       "items": [
         {
           "q": "A notice heading: 'Voluntary Work Policy'. Paragraph: 'Full-time employees who have been with the company for six months may take one day of paid leave per month for volunteer work.' What is the core rule?",
-          "a": "<span class='pat-step1'>Skim heading: Volunteer policy.</span> <span class='pat-step2'>Skim details: 6 months tenure required, 1 day paid leave per month.</span> <span class='pat-step3'>Core message: <u>Eligible employees get paid leave to do volunteer work.</u></span>"
+          "a": "<span class='pat-step1'>Skim heading: Volunteer policy.</span> <span class='pat-step2'>Skim details: 6 months tenure required, 1 day paid leave per month.</span> <span class='pat-step3'>Core message: Eligible employees get paid leave to do volunteer work.</span>"
         }
       ]
     },
@@ -104,7 +104,7 @@
       "items": [
         {
           "q": "Question: 'Who is eligible to participate?' Text: 'Adults age 18 and over only are permitted in the pool.' Match synonyms.",
-          "a": "<span class='pat-step1'>Compare: 'eligible' in question maps to 'permitted' in text.</span> <span class='pat-step2'>Match: 'Who' maps to 'Adults age 18 and over'.</span> <span class='pat-step3'>Answer: <u>Adults aged 18 and older.</u></span>"
+          "a": "<span class='pat-step1'>Compare: 'eligible' in question maps to 'permitted' in text.</span> <span class='pat-step2'>Match: 'Who' maps to 'Adults age 18 and over'.</span> <span class='pat-step3'>Answer: Adults aged 18 and older.</span>"
         }
       ]
     },
@@ -116,7 +116,7 @@
       "items": [
         {
           "q": "Text: 'Before the Europeans arrived, Arab traders brought glass beads. Prior to them, Phoenician mariners brought cargoes of beads.' Sequence the traders chronologically.",
-          "a": "<span class='pat-step1'>Analyze timeline: 'Prior to them' means Phoenicians came before Arabs.</span> <span class='pat-step2'>Identify Europeans: Arrived last.</span> <span class='pat-step3'>Sequence: <u>1. Phoenicians (first) -> 2. Arab traders -> 3. Europeans (last).</u></span>"
+          "a": "<span class='pat-step1'>Analyze timeline: 'Prior to them' means Phoenicians came before Arabs.</span> <span class='pat-step2'>Identify Europeans: Arrived last.</span> <span class='pat-step3'>Sequence: 1. Phoenicians (first) -> 2. Arab traders -> 3. Europeans (last).</span>"
         }
       ]
     }
@@ -124,57 +124,57 @@
   "passages": [
     {
       "title": "Passage 1: Avian Intelligence & Adaptability",
-      "text": "<u>Observations of different species of birds, both in the wild and in captivity, have shown a great deal of evidence of high levels of avian intelligence.</u> For years, scientists believed that only primates were capable of complex tool construction and problem solving. However, recent experiments with New Caledonian crows have shattered this biological assumption. <u>These birds have been observed bending straight pieces of wire to manufacture hooks, which they subsequently use to retrieve food from narrow chambers.</u><br><br>In addition to tool-making, cognitive mapping has been observed in species of migratory birds. <u>The birds navigate thousands of miles with remarkable precision by mapping star clusters and the Earth's magnetic fields</u>, adjusting their trajectory based on real-time weather anomalies.",
+      "text": "<span class='annotation-wrapper'><span class='underlined-mark line-orange'>Observations of different species of birds, both in the wild and in captivity, have shown a great deal of evidence of high levels of avian intelligence.</span><span class='annotation-sub text-orange'>Thesis statement of passage</span></span> For years, scientists believed that only primates were capable of complex tool construction and problem solving. However, recent experiments with New Caledonian crows have shattered this biological assumption. <span class='annotation-wrapper'><span class='underlined-mark line-green'>These birds have been observed bending straight pieces of wire to manufacture hooks</span><span class='annotation-sub text-green'>Clue for Q1 (crows behavior)</span></span>, which they subsequently use to retrieve food from narrow chambers.<br><br>In addition to tool-making, cognitive mapping has been observed in species of migratory birds. <span class='annotation-wrapper'><span class='underlined-mark line-blue'>The birds navigate thousands of miles with remarkable precision by mapping star clusters and the Earth's magnetic fields</span><span class='annotation-sub text-blue'>Clue for Q2 (navigation)</span></span>, adjusting their trajectory based on real-time weather anomalies.",
       "qas": [
         {
           "q": "What physical actions performed by New Caledonian crows demonstrate cognitive problem-solving?",
-          "a": "Manufacturing hooks by <b><u>bending straight wire</u></b> to retrieve food from chambers."
+          "a": "Manufacturing hooks by <b>bending straight wire</b> to retrieve food from chambers."
         },
         {
           "q": "What natural elements do migratory birds map to navigate accurately?",
-          "a": "<b><u>Star clusters</u></b> and the <b><u>Earth's magnetic fields</u></b>."
+          "a": "<b>Star clusters</b> and the <b>Earth's magnetic fields</b>."
         }
       ]
     },
     {
       "title": "Passage 2: The Pathophysiology of OCD",
-      "text": "Obsessive-compulsive disorder (OCD) is a clinically diagnosed anxiety disorder characterized by distressing and intrusive thoughts, known as obsessions. <u>To combat these excessive impulses, most OCD sufferers perform repetitive, time-consuming rituals (compulsions) that they believe will temporarily relieve their intense anxiety.</u> These rituals can include compulsive washing, meticulous checking, or repetitive counting.<br><br><u>Neurological research reveals that OCD is linked to communication malfunctions between the frontal lobe of the brain and the deeper basal ganglia.</u> Specifically, the brain's filtering mechanism fails to dismiss non-essential warning signals, causing the patient to experience an ongoing state of emergency.",
+      "text": "Obsessive-compulsive disorder (OCD) is a clinically diagnosed anxiety disorder characterized by distressing and intrusive thoughts, known as obsessions. <span class='annotation-wrapper'><span class='underlined-mark line-orange'>To combat these excessive impulses, most OCD sufferers perform repetitive, time-consuming rituals (compulsions) that they believe will temporarily relieve their intense anxiety.</span><span class='annotation-sub text-orange'>Clue for Q1 (compulsion purpose)</span></span> These rituals can include compulsive washing, meticulous checking, or repetitive counting.<br><br><span class='annotation-wrapper'><span class='underlined-mark line-green'>Neurological research reveals that OCD is linked to communication malfunctions between the frontal lobe of the brain and the deeper basal ganglia.</span><span class='annotation-sub text-green'>Clue for Q2 (brain regions)</span></span> Specifically, the brain's filtering mechanism fails to dismiss non-essential warning signals, causing the patient to experience an ongoing state of emergency.",
       "qas": [
         {
           "q": "According to the text, what is the primary purpose of compulsive rituals?",
-          "a": "To <b><u>temporarily relieve intense anxiety</u></b> caused by excessive thoughts or impulses."
+          "a": "To <b>temporarily relieve intense anxiety</b> caused by excessive thoughts or impulses."
         },
         {
           "q": "What specific brain areas have communication failures in OCD patients?",
-          "a": "The connection between the <b><u>frontal lobe</u></b> and the <b><u>basal ganglia</u></b>."
+          "a": "The connection between the <b>frontal lobe</b> and the <b>basal ganglia</b>."
         }
       ]
     },
     {
       "title": "Passage 3: Zulu Beadwork as a Form of Communication",
-      "text": "In the Zulu nation of Southern Africa, beadwork has long served as a primary medium for social communication and cultural expression. Historically, Zulu girls hand-crafted beadwork items for themselves, their peer groups, and the young men they admired. The elaborate colors and geometric layouts of the beads communicate specific messages regarding a person's marital status, intentions, and emotional feelings.<br><br>Geometric shapes act as a structured code. <u>For example, a single triangle with the apex pointing downward denotes an unmarried man.</u> Conversely, two triangles connected apex-to-apex in an hourglass shape symbolize a married man, while <u>married women wear beadwork featuring triangles forming a diamond shape.</u>",
+      "text": "In the Zulu nation of Southern Africa, beadwork has long served as a primary medium for social communication and cultural expression. Historically, Zulu girls hand-crafted beadwork items for themselves, their peer groups, and the young men they admired. The elaborate colors and geometric layouts of the beads communicate specific messages regarding a person's marital status, intentions, and emotional feelings.<br><br>Geometric shapes act as a structured code. <span class='annotation-wrapper'><span class='underlined-mark line-blue'>For example, a single triangle with the apex pointing downward denotes an unmarried man.</span><span class='annotation-sub text-blue'>Clue for Q1 (unmarried man symbol)</span></span> Conversely, two triangles connected apex-to-apex in an hourglass shape symbolize a married man, while married women wear beadwork featuring triangles forming a <span class='annotation-wrapper'><span class='underlined-mark line-green'>diamond shape.</span><span class='annotation-sub text-green'>Clue for Q2 (married woman symbol)</span></span>",
       "qas": [
         {
           "q": "What geometric symbol indicates that a Zulu man is unmarried?",
-          "a": "A single triangle with the <b><u>apex pointing downward</u></b>."
+          "a": "A single triangle with the <b>apex pointing downward</b>."
         },
         {
           "q": "Who historically crafted the beadwork items in Zulu society?",
-          "a": "<b><u>Zulu girls</u></b>."
+          "a": "<b>Zulu girls</b>."
         }
       ]
     },
     {
       "title": "Passage 4: The Trade & History of Glass Beads",
-      "text": "The history of KwaZulu-Natal was shaped by maritime trade networks. <u>Long before European explorers arrived in Southern Africa in 1497, Arab merchants had established trade routes along the east coast.</u> They traded glass beads manufactured in Egypt and India for <u>African gold, ivory, and skins.</u> Prior to the Arab traders, Phoenician mariners are believed to have introduced early glass cargoes to local ports.<br><br>When Portuguese explorer Vasco da Gama arrived on Christmas Day in 1497, he named the area Natal ('Christmas' in Portuguese). The subsequent influx of European trade beads altered traditional Zulu bead designs, as new colors and uniform sizes became widely accessible.",
+      "text": "The history of KwaZulu-Natal was shaped by maritime trade networks. <span class='annotation-wrapper'><span class='underlined-mark line-orange'>Long before European explorers arrived in Southern Africa in 1497, Arab merchants had established trade routes along the east coast.</span><span class='annotation-sub text-orange'>Clue for Q1 (historical timeline)</span></span> They traded glass beads manufactured in Egypt and India for <span class='annotation-wrapper'><span class='underlined-mark line-green'>African gold, ivory, and skins.</span><span class='annotation-sub text-green'>Clue for Q2 (trade commodities)</span></span> Prior to the Arab traders, Phoenician mariners are believed to have introduced early glass cargoes to local ports.<br><br>When Portuguese explorer Vasco da Gama arrived on Christmas Day in 1497, he named the area Natal ('Christmas' in Portuguese). The subsequent influx of European trade beads altered traditional Zulu bead designs, as new colors and uniform sizes became widely accessible.",
       "qas": [
         {
           "q": "According to the passage, when did European explorers first arrive in Natal?",
-          "a": "In <b><u>1497</u></b> (specifically on Christmas Day, led by Vasco da Gama)."
+          "a": "In <b>1497</b> (specifically on Christmas Day, led by Vasco da Gama)."
         },
         {
           "q": "What items did Arab merchants trade in exchange for glass beads?",
-          "a": "They exchanged glass beads for <b><u>gold, ivory, and animal skins</u></b>."
+          "a": "They exchanged glass beads for <b>gold, ivory, and animal skins</b>."
         }
       ]
     }
