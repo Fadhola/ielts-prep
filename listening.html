@@ -297,6 +297,32 @@
     background: rgba(255,255,255,0.03);
   }
 
+  /* Part Heading layout matches index.html */
+  .part-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 30px 0 12px;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 5px;
+    font-family: 'Courier New', monospace;
+  }
+  .part-num {
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 8px;
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 2px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .part-title {
+    font-size: 15.5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+  }
+
   /* Extra views styling */
   .passage-block {
     border: 1px solid var(--rule);
@@ -789,9 +815,8 @@ function toggleAnswer(event, btnEl) {
   btnEl.textContent = btnEl.classList.contains('open') ? 'Hide details' : 'Show details';
 }
 
-function renderSkillsList() {
-  const listEl = document.getElementById('skills-list');
-  listEl.innerHTML = SKILLS_DATA.map(s => {
+function renderGroup(data) {
+  return data.map(s => {
     const safeBody = escapeAttribute(s.note + ' ' + s.details);
     const itemsHtml = s.items.map((item, i) => `
       <li>
@@ -810,7 +835,7 @@ function renderSkillsList() {
       <div class="cue-card skill-card" data-title="${s.title.toLowerCase()}" data-body="${safeBody.toLowerCase()}">
         <div class="skill-card-head" onclick="toggleSkill(this)" style="cursor:pointer;">
           <div style="display:flex; align-items:center; gap:10px;">
-            <span class="skill-num">SKILL ${s.number}</span>
+            <span class="skill-num" style="background:var(--tab-3);">SKILL ${s.number}</span>
             <strong>${s.title}</strong>
           </div>
           <span class="caret">▶</span>
@@ -827,28 +852,50 @@ function renderSkillsList() {
       </div>
     `;
   }).join('');
-  
-  filterSkills();
 }
 
-function filterSkills() {
-  const query = document.getElementById('search').value.trim().toLowerCase();
-  let count = 0;
+function renderSkillsList() {
+  const listEl = document.getElementById('skills-list');
+  const mod = 'listening';
   
-  document.querySelectorAll('.skill-card').forEach(card => {
-    const title = card.getAttribute('data-title');
-    const body = card.getAttribute('data-body');
-    const match = !query || title.includes(query) || body.includes(query);
-    
-    if (match) {
-      card.classList.remove('hidden-by-search');
-      count++;
-    } else {
-      card.classList.add('hidden-by-search');
-    }
-  });
+  if (mod === 'writing') {
+    const p1 = SKILLS_DATA.filter(s => s.number >= 1 && s.number <= 7);
+    const p2 = SKILLS_DATA.filter(s => s.number >= 8 && s.number <= 14);
+    const p3 = SKILLS_DATA.filter(s => s.number >= 15 && s.number <= 20);
+    listEl.innerHTML = `
+      <div class="part-head"><span class="part-num" style="background:var(--tab-2);">PART 1</span><span class="part-title">Task 1 Academic (Skills 1-7)</span></div>
+      ${renderGroup(p1)}
+      <div class="part-head"><span class="part-num" style="background:var(--tab-1);">PART 2</span><span class="part-title">Task 1 General Training (Skills 8-14)</span></div>
+      ${renderGroup(p2)}
+      <div class="part-head"><span class="part-num" style="background:var(--tab-3);">PART 3</span><span class="part-title">Task 2 Essay (Skills 15-20)</span></div>
+      ${renderGroup(p3)}
+    `;
+  } else if (mod === 'reading') {
+    const p1 = SKILLS_DATA.filter(s => s.number >= 1 && s.number <= 5);
+    const p2 = SKILLS_DATA.filter(s => s.number >= 6 && s.number <= 10);
+    listEl.innerHTML = `
+      <div class="part-head"><span class="part-num" style="background:var(--tab-2);">PART 1</span><span class="part-title">Academic & General Training (Skills 1-5)</span></div>
+      ${renderGroup(p1)}
+      <div class="part-head"><span class="part-num" style="background:var(--tab-1);">PART 2</span><span class="part-title">General Training Sections (Skills 6-10)</span></div>
+      ${renderGroup(p2)}
+    `;
+  } else if (mod === 'listening') {
+    const p1 = SKILLS_DATA.filter(s => s.number >= 1 && s.number <= 4);
+    const p2 = SKILLS_DATA.filter(s => s.number >= 5 && s.number <= 8);
+    const p3 = SKILLS_DATA.filter(s => s.number >= 9 && s.number <= 14);
+    listEl.innerHTML = `
+      <div class="part-head"><span class="part-num" style="background:var(--tab-2);">PART 1</span><span class="part-title">Sound, Numbers & Letters (Skills 1-4)</span></div>
+      ${renderGroup(p1)}
+      <div class="part-head"><span class="part-num" style="background:var(--tab-1);">PART 2</span><span class="part-title">Practical Cues & Synonyms (Skills 5-8)</span></div>
+      ${renderGroup(p2)}
+      <div class="part-head"><span class="part-num" style="background:var(--tab-3);">PART 3</span><span class="part-title">Advanced Context & Chronology (Skills 9-14)</span></div>
+      ${renderGroup(p3)}
+    `;
+  } else {
+    listEl.innerHTML = renderGroup(SKILLS_DATA);
+  }
   
-  document.getElementById('count').textContent = `${count} skills shown`;
+  filterSkills();
 }
 
 // Initial load
