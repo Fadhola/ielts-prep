@@ -416,6 +416,24 @@
   .annotation-sub.text-green { color: var(--tab-2); }
   .annotation-sub.text-blue { color: var(--tab-3); }
 
+  /* Band Toggle Buttons */
+  .band-toggle-btn {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    color: var(--ink-soft);
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+  }
+  .band-toggle-btn.active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
   @media (max-width: 600px){
     body{padding:72px 12px 60px;}
     h1{font-size:26px;}
@@ -553,35 +571,6 @@
         
     </div>
     
-    <div class="passage-block">
-      <div class="passage-title">Passage 4: The Trade & History of Glass Beads</div>
-      <div class="passage-text">The history of KwaZulu-Natal was shaped by maritime trade networks. <span class='annotation-wrapper'><span class='underlined-mark line-orange'>Long before European explorers arrived in Southern Africa in 1497, Arab merchants had established trade routes along the east coast.</span><span class='annotation-sub text-orange'>Clue for Q1 (historical timeline)</span></span> They traded glass beads manufactured in Egypt and India for <span class='annotation-wrapper'><span class='underlined-mark line-green'>African gold, ivory, and skins.</span><span class='annotation-sub text-green'>Clue for Q2 (trade commodities)</span></span> Prior to the Arab traders, Phoenician mariners are believed to have introduced early glass cargoes to local ports.<br><br>When Portuguese explorer Vasco da Gama arrived on Christmas Day in 1497, he named the area Natal ('Christmas' in Portuguese). The subsequent influx of European trade beads altered traditional Zulu bead designs, as new colors and uniform sizes became widely accessible.</div>
-      <div style="font-family:'Courier New', monospace; font-size:11px; text-transform:uppercase; color:var(--ink-soft); margin-bottom:12px; font-weight:bold;">Questions &amp; Answers</div>
-      
-        <div style="margin-bottom: 12px; border-bottom: 1px dashed var(--rule); padding-bottom: 8px;">
-          <div class="qa-row">
-            <span class="qa-q"><b>Q: According to the passage, when did European explorers first arrive in Natal?</b></span>
-            <button class="ans-toggle" onclick="toggleAnswer(event, this)">Show details</button>
-          </div>
-          <div class="ans-box">
-            <span class="ex-label">Answer Explanation</span>
-            <div>In <b>1497</b> (specifically on Christmas Day, led by Vasco da Gama).</div>
-          </div>
-        </div>
-        
-        <div style="margin-bottom: 12px; border-bottom: 1px dashed var(--rule); padding-bottom: 8px;">
-          <div class="qa-row">
-            <span class="qa-q"><b>Q: What items did Arab merchants trade in exchange for glass beads?</b></span>
-            <button class="ans-toggle" onclick="toggleAnswer(event, this)">Show details</button>
-          </div>
-          <div class="ans-box">
-            <span class="ex-label">Answer Explanation</span>
-            <div>They exchanged glass beads for <b>gold, ivory, and animal skins</b>.</div>
-          </div>
-        </div>
-        
-    </div>
-    
   </div>
 
   <!-- VIEW 3: EXTRA 3 (Vocabulary or Samples) -->
@@ -628,36 +617,6 @@
         <td>Red and blue are the predominant colors in Zulu beadwork indicating affection.</td>
       </tr>
     
-      <tr>
-        <td><b>alleviate</b> (Verb)</td>
-        <td><i>meredakan / meringankan</i></td>
-        <td>Rituals performed by OCD patients temporarily alleviate their spike in anxiety.</td>
-      </tr>
-    
-      <tr>
-        <td><b>scrutiny</b> (Noun)</td>
-        <td><i>pemeriksaan cermat / teliti</i></td>
-        <td>Scientific theories regarding avian cognitive mapping must undergo rigorous peer scrutiny.</td>
-      </tr>
-    
-      <tr>
-        <td><b>subsequent</b> (Adjective)</td>
-        <td><i>berikutnya / sesudah itu</i></td>
-        <td>The initial experiment failed, but subsequent trials proved highly successful.</td>
-      </tr>
-    
-      <tr>
-        <td><b>empirical</b> (Adjective)</td>
-        <td><i>empiris / berdasarkan bukti</i></td>
-        <td>Researchers require empirical evidence rather than assumptions to validate cognitive claims.</td>
-      </tr>
-    
-      <tr>
-        <td><b>deviate</b> (Verb)</td>
-        <td><i>menyimpang</i></td>
-        <td>Migratory birds rarely deviate from their traditional seasonal flight paths.</td>
-      </tr>
-    
     </tbody>
   </table>
 </div>
@@ -675,7 +634,7 @@ const SKILLS_DATA = [
     "number": 1,
     "title": "Using the First Paragraph to Make Predictions",
     "note": "Protects Reading Speed & Comprehension. Skim the introductory paragraph to identify the thesis statement and predict the passage theme.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Always read the first paragraph (introduction) first. It introduces the main topic and context of the passage.</li>\n          <li>Locate the <b>Thesis Statement</b>\u2014usually the first or last sentence of the introduction\u2014which states the main point of the entire text.</li>\n          <li>Use this thesis to predict the overall layout, content, and arguments that will follow in the body paragraphs.</li>\n        </ul>\n        <b>Key Vocabulary & Patterns:</b>\n        <table>\n          <tr>\n            <th>English Pattern</th>\n            <th>Type / Role</th>\n            <th>Arti (Indonesian)</th>\n            <th>Usage Context &amp; Explanation</th>\n          </tr>\n          <tr>\n            <td><b>thesis statement</b></td>\n            <td>Noun Phrase</td>\n            <td>pernyataan tesis / ide pokok</td>\n            <td>Kalimat kunci yang merangkum inti seluruh bacaan. Biasanya ada di akhir paragraf pertama.</td>\n          </tr>\n          <tr>\n            <td><b>make predictions</b></td>\n            <td>Verb Phrase</td>\n            <td>membuat prediksi / perkiraan</td>\n            <td>Menebak isi paragraf berikutnya berdasarkan kalimat pengantar untuk menghemat waktu baca.</td>\n          </tr>\n          <tr>\n            <td><b>introductory paragraph</b></td>\n            <td>Noun Phrase</td>\n            <td>paragraf pembuka / pengantar</td>\n            <td>Paragraf pertama yang membangun latar belakang topik (background context).</td>\n          </tr>\n        </table>\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Always read the first paragraph (introduction) first. It introduces the main topic and context of the passage.</li>\n          <li>Locate the <b>Thesis Statement</b>\u2014usually the first or last sentence of the introduction\u2014which states the main point of the entire text.</li>\n          <li>Use this thesis to predict the overall layout, content, and arguments that will follow in the body paragraphs.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Identify the thesis statement: 'Observations of different species of birds, both in the wild and in captivity, have shown a great deal of evidence of high levels of avian intelligence.' What is the predicted topic?",
@@ -936,6 +895,8 @@ function renderSkillsList() {
 
 // Initial load
 renderSkillsList();
+
+
 </script>
 </body>
 </html>

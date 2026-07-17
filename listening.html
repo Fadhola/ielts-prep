@@ -416,6 +416,24 @@
   .annotation-sub.text-green { color: var(--tab-2); }
   .annotation-sub.text-blue { color: var(--tab-3); }
 
+  /* Band Toggle Buttons */
+  .band-toggle-btn {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    color: var(--ink-soft);
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+  }
+  .band-toggle-btn.active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
   @media (max-width: 600px){
     body{padding:72px 12px 60px;}
     h1{font-size:26px;}
@@ -482,22 +500,6 @@
       <div class="tip" style="margin-top: 12px;">Relative Directions: Printing office is across from grocery store. Locker area is next to the printing office. Schedule: Closed Wednesday mornings.</div>
     </div>
     
-    <div class="passage-block">
-      <div class="passage-title">Part 3 Group Discussion: Final Thesis Project Outline</div>
-      <div class="passage-text" style="font-family: 'Courier New', monospace; font-size: 13.5px; background: rgba(0,0,0,0.02); padding: 12px; border-left: 2px solid var(--tab-3); line-height: 1.85;">
-        <b>Professor:</b> So, Sarah, how is your final biology project coming along? You look a bit nervous.<br><b>Sarah:</b> (Sighs) Well, I was <span class='annotation-wrapper'><span class='underlined-mark line-orange'>extremely anxious</span><span class='annotation-sub text-orange'>Initial emotional state</span></span> when I began reading the guidelines last week. But after discussing it with Tom, I feel much more <span class='annotation-wrapper'><span class='underlined-mark line-green'>relieved.</span><span class='annotation-sub text-green'>Current emotional state</span></span> My study compares the behavior of crows and chimps.<br><b>Professor:</b> Excellent. Remember, chimps are highly social, whereas crows are more solitary tool-users. Your project must classify the behaviors into three categories: <span class='annotation-wrapper'><span class='underlined-mark line-blue'>tool manufacturing</span><span class='annotation-sub text-blue'>Classification Category 1</span></span>, <span class='annotation-wrapper'><span class='underlined-mark line-green'>communication signals</span><span class='annotation-sub text-green'>Classification Category 2</span></span>, and nesting styles.
-      </div>
-      <div class="tip" style="margin-top: 12px;">Emotions: Initially anxious, now relieved. Contrast: Chimps are social whereas crows are solitary. Classification categories: Tool manufacturing, communication signals, and nesting styles.</div>
-    </div>
-    
-    <div class="passage-block">
-      <div class="passage-title">Part 4 Lecture: The Evolution of Hunter-Gatherer Societies</div>
-      <div class="passage-text" style="font-family: 'Courier New', monospace; font-size: 13.5px; background: rgba(0,0,0,0.02); padding: 12px; border-left: 2px solid var(--tab-3); line-height: 1.85;">
-        <b>Lecturer:</b> Good afternoon. Today we examine early social structures. <span class='annotation-wrapper'><span class='underlined-mark line-orange'>Initially</span><span class='annotation-sub text-orange'>First time sequence point</span></span>, humans survived as nomadic bands, traveling constantly to follow migrating herds. <span class='annotation-wrapper'><span class='underlined-mark line-green'>Subsequently</span><span class='annotation-sub text-green'>Second time sequence point</span></span>, with the discovery of grain storage, they established sedentary settlements. <span class='annotation-wrapper'><span class='underlined-mark line-blue'>As a result of</span><span class='annotation-sub text-blue'>Cause-and-effect link</span></span> this sedentary transition, populations grew rapidly, leading to the rise of specialized labor and social hierarchies that replaced the original egalitarian system.
-      </div>
-      <div class="tip" style="margin-top: 12px;">Chronology Order: Nomadic bands -> Grain storage discovery -> Sedentary settlements. Cause-and-Effect: Sedentary transition caused population growth, leading to hierarchies.</div>
-    </div>
-    
   </div>
 
   <!-- VIEW 3: EXTRA 3 (Vocabulary or Samples) -->
@@ -530,48 +532,6 @@
         <td><b>laundromat</b> (Noun)</td>
         <td><i>binatu otomatis / tempat cuci umum</i></td>
         <td>Since the flat lacks laundry hookups, I use the local laundromat down the block.</td>
-      </tr>
-    
-      <tr>
-        <td><b>nomadic</b> (Adjective)</td>
-        <td><i>nomaden / berkelana</i></td>
-        <td>Nomadic tribes migrated constantly to seek fresh water and pasture.</td>
-      </tr>
-    
-      <tr>
-        <td><b>sedentary</b> (Adjective)</td>
-        <td><i>menetap</i></td>
-        <td>Developing agriculture allowed humans to abandon a nomadic life for a sedentary one.</td>
-      </tr>
-    
-      <tr>
-        <td><b>syllabus</b> (Noun)</td>
-        <td><i>silabus / rancangan studi</i></td>
-        <td>The professor handed out the course syllabus detailing the weekly readings.</td>
-      </tr>
-    
-      <tr>
-        <td><b>auditorium</b> (Noun)</td>
-        <td><i>auditorium / aula besar</i></td>
-        <td>The orientation lecture will be held in the main university auditorium at 9:00 a.m.</td>
-      </tr>
-    
-      <tr>
-        <td><b>hesitation</b> (Noun)</td>
-        <td><i>keragu-raguan</i></td>
-        <td>Any hesitation or long pause in your speech will lower your fluency band score.</td>
-      </tr>
-    
-      <tr>
-        <td><b>pitch</b> (Noun)</td>
-        <td><i>tinggi rendah suara / nada</i></td>
-        <td>Varying your vocal pitch helps convey enthusiasm and emotion clearly.</td>
-      </tr>
-    
-      <tr>
-        <td><b>registration</b> (Noun)</td>
-        <td><i>pendaftaran / registrasi</i></td>
-        <td>The registration desk is located on the ground floor of the administration building.</td>
       </tr>
     
     </tbody>
@@ -900,6 +860,8 @@ function renderSkillsList() {
 
 // Initial load
 renderSkillsList();
+
+
 </script>
 </body>
 </html>

@@ -416,6 +416,24 @@
   .annotation-sub.text-green { color: var(--tab-2); }
   .annotation-sub.text-blue { color: var(--tab-3); }
 
+  /* Band Toggle Buttons */
+  .band-toggle-btn {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    color: var(--ink-soft);
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+  }
+  .band-toggle-btn.active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
   @media (max-width: 600px){
     body{padding:72px 12px 60px;}
     h1{font-size:26px;}
@@ -451,7 +469,7 @@
   <div class="view-switch">
     <button class="view-btn active" data-view="skills">Writing Skills</button>
     <button class="view-btn" data-view="extra_2">Essay Outline Templates</button>
-    <button class="view-btn" data-view="extra_3">Band 9 Sample Essays</button>
+    <button class="view-btn" data-view="extra_3">Model Essays (Bands 6.5 - 9.0)</button>
   </div>
 
   <!-- VIEW 1: SKILLS GUIDE -->
@@ -466,9 +484,42 @@
   <!-- VIEW 2: EXTRA 2 (Passages, Transcripts, or Templates) -->
   <div id="view-extra_2" class="section-view">
     
+<div class="passage-block">
+  <div class="passage-title" style="margin-bottom: 4px;">Interactive Essay Construction Kit</div>
+  <div style="font-size: 13px; font-style: italic; color: var(--ink-soft); margin-bottom: 16px;">
+    Pilih jenis esai, tentukan topik latihan, lalu navigasikan langkah esai untuk melihat konstruksi paragraf Band 9 secara dinamis.
+  </div>
+
+  <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+    <button class="tab-btn active" id="btn-t-1" onclick="selectBuilderTemplate('agree_disagree')">Opinion (Agree/Disagree)</button>
+    <button class="tab-btn" id="btn-t-2" onclick="selectBuilderTemplate('discussion')">Discussion (Both Views)</button>
+  </div>
+
+  <div style="margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+    <span style="font-family: 'Courier New', monospace; font-size: 12px; font-weight: bold;">Latihan Topik:</span>
+    <select id="template-topic-selector" onchange="changeBuilderTopic()" style="font-family: 'Courier New', monospace; font-size: 12px; padding: 6px 10px; background: var(--card); border: 1px solid var(--rule); color: var(--ink); border-radius: 3px;">
+      <option value="education">Pendidikan — Free University Tuition</option>
+      <option value="technology">Teknologi — AI Workflow Integration</option>
+      <option value="environment">Lingkungan — Carbon Tax on Corporations</option>
+    </select>
+  </div>
+
+  <div style="display: flex; gap: 6px; border-bottom: 1px solid var(--rule); padding-bottom: 8px; margin-bottom: 16px;">
+    <button class="tab-btn active" style="flex:1;" id="step-btn-intro" onclick="changeBuilderStep('intro')">1. Introduction</button>
+    <button class="tab-btn" style="flex:1;" id="step-btn-body1" onclick="changeBuilderStep('body1')">2. Body 1</button>
+    <button class="tab-btn" style="flex:1;" id="step-btn-body2" onclick="changeBuilderStep('body2')">3. Body 2</button>
+    <button class="tab-btn" style="flex:1;" id="step-btn-conclusion" onclick="changeBuilderStep('conclusion')">4. Conclusion</button>
+  </div>
+
+  <div style="background: rgba(0,0,0,0.02); border-left: 3px solid var(--tab-2); padding: 16px; border-radius: 4px; min-height: 110px; transition: all 0.3s ease;">
+    <div id="builder-step-title" style="font-family: 'Courier New', monospace; font-size: 10px; font-weight: bold; text-transform: uppercase; color: var(--tab-2); margin-bottom: 8px;">1. INTRODUCTION (Thesis & Background)</div>
+    <div id="builder-preview-text" style="font-size: 14.5px; line-height: 1.7; font-family: 'Georgia', serif;">Select a topic to start previewing...</div>
+  </div>
+</div>
+
     <div class="passage-block">
-      <div class="passage-title">Template 1: Agree / Disagree (Opinion) Essay Outline</div>
-      <div class="passage-text" style="line-height: 1.7;">
+      <div class="passage-title" style="font-size:16px;">Template 1: Agree / Disagree (Opinion) Essay Outline</div>
+      <div class="passage-text" style="line-height: 1.7; font-size:13.5px;">
         
         <b>Introduction:</b><br>
         1. <i>Paraphrase Statement:</i> State the controversial topic in your own words (e.g., 'Some assert that...').<br>
@@ -491,8 +542,8 @@
     </div>
     
     <div class="passage-block">
-      <div class="passage-title">Template 2: Discussion (Discuss Both Views + Opinion) Outline</div>
-      <div class="passage-text" style="line-height: 1.7;">
+      <div class="passage-title" style="font-size:16px;">Template 2: Discussion (Discuss Both Views + Opinion) Outline</div>
+      <div class="passage-text" style="line-height: 1.7; font-size:13.5px;">
         
         <b>Introduction:</b><br>
         1. <i>Paraphrase Statement:</i> Acknowledge that people have differing views on the topic.<br>
@@ -512,8 +563,8 @@
     </div>
     
     <div class="passage-block">
-      <div class="passage-title">Template 3: Task 1 Academic Line Graph / Chart Report</div>
-      <div class="passage-text" style="line-height: 1.7;">
+      <div class="passage-title" style="font-size:16px;">Template 3: Task 1 Academic Line Graph / Chart Report</div>
+      <div class="passage-text" style="line-height: 1.7; font-size:13.5px;">
         
         <b>Paragraph 1: Introduction</b><br>
         - <i>Sentence:</i> Paraphrase the graph prompt (e.g., 'The line graph depicts the volume of... between [Year] and [Year] in [Location].'). Include units.<br><br>
@@ -529,8 +580,8 @@
     </div>
     
     <div class="passage-block">
-      <div class="passage-title">Template 4: Task 1 GT Formal Complaint Letter Layout</div>
-      <div class="passage-text" style="line-height: 1.7;">
+      <div class="passage-title" style="font-size:16px;">Template 4: Task 1 GT Formal Complaint Letter Layout</div>
+      <div class="passage-text" style="line-height: 1.7; font-size:13.5px;">
         
         <b>Salutation:</b> Dear Sir or Madam, (or Dear Mr./Ms. [Surname] if known)<br><br>
         <b>Paragraph 1: Purpose of the letter</b><br>
@@ -552,72 +603,109 @@
   <!-- VIEW 3: EXTRA 3 (Vocabulary or Samples) -->
   <div id="view-extra_3" class="section-view">
     
-    <div class="passage-block">
-      <div class="passage-title">Sample 1 (Task 2): Discussion Essay - Free University Tuition</div>
-      <div style="font-size: 13px; font-family: 'Courier New', monospace; margin-bottom: 8px; color: var(--ink-soft);">PROMPT: Some people think that university education should be free for all students. Discuss both views and give your opinion.</div>
-      <div class="passage-text" style="font-style: italic; background: rgba(0,0,0,0.01); padding: 12px; border-left: 2px solid var(--tab-2); line-height: 1.85;">
-        It is often argued whether higher education should be fully funded by governments or paid for by the students themselves. In my opinion, while tertiary education is expensive, making it free is crucial for social mobility and economic development.<br><br><span class='annotation-wrapper'><span class='underlined-mark line-orange'>On the one hand</span><span class='annotation-sub text-orange'>Paragraph transition view A</span></span>, tuition fees ensure that universities are well-funded. When students pay, institutions have more capital to invest in top-tier research facilities and recruit high-quality professors. For instance, in countries with high tuition like the US, universities dominate global research rankings. <span class='annotation-wrapper'><span class='underlined-mark line-green'>However</span><span class='annotation-sub text-green'>Concession contrast connector</span></span>, this system excludes talented low-income youth.<br><br><span class='annotation-wrapper'><span class='underlined-mark line-blue'>On the other hand</span><span class='annotation-sub text-blue'>Paragraph transition view B</span></span>, free university education promotes equal opportunity. If access depends solely on academic merit rather than financial wealth, society benefits from a highly skilled workforce. For example, Scandinavian countries offer free tuition and have high levels of innovation. <span class='annotation-wrapper'><span class='underlined-mark line-orange'>To sum up</span><span class='annotation-sub text-orange'>Conclusion signpost</span></span>, I believe that university education should be free, as the long-term societal and economic benefits far outweigh the funding costs.
+    <div class="passage-block" id="sample-block-0">
+      <div class="passage-title">Sample 1 (Task 2 Essay): Free University Tuition</div>
+      <div style="font-size: 13px; font-family: 'Courier New', monospace; margin-bottom: 8px; color: var(--ink-soft); line-height: 1.4;">PROMPT: Some people think that university education should be free for all students. Discuss both views and give your opinion.</div>
+      
+      <!-- Band Selector buttons -->
+      <div style="display: flex; gap: 6px; margin: 12px 0 16px 0; background: rgba(0,0,0,0.03); padding: 4px; border-radius: 4px; width: fit-content;">
+        <button class="band-toggle-btn active" onclick="switchEssayBand(this, 0, '9.0')">Band 9.0 (Expert)</button>
+        <button class="band-toggle-btn" onclick="switchEssayBand(this, 0, '7.5')">Band 7.5 (Good)</button>
+        <button class="band-toggle-btn" onclick="switchEssayBand(this, 0, '6.5')">Band 6.5 (Average)</button>
       </div>
-      <div class="tip" style="border-left-color: var(--tab-2); color: var(--good);"><b>Band 9.0 Evaluation & Analysis:</b><br><ul><li><b>Task Response:</b> Completely addresses both sides of the argument and gives a clear opinion. Ideas are fully developed with examples.</li><li><b>Coherence & Cohesion:</b> Paragraphs flow logically. Uses transition markers (*On the one hand, Conversely, For instance, To sum up*) effectively.</li><li><b>Lexical Resource:</b> High-quality vocabulary used accurately (*tertiary education, social mobility, academic merit, innovate*).</li><li><b>Grammar:</b> Error-free range of structures including conditionals and relative clauses.</li></ul></div>
+
+      <div class="passage-text essay-text-content" style="font-style: italic; background: rgba(0,0,0,0.01); padding: 14px; border-left: 3px solid var(--tab-2); line-height: 1.85;">
+        It is often argued whether higher education should be fully funded by governments or paid for by the students themselves. In my opinion, while tertiary education is expensive, making it free is crucial for social mobility and economic development.<br><br><span class='annotation-wrapper'><span class='underlined-mark line-orange'>On the one hand</span><span class='annotation-sub text-orange'>Cohesive paragraph transition</span></span>, tuition fees ensure that universities are well-funded. When students pay, institutions have more capital to invest in top-tier research facilities and recruit high-quality professors. For instance, in countries with high tuition like the US, universities dominate global research rankings. <span class='annotation-wrapper'><span class='underlined-mark line-green'>However, this fee-paying system inevitably excludes talented low-income youth</span><span class='annotation-sub text-green'>Sophisticated argument contrast</span></span>, perpetuating social inequality.<br><br><span class='annotation-wrapper'><span class='underlined-mark line-blue'>On the other hand</span><span class='annotation-sub text-blue'>Cohesive paragraph contrast</span></span>, free university education promotes equal opportunity. If access depends solely on academic merit rather than financial wealth, society benefits from a highly skilled workforce. For example, Scandinavian countries offer free tuition and have high levels of innovation. <span class='annotation-wrapper'><span class='underlined-mark line-orange'>To sum up</span><span class='annotation-sub text-orange'>Formal conclusion signpost</span></span>, I believe that university education should be free, as the long-term societal and economic benefits far outweigh the funding costs.
+      </div>
+      
+      <div class="tip essay-commentary-content" style="border-left-color: var(--tab-2); color: var(--good); margin-top: 16px; padding: 10px 12px; font-size:13px; line-height:1.6;">
+        <b>Band 9.0 Evaluation & Feedback:</b><br><ul><li><b>Task Response:</b> Flawless task coverage. Position is fully developed and sustained throughout the essay.</li><li><b>Coherence & Cohesion:</b> Natural, seamless flow. Linking words are sophisticated and never feel forced.</li><li><b>Lexical Resource:</b> Excellent lexical range (*perpetuating, tertiary education, social mobility, merit-based*).</li><li><b>Grammar:</b> Highly varied sentence structures showing full flexibility and precision.</li></ul>
+      </div>
     </div>
     
-    <div class="passage-block">
-      <div class="passage-title">Sample 2 (Task 1 Academic): Bar Chart Report - Pupil Expenditures</div>
-      <div style="font-size: 13px; font-family: 'Courier New', monospace; margin-bottom: 8px; color: var(--ink-soft);">PROMPT: The bar chart compares the average annual expenditure per pupil in three different school levels in the UK between 2000 and 2015.<br>
+    <div class="passage-block" id="sample-block-1">
+      <div class="passage-title">Sample 2 (Task 1 Academic): Line Graph - Meat & Fish Consumption</div>
+      <div style="font-size: 13px; font-family: 'Courier New', monospace; margin-bottom: 8px; color: var(--ink-soft); line-height: 1.4;">PROMPT: The line graph shows the weekly consumption of fish and different kinds of meat in a European country between 1979 and 2004.<br>
 <div style='max-width: 480px; margin: 16px auto; background: var(--card); border: 1px solid var(--rule); padding: 16px; border-radius: 4px; transition: background-color 0.3s ease, border-color 0.3s ease;'>
   <div style='font-family: "Courier New", monospace; font-size: 11px; font-weight: bold; text-align: center; margin-bottom: 12px; color: var(--ink);'>
-    Average Annual Spending per Pupil (£) in the UK
+    UK Meat &amp; Fish Consumption (grams per person per week)
   </div>
-  <svg viewBox='0 0 400 220' style='width: 100%; height: auto;'>
+  <svg viewBox='0 0 400 240' style='width: 100%; height: auto;'>
     <line x1='40' y1='30' x2='380' y2='30' stroke='var(--rule)' stroke-dasharray='3,3' />
     <line x1='40' y1='80' x2='380' y2='80' stroke='var(--rule)' stroke-dasharray='3,3' />
     <line x1='40' y1='130' x2='380' y2='130' stroke='var(--rule)' stroke-dasharray='3,3' />
-    <line x1='40' y1='180' x2='380' y2='180' stroke='var(--rule)' stroke-width='1.5' />
+    <line x1='40' y1='180' x2='380' y2='180' stroke='var(--rule)' stroke-dasharray='3,3' />
+    <line x1='40' y1='210' x2='380' y2='210' stroke='var(--rule)' stroke-width='1.5' />
     
-    <text x='35' y='34' font-family='Courier New' font-size='9' text-anchor='end' fill='var(--ink-soft)'>8,000</text>
-    <text x='35' y='84' font-family='Courier New' font-size='9' text-anchor='end' fill='var(--ink-soft)'>5,000</text>
-    <text x='35' y='134' font-family='Courier New' font-size='9' text-anchor='end' fill='var(--ink-soft)'>3,000</text>
-    <text x='35' y='184' font-family='Courier New' font-size='9' text-anchor='end' fill='var(--ink-soft)'>0</text>
+    <text x='35' y='34' font-family='Courier New' font-size='9' text-anchor='end' fill='var(--ink-soft)'>250</text>
+    <text x='35' y='84' font-family='Courier New' font-size='9' text-anchor='end' fill='var(--ink-soft)'>200</text>
+    <text x='35' y='134' font-family='Courier New' font-size='9' text-anchor='end' fill='var(--ink-soft)'>150</text>
+    <text x='35' y='184' font-family='Courier New' font-size='9' text-anchor='end' fill='var(--ink-soft)'>100</text>
+    <text x='35' y='214' font-family='Courier New' font-size='9' text-anchor='end' fill='var(--ink-soft)'>50</text>
     
-    <!-- Primary (Green) -->
-    <rect x='60' y='150' width='14' height='30' fill='var(--tab-2)' />
-    <rect x='76' y='140' width='14' height='40' fill='var(--tab-2)' opacity='0.8' />
-    <rect x='92' y='135' width='14' height='45' fill='var(--tab-2)' opacity='0.6' />
+    <text x='50' y='226' font-family='Courier New' font-size='9' text-anchor='middle' fill='var(--ink-soft)'>1979</text>
+    <text x='110' y='226' font-family='Courier New' font-size='9' text-anchor='middle' fill='var(--ink-soft)'>1984</text>
+    <text x='170' y='226' font-family='Courier New' font-size='9' text-anchor='middle' fill='var(--ink-soft)'>1989</text>
+    <text x='230' y='226' font-family='Courier New' font-size='9' text-anchor='middle' fill='var(--ink-soft)'>1994</text>
+    <text x='290' y='226' font-family='Courier New' font-size='9' text-anchor='middle' fill='var(--ink-soft)'>1999</text>
+    <text x='350' y='226' font-family='Courier New' font-size='9' text-anchor='middle' fill='var(--ink-soft)'>2004</text>
     
-    <!-- Secondary (Orange) -->
-    <rect x='160' y='130' width='14' height='50' fill='var(--tab-1)' />
-    <rect x='176' y='112' width='14' height='68' fill='var(--tab-1)' opacity='0.8' />
-    <rect x='192' y='115' width='14' height='65' fill='var(--tab-1)' opacity='0.6' />
+    <!-- Beef Line (Orange) -->
+    <path d='M 50 57 L 110 84 L 170 111 L 230 142.5 L 290 156 L 350 165' fill='none' stroke='var(--tab-1)' stroke-width='2.5' />
     
-    <!-- Tertiary (Blue) -->
-    <rect x='260' y='120' width='14' height='60' fill='var(--tab-3)' />
-    <rect x='276' y='132' width='14' height='48' fill='var(--tab-3)' opacity='0.8' />
-    <rect x='292' y='128' width='14' height='52' fill='var(--tab-3)' opacity='0.6' />
+    <!-- Chicken Line (Green) -->
+    <path d='M 50 124.5 L 110 111 L 170 75 L 230 48 L 290 39 L 350 30' fill='none' stroke='var(--tab-2)' stroke-width='2.5' />
     
-    <text x='76' y='196' font-family='Courier New' font-size='9' text-anchor='middle' fill='var(--ink)'>Primary</text>
-    <text x='176' y='196' font-family='Courier New' font-size='9' text-anchor='middle' fill='var(--ink)'>Secondary</text>
-    <text x='292' y='196' font-family='Courier New' font-size='9' text-anchor='middle' fill='var(--ink)'>Tertiary</text>
+    <!-- Pork Line (Blue) -->
+    <path d='M 50 187.5 L 110 178.5 L 170 174 L 230 184.8 L 290 190.2 L 350 187.5' fill='none' stroke='var(--tab-3)' stroke-width='2.5' />
+    
+    <!-- Fish Line (Dotted Gray) -->
+    <path d='M 50 205.5 L 110 208.2 L 170 210 L 230 211.8 L 290 210.9 L 350 211.8' fill='none' stroke='var(--ink-soft)' stroke-dasharray='4,2' stroke-width='2' />
   </svg>
-  <div style='display: flex; justify-content: center; gap: 16px; margin-top: 8px; font-family: "Courier New", monospace; font-size: 10px;'>
-    <div style='display: flex; align-items: center; gap: 4px;'><span style='display: inline-block; width: 10px; height: 10px; background: var(--tab-2);'></span> 2000</div>
-    <div style='display: flex; align-items: center; gap: 4px;'><span style='display: inline-block; width: 10px; height: 10px; background: var(--tab-2); opacity: 0.8;'></span> 2010</div>
-    <div style='display: flex; align-items: center; gap: 4px;'><span style='display: inline-block; width: 10px; height: 10px; background: var(--tab-2); opacity: 0.6;'></span> 2015</div>
+  
+  <div style='display: flex; justify-content: center; gap: 12px; margin-top: 10px; font-family: "Courier New", monospace; font-size: 10px; flex-wrap: wrap;'>
+    <div style='display: flex; align-items: center; gap: 4px;'><span style='display: inline-block; width: 12px; height: 3px; background: var(--tab-1);'></span> Beef</div>
+    <div style='display: flex; align-items: center; gap: 4px;'><span style='display: inline-block; width: 12px; height: 3px; background: var(--tab-2);'></span> Chicken</div>
+    <div style='display: flex; align-items: center; gap: 4px;'><span style='display: inline-block; width: 12px; height: 3px; background: var(--tab-3);'></span> Pork</div>
+    <div style='display: flex; align-items: center; gap: 4px;'><span style='display: inline-block; width: 12px; height: 3px; border-bottom: 2px dashed var(--ink-soft);'></span> Fish</div>
   </div>
 </div>
 </div>
-      <div class="passage-text" style="font-style: italic; background: rgba(0,0,0,0.01); padding: 12px; border-left: 2px solid var(--tab-2); line-height: 1.85;">
-        The bar chart illustrates the average annual spending per student across primary, secondary, and tertiary levels of education in the United Kingdom over a fifteen-year period from 2000 to 2015.<br><br><span class='annotation-wrapper'><span class='underlined-mark line-orange'>Overall</span><span class='annotation-sub text-orange'>Overview signpost</span></span>, it is clear that secondary schools received the highest funding per pupil throughout the entire period, while primary schools consistently received the lowest. Additionally, expenditures for primary and secondary education experienced overall growth, whereas spending on tertiary education declined.<br><br>Regarding primary education, average spending <span class='annotation-wrapper'><span class='underlined-mark line-green'>stood at</span><span class='annotation-sub text-green'>Preposition for static figure</span></span> £3,000 per pupil in 2000, <span class='annotation-wrapper'><span class='underlined-mark line-blue'>before rising steadily to reach</span><span class='annotation-sub text-blue'>Describes progressive upward change</span></span> £4,500 in 2015. Similarly, funding for secondary school pupils climbed from £5,000 in 2000 to peak at £6,800 in 2010, before leveling off at £6,500 at the end of the period.<br><br><span class='annotation-wrapper'><span class='underlined-mark line-orange'>In contrast</span><span class='annotation-sub text-orange'>Contrast transition link</span></span>, tertiary education saw a different trend. Spending initially stood at £6,000 per student in 2000, which was higher than primary levels. <span class='annotation-wrapper'><span class='underlined-mark line-green'>However</span><span class='annotation-sub text-green'>Contrast sentence connector</span></span>, it subsequently fell to £4,800 in 2010, before registering a minor recovery to end at £5,200 in 2015.
+      
+      <!-- Band Selector buttons -->
+      <div style="display: flex; gap: 6px; margin: 12px 0 16px 0; background: rgba(0,0,0,0.03); padding: 4px; border-radius: 4px; width: fit-content;">
+        <button class="band-toggle-btn active" onclick="switchEssayBand(this, 1, '9.0')">Band 9.0 (Expert)</button>
+        <button class="band-toggle-btn" onclick="switchEssayBand(this, 1, '7.5')">Band 7.5 (Good)</button>
+        <button class="band-toggle-btn" onclick="switchEssayBand(this, 1, '6.5')">Band 6.5 (Average)</button>
       </div>
-      <div class="tip" style="border-left-color: var(--tab-2); color: var(--good);"><b>Band 9.0 Evaluation & Analysis:</b><br><ul><li><b>Task Achievement:</b> Accurate overview statement summarizing major trends. Key comparisons are made with precise numbers and years.</li><li><b>Cohesion:</b> Paragraph structures are logical. Transitions like *Overall*, *Similarly*, *In contrast*, and *Subsequently* guide the reader.</li><li><b>Vocabulary:</b> High precision (*per student, expenditure, leveled off, minor recovery*).</li></ul></div>
+
+      <div class="passage-text essay-text-content" style="font-style: italic; background: rgba(0,0,0,0.01); padding: 14px; border-left: 3px solid var(--tab-2); line-height: 1.85;">
+        The line graph depicts the consumption of three types of meat and fish in a European nation over a 25-year period starting in 1979.<br><br>Overall, beef consumption experienced a dramatic decline, whereas chicken consumption <span class='annotation-wrapper'><span class='underlined-mark line-green'>surged to become the most popular protein source</span><span class='annotation-sub text-green'>Precise descriptions of trend crossover</span></span> by the end of the period. Meanwhile, pork and fish consumption remained relatively stable.<br><br>In 1979, beef was the most consumed item, <span class='annotation-wrapper'><span class='underlined-mark line-orange'>standing at 220 grams per week</span><span class='annotation-sub text-orange'>Advanced prepositional structure</span></span>. However, it dropped sharply over the years to finish at just 100 grams in 2004. Conversely, chicken consumption steadily climbed, <span class='annotation-wrapper'><span class='underlined-mark line-blue'>overtaking beef in 1989</span><span class='annotation-sub text-blue'>Accurate pinpointing of chart intersection</span></span> and peaking at 250 grams by the end of the timeline.<br><br>Regarding pork and fish, their numbers remained comparatively low. Pork consumption fluctuated marginally around 75 to 90 grams, while fish saw a slight decrease from 55 grams to end the period at 48 grams.
+      </div>
+      
+      <div class="tip essay-commentary-content" style="border-left-color: var(--tab-2); color: var(--good); margin-top: 16px; padding: 10px 12px; font-size:13px; line-height:1.6;">
+        <b>Band 9.0 Evaluation & Feedback:</b><br><ul><li><b>Task Achievement:</b> Outstanding summary of data trends. Selects key crossover years (1989) and makes flawless comparisons.</li><li><b>Coherence & Cohesion:</b> Information is organized perfectly into logical comparisons. Transitions are varied (*Conversely, Meanwhile, Regarding*).</li><li><b>Lexical Resource:</b> Precise vocabulary (*depicts, surged, marginally, standing at*).</li><li><b>Grammar:</b> Flawless grammatical range, using participle clauses and complex comparisons.</li></ul>
+      </div>
     </div>
     
-    <div class="passage-block">
-      <div class="passage-title">Sample 3 (Task 1 GT): Formal Complaint Letter - Water Leak</div>
-      <div style="font-size: 13px; font-family: 'Courier New', monospace; margin-bottom: 8px; color: var(--ink-soft);">PROMPT: Write a letter to your landlord complaining about a water leak in your apartment. Explain the problem, tell him what needs fixing, and request action.</div>
-      <div class="passage-text" style="font-style: italic; background: rgba(0,0,0,0.01); padding: 12px; border-left: 2px solid var(--tab-2); line-height: 1.85;">
-        Dear Mr. Davies,<br><br>I am writing to <span class='annotation-wrapper'><span class='underlined-mark line-orange'>bring to your immediate attention</span><span class='annotation-sub text-orange'>Polite formal complaint opening</span></span> a serious water leakage issue in the kitchen of my apartment, which is Unit 4B.<br><br>The leak began yesterday afternoon, following heavy rainfall. Water is actively dripping from the ceiling directly above the stove area, causing significant pooling on the floor. <span class='annotation-wrapper'><span class='underlined-mark line-green'>Furthermore</span><span class='annotation-sub text-green'>Adding secondary complaint detail</span></span>, the dampness is causing the plaster on the ceiling to crack and peel, which poses a safety hazard. I have had to turn off the overhead light fixtures in the kitchen to prevent an electrical short-circuit.<br><br><span class='annotation-wrapper'><span class='underlined-mark line-blue'>Therefore</span><span class='annotation-sub text-blue'>Transition stating request action</span></span>, I request that you dispatch a professional plumber to repair the roof or pipes immediately to prevent further structural damage. I also request your approval to have the kitchen ceiling replastered once the leak is sealed.<br><br>I look forward to your prompt response and action on this matter.<br><br>Yours sincerely,<br>James Kingston
+    <div class="passage-block" id="sample-block-2">
+      <div class="passage-title">Sample 3 (Task 1 GT): Formal Letter - Kitchen Water Leak</div>
+      <div style="font-size: 13px; font-family: 'Courier New', monospace; margin-bottom: 8px; color: var(--ink-soft); line-height: 1.4;">PROMPT: Write a letter to your landlord complaining about a water leak in your apartment. Explain the problem, tell him what needs fixing, and request action.</div>
+      
+      <!-- Band Selector buttons -->
+      <div style="display: flex; gap: 6px; margin: 12px 0 16px 0; background: rgba(0,0,0,0.03); padding: 4px; border-radius: 4px; width: fit-content;">
+        <button class="band-toggle-btn active" onclick="switchEssayBand(this, 2, '9.0')">Band 9.0 (Expert)</button>
+        <button class="band-toggle-btn" onclick="switchEssayBand(this, 2, '7.5')">Band 7.5 (Good)</button>
+        <button class="band-toggle-btn" onclick="switchEssayBand(this, 2, '6.5')">Band 6.5 (Average)</button>
       </div>
-      <div class="tip" style="border-left-color: var(--tab-2); color: var(--good);"><b>Band 9.0 Evaluation & Analysis:</b><br><ul><li><b>Task Achievement:</b> Covers all three bullet points in detail. Tone is consistently formal and polite.</li><li><b>Coherence:</b> Divided into three distinct paragraphs matching the purpose, detail, and request layout.</li><li><b>Vocabulary:</b> Appropriate formal letters vocabulary (*bring to your attention, significant pooling, safety hazard, dispatch*).</li></ul></div>
+
+      <div class="passage-text essay-text-content" style="font-style: italic; background: rgba(0,0,0,0.01); padding: 14px; border-left: 3px solid var(--tab-2); line-height: 1.85;">
+        Dear Mr. Davies,<br><br>I am writing to <span class='annotation-wrapper'><span class='underlined-mark line-orange'>bring to your immediate attention</span><span class='annotation-sub text-orange'>Polite formal complaint opening</span></span> a serious water leakage issue in the kitchen of my apartment, which is Unit 4B.<br><br>The leak began yesterday afternoon, following heavy rainfall. Water is actively dripping from the ceiling directly above the stove area, causing significant pooling on the floor. <span class='annotation-wrapper'><span class='underlined-mark line-green'>Furthermore</span><span class='annotation-sub text-green'>Cohesive marker adding secondary detail</span></span>, the dampness is causing the plaster on the ceiling to crack and peel, which poses a safety hazard. I have had to turn off the overhead light fixtures in the kitchen to prevent an electrical short-circuit.<br><br><span class='annotation-wrapper'><span class='underlined-mark line-blue'>Therefore</span><span class='annotation-sub text-blue'>Transition stating request action</span></span>, I request that you dispatch a professional plumber to repair the roof or pipes immediately to prevent further structural damage. I also request your approval to have the kitchen ceiling replastered once the leak is sealed.<br><br>I look forward to your prompt response and action on this matter.<br><br>Yours sincerely,<br>James Kingston
+      </div>
+      
+      <div class="tip essay-commentary-content" style="border-left-color: var(--tab-2); color: var(--good); margin-top: 16px; padding: 10px 12px; font-size:13px; line-height:1.6;">
+        <b>Band 9.0 Evaluation & Feedback:</b><br><ul><li><b>Task Achievement:</b> Fully answers all points with perfect, highly persuasive formal tone.</li><li><b>Coherence:</b> Seamless linking of ideas across paragraphs.</li><li><b>Lexical Resource:</b> Sophisticated, precise vocabulary (*bring to your attention, safety hazard, dispatch, structural damage*).</li><li><b>Grammar:</b> Perfect grammatical complexity and execution.</li></ul>
+      </div>
     </div>
     
   </div>
@@ -633,7 +721,7 @@ const SKILLS_DATA = [
     "number": 1,
     "title": "Determining the Task (Task 1 Academic)",
     "note": "Initial Phase. Analyze the chart, graph, table, or map to identify what key information you must summarize.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Read the prompt carefully to see what graphic is presented (bar chart, line graph, pie chart, table, or diagram).</li>\n          <li>Identify the time period (past, present, or future) to select the correct grammatical verb tenses.</li>\n          <li>Look for the units of measurement (percentages, millions of dollars, tons) to report figures accurately.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Prompt:</i> 'The bar chart shows average spending per pupil in 2000-2015.'<br>\n        - <i>Analysis:</i> The task requires describing expenditures, using <span class='annotation-wrapper'><span class='underlined-mark line-orange'>past tense</span><span class='annotation-sub text-orange'>Select correct tense based on years</span></span> verbs (e.g., primary spending <u>decreased</u>, <u>rose</u>, <u>fluctuated</u>) because the timeframe is in the past.\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Read the prompt carefully to see what graphic is presented (bar chart, line graph, pie chart, table, or diagram).</li>\n          <li>Identify the time period (past, present, or future) to select the correct grammatical verb tenses.</li>\n          <li>Look for the units of measurement (percentages, millions of dollars, tons) to report figures accurately.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Prompt: 'The bar chart shows average spending per pupil in 2000-2015.' What is the task and tense?",
@@ -645,7 +733,7 @@ const SKILLS_DATA = [
     "number": 2,
     "title": "Determining the Topic (Task 1 Academic)",
     "note": "Formulates the Overview. Define the main subject, variables, and categories of the graphic to paraphrase in your intro.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Determine the topic by looking at the graphic's title and axis labels.</li>\n          <li>Paraphrase the prompt using synonyms to write your first introduction sentence.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Original:</i> 'The table shows the percentage of students passing a math test.'<br>\n        - <i>Paraphrased:</i> '<span class='annotation-wrapper'><span class='underlined-mark line-green'>The table illustrates the proportion of pupils who successfully passed a mathematics examination...</span><span class='annotation-sub text-green'>Paraphrased Introduction</span></span>' (using synonyms like <u>illustrates</u>, <u>proportion of pupils</u>, <u>mathematics examination</u>).\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Determine the topic by looking at the graphic's title and axis labels.</li>\n          <li>Paraphrase the prompt using synonyms to write your first introduction sentence.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Paraphrase: 'The table shows the percentage of students passing a math test in three different schools.'",
@@ -657,7 +745,7 @@ const SKILLS_DATA = [
     "number": 3,
     "title": "Making Comparisons (Task 1 Academic)",
     "note": "Scores Task Achievement. Group similar data together and highlight the highest, lowest, or most dramatic trends.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Do not list every data point sequentially. Group data into high, medium, and low categories.</li>\n          <li>Use comparative structures (*higher than, double, in contrast, similarly*).</li>\n          <li>Highlight the peak (highest point) and the trough (lowest point).</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Data:</i> Primary spending rose from $3k to $4k, while tertiary fell from $6k to $4.8k.<br>\n        - <i>Comparison:</i> '<span class='annotation-wrapper'><span class='underlined-mark line-blue'>While expenditures for primary pupils grew steadily, funding allocated for tertiary education experienced a notable decline...</span><span class='annotation-sub text-blue'>Contrast structure linking two trends</span></span>' (contrasting trends using <u>while</u>).\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Do not list every data point sequentially. Group data into high, medium, and low categories.</li>\n          <li>Use comparative structures (*higher than, double, in contrast, similarly*).</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Chart data: Cafeteria spending was $50 per student in 2000, and fell to $10 in 2015. Write a comparison sentence.",
@@ -669,7 +757,7 @@ const SKILLS_DATA = [
     "number": 4,
     "title": "Making an Outline (Task 1 Academic)",
     "note": "Organizes Paragraph Structure. Plan a 4-paragraph layout: 1) Introduction, 2) Overview, 3) Body 1, 4) Body 2.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Never start writing without planning. Spend 2-3 minutes outlining.</li>\n          <li><b>Paragraph 1:</b> Introduction (Paraphrase the prompt).</li>\n          <li><b>Paragraph 2:</b> Overview (Describe 2-3 major overall trends without writing specific data figures).</li>\n          <li><b>Paragraph 3 & 4:</b> Detailed Body Paragraphs describing specific variables.</li>\n        </ul>\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Never start writing without planning. Spend 2-3 minutes outlining.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Create an outline structure for a line graph showing sales of books and e-books over 10 years.",
@@ -681,7 +769,7 @@ const SKILLS_DATA = [
     "number": 5,
     "title": "Writing the Introduction (Task 1 Academic)",
     "note": "First Impression. Paraphrase the prompt using synonyms and state what the graphic compares.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Paraphrase the original sentence. Replace words like *gives information about* with *provides data on*.</li>\n          <li>Include the geographical area (e.g., in the UK) and the timeframe (e.g., between 2005 and 2010).</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Original:</i> 'The chart shows the number of tourists visiting three cities.'<br>\n        - <i>Introduction:</i> '<span class='annotation-wrapper'><span class='underlined-mark line-orange'>The bar chart compares the volume of international tourists who visited three distinct cities...</span><span class='annotation-sub text-orange'>Polished intro paraphrase</span></span>'\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Paraphrase the original sentence. Replace words like *gives information about* with *provides data on*.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Prompt: 'The chart shows the number of tourists visiting three different cities in Europe from 2010 to 2020.' Write the introduction.",
@@ -693,7 +781,7 @@ const SKILLS_DATA = [
     "number": 6,
     "title": "Writing the Paragraphs (Task 1 Academic)",
     "note": "Body Paragraph Development. Report detailed data points, values, and trends accurately with cohesive transition markers.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Use transition words to compare data groups (*in terms of, regarding, as for, on the other hand*).</li>\n          <li>Present exact data values in brackets or using prepositions (e.g., \"...stood at 45% in 2008\").</li>\n          <li>Vary your vocabulary for describing change (*dropped, fell, surged, plateaued*).</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Data:</i> Primary spending stood at 15% in 2000, then rose to 35% in 2010.<br>\n        - <i>Description:</i> '<span class='annotation-wrapper'><span class='underlined-mark line-green'>Regarding primary levels, expenditures stood at 15% in 2000 before rising significantly to hit 35% in 2010.</span><span class='annotation-sub text-green'>Prepositional detail structure</span></span>'\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Use transition words to compare data groups (*in terms of, regarding, as for, on the other hand*).</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Write a body paragraph sentence stating that school library spending was at 15% in 2000, then rose to 35% in 2010.",
@@ -705,7 +793,7 @@ const SKILLS_DATA = [
     "number": 7,
     "title": "Writing the Conclusion (Task 1 Academic)",
     "note": "Completes Task 1. Restate the main overview trend clearly and briefly in 1-2 final sentences.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Summarize the core takeaways. A formal 'Conclusion' is optional if you already have an Overview, but a short summary sentence wraps up the essay nicely.</li>\n          <li>Do not introduce any new numbers or data points in the concluding sentence.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Summary:</i> '<span class='annotation-wrapper'><span class='underlined-mark line-blue'>In conclusion, the data shows a major shift in national power generation, with clean energy sources gradually replacing fossil fuels over the period.</span><span class='annotation-sub text-blue'>Summary of core trends without numbers</span></span>'\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Summarize the core takeaways without introducing new numbers or data points.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Write a concluding sentence for a chart showing a transition from fossil fuels to renewable energy.",
@@ -717,7 +805,7 @@ const SKILLS_DATA = [
     "number": 8,
     "title": "Determining the Task (Task 1 General Training)",
     "note": "For GT Letters. Identify if the letter is formal, semi-formal, or informal, and check the 3 bullet points you must cover.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Determine the letter tone: <b>Formal</b> (to a landlord, employer, company), <b>Informal</b> (to a friend, family member).</li>\n          <li>Address style: Formal letters start with \"Dear Sir or Madam\"; informal start with \"Dear [Friend's Name]\".</li>\n          <li>Highlight the 3 bullet prompts. You must write at least 50 words on EACH bullet to score Band 7+.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Prompt:</i> 'Write a letter to your landlord complaining about a leak.'<br>\n        - <i>Analysis:</i> Tone is <u>Formal</u>. Salutation: <span class='annotation-wrapper'><span class='underlined-mark line-orange'>Dear Mr. [Surname]</span><span class='annotation-sub text-orange'>Formal Salutation</span></span> or <u>Dear Sir/Madam</u>. Purpose: <u>To bring to your attention a serious water leakage...</u>\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Determine the letter tone: <b>Formal</b> (to a landlord, employer, company), <b>Informal</b> (to a friend).</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Prompt: 'Write a letter to your landlord complaining about a leak. Explain the problem, tell him what needs fixing, and request action.' Determine the tone and opening.",
@@ -729,7 +817,7 @@ const SKILLS_DATA = [
     "number": 9,
     "title": "Determining the Topic (Task 1 General Training)",
     "note": "Brainstorming context. Establish the background story (who, what, where) to make the letter sound natural and cohesive.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Create a believable background story. If complaining about a noisy neighbor, decide what noise (e.g., playing drums late at night).</li>\n          <li>Structure your letter around this scenario so it reads logically.</li>\n        </ul>\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Create a believable background story to build your points on.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Brainstorm details for: 'Write a letter to a manager complaining about bad customer service at a restaurant.'",
@@ -741,7 +829,7 @@ const SKILLS_DATA = [
     "number": 10,
     "title": "Brainstorming Ideas (Task 1 General Training)",
     "note": "Letter Details. Generate specific request details, dates, and names for each of the letter's 3 prompts.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Generate realistic details for your requests: dates, exact times, items, prices.</li>\n          <li>For informal letters, use conversational, friendly anecdotes. For formal, keep descriptions precise and transactional.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Request:</i> '<span class='annotation-wrapper'><span class='underlined-mark line-green'>Therefore, I request a complete reimbursement of the purchase price, which stands at $1,200, as soon as possible.</span><span class='annotation-sub text-green'>Polite yet firm request</span></span>'\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Generate realistic details for your requests: dates, exact times, items, prices.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Write a request sentence to a company asking for a full refund for a broken laptop.",
@@ -753,7 +841,7 @@ const SKILLS_DATA = [
     "number": 11,
     "title": "Making an Outline (Task 1 General Training)",
     "note": "GT Letter Structure. Outline a 5-part layout: 1) Salutation, 2) Purpose, 3) Bullet Points coverage, 4) Sign-off.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Salutation: \"Dear Sir/Madam\" (formal) vs \"Dear John\" (informal).</li>\n          <li>Paragraph 1: Statement of purpose.</li>\n          <li>Paragraph 2 & 3: Address the 3 bullet prompts in detail.</li>\n          <li>Sign-off: \"Yours faithfully\" (formal, recipient unknown) vs \"Yours sincerely\" (formal, recipient known) vs \"Best wishes\" (informal).</li>\n        </ul>\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Structure the letter logically, dedicating a paragraph to each bullet point.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Draft the outline of an informal letter inviting a friend to a weekend camping trip.",
@@ -765,7 +853,7 @@ const SKILLS_DATA = [
     "number": 12,
     "title": "Writing the Introduction (Task 1 General Training)",
     "note": "Letter Opening. Learn the standard opening phrases to state your letter's objective immediately.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Open formal letters with: \"I am writing to complain about...\", \"I am writing to express my dissatisfaction with...\".</li>\n          <li>Open informal letters with: \"I hope you are doing well.\", \"It was great to hear from you.\"</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Opening:</i> '<span class='annotation-wrapper'><span class='underlined-mark line-blue'>I am writing to formally request a transfer from my current night shift assignment to the morning shift, starting next month.</span><span class='annotation-sub text-blue'>Direct statement of intent</span></span>'\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>State the purpose of writing in the first sentence.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Write a formal introduction for a letter requesting a change of work shift.",
@@ -777,7 +865,7 @@ const SKILLS_DATA = [
     "number": 13,
     "title": "Writing the Paragraphs (Task 1 General Training)",
     "note": "GT Body development. Use appropriate formal or informal cohesive links to detail your story.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Use paragraphs to separate different topics (1 paragraph for explaining the situation, 1 for your request).</li>\n          <li>Use formal transition words: *Furthermore, Consequently, However, In light of this*.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Detail:</i> '<span class='annotation-wrapper'><span class='underlined-mark line-orange'>The central heating system broke down last Friday. Consequently, temperatures inside the flat have dropped to unsafe levels, making it freezing and uninhabitable...</span><span class='annotation-sub text-orange'>Problem statement linked to consequence</span></span>'\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Use cohesive devices appropriate for the letter's tone.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Write a complaint paragraph detailing a broken heating system in winter.",
@@ -789,7 +877,7 @@ const SKILLS_DATA = [
     "number": 14,
     "title": "Writing the Conclusion (Task 1 General Training)",
     "note": "Letter Closing. Request a specific action or response, and sign off using the correct greeting.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>End with a call to action: \"I urge you to look into this matter immediately\", \"Please let me know if this date works for you\".</li>\n          <li>Ensure your sign-off aligns with your salutation.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Closing:</i> '<span class='annotation-wrapper'><span class='underlined-mark line-green'>I appreciate your prompt attention to this matter and hope to receive a full refund shortly. Yours sincerely, [Name].</span><span class='annotation-sub text-green'>Polite closing formula</span></span>'\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Request response or action, then close appropriately.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Write a concluding paragraph for a complaint letter to a hotel manager.",
@@ -801,7 +889,7 @@ const SKILLS_DATA = [
     "number": 15,
     "title": "Determining the Task (Task 2 Essay)",
     "note": "Essay Core. Identify the essay type: Agree/Disagree, Discussion (Both views), Problem/Solution, or Double Question.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Analyze the essay question keywords. \"To what extent do you agree?\" is an Agree/Disagree essay. \"Discuss both views and give your opinion\" requires balancing both sides.</li>\n          <li>Highlight the core topics to ensure you do not wander off-topic (which drops your Task Response score to Band 5).</li>\n        </ul>\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Identify task type to structure your body paragraphs accordingly.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Prompt: 'Some people think university education should be free. Others argue that students should pay tuition. Discuss both views.' Determine the essay type and task.",
@@ -813,7 +901,7 @@ const SKILLS_DATA = [
     "number": 16,
     "title": "Developing a Thesis Statement (Task 2)",
     "note": "Scores Coherence & Cohesion. Write a 1-sentence answer to the essay prompt to present your position clearly.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>The <b>Thesis Statement</b> is the most important sentence in your essay. It must answer the prompt directly and show your main stance.</li>\n          <li>Place the thesis statement at the end of your introductory paragraph.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Thesis:</i> '<span class='annotation-wrapper'><span class='underlined-mark line-blue'>I believe that school homework should be completely banned because it causes excessive stress for young students and reduces their necessary leisure time.</span><span class='annotation-sub text-blue'>Stance + 2 supporting sub-reasons</span></span>'\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Formulate a clear thesis expressing your opinion and core reasoning.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Write a thesis statement for: 'Should homework be banned in schools?' (Position: Ban it).",
@@ -825,7 +913,7 @@ const SKILLS_DATA = [
     "number": 17,
     "title": "Organizing Your Writing (Task 2)",
     "note": "Essay Layout. Plan a 4-paragraph layout: 1) Intro, 2) Body 1 (argument A), 3) Body 2 (argument B), 4) Conclusion.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Stick to a clean 4-paragraph layout. It provides the best structure for balancing arguments and finishing within the 40-minute limit.</li>\n          <li>Use paragraph indentations or double line breaks to demarcate sections clearly.</li>\n        </ul>\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Spend 2 minutes outline writing before drafting to ensure paragraph balance.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Draft the outline of an Agree/Disagree essay about whether public transport should be free.",
@@ -837,7 +925,7 @@ const SKILLS_DATA = [
     "number": 18,
     "title": "Writing the Introduction (Task 2)",
     "note": "Essay Opening. Paraphrase the prompt in 1-2 sentences and end with your clear thesis statement.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Sentence 1: Background sentence (paraphrase the general topic prompt).</li>\n          <li>Sentence 2: Thesis statement (your direct response/opinion).</li>\n          <li>Avoid using template sentences like \"This essay will discuss...\" as they sound generic and lower your lexical resource score.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Introduction:</i> '<span class='annotation-wrapper'><span class='underlined-mark line-orange'>It is often argued that state budgets should prioritize the arts over scientific research. In my opinion, I strongly disagree with this view, as scientific advancements play a far more vital role in national development.</span><span class='annotation-sub text-orange'>Polished Introduction Outline</span></span>'\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Introduce the topic generally, then state your thesis.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Write an introduction for: 'Governments should invest in art rather than science.' (Disagree).",
@@ -849,7 +937,7 @@ const SKILLS_DATA = [
     "number": 19,
     "title": "Writing the Paragraphs (Task 2)",
     "note": "Body Paragraph Logic. Build each paragraph using the PEEL method: Point, Explanation, Example, Link.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li><b>Point:</b> State the main argument sentence.</li>\n          <li><b>Explanation:</b> Explain why/how (2-3 sentences).</li>\n          <li><b>Example:</b> Give a concrete example (from studies, news, or history).</li>\n          <li><b>Link:</b> Wrap up by linking back to your main thesis position.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Paragraph:</i> '<span class='annotation-wrapper'><span class='underlined-mark line-green'>Online learning is highly flexible. Because students can study at their own pace, working professionals can watch recorded lectures at night. For instance, a recent survey... Therefore, this flexibility leads to higher access...</span><span class='annotation-sub text-green'>PEEL Body Paragraph Paragraph</span></span>'\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Follow the PEEL structure for logical coherence and clarity.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Write a body paragraph point showing that online education is flexible, using PEEL.",
@@ -861,7 +949,7 @@ const SKILLS_DATA = [
     "number": 20,
     "title": "Writing the Conclusion (Task 2)",
     "note": "Completes Essay. Summarize the main points and restate your thesis in 2 final sentences.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Summarize: Restate your main arguments from Body 1 & 2 in a fresh way (paraphrased).</li>\n          <li>Opinion: Restate your final stance clearly.</li>\n          <li>Never introduce a completely new idea or argument in the conclusion.</li>\n        </ul>\n        <b>Curated Examples:</b><br>\n        - <i>Conclusion:</i> '<span class='annotation-wrapper'><span class='underlined-mark line-blue'>In conclusion, it is clear that while digital devices connect us globally, they often make us isolated locally. I believe that moderation is key to maintaining healthy face-to-face relationships.</span><span class='annotation-sub text-blue'>Summary + Recommendation</span></span>'\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Summarize main arguments without introducing new claims.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Write a conclusion for an essay arguing that technology has made us more isolated.",
@@ -1014,6 +1102,181 @@ function renderSkillsList() {
 
 // Initial load
 renderSkillsList();
+
+
+const SAMPLES_DATA = [
+  {
+    "title": "Sample 1 (Task 2 Essay): Free University Tuition",
+    "prompt": "Some people think that university education should be free for all students. Discuss both views and give your opinion.",
+    "bands": {
+      "6.5": {
+        "essay": "In many countries today, people discuss if university should be free. Some think it is a good idea, while other people say that students should pay. In this essay I will discuss both sides and give my opinion.<br><br>First, if university is free, it helps poor students who want to study. But it costs the government <span class='annotation-wrapper'><span class='underlined-mark line-orange'>a lot of money</span><span class='annotation-sub text-orange'>Simplistic repetitive vocabulary</span></span>. Universities need money for libraries and computers. If there is no money, the quality of study will go down. For example, in some poor countries, colleges have old libraries because they do not have money.<br><br>Second, <span class='annotation-wrapper'><span class='underlined-mark line-green'>free university</span><span class='annotation-sub text-green'>Repetitive subject reference</span></span> makes people get better jobs. When poor people get jobs, they pay taxes. So the government gets money back. But some students do not study hard if they do not pay. They just waste time.<br><br>In conclusion, I think university should be free because it is fair. But the government must check that students study hard.",
+        "commentary": "<b>Band 6.5 Evaluation & Feedback:</b><br><ul><li><b>Task Response:</b> Discusses both sides but arguments are basic and lack development. Stance is clear but simple.</li><li><b>Coherence & Cohesion:</b> Cohesive markers are very repetitive (*First, Second, In conclusion*). Paragraphs are too short and disconnected.</li><li><b>Lexical Resource:</b> Basic vocabulary (*poor people, a lot of money, waste time*). Multiple repetitions of *free university* and *money*.</li><li><b>Grammar:</b> Mostly simple sentences. Minor grammatical slip-ups, though generally understandable.</li></ul>"
+      },
+      "7.5": {
+        "essay": "It is widely discussed whether tertiary education should be fully funded by governments or paid for by students. In my view, although running universities requires heavy capital, providing free tuition offers significant social and economic advantages.<br><br>On the one hand, tuition fees ensure that universities are well-funded. When students pay, institutions have more capital to invest in top-tier research facilities and recruit high-quality professors. For instance, in countries with high tuition like the US, universities dominate global research rankings. <span class='annotation-wrapper'><span class='underlined-mark line-green'>However, this system excludes talented low-income youth.</span><span class='annotation-sub text-green'>Good contrast but lacks advanced vocabulary</span></span><br><br>On the other hand, free university education promotes equal opportunity. If access depends solely on academic merit rather than financial wealth, society benefits from a highly skilled workforce. For example, Scandinavian countries offer free tuition and have high levels of innovation.<br><br>In conclusion, I believe that university education should be free, as the long-term societal and economic benefits <span class='annotation-wrapper'><span class='underlined-mark line-blue'>are very big</span><span class='annotation-sub text-blue'>Slight lexical drop in conclusion</span></span> compared to the funding costs.",
+        "commentary": "<b>Band 7.5 Evaluation & Feedback:</b><br><ul><li><b>Task Response:</b> Effectively discusses both viewpoints and presents a clear stance. Arguments are logically supported.</li><li><b>Coherence & Cohesion:</b> Good paragraph progression. Standard transitions are used correctly (*On the one hand, On the other hand, In conclusion*).</li><li><b>Lexical Resource:</b> Strong vocabulary (*tertiary education, dominate, innovation*), but drops slightly in the conclusion (*are very big*).</li><li><b>Grammar:</b> Good mix of complex sentences with only minor slips.</li></ul>"
+      },
+      "9.0": {
+        "essay": "It is often argued whether higher education should be fully funded by governments or paid for by the students themselves. In my opinion, while tertiary education is expensive, making it free is crucial for social mobility and economic development.<br><br><span class='annotation-wrapper'><span class='underlined-mark line-orange'>On the one hand</span><span class='annotation-sub text-orange'>Cohesive paragraph transition</span></span>, tuition fees ensure that universities are well-funded. When students pay, institutions have more capital to invest in top-tier research facilities and recruit high-quality professors. For instance, in countries with high tuition like the US, universities dominate global research rankings. <span class='annotation-wrapper'><span class='underlined-mark line-green'>However, this fee-paying system inevitably excludes talented low-income youth</span><span class='annotation-sub text-green'>Sophisticated argument contrast</span></span>, perpetuating social inequality.<br><br><span class='annotation-wrapper'><span class='underlined-mark line-blue'>On the other hand</span><span class='annotation-sub text-blue'>Cohesive paragraph contrast</span></span>, free university education promotes equal opportunity. If access depends solely on academic merit rather than financial wealth, society benefits from a highly skilled workforce. For example, Scandinavian countries offer free tuition and have high levels of innovation. <span class='annotation-wrapper'><span class='underlined-mark line-orange'>To sum up</span><span class='annotation-sub text-orange'>Formal conclusion signpost</span></span>, I believe that university education should be free, as the long-term societal and economic benefits far outweigh the funding costs.",
+        "commentary": "<b>Band 9.0 Evaluation & Feedback:</b><br><ul><li><b>Task Response:</b> Flawless task coverage. Position is fully developed and sustained throughout the essay.</li><li><b>Coherence & Cohesion:</b> Natural, seamless flow. Linking words are sophisticated and never feel forced.</li><li><b>Lexical Resource:</b> Excellent lexical range (*perpetuating, tertiary education, social mobility, merit-based*).</li><li><b>Grammar:</b> Highly varied sentence structures showing full flexibility and precision.</li></ul>"
+      }
+    }
+  },
+  {
+    "title": "Sample 2 (Task 1 Academic): Line Graph - Meat & Fish Consumption",
+    "prompt": "The line graph shows the weekly consumption of fish and different kinds of meat in a European country between 1979 and 2004.<br>\n<div style='max-width: 480px; margin: 16px auto; background: var(--card); border: 1px solid var(--rule); padding: 16px; border-radius: 4px; transition: background-color 0.3s ease, border-color 0.3s ease;'>\n  <div style='font-family: \"Courier New\", monospace; font-size: 11px; font-weight: bold; text-align: center; margin-bottom: 12px; color: var(--ink);'>\n    UK Meat &amp; Fish Consumption (grams per person per week)\n  </div>\n  <svg viewBox='0 0 400 240' style='width: 100%; height: auto;'>\n    <line x1='40' y1='30' x2='380' y2='30' stroke='var(--rule)' stroke-dasharray='3,3' />\n    <line x1='40' y1='80' x2='380' y2='80' stroke='var(--rule)' stroke-dasharray='3,3' />\n    <line x1='40' y1='130' x2='380' y2='130' stroke='var(--rule)' stroke-dasharray='3,3' />\n    <line x1='40' y1='180' x2='380' y2='180' stroke='var(--rule)' stroke-dasharray='3,3' />\n    <line x1='40' y1='210' x2='380' y2='210' stroke='var(--rule)' stroke-width='1.5' />\n    \n    <text x='35' y='34' font-family='Courier New' font-size='9' text-anchor='end' fill='var(--ink-soft)'>250</text>\n    <text x='35' y='84' font-family='Courier New' font-size='9' text-anchor='end' fill='var(--ink-soft)'>200</text>\n    <text x='35' y='134' font-family='Courier New' font-size='9' text-anchor='end' fill='var(--ink-soft)'>150</text>\n    <text x='35' y='184' font-family='Courier New' font-size='9' text-anchor='end' fill='var(--ink-soft)'>100</text>\n    <text x='35' y='214' font-family='Courier New' font-size='9' text-anchor='end' fill='var(--ink-soft)'>50</text>\n    \n    <text x='50' y='226' font-family='Courier New' font-size='9' text-anchor='middle' fill='var(--ink-soft)'>1979</text>\n    <text x='110' y='226' font-family='Courier New' font-size='9' text-anchor='middle' fill='var(--ink-soft)'>1984</text>\n    <text x='170' y='226' font-family='Courier New' font-size='9' text-anchor='middle' fill='var(--ink-soft)'>1989</text>\n    <text x='230' y='226' font-family='Courier New' font-size='9' text-anchor='middle' fill='var(--ink-soft)'>1994</text>\n    <text x='290' y='226' font-family='Courier New' font-size='9' text-anchor='middle' fill='var(--ink-soft)'>1999</text>\n    <text x='350' y='226' font-family='Courier New' font-size='9' text-anchor='middle' fill='var(--ink-soft)'>2004</text>\n    \n    <!-- Beef Line (Orange) -->\n    <path d='M 50 57 L 110 84 L 170 111 L 230 142.5 L 290 156 L 350 165' fill='none' stroke='var(--tab-1)' stroke-width='2.5' />\n    \n    <!-- Chicken Line (Green) -->\n    <path d='M 50 124.5 L 110 111 L 170 75 L 230 48 L 290 39 L 350 30' fill='none' stroke='var(--tab-2)' stroke-width='2.5' />\n    \n    <!-- Pork Line (Blue) -->\n    <path d='M 50 187.5 L 110 178.5 L 170 174 L 230 184.8 L 290 190.2 L 350 187.5' fill='none' stroke='var(--tab-3)' stroke-width='2.5' />\n    \n    <!-- Fish Line (Dotted Gray) -->\n    <path d='M 50 205.5 L 110 208.2 L 170 210 L 230 211.8 L 290 210.9 L 350 211.8' fill='none' stroke='var(--ink-soft)' stroke-dasharray='4,2' stroke-width='2' />\n  </svg>\n  \n  <div style='display: flex; justify-content: center; gap: 12px; margin-top: 10px; font-family: \"Courier New\", monospace; font-size: 10px; flex-wrap: wrap;'>\n    <div style='display: flex; align-items: center; gap: 4px;'><span style='display: inline-block; width: 12px; height: 3px; background: var(--tab-1);'></span> Beef</div>\n    <div style='display: flex; align-items: center; gap: 4px;'><span style='display: inline-block; width: 12px; height: 3px; background: var(--tab-2);'></span> Chicken</div>\n    <div style='display: flex; align-items: center; gap: 4px;'><span style='display: inline-block; width: 12px; height: 3px; background: var(--tab-3);'></span> Pork</div>\n    <div style='display: flex; align-items: center; gap: 4px;'><span style='display: inline-block; width: 12px; height: 3px; border-bottom: 2px dashed var(--ink-soft);'></span> Fish</div>\n  </div>\n</div>\n",
+    "bands": {
+      "6.5": {
+        "essay": "The line graph shows how much beef, chicken, pork, and fish people ate in a European country from 1979 to 2004.<br><br>First, beef consumption was very high at 220 grams in 1979, but then it <span class='annotation-wrapper'><span class='underlined-mark line-orange'>went down</span><span class='annotation-sub text-orange'>Simplistic verb for decline</span></span> to only 100 grams in 2004. Next, chicken started at 145 grams and <span class='annotation-wrapper'><span class='underlined-mark line-green'>went up a lot</span><span class='annotation-sub text-green'>Simplistic verb for growth</span></span> to 250 grams in 2004. It became the most popular meat.<br><br>Pork and fish did not change much. Pork started at 75 grams and ended at 75 grams. Fish was the lowest at 55 grams in 1979 and ended at 48 grams in 2004.<br><br>Overall, beef went down, chicken went up, and fish and pork stayed the same.",
+        "commentary": "<b>Band 6.5 Evaluation & Feedback:</b><br><ul><li><b>Task Achievement:</b> Details are reported line-by-line rather than comparing trends. The overview at the end is very basic.</li><li><b>Coherence:</b> Paragraphs are separated, but transitions are simple (*First, Next, Overall*).</li><li><b>Lexical Resource:</b> Simplistic verbs (*went down, went up a lot, stayed the same*). Repetitive phrasing.</li><li><b>Grammar:</b> Relies on simple sentences. Preposition usage is correct but basic.</li></ul>"
+      },
+      "7.5": {
+        "essay": "The line graph illustrates the weekly consumption of beef, chicken, pork, and fish in a European nation between 1979 and 2004.<br><br>Overall, the consumption of beef experienced a significant decline, whereas chicken consumption grew dramatically. In contrast, pork and fish remained relatively stable.<br><br>Beef consumption was the highest in 1979 at 220 grams, before decreasing steadily to 100 grams in 2004. <span class='annotation-wrapper'><span class='underlined-mark line-blue'>Conversely, chicken consumption steadily climbed</span><span class='annotation-sub text-blue'>Good comparative transition</span></span>, starting at 145 grams and overtaking beef in 1989 to reach a peak of 250 grams in 2004.<br><br>Pork consumption fluctuated slightly, starting at 75 grams and finishing at the same level. Fish remained the least consumed item, showing a minor drop from 55 grams to 48 grams.",
+        "commentary": "<b>Band 7.5 Evaluation & Feedback:</b><br><ul><li><b>Task Achievement:</b> Clear overview of the main trends. Key features are compared successfully.</li><li><b>Coherence:</b> Paragraphs are logical and data is grouped well (meat drops vs rises, stable items).</li><li><b>Lexical Resource:</b> Strong vocabulary (*illustrates, fluctuated, overtook, consumption*).</li><li><b>Grammar:</b> Mix of complex structures, though a bit formulaic.</li></ul>"
+      },
+      "9.0": {
+        "essay": "The line graph depicts the consumption of three types of meat and fish in a European nation over a 25-year period starting in 1979.<br><br>Overall, beef consumption experienced a dramatic decline, whereas chicken consumption <span class='annotation-wrapper'><span class='underlined-mark line-green'>surged to become the most popular protein source</span><span class='annotation-sub text-green'>Precise descriptions of trend crossover</span></span> by the end of the period. Meanwhile, pork and fish consumption remained relatively stable.<br><br>In 1979, beef was the most consumed item, <span class='annotation-wrapper'><span class='underlined-mark line-orange'>standing at 220 grams per week</span><span class='annotation-sub text-orange'>Advanced prepositional structure</span></span>. However, it dropped sharply over the years to finish at just 100 grams in 2004. Conversely, chicken consumption steadily climbed, <span class='annotation-wrapper'><span class='underlined-mark line-blue'>overtaking beef in 1989</span><span class='annotation-sub text-blue'>Accurate pinpointing of chart intersection</span></span> and peaking at 250 grams by the end of the timeline.<br><br>Regarding pork and fish, their numbers remained comparatively low. Pork consumption fluctuated marginally around 75 to 90 grams, while fish saw a slight decrease from 55 grams to end the period at 48 grams.",
+        "commentary": "<b>Band 9.0 Evaluation & Feedback:</b><br><ul><li><b>Task Achievement:</b> Outstanding summary of data trends. Selects key crossover years (1989) and makes flawless comparisons.</li><li><b>Coherence & Cohesion:</b> Information is organized perfectly into logical comparisons. Transitions are varied (*Conversely, Meanwhile, Regarding*).</li><li><b>Lexical Resource:</b> Precise vocabulary (*depicts, surged, marginally, standing at*).</li><li><b>Grammar:</b> Flawless grammatical range, using participle clauses and complex comparisons.</li></ul>"
+      }
+    }
+  },
+  {
+    "title": "Sample 3 (Task 1 GT): Formal Letter - Kitchen Water Leak",
+    "prompt": "Write a letter to your landlord complaining about a water leak in your apartment. Explain the problem, tell him what needs fixing, and request action.",
+    "bands": {
+      "6.5": {
+        "essay": "Dear landlord,<br><br>I am writing to tell you that there is a big leak in my kitchen. It started yesterday when it was raining. The water is dripping from the ceiling and making a mess on the floor. I cannot use my stove to cook.<br><br>Also, the plaster is cracking. I had to turn off the lights because I am scared of electricity problems. It is <span class='annotation-wrapper'><span class='underlined-mark line-orange'>a dangerous thing</span><span class='annotation-sub text-orange'>Simplistic phrase for hazard</span></span> for me.<br><br>Please send a plumber to fix this quickly. I need the kitchen to be repaired soon.<br><br>Yours sincerely,<br>James Kingston",
+        "commentary": "<b>Band 6.5 Evaluation & Feedback:</b><br><ul><li><b>Task Achievement:</b> Addresses all prompts but in a very brief way. The tone is formal in the sign-off but informal in the salutation (*Dear landlord*).</li><li><b>Coherence:</b> Layout has paragraphs, but ideas are simple.</li><li><b>Lexical Resource:</b> Basic vocabulary (*big leak, mess, dangerous thing*).</li><li><b>Grammar:</b> Mostly simple sentences. Minor awkward phrasing (*making a mess, a dangerous thing*).</li></ul>"
+      },
+      "7.5": {
+        "essay": "Dear Mr. Davies,<br><br>I am writing to inform you about a serious water leak in my kitchen. The leak started yesterday afternoon after a heavy storm. Water is dripping from the ceiling onto the stove, which makes the kitchen unusable.<br><br>Additionally, the plaster on the ceiling is starting to crack and peel. I have turned off the lights to avoid any electrical problems. This is quite dangerous.<br><br>Therefore, I would like to ask you to send a plumber to repair the leak as soon as possible. I also want to get the ceiling repainted after it is fixed.<br><br>Yours sincerely,<br>James Kingston",
+        "commentary": "<b>Band 7.5 Evaluation & Feedback:</b><br><ul><li><b>Task Achievement:</b> Letter fully covers all points. Tone is polite and appropriately formal.</li><li><b>Coherence:</b> Good logical structure and separation of issues.</li><li><b>Lexical Resource:</b> Good vocabulary (*inform you, unusable, additionally, plaster*).</li><li><b>Grammar:</b> Grammatical structures are correct with few errors.</li></ul>"
+      },
+      "9.0": {
+        "essay": "Dear Mr. Davies,<br><br>I am writing to <span class='annotation-wrapper'><span class='underlined-mark line-orange'>bring to your immediate attention</span><span class='annotation-sub text-orange'>Polite formal complaint opening</span></span> a serious water leakage issue in the kitchen of my apartment, which is Unit 4B.<br><br>The leak began yesterday afternoon, following heavy rainfall. Water is actively dripping from the ceiling directly above the stove area, causing significant pooling on the floor. <span class='annotation-wrapper'><span class='underlined-mark line-green'>Furthermore</span><span class='annotation-sub text-green'>Cohesive marker adding secondary detail</span></span>, the dampness is causing the plaster on the ceiling to crack and peel, which poses a safety hazard. I have had to turn off the overhead light fixtures in the kitchen to prevent an electrical short-circuit.<br><br><span class='annotation-wrapper'><span class='underlined-mark line-blue'>Therefore</span><span class='annotation-sub text-blue'>Transition stating request action</span></span>, I request that you dispatch a professional plumber to repair the roof or pipes immediately to prevent further structural damage. I also request your approval to have the kitchen ceiling replastered once the leak is sealed.<br><br>I look forward to your prompt response and action on this matter.<br><br>Yours sincerely,<br>James Kingston",
+        "commentary": "<b>Band 9.0 Evaluation & Feedback:</b><br><ul><li><b>Task Achievement:</b> Fully answers all points with perfect, highly persuasive formal tone.</li><li><b>Coherence:</b> Seamless linking of ideas across paragraphs.</li><li><b>Lexical Resource:</b> Sophisticated, precise vocabulary (*bring to your attention, safety hazard, dispatch, structural damage*).</li><li><b>Grammar:</b> Perfect grammatical complexity and execution.</li></ul>"
+      }
+    }
+  }
+];
+
+const TOPIC_TEMPLATES = {
+  education: {
+    noun: "tertiary tuition costs",
+    clause: "making university education free for all individuals",
+    benefit: "boosts social mobility and bridges the gap between socioeconomic classes",
+    drawback: "places a significant financial burden on national tax budgets"
+  },
+  technology: {
+    noun: "artificial intelligence development",
+    clause: "integrating AI assistants into everyday workflows",
+    benefit: "accelerates industrial productivity and automates redundant tasks",
+    drawback: "triggers widespread job displacements and reduces human critical thinking"
+  },
+  environment: {
+    noun: "carbon emissions taxation",
+    clause: "imposing heavy carbon taxes on manufacturing corporations",
+    benefit: "incentivizes companies to invest in clean, renewable energy sources",
+    drawback: "increases the retail prices of consumer goods and spikes inflation"
+  }
+};
+
+function switchEssayBand(btnEl, sampleIndex, band) {
+  const btnGroup = btnEl.parentElement;
+  btnGroup.querySelectorAll('.band-toggle-btn').forEach(btn => btn.classList.remove('active'));
+  btnEl.classList.add('active');
+  
+  const sample = SAMPLES_DATA[sampleIndex];
+  const bandData = sample.bands[band];
+  
+  const blockEl = btnGroup.parentElement;
+  const essayEl = blockEl.querySelector('.essay-text-content');
+  const commentaryEl = blockEl.querySelector('.essay-commentary-content');
+  
+  essayEl.innerHTML = bandData.essay;
+  commentaryEl.innerHTML = bandData.commentary;
+  
+  // Dynamic border coloring based on band score quality
+  if (band === '9.0') {
+    essayEl.style.borderLeftColor = 'var(--tab-2)';
+    commentaryEl.style.borderLeftColor = 'var(--tab-2)';
+    commentaryEl.style.color = 'var(--good)';
+  } else if (band === '7.5') {
+    essayEl.style.borderLeftColor = 'var(--tab-3)';
+    commentaryEl.style.borderLeftColor = 'var(--tab-3)';
+    commentaryEl.style.color = 'var(--ink)';
+  } else {
+    essayEl.style.borderLeftColor = 'var(--tab-1)';
+    commentaryEl.style.borderLeftColor = 'var(--tab-1)';
+    commentaryEl.style.color = 'var(--err)';
+  }
+}
+
+let currentTemplateType = 'agree_disagree';
+let currentBuilderTopic = 'education';
+let currentBuilderStep = 'intro';
+
+function selectBuilderTemplate(type) {
+  currentTemplateType = type;
+  document.getElementById('btn-t-1').classList.toggle('active', type === 'agree_disagree');
+  document.getElementById('btn-t-2').classList.toggle('active', type === 'discussion');
+  updateBuilderPreview();
+}
+
+function changeBuilderTopic() {
+  currentBuilderTopic = document.getElementById('template-topic-selector').value;
+  updateBuilderPreview();
+}
+
+function changeBuilderStep(step) {
+  currentBuilderStep = step;
+  ['intro', 'body1', 'body2', 'conclusion'].forEach(s => {
+    document.getElementById('step-btn-' + s).classList.toggle('active', s === step);
+  });
+  
+  const stepTitles = {
+    intro: "1. INTRODUCTION (Thesis & Background)",
+    body1: "2. BODY PARAGRAPH 1 (Primary Argument)",
+    body2: "3. BODY PARAGRAPH 2 (Secondary/Counter Argument)",
+    conclusion: "4. CONCLUSION (Restatement & Final Stance)"
+  };
+  document.getElementById('builder-step-title').textContent = stepTitles[step];
+  updateBuilderPreview();
+}
+
+function updateBuilderPreview() {
+  const topic = TOPIC_TEMPLATES[currentBuilderTopic];
+  let text = '';
+  
+  if (currentTemplateType === 'agree_disagree') {
+    if (currentBuilderStep === 'intro') {
+      text = `It is often argued whether <b>${topic.noun}</b> should be prioritized. Personally, I completely agree with <b>${topic.clause}</b> because it <b>${topic.benefit}</b>.`;
+    } else if (currentBuilderStep === 'body1') {
+      text = `To begin with, the primary advantage of <b>${topic.clause}</b> is that it <b>${topic.benefit}</b>. For instance, a recent study from Cambridge University shows that implementing such policies leads to long-term gains. Therefore, it is clear that the advantages are substantial.`;
+    } else if (currentBuilderStep === 'body2') {
+      text = `Furthermore, another key consideration regarding <b>${topic.noun}</b> is that while some opponents raise concerns about how it <b>${topic.drawback}</b>, the positive impact of <b>${topic.benefit}</b> far outweighs these potential negatives.`;
+    } else if (currentBuilderStep === 'conclusion') {
+      text = `In conclusion, while <b>${topic.clause}</b> might present minor challenges, I firmly believe that the capacity to <b>${topic.benefit}</b> makes it a highly positive development.`;
+    }
+  } else {
+    if (currentBuilderStep === 'intro') {
+      text = `Opinions are divided on whether <b>${topic.clause}</b> is beneficial or if it <b>${topic.drawback}</b>. In my view, while there are valid concerns, I believe <b>${topic.benefit}</b> is the most critical factor.`;
+    } else if (currentBuilderStep === 'body1') {
+      text = `On the one hand, supporters of <b>${topic.noun}</b> argue that it <b>${topic.benefit}</b>. This is because it provides equal opportunities for all members of society, fostering innovation.`;
+    } else if (currentBuilderStep === 'body2') {
+      text = `On the other hand, critics argue that it <b>${topic.drawback}</b>. They point out that the financial costs or personal impacts could lead to negative consequences.`;
+    } else if (currentBuilderStep === 'conclusion') {
+      text = `To sum up, although there are reasonable arguments on both sides of <b>${topic.noun}</b>, I believe that the benefits of <b>${topic.benefit}</b> are far more significant.`;
+    }
+  }
+  
+  document.getElementById('builder-preview-text').innerHTML = text;
+}
+
+// Initialize builder
+updateBuilderPreview();
+
 </script>
 </body>
 </html>

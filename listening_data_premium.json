@@ -179,16 +179,6 @@
       "title": "Part 2 Monologue: Campus Library Orientation Tour",
       "transcript": "<b>Guide:</b> Welcome to the university library orientation. The library is <span class='annotation-wrapper'><span class='underlined-mark line-orange'>closed every Wednesday morning</span><span class='annotation-sub text-orange'>Regular closure schedule</span></span> for staff training, but open at all other times. On the corner of our entry street, you will notice the student grocery store. Directly facing it, <span class='annotation-wrapper'><span class='underlined-mark line-green'>across from the grocery store</span><span class='annotation-sub text-green'>Print shop layout location</span></span>, is our printing and binding office. <span class='annotation-wrapper'><span class='underlined-mark line-blue'>Next to the printing office</span><span class='annotation-sub text-blue'>Locker area placement</span></span> is the library's main clothing repository and locker area where you must deposit all bags. For a low monthly fee of five pounds, you can also rent a private research cubicle on the third floor.",
       "notes": "Relative Directions: Printing office is across from grocery store. Locker area is next to the printing office. Schedule: Closed Wednesday mornings."
-    },
-    {
-      "title": "Part 3 Group Discussion: Final Thesis Project Outline",
-      "transcript": "<b>Professor:</b> So, Sarah, how is your final biology project coming along? You look a bit nervous.<br><b>Sarah:</b> (Sighs) Well, I was <span class='annotation-wrapper'><span class='underlined-mark line-orange'>extremely anxious</span><span class='annotation-sub text-orange'>Initial emotional state</span></span> when I began reading the guidelines last week. But after discussing it with Tom, I feel much more <span class='annotation-wrapper'><span class='underlined-mark line-green'>relieved.</span><span class='annotation-sub text-green'>Current emotional state</span></span> My study compares the behavior of crows and chimps.<br><b>Professor:</b> Excellent. Remember, chimps are highly social, whereas crows are more solitary tool-users. Your project must classify the behaviors into three categories: <span class='annotation-wrapper'><span class='underlined-mark line-blue'>tool manufacturing</span><span class='annotation-sub text-blue'>Classification Category 1</span></span>, <span class='annotation-wrapper'><span class='underlined-mark line-green'>communication signals</span><span class='annotation-sub text-green'>Classification Category 2</span></span>, and nesting styles.",
-      "notes": "Emotions: Initially anxious, now relieved. Contrast: Chimps are social whereas crows are solitary. Classification categories: Tool manufacturing, communication signals, and nesting styles."
-    },
-    {
-      "title": "Part 4 Lecture: The Evolution of Hunter-Gatherer Societies",
-      "transcript": "<b>Lecturer:</b> Good afternoon. Today we examine early social structures. <span class='annotation-wrapper'><span class='underlined-mark line-orange'>Initially</span><span class='annotation-sub text-orange'>First time sequence point</span></span>, humans survived as nomadic bands, traveling constantly to follow migrating herds. <span class='annotation-wrapper'><span class='underlined-mark line-green'>Subsequently</span><span class='annotation-sub text-green'>Second time sequence point</span></span>, with the discovery of grain storage, they established sedentary settlements. <span class='annotation-wrapper'><span class='underlined-mark line-blue'>As a result of</span><span class='annotation-sub text-blue'>Cause-and-effect link</span></span> this sedentary transition, populations grew rapidly, leading to the rise of specialized labor and social hierarchies that replaced the original egalitarian system.",
-      "notes": "Chronology Order: Nomadic bands -> Grain storage discovery -> Sedentary settlements. Cause-and-Effect: Sedentary transition caused population growth, leading to hierarchies."
     }
   ],
   "vocabulary": [
@@ -209,48 +199,6 @@
       "pos": "Noun",
       "translation": "binatu otomatis / tempat cuci umum",
       "example": "Since the flat lacks laundry hookups, I use the local laundromat down the block."
-    },
-    {
-      "word": "nomadic",
-      "pos": "Adjective",
-      "translation": "nomaden / berkelana",
-      "example": "Nomadic tribes migrated constantly to seek fresh water and pasture."
-    },
-    {
-      "word": "sedentary",
-      "pos": "Adjective",
-      "translation": "menetap",
-      "example": "Developing agriculture allowed humans to abandon a nomadic life for a sedentary one."
-    },
-    {
-      "word": "syllabus",
-      "pos": "Noun",
-      "translation": "silabus / rancangan studi",
-      "example": "The professor handed out the course syllabus detailing the weekly readings."
-    },
-    {
-      "word": "auditorium",
-      "pos": "Noun",
-      "translation": "auditorium / aula besar",
-      "example": "The orientation lecture will be held in the main university auditorium at 9:00 a.m."
-    },
-    {
-      "word": "hesitation",
-      "pos": "Noun",
-      "translation": "keragu-raguan",
-      "example": "Any hesitation or long pause in your speech will lower your fluency band score."
-    },
-    {
-      "word": "pitch",
-      "pos": "Noun",
-      "translation": "tinggi rendah suara / nada",
-      "example": "Varying your vocal pitch helps convey enthusiasm and emotion clearly."
-    },
-    {
-      "word": "registration",
-      "pos": "Noun",
-      "translation": "pendaftaran / registrasi",
-      "example": "The registration desk is located on the ground floor of the administration building."
     }
   ]
 }
