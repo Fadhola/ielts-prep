@@ -459,7 +459,7 @@
 
   <header>
     <div>
-      <div class="kicker">IELTS Study Kit</div>
+      <div class="kicker">IELTS Study Kit — v1.2.0 (Latest Update)</div>
       <h1>Writing Practice</h1>
       <div class="sub">Curated strategy guides, practices, and vocabulary reference</div>
     </div>
@@ -1036,6 +1036,26 @@ function toggleAnswer(event, btnEl) {
   btnEl.textContent = btnEl.classList.contains('open') ? 'Hide details' : 'Show details';
 }
 
+function filterSkills() {
+  const query = document.getElementById('search').value.toLowerCase().trim();
+  const cards = document.querySelectorAll('.skill-card');
+  let visibleCount = 0;
+  
+  cards.forEach(card => {
+    const title = card.getAttribute('data-title') || '';
+    const body = card.getAttribute('data-body') || '';
+    
+    if (title.includes(query) || body.includes(query)) {
+      card.classList.remove('hidden-by-search');
+      visibleCount++;
+    } else {
+      card.classList.add('hidden-by-search');
+    }
+  });
+  
+  document.getElementById('count').textContent = `Menampilkan ${visibleCount} dari ${cards.length} skill`;
+}
+
 function renderGroup(data) {
   return data.map(s => {
     const safeBody = escapeAttribute(s.note + ' ' + s.details);
@@ -1181,33 +1201,47 @@ const SAMPLES_DATA = [
 ];
 
 function switchEssayBand(btnEl, sampleIndex, band) {
-  const btnGroup = btnEl.parentElement;
-  btnGroup.querySelectorAll('.band-toggle-btn').forEach(btn => btn.classList.remove('active'));
-  btnEl.classList.add('active');
-  
-  const sample = SAMPLES_DATA[sampleIndex];
-  const bandData = sample.bands[band];
-  
-  const blockEl = btnGroup.parentElement;
-  const essayEl = blockEl.querySelector('.essay-text-content');
-  const commentaryEl = blockEl.querySelector('.essay-commentary-content');
-  
-  essayEl.innerHTML = bandData.essay;
-  commentaryEl.innerHTML = bandData.commentary;
-  
-  // Dynamic border coloring based on band score quality
-  if (band === '9.0') {
-    essayEl.style.borderLeftColor = 'var(--tab-2)';
-    commentaryEl.style.borderLeftColor = 'var(--tab-2)';
-    commentaryEl.style.color = 'var(--good)';
-  } else if (band === '7.5') {
-    essayEl.style.borderLeftColor = 'var(--tab-3)';
-    commentaryEl.style.borderLeftColor = 'var(--tab-3)';
-    commentaryEl.style.color = 'var(--ink)';
-  } else {
-    essayEl.style.borderLeftColor = 'var(--tab-1)';
-    commentaryEl.style.borderLeftColor = 'var(--tab-1)';
-    commentaryEl.style.color = 'var(--err)';
+  try {
+    console.log("switchEssayBand called for sampleIndex:", sampleIndex, "band:", band);
+    const btnGroup = btnEl.parentElement;
+    btnGroup.querySelectorAll('.band-toggle-btn').forEach(btn => btn.classList.remove('active'));
+    btnEl.classList.add('active');
+    
+    const sample = SAMPLES_DATA[sampleIndex];
+    if (!sample) {
+      console.error("No sample found for index:", sampleIndex);
+      return;
+    }
+    const bandData = sample.bands[band];
+    if (!bandData) {
+      console.error("No band data found for band:", band);
+      return;
+    }
+    
+    const blockEl = btnGroup.parentElement;
+    const essayEl = blockEl.querySelector('.essay-text-content');
+    const commentaryEl = blockEl.querySelector('.essay-commentary-content');
+    
+    essayEl.innerHTML = bandData.essay;
+    commentaryEl.innerHTML = bandData.commentary;
+    
+    // Dynamic border coloring based on band score quality
+    if (band === '9.0') {
+      essayEl.style.borderLeftColor = 'var(--tab-2)';
+      commentaryEl.style.borderLeftColor = 'var(--tab-2)';
+      commentaryEl.style.color = 'var(--good)';
+    } else if (band === '7.5') {
+      essayEl.style.borderLeftColor = 'var(--tab-3)';
+      commentaryEl.style.borderLeftColor = 'var(--tab-3)';
+      commentaryEl.style.color = 'var(--ink)';
+    } else {
+      essayEl.style.borderLeftColor = 'var(--tab-1)';
+      commentaryEl.style.borderLeftColor = 'var(--tab-1)';
+      commentaryEl.style.color = 'var(--err)';
+    }
+    console.log("Successfully switched band layout!");
+  } catch (e) {
+    console.error("Error inside switchEssayBand:", e);
   }
 }
 

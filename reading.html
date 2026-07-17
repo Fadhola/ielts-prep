@@ -459,7 +459,7 @@
 
   <header>
     <div>
-      <div class="kicker">IELTS Study Kit</div>
+      <div class="kicker">IELTS Study Kit — v1.2.0 (Latest Update)</div>
       <h1>Reading Practice</h1>
       <div class="sub">Curated strategy guides, practices, and vocabulary reference</div>
     </div>
@@ -808,6 +808,26 @@ function toggleAnswer(event, btnEl) {
   box.classList.toggle('open');
   btnEl.classList.toggle('open');
   btnEl.textContent = btnEl.classList.contains('open') ? 'Hide details' : 'Show details';
+}
+
+function filterSkills() {
+  const query = document.getElementById('search').value.toLowerCase().trim();
+  const cards = document.querySelectorAll('.skill-card');
+  let visibleCount = 0;
+  
+  cards.forEach(card => {
+    const title = card.getAttribute('data-title') || '';
+    const body = card.getAttribute('data-body') || '';
+    
+    if (title.includes(query) || body.includes(query)) {
+      card.classList.remove('hidden-by-search');
+      visibleCount++;
+    } else {
+      card.classList.add('hidden-by-search');
+    }
+  });
+  
+  document.getElementById('count').textContent = `Menampilkan ${visibleCount} dari ${cards.length} skill`;
 }
 
 function renderGroup(data) {
