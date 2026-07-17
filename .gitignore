@@ -5,3 +5,5 @@ scratch/
 walkthrough.md
 *.log
 .gemini/
+
+.vercel
