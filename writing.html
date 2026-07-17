@@ -112,13 +112,13 @@
   h1{font-size:34px;margin:6px 0 4px;font-weight:400;}
   .sub{color:var(--ink-soft);font-size:14px;font-style:italic;transition:color 0.3s ease;}
 
-  .mode-toggle{
+  .tab-btn{
     font-family:'Courier New',monospace;font-size:11px;background:none;border:1px solid var(--ink);
     color:var(--ink);padding:6px 10px;cursor:pointer;border-radius:3px;
     transition:background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   }
-  .mode-toggle:hover{background:rgba(0,0,0,.05);}
-  body.dark-mode .mode-toggle:hover{background:rgba(255,255,255,.05);}
+  .tab-btn:hover{background:rgba(0,0,0,.05);}
+  body.dark-mode .tab-btn:hover{background:rgba(255,255,255,.05);}
 
   .view-switch {
     position: sticky;
@@ -287,6 +287,40 @@
     background: rgba(255,255,255,0.03);
   }
 
+  /* Extra views styling */
+  .passage-block {
+    border: 1px solid var(--rule);
+    background: var(--card);
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+  }
+  .passage-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    font-family: 'Georgia', serif;
+  }
+  .passage-text {
+    font-size: 14.5px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--ink);
+  }
+
+  .vocab-table-container {
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .section-view {
+    display: none;
+  }
+  .section-view.active {
+    display: block;
+  }
+
   footer{
     font-family:'Courier New',monospace;font-size:11px;color:var(--ink-soft);
     border-top:1px solid var(--rule);padding-top:16px;margin-top:60px;
@@ -307,26 +341,62 @@
   <header>
     <div>
       <div class="kicker">IELTS Study Kit</div>
-      <h1>Writing Skills</h1>
-      <div class="sub">Structured methods, practice questions, and answer keys</div>
+      <h1>Writing Practice</h1>
+      <div class="sub">Curated strategy guides, practices, and vocabulary reference</div>
     </div>
-    <button class="mode-toggle" id="dark-btn" onclick="toggleDarkMode()">DARK MODE</button>
+    <button id="theme-toggle" class="tab-btn" style="display:inline-flex; align-items:center; gap:6px;">🌙 Dark Mode</button>
   </header>
 
   <div class="view-switch">
-    <div class="view-btn active">Writing Guide</div>
+    <button class="view-btn active" data-view="skills">Writing Skills</button>
+    <button class="view-btn" data-view="extra_2">Essay Outline Templates</button>
+    <button class="view-btn" data-view="extra_3">Band 9 Sample Essays</button>
   </div>
 
-  <div class="controls">
-    <input type="text" id="search" placeholder="cari skill atau keyword..." oninput="filterSkills()">
+  <!-- VIEW 1: SKILLS GUIDE -->
+  <div id="view-skills" class="section-view active">
+    <div class="controls">
+      <input type="text" id="search" placeholder="cari skill atau keyword..." oninput="filterSkills()">
+    </div>
+    <div class="count" id="count"></div>
+    <div id="skills-list"></div>
   </div>
 
-  <div class="count" id="count"></div>
+  <!-- VIEW 2: EXTRA 2 (Passages, Transcripts, or Templates) -->
+  <div id="view-extra_2" class="section-view">
+    
+    <div class="passage-block">
+      <div class="passage-title">Task 2: Agree/Disagree Essay Outline</div>
+      <div class="passage-text" style="line-height: 1.7;">
+        <b>Introduction:</b> Paraphrase prompt + Thesis statement (e.g., 'I completely agree with this view...').<br><b>Body Paragraph 1:</b> Point 1 (First reason supporting your view with explanation & example).<br><b>Body Paragraph 2:</b> Point 2 (Second reason supporting your view with explanation & example).<br><b>Conclusion:</b> Restate opinion + summarize main points.
+      </div>
+    </div>
+    
+    <div class="passage-block">
+      <div class="passage-title">Task 1 Academic: Line Graph Description Structure</div>
+      <div class="passage-text" style="line-height: 1.7;">
+        <b>Introduction:</b> Paraphrase graph title using synonyms.<br><b>Overview:</b> State the general trend (e.g., 'Overall, sales of e-books rose sharply, whereas physical book sales dropped over the period.').<br><b>Body Paragraph 1:</b> Specific details of physical books (include numbers/dates).<br><b>Body Paragraph 2:</b> Specific details of e-books (include numbers/dates).
+      </div>
+    </div>
+    
+  </div>
 
-  <div id="skills-list"></div>
+  <!-- VIEW 3: EXTRA 3 (Vocabulary or Samples) -->
+  <div id="view-extra_3" class="section-view">
+    
+    <div class="passage-block">
+      <div class="passage-title">Task 2 Band 9 Essay: Free University Tuition</div>
+      <div style="font-size: 13px; font-family: 'Courier New', monospace; margin-bottom: 8px; color: var(--ink-soft);">PROMPT: Some people think that university education should be free for all students. Discuss both views and give your opinion.</div>
+      <div class="passage-text" style="font-style: italic; background: rgba(0,0,0,0.01); padding: 12px; border-left: 2px solid var(--tab-2);">
+        It is often argued whether higher education should be fully funded by governments or paid for by the students themselves. In my opinion, while tertiary education is expensive, making it free is crucial for social mobility and national economic development.<br><br>On the one hand, tuition fees ensure that universities are well-funded. When students pay, institutions have more capital to invest in top-tier research facilities and recruit high-quality professors. For instance, in countries with high tuition like the US, universities dominate global research rankings. However, this system excludes talented low-income youth.<br><br>On the other hand, free university education promotes equal opportunity. If access depends solely on academic merit rather than financial wealth, society benefits from a highly skilled workforce. For example, Scandinavian countries offer free tuition and have high levels of innovation. To sum up, I believe that university education should be free, as the long-term societal and economic benefits far outweigh the funding costs.
+      </div>
+      <div class="tip" style="border-left-color: var(--tab-2); color: var(--good);">Band 9.0 Analysis: The essay discusses both views in detail. Coherence is high with clear paragraph transitions (*On the one hand, However, On the other hand, To sum up*). Lexical resource is sophisticated (*tertiary education, social mobility, academic merit*).</div>
+    </div>
+    
+  </div>
 
   <footer>
-    Answer Keys and reference materials parsed directly from Barron's IELTS textbook. Toggle Dark Mode above for comfort.
+    Study materials and reference keys extracted directly from Barron's IELTS 4th Edition.
   </footer>
 </div>
 
@@ -336,7 +406,7 @@ const SKILLS_DATA = [
     "number": 1,
     "title": "Determining the Task (Task 1 Academic)",
     "note": "Initial Phase. Analyze the chart, graph, table, or map to identify what key information you must summarize.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>Read the prompt carefully to see what graphic is presented (bar chart, line graph, pie chart, table, or diagram).</li>\n        <li>Identify the time period (past, present, or future) to select the correct grammatical verb tenses.</li>\n        <li>Look for the units of measurement (percentages, millions of dollars, tons) to report figures accurately.</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>summarize the information</b></td>\n          <td>Verb Phrase</td>\n          <td>merangkum informasi</td>\n          <td>Instruksi wajib untuk memilih dan melaporkan fitur utama secara singkat.</td>\n        </tr>\n        <tr>\n          <td><b>units of measurement</b></td>\n          <td>Noun Phrase</td>\n          <td>satuan pengukuran</td>\n          <td>Satuan data yang disajikan (misal: *percent*, *thousands*, *kilograms*).</td>\n        </tr>\n      </table>\n    ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Read the prompt carefully to see what graphic is presented (bar chart, line graph, table, or diagram).</li>\n          <li>Identify the time period (past, present, or future) to select the correct grammatical verb tenses.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Prompt: 'The bar chart shows average spending per pupil in 2000-2015.' What is the task and tense?",
@@ -348,7 +418,7 @@ const SKILLS_DATA = [
     "number": 2,
     "title": "Determining the Topic (Task 1 Academic)",
     "note": "Formulates the Overview. Define the main subject, variables, and categories of the graphic to paraphrase in your intro.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>Determine the topic by looking at the graphic's title and axis labels.</li>\n        <li>Identify the categories compared (e.g., fast food vs sit-down restaurants).</li>\n        <li>Paraphrase the prompt using synonyms to write your first introduction sentence.</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>illustrate / depict</b></td>\n          <td>Verb</td>\n          <td>menggambarkan / menunjukkan</td>\n          <td>Kata kerja alternatif pengganti *show* saat memparafrase kalimat pengantar.</td>\n        </tr>\n        <tr>\n          <td><b>spending per pupil</b></td>\n          <td>Noun Phrase</td>\n          <td>pengeluaran per siswa</td>\n          <td>Contoh variabel data keuangan; biaya operasional sekolah per siswa.</td>\n        </tr>\n      </table>\n    ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Determine the topic by looking at the graphic's title and axis labels.</li>\n          <li>Paraphrase the prompt using synonyms to write your first introduction sentence.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Paraphrase: 'The table shows the percentage of students passing a math test in three different schools.'",
@@ -360,7 +430,7 @@ const SKILLS_DATA = [
     "number": 3,
     "title": "Making Comparisons (Task 1 Academic)",
     "note": "Scores Task Achievement. Group similar data together and highlight the highest, lowest, or most dramatic trends.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>Do not list every data point sequentially. Group data into high, medium, and low categories.</li>\n        <li>Use comparative structures (*higher than, double, three times, in contrast, similarly*).</li>\n        <li>Highlight the peak (highest point) and the trough (lowest point).</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>in comparison with</b></td>\n          <td>Prep Phrase</td>\n          <td>dibandingkan dengan</td>\n          <td>Menghubungkan dua data berbeda untuk dibandingkan.</td>\n        </tr>\n        <tr>\n          <td><b>reach a peak of</b></td>\n          <td>Verb Phrase</td>\n          <td>mencapai puncak tertinggi sebesar</td>\n          <td>Digunakan untuk mendeskripsikan titik data paling tinggi di grafik garis.</td>\n        </tr>\n      </table>\n    ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Do not list every data point sequentially. Group data into high, medium, and low categories.</li>\n          <li>Use comparative structures (*higher than, double, in contrast, similarly*).</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Chart data: Cafeteria spending was $50 per student in 2000, and fell to $10 in 2015. Write a comparison sentence.",
@@ -372,7 +442,7 @@ const SKILLS_DATA = [
     "number": 4,
     "title": "Making an Outline (Task 1 Academic)",
     "note": "Organizes Paragraph Structure. Plan a 4-paragraph layout: 1) Introduction, 2) Overview, 3) Body 1, 4) Body 2.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>Never start writing without planning. Spend 2-3 minutes outlining.</li>\n        <li><b>Paragraph 1:</b> Introduction (Paraphrase the prompt).</li>\n        <li><b>Paragraph 2:</b> Overview (Describe 2-3 major overall trends without writing specific data figures).</li>\n        <li><b>Paragraph 3:</b> Body Paragraph 1 (Detail first category or trend).</li>\n        <li><b>Paragraph 4:</b> Body Paragraph 2 (Detail second category or trend).</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>overall trend</b></td>\n          <td>Noun Phrase</td>\n          <td>tren keseluruhan</td>\n          <td>Arah umum dari data (naik, turun, atau stabil) yang wajib dilaporkan di bagian Overview.</td>\n        </tr>\n        <tr>\n          <td><b>body paragraph</b></td>\n          <td>Noun Phrase</td>\n          <td>paragraf isi utama</td>\n          <td>Paragraf tempat Anda menyajikan data spesifik secara terperinci.</td>\n        </tr>\n      </table>\n    ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li><b>Paragraph 1:</b> Introduction (Paraphrase the prompt).</li>\n          <li><b>Paragraph 2:</b> Overview (Describe 2-3 major overall trends without writing specific data figures).</li>\n          <li><b>Paragraph 3 & 4:</b> Body Paragraphs (detailed comparative data).</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Create an outline structure for a line graph showing sales of books and e-books over 10 years.",
@@ -384,7 +454,7 @@ const SKILLS_DATA = [
     "number": 5,
     "title": "Writing the Introduction (Task 1 Academic)",
     "note": "First Impression. Paraphrase the prompt using synonyms and state what the graphic compares.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>Paraphrase the original sentence. Replace words like *gives information about* with *provides data on*.</li>\n        <li>Include the geographical area (e.g., in the UK) and the timeframe (e.g., between 2005 and 2010).</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>provides data on</b></td>\n          <td>Verb Phrase</td>\n          <td>menyediakan data tentang</td>\n          <td>Frasa pembuka untuk mengenalkan objek penelitian di grafik.</td>\n        </tr>\n        <tr>\n          <td><b>over a ten-year period</b></td>\n          <td>Prep Phrase</td>\n          <td>selama periode sepuluh tahun</td>\n          <td>Paraphrase dari frasa jangka waktu seperti *from 2000 to 2010*.</td>\n        </tr>\n      </table>\n    ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Paraphrase the original sentence. Replace words like *gives information about* with *provides data on*.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Prompt: 'The chart shows the number of tourists visiting three different cities in Europe from 2010 to 2020.' Write the introduction.",
@@ -396,7 +466,7 @@ const SKILLS_DATA = [
     "number": 6,
     "title": "Writing the Paragraphs (Task 1 Academic)",
     "note": "Body Paragraph Development. Report detailed data points, values, and trends accurately with cohesive transition markers.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>Use transition words to compare data groups (*in terms of, regarding, as for, on the other hand*).</li>\n        <li>Present exact data values in brackets or using prepositions (e.g., \"...stood at 45% in 2008\").</li>\n        <li>Vary your vocabulary for describing change (*dropped, fell, plunged, grew, surged, plateaued*).</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>regarding / as for</b></td>\n          <td>Preposition</td>\n          <td>mengenai / adapun untuk</td>\n          <td>Kata transisi untuk memindahkan fokus bahasan ke kategori data baru.</td>\n        </tr>\n        <tr>\n          <td><b>stood at</b></td>\n          <td>Verb Phrase</td>\n          <td>berada pada angka / nilai</td>\n          <td>Menyatakan nilai data statis pada titik waktu tertentu.</td>\n        </tr>\n      </table>\n    ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Use transition words to compare data groups (*in terms of, regarding, as for*).</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Write a body paragraph sentence stating that school library spending was at 15% in 2000, then rose to 35% in 2010.",
@@ -408,7 +478,7 @@ const SKILLS_DATA = [
     "number": 7,
     "title": "Writing the Conclusion (Task 1 Academic)",
     "note": "Completes Task 1. Restate the main overview trend clearly and briefly in 1-2 final sentences.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>Summarize the core takeaways. Note that a formal 'Conclusion' is optional if you already have an Overview, but a short summary sentence wraps up the essay nicely.</li>\n        <li>Do not introduce any new numbers or data points in the concluding sentence.</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>in conclusion / to sum up</b></td>\n          <td>Transition</td>\n          <td>kesimpulannya / secara ringkas</td>\n          <td>Penanda transisi penutup paragraf kesimpulan.</td>\n        </tr>\n        <tr>\n          <td><b>major shift</b></td>\n          <td>Noun Phrase</td>\n          <td>perubahan besar / signifikan</td>\n          <td>Perubahan dominan yang tampak di data (misal: perpindahan dari belanja fisik ke online).</td>\n        </tr>\n      </table>\n    ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Summarize the core takeaways. Note that a formal 'Conclusion' is optional if you already have an Overview.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Write a concluding sentence for a chart showing a clear transition from fossil fuels to renewable energy.",
@@ -420,23 +490,23 @@ const SKILLS_DATA = [
     "number": 8,
     "title": "Determining the Task (Task 1 General Training)",
     "note": "For GT Letters. Identify if the letter is formal, semi-formal, or informal, and check the 3 bullet points you must cover.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>Determine the letter tone: <b>Formal</b> (to a landlord, employer, company), <b>Informal</b> (to a friend, family member).</li>\n        <li>Address style: Formal letters start with \"Dear Sir or Madam\"; informal start with \"Dear [Friend's Name]\".</li>\n        <li>Highlight the 3 bullet prompts. You must write at least 50 words on EACH bullet to score Band 7+.</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>I am writing to</b></td>\n          <td>Verb Phrase</td>\n          <td>saya menulis surat ini untuk</td>\n          <td>Frasa pembuka wajib untuk menyatakan tujuan menulis surat formal.</td>\n        </tr>\n        <tr>\n          <td><b>prompt / bullet point</b></td>\n          <td>Noun</td>\n          <td>poin arahan / instruksi soal</td>\n          <td>Tiga instruksi khusus yang wajib dijawab di dalam badan surat.</td>\n        </tr>\n      </table>\n    ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Determine the letter tone: <b>Formal</b> (to a landlord, employer), <b>Informal</b> (to a friend).</li>\n          <li>Address the 3 bullet prompts in detail to score Band 7+.</li>\n        </ul>\n      ",
     "items": [
       {
-        "q": "Prompt: 'Write a letter to your landlord complaining about a leak. Explain the problem, tell him what needs fixing, and request action.' Determine the tone and opening.",
-        "a": "<span class='pat-step1'>Tone: Formal (communication with landlord).</span> <span class='pat-step2'>Opening: 'Dear Mr. [Landlord's Surname]' or 'Dear Sir/Madam'.</span> <span class='pat-step3'>Statement of purpose: 'I am writing to bring to your attention a serious water leakage problem in my apartment.'</span>"
+        "q": "Prompt: 'Write a letter to your landlord complaining about a leak. Explain the problem, tell him what needs fixing, and request action.' Determine the tone.",
+        "a": "<span class='pat-step1'>Tone: Formal (communication with landlord).</span> <span class='pat-step2'>Opening: 'Dear Sir/Madam'.</span> <span class='pat-step3'>Statement of purpose: 'I am writing to bring to your attention a serious water leakage problem in my apartment.'</span>"
       }
     ]
   },
   {
     "number": 9,
     "title": "Determining the Topic (Task 1 General Training)",
-    "note": "Brainstorming context. Establish the background story (who, what, where) to make the letter sound natural and cohesive.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>Create a believable background story. If complaining about a noisy neighbor, decide what noise (e.g., playing drums late at night).</li>\n        <li>Structure your letter around this scenario so it reads logically.</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>bring to your attention</b></td>\n          <td>Verb Phrase</td>\n          <td>melaporkan / memberitahukan kepada Anda</td>\n          <td>Frasa formal untuk melaporkan suatu masalah secara resmi.</td>\n        </tr>\n        <tr>\n          <td><b>inconvenience</b></td>\n          <td>Noun</td>\n          <td>ketidaknyamanan / kendala</td>\n          <td>Masalah atau kesulitan yang ditimbulkan oleh suatu keadaan buruk.</td>\n        </tr>\n      </table>\n    ",
+    "note": "Brainstorming context. Establish the background story (who, what, where) to make the letter sound natural.",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Create a believable background story to build cohesive paragraphs.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Brainstorm details for: 'Write a letter to a manager complaining about bad customer service at a restaurant.'",
-        "a": "<span class='pat-step1'>Identify who: Waiter was rude.</span> <span class='pat-step2'>Identify what: Food served cold, waiter ignored requests.</span> <span class='pat-step3'>Identify where/when: Friday night at the downtown branch. Use these details to build your letter paragraph.</span>"
+        "a": "<span class='pat-step1'>Identify who: Waiter was rude.</span> <span class='pat-step2'>Identify what: Food served cold.</span> <span class='pat-step3'>Identify where/when: Friday night at the downtown branch.</span>"
       }
     ]
   },
@@ -444,7 +514,7 @@ const SKILLS_DATA = [
     "number": 10,
     "title": "Brainstorming Ideas (Task 1 General Training)",
     "note": "Letter Details. Generate specific request details, dates, and names for each of the letter's 3 prompts.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>Generate realistic details for your requests: dates, exact times, items, prices.</li>\n        <li>For informal letters, use conversational, friendly anecdotes. For formal, keep descriptions precise and transactional.</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>apologize for</b></td>\n          <td>Verb Phrase</td>\n          <td>meminta maaf atas</td>\n          <td>Digunakan dalam surat permohonan maaf (apology letter).</td>\n        </tr>\n        <tr>\n          <td><b>look forward to</b></td>\n          <td>Verb Phrase</td>\n          <td>sangat menantikan / berharap</td>\n          <td>Frasa penutup untuk surat formal (e.g., *I look forward to hearing from you*).</td>\n        </tr>\n      </table>\n    ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Generate realistic details: dates, exact times, items, prices.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Write a request sentence to a company asking for a full refund for a broken laptop.",
@@ -456,11 +526,11 @@ const SKILLS_DATA = [
     "number": 11,
     "title": "Making an Outline (Task 1 General Training)",
     "note": "GT Letter Structure. Outline a 5-part layout: 1) Salutation, 2) Purpose, 3) Bullet Points coverage, 4) Sign-off.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>Salutation: \"Dear Sir/Madam\" (formal) vs \"Dear John\" (informal).</li>\n        <li>Paragraph 1: Statement of purpose.</li>\n        <li>Paragraph 2 & 3: Address the 3 bullet prompts in detail.</li>\n        <li>Sign-off: \"Yours faithfully\" (formal, recipient unknown) vs \"Yours sincerely\" (formal, recipient known) vs \"Best wishes\" (informal).</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>Yours faithfully</b></td>\n          <td>Sign-off Phrase</td>\n          <td>Hormat saya</td>\n          <td>Penutup formal jika Anda tidak mengetahui nama penerima surat (diawali *Dear Sir/Madam*).</td>\n        </tr>\n        <tr>\n          <td><b>Yours sincerely</b></td>\n          <td>Sign-off Phrase</td>\n          <td>Hormat saya</td>\n          <td>Penutup formal jika Anda tahu nama penerima surat (diawali *Dear Mr. Smith*).</td>\n        </tr>\n      </table>\n    ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Structure: Salutation -> Purpose -> Body Prompts -> Formal/Informal Sign-off.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Draft the outline of an informal letter inviting a friend to a weekend camping trip.",
-        "a": "<span class='pat-step1'>Salutation: 'Dear Mark,'. Purpose: Invite him to camp next weekend.</span> <span class='pat-step2'>Details: Explain location (Rocky Mountains), packing list, travel plan.</span> <span class='pat-step3'>Sign-off: 'Warmly,' or 'Best wishes,' followed by your name.</span>"
+        "a": "<span class='pat-step1'>Salutation: 'Dear Mark,'. Purpose: Invite him to camp next weekend.</span> <span class='pat-step2'>Details: Explain location, packing list, travel plan.</span> <span class='pat-step3'>Sign-off: 'Warmly,' followed by your name.</span>"
       }
     ]
   },
@@ -468,7 +538,7 @@ const SKILLS_DATA = [
     "number": 12,
     "title": "Writing the Introduction (Task 1 General Training)",
     "note": "Letter Opening. Learn the standard opening phrases to state your letter's objective immediately.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>Open formal letters with: \"I am writing to complain about...\", \"I am writing to inquire about...\", \"I am writing to express my dissatisfaction with...\".</li>\n        <li>Open informal letters with: \"I hope you are doing well.\", \"It was great to hear from you.\"</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>write on behalf of</b></td>\n          <td>Verb Phrase</td>\n          <td>menulis atas nama / mewakili</td>\n          <td>Digunakan jika menulis mewakili kelompok (misal: asosiasi tetangga atau tim kerja).</td>\n        </tr>\n        <tr>\n          <td><b>express my dissatisfaction</b></td>\n          <td>Verb Phrase</td>\n          <td>menyatakan kekecewaan saya</td>\n          <td>Frasa pembuka formal untuk surat komplain barang/layanan rusak.</td>\n        </tr>\n      </table>\n    ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Open formal letters with: 'I am writing to complain about...', 'I am writing to inquire about...'.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Write a formal introduction for a letter requesting a change of work shift.",
@@ -480,7 +550,7 @@ const SKILLS_DATA = [
     "number": 13,
     "title": "Writing the Paragraphs (Task 1 General Training)",
     "note": "GT Body development. Use appropriate formal or informal cohesive links to detail your story.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>Use paragraphs to separate different topics (1 paragraph for explaining the situation, 1 for your request).</li>\n        <li>Use formal transition words: *Furthermore, Consequently, However, In light of this*.</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>Furthermore</b></td>\n          <td>Adverb</td>\n          <td>selain itu / terlebih lagi</td>\n          <td>Transisi formal untuk menambahkan keluhan atau detail pendukung baru.</td>\n        </tr>\n        <tr>\n          <td><b>Consequently</b></td>\n          <td>Adverb</td>\n          <td>akibatnya / konsekuensinya</td>\n          <td>Menunjukkan dampak dari masalah (e.g., *Consequently, I cannot sleep*).</td>\n        </tr>\n      </table>\n    ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Use paragraphs to separate different topics. Use cohesive words (*Furthermore, Consequently*).</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Write a complaint paragraph detailing a broken heating system in winter.",
@@ -492,7 +562,7 @@ const SKILLS_DATA = [
     "number": 14,
     "title": "Writing the Conclusion (Task 1 General Training)",
     "note": "Letter Closing. Request a specific action or response, and sign off using the correct greeting.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>End with a call to action: \"I urge you to look into this matter immediately\", \"Please let me know if this date works for you\".</li>\n        <li>Ensure your sign-off aligns with your salutation.</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>look into this matter</b></td>\n          <td>Verb Phrase</td>\n          <td>menyelidiki / memproses masalah ini</td>\n          <td>Frasa formal mendesak penyelesaian masalah oleh pihak berwenang.</td>\n        </tr>\n        <tr>\n          <td><b>appreciate your prompt attention</b></td>\n          <td>Verb Phrase</td>\n          <td>menghargai tanggapan cepat Anda</td>\n          <td>Frasa penutup sopan untuk surat komplain formal.</td>\n        </tr>\n      </table>\n    ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>End with a call to action: 'I appreciate your prompt attention to this matter.'</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Write a concluding paragraph for a complaint letter to a hotel manager.",
@@ -504,7 +574,7 @@ const SKILLS_DATA = [
     "number": 15,
     "title": "Determining the Task (Task 2 Essay)",
     "note": "Essay Core. Identify the essay type: Agree/Disagree, Discussion (Both views), Problem/Solution, or Double Question.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>Analyze the essay question keywords. \"To what extent do you agree?\" is an Agree/Disagree essay. \"Discuss both views and give your opinion\" requires balancing both sides.</li>\n        <li>Highlight the core topics to ensure you do not wander off-topic (which drops your Task Response score to Band 5).</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>agree / disagree</b></td>\n          <td>Verb</td>\n          <td>setuju / tidak setuju</td>\n          <td>Menyatakan posisi atau opini Anda terhadap suatu isu sosial.</td>\n        </tr>\n        <tr>\n          <td><b>discuss both views</b></td>\n          <td>Verb Phrase</td>\n          <td>membahas kedua sudut pandang</td>\n          <td>Tipe esai yang mewajibkan penulisan argumentasi untuk kedua pihak yang berseberangan sebelum memberi opini pribadi.</td>\n        </tr>\n      </table>\n    ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Analyze essay keywords to identify the essay type and layout requirements.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Prompt: 'Some people think university education should be free. Others argue that students should pay tuition. Discuss both views.' Determine the essay type and task.",
@@ -516,7 +586,7 @@ const SKILLS_DATA = [
     "number": 16,
     "title": "Developing a Thesis Statement (Task 2)",
     "note": "Scores Coherence & Cohesion. Write a 1-sentence answer to the essay prompt to present your position clearly.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>The <b>Thesis Statement</b> is the most important sentence in your essay. It must answer the prompt directly and show your main stance.</li>\n        <li>Place the thesis statement at the end of your introductory paragraph.</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>thesis statement</b></td>\n          <td>Noun Phrase</td>\n          <td>kalimat tesis / posisi penulis</td>\n          <td>Kalimat kunci di paragraf pertama yang menyatakan dengan tegas posisi opini Anda terhadap isu tersebut.</td>\n        </tr>\n        <tr>\n          <td><b>In my opinion / I believe</b></td>\n          <td>Transition</td>\n          <td>menurut pendapat saya / saya percaya</td>\n          <td>Frasa pembuka sebelum menyatakan sikap/opini pribadi.</td>\n        </tr>\n      </table>\n    ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>The thesis statement must answer the prompt directly and show your main stance.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Write a thesis statement for: 'Should homework be banned in schools?' (Position: Ban it).",
@@ -528,11 +598,11 @@ const SKILLS_DATA = [
     "number": 17,
     "title": "Organizing Your Writing (Task 2)",
     "note": "Essay Layout. Plan a 4-paragraph layout: 1) Intro, 2) Body 1 (argument A), 3) Body 2 (argument B), 4) Conclusion.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>Stick to a clean 4-paragraph layout. It provides the best structure for balancing arguments and finishing within the 40-minute limit.</li>\n        <li>Use paragraph indentations or double line breaks to demarcate sections clearly.</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>cohesion</b></td>\n          <td>Noun</td>\n          <td>kepaduan paragraf / keterikatan</td>\n          <td>Bagaimana ide-ide dalam esai mengalir secara logis menggunakan kata transisi.</td>\n        </tr>\n        <tr>\n          <td><b>counter-argument</b></td>\n          <td>Noun</td>\n          <td>argumen sanggahan</td>\n          <td>Poin sanggahan yang digunakan untuk menyanggah posisi lawan demi memperkuat opini Anda.</td>\n        </tr>\n      </table>\n    ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Stick to a clean 4-paragraph layout. Plan cohesion transitions.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Draft the outline of an Agree/Disagree essay about whether public transport should be free.",
-        "a": "<span class='pat-step1'>Para 1: Intro + thesis (strongly agree).</span> <span class='pat-step2'>Para 2: Body 1 (environmental benefits - cuts emissions). Para 3: Body 3 (social benefits - helps low-income workers).</span> <span class='pat-step3'>Para 4: Conclusion (restate position).</span>"
+        "a": "<span class='pat-step1'>Para 1: Intro + thesis (strongly agree).</span> <span class='pat-step2'>Para 2: Body 1 (environmental benefits). Para 3: Body 3 (social benefits).</span> <span class='pat-step3'>Para 4: Conclusion (restate position).</span>"
       }
     ]
   },
@@ -540,11 +610,11 @@ const SKILLS_DATA = [
     "number": 18,
     "title": "Writing the Introduction (Task 2)",
     "note": "Essay Opening. Paraphrase the prompt in 1-2 sentences and end with your clear thesis statement.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>Sentence 1: Background sentence (paraphrase the general topic prompt).</li>\n        <li>Sentence 2: Thesis statement (your direct response/opinion).</li>\n        <li>Avoid using template sentences like \"This essay will discuss...\" as they sound generic and lower your lexical resource score.</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>It is often argued that</b></td>\n          <td>Passive Phrase</td>\n          <td>sering diperdebatkan bahwa</td>\n          <td>Frasa pengantar formal untuk membuka topik kontroversial.</td>\n        </tr>\n        <tr>\n          <td><b>play a vital role in</b></td>\n          <td>Verb Phrase</td>\n          <td>memainkan peran vital dalam</td>\n          <td>Menyatakan pentingnya suatu aspek (e.g., *Education plays a vital role in society*).</td>\n        </tr>\n      </table>\n    ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Sentence 1: Background (paraphrase topic). Sentence 2: Thesis statement.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Write an introduction for: 'Governments should invest in art rather than science.' (Disagree).",
-        "a": "<span class='pat-step1'>Paraphrase topic: It is often argued whether state funding should prioritize artistic projects over scientific research.</span> <span class='pat-step2'>Thesis: I disagree and believe scientific funding is far more critical for society.</span> <span class='pat-step3'>Intro: 'It is often argued that state budgets should prioritize the arts over scientific research. In my opinion, I strongly disagree with this view, as scientific advancements play a far more vital role in national development.'</span>"
+        "a": "<span class='pat-step1'>Paraphrase topic: It is often argued whether state funding should prioritize artistic projects over scientific research.</span> <span class='pat-step2'>Thesis: I disagree and believe scientific funding is far more critical.</span> <span class='pat-step3'>Intro: 'It is often argued that state budgets should prioritize the arts over scientific research. In my opinion, I strongly disagree with this view, as scientific advancements play a far more vital role in national development.'</span>"
       }
     ]
   },
@@ -552,7 +622,7 @@ const SKILLS_DATA = [
     "number": 19,
     "title": "Writing the Paragraphs (Task 2)",
     "note": "Body Paragraph Logic. Build each paragraph using the PEEL method: Point, Explanation, Example, Link.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li><b>Point:</b> State the main argument sentence.</li>\n        <li><b>Explanation:</b> Explain why/how (2-3 sentences).</li>\n        <li><b>Example:</b> Give a concrete example (from studies, news, or history).</li>\n        <li><b>Link:</b> Wrap up by linking back to your main thesis position.</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>For instance / For example</b></td>\n          <td>Transition</td>\n          <td>sebagai contoh / misalnya</td>\n          <td>Transisi wajib sebelum memberikan data dukung berupa contoh kasus.</td>\n        </tr>\n        <tr>\n          <td><b>leads to</b></td>\n          <td>Verb</td>\n          <td>mengarah pada / menyebabkan</td>\n          <td>Menunjukkan hubungan logis sebab-akibat.</td>\n        </tr>\n      </table>\n    ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li><b>PEEL Method:</b> Point -> Explanation -> Example -> Link back to thesis.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Write a body paragraph point showing that online education is flexible, using PEEL.",
@@ -564,7 +634,7 @@ const SKILLS_DATA = [
     "number": 20,
     "title": "Writing the Conclusion (Task 2)",
     "note": "Completes Essay. Summarize the main points and restate your thesis in 2 final sentences.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>Summarize: Restate your main arguments from Body 1 & 2 in a fresh way (paraphrased).</li>\n        <li>Opinion: Restate your final stance clearly.</li>\n        <li>Never introduce a completely new idea or argument in the conclusion.</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>In conclusion / To sum up</b></td>\n          <td>Transition</td>\n          <td>kesimpulannya / kesimpulannya</td>\n          <td>Transisi resmi untuk mengawali paragraf penutup esai Task 2.</td>\n        </tr>\n        <tr>\n          <td><b>it is clear that</b></td>\n          <td>Phrase</td>\n          <td>tampak jelas bahwa</td>\n          <td>Pernyataan penutup untuk merangkum hasil analisis data esai.</td>\n        </tr>\n      </table>\n    ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Summarize main arguments and restate your opinion clearly. Do not introduce new topics.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Write a conclusion for an essay arguing that technology has made us more isolated.",
@@ -574,23 +644,42 @@ const SKILLS_DATA = [
   }
 ];
 
-// Dark Mode logic
-function toggleDarkMode() {
+// Shared Dark Mode Synchronization
+const themeToggle = document.getElementById('theme-toggle');
+themeToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
   const isDark = document.body.classList.contains('dark-mode');
-  localStorage.setItem('dark-mode', isDark);
-  document.getElementById('dark-btn').textContent = isDark ? 'LIGHT MODE' : 'DARK MODE';
-}
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  themeToggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+});
 
 // Initialize dark mode
-if (localStorage.getItem('dark-mode') === 'true') {
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
   document.body.classList.add('dark-mode');
-  document.getElementById('dark-btn').textContent = 'LIGHT MODE';
+  themeToggle.textContent = '☀️ Light Mode';
+} else {
+  themeToggle.textContent = '🌙 Dark Mode';
 }
 
 // Set active navigation tab
 const activeNav = 'nav-' + 'writing';
 document.getElementById(activeNav).classList.add('active');
+
+// View switching logic
+const viewBtns = document.querySelectorAll('.view-btn');
+const views = document.querySelectorAll('.section-view');
+
+viewBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    viewBtns.forEach(b => b.classList.remove('active'));
+    views.forEach(v => v.classList.remove('active'));
+    
+    btn.classList.add('active');
+    const targetView = 'view-' + btn.getAttribute('data-view');
+    document.getElementById(targetView).classList.add('active');
+  });
+});
 
 function escapeAttribute(str) {
   if (!str) return '';

@@ -1,122 +1,186 @@
-[
-  {
-    "number": 1,
-    "title": "Using the First Paragraph to Make Predictions",
-    "note": "Protects Reading Speed & Comprehension. Skim the introductory paragraph to identify the thesis statement and predict the passage theme.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>Always read the first paragraph (introduction) first. It introduces the main topic and context of the passage.</li>\n        <li>Locate the <b>Thesis Statement</b>\u2014usually the first or last sentence of the introduction\u2014which states the main point of the entire text.</li>\n        <li>Use this thesis to predict the overall layout, content, and arguments that will follow in the body paragraphs.</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>thesis statement</b></td>\n          <td>Noun Phrase</td>\n          <td>pernyataan tesis / ide pokok</td>\n          <td>Kalimat kunci yang merangkum inti seluruh bacaan. Biasanya ada di akhir paragraf pertama.</td>\n        </tr>\n        <tr>\n          <td><b>make predictions</b></td>\n          <td>Verb Phrase</td>\n          <td>membuat prediksi / perkiraan</td>\n          <td>Menebak isi paragraf berikutnya berdasarkan kalimat pengantar untuk menghemat waktu baca.</td>\n        </tr>\n        <tr>\n          <td><b>introductory paragraph</b></td>\n          <td>Noun Phrase</td>\n          <td>paragraf pembuka / pengantar</td>\n          <td>Paragraf pertama yang membangun latar belakang topik (background context).</td>\n        </tr>\n      </table>\n    ",
-    "items": [
-      {
-        "q": "Identify the thesis statement: 'Observations of different species of birds, both in the wild and in captivity, have shown a great deal of evidence of high levels of avian intelligence.' What is the predicted topic?",
-        "a": "<span class='pat-step1'>Thesis statement is the entire sentence.</span> <span class='pat-step2'>The predicted topic is:</span> <span class='pat-step3'>The passage will describe scientific experiments and behavior proving how smart birds are.</span>"
-      }
-    ]
-  },
-  {
-    "number": 2,
-    "title": "Using the Topic Sentence to Make Predictions",
-    "note": "Aids Skimming. Read the first sentence of each body paragraph to find its topic sentence and predict the sub-details.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>The <b>Topic Sentence</b> is the first sentence of a body paragraph and expresses its main idea.</li>\n        <li>If the first sentence is not the topic sentence, read the second or last sentence.</li>\n        <li>Predict what supporting details (examples, facts, stats) will appear in the rest of the paragraph.</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>topic sentence</b></td>\n          <td>Noun Phrase</td>\n          <td>kalimat topik / ide pokok paragraf</td>\n          <td>Kalimat utama di awal paragraf yang mengontrol seluruh isi paragraf tersebut.</td>\n        </tr>\n        <tr>\n          <td><b>body paragraph</b></td>\n          <td>Noun Phrase</td>\n          <td>paragraf isi / paragraf utama</td>\n          <td>Paragraf setelah pendahuluan yang mengembangkan poin-poin tesis.</td>\n        </tr>\n      </table>\n    ",
-    "items": [
-      {
-        "q": "Identify the topic sentence: 'To combat excessive thoughts and impulses, most OCD sufferers perform certain repetitive rituals that they believe will relieve their anxiety.' Predict the paragraph's details.",
-        "a": "<span class='pat-step1'>Topic sentence: First sentence.</span> <span class='pat-step2'>Prediction:</span> <span class='pat-step3'>The paragraph will detail the specific repetitive rituals (checking, washing, counting) performed by OCD sufferers.</span>"
-      }
-    ]
-  },
-  {
-    "number": 3,
-    "title": "Looking for Supporting Details",
-    "note": "Crucial for Detail-Matching Questions. Identify facts, statistics, examples, or quotes that back up the topic sentence.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>Supporting details are the 'meat' of the paragraph\u2014they prove the topic sentence.</li>\n        <li>Look for types of evidence: statistics (numbers), names, scientific facts, historical dates, or examples.</li>\n        <li>Map these details back to the main topic sentence to confirm your understanding.</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>supporting details</b></td>\n          <td>Noun Phrase</td>\n          <td>detail / informasi pendukung</td>\n          <td>Fakta, contoh, atau statistik yang memperkuat kalimat topik utama.</td>\n        </tr>\n        <tr>\n          <td><b>factual evidence</b></td>\n          <td>Noun Phrase</td>\n          <td>bukti faktual / nyata</td>\n          <td>Informasi objektif yang dapat diverifikasi (data, nama peneliti, dll).</td>\n        </tr>\n      </table>\n    ",
-    "items": [
-      {
-        "q": "In a paragraph about Zulu beadwork being communication: 'Beads are used to make items for personal adornment, home decoration, and as a language to send status messages.' What are the supporting details?",
-        "a": "<span class='pat-step1'>Main idea: Zulu beadwork is a form of communication.</span> <span class='pat-step2'>Supporting details:</span> <span class='pat-step3'>1) Items for personal adornment. 2) Home decoration. 3) Language to send status/relationship messages.</span>"
-      }
-    ]
-  },
-  {
-    "number": 4,
-    "title": "Using Key Words",
-    "note": "Core Scanning Skill. Circle key nouns, verbs, dates, and names in the questions, then locate them or their synonyms in the passage.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>Do not read the passage word-for-word first. Go to the questions, circle <b>Key Words</b> (nouns, names, dates, numbers).</li>\n        <li>Scan the text quickly by running your eyes over it looking for these keywords or their synonyms/paraphrases.</li>\n        <li>When found, read closely (intensive reading) the surrounding sentences to extract the answer.</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>keyword scanning</b></td>\n          <td>Noun Phrase</td>\n          <td>pemindaian kata kunci</td>\n          <td>Mencari letak kata kunci tanpa membaca arti kalimat secara keseluruhan terlebih dahulu.</td>\n        </tr>\n        <tr>\n          <td><b>equivalent meaning</b></td>\n          <td>Noun Phrase</td>\n          <td>makna setara / sinonim</td>\n          <td>Kata yang berbeda namun memiliki arti yang sama (misal: *fix* = *repair*).</td>\n        </tr>\n      </table>\n    ",
-    "items": [
-      {
-        "q": "Question: 'On what date did Portuguese explorers arrive in KwaZulu-Natal?' What are the keywords to scan?",
-        "a": "<span class='pat-step1'>Keywords: 'Portuguese explorers', 'arrive', 'KwaZulu-Natal'.</span> <span class='pat-step2'>Scan the text for these words or dates like '1497'.</span> <span class='pat-step3'>Found sentence: 'Portuguese explorers gave this region when they arrived in 1497.' Answer: 1497.</span>"
-      }
-    ]
-  },
-  {
-    "number": 5,
-    "title": "Matching Headings to Paragraphs",
-    "note": "Common Reading Question. Identify the core theme of each paragraph to select the correct heading from a list.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>Read the paragraph's topic sentence and concluding sentence to grasp the core theme.</li>\n        <li>Watch out for <b>distractors</b>\u2014headings that contain words from the paragraph but do not represent the main idea.</li>\n        <li>Cross out headings as you use them to narrow down choices.</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>heading matching</b></td>\n          <td>Noun Phrase</td>\n          <td>pencocokan kepala paragraf</td>\n          <td>Memilih judul/ikhtisar yang paling sesuai dengan isi satu paragraf utuh.</td>\n        </tr>\n        <tr>\n          <td><b>distractor</b></td>\n          <td>Noun</td>\n          <td>distraktor / opsi pengecoh</td>\n          <td>Pilihan jawaban salah yang sengaja dibuat menyerupai teks asli untuk menguji ketelitian.</td>\n        </tr>\n      </table>\n    ",
-    "items": [
-      {
-        "q": "Paragraph A discusses how people think colorblindness means seeing no color, but explains it is actually difficulty distinguishing shades. Headings options: 'i. Complete Blindness', 'ii. What Is Colorblindness?', 'iii. Genetic Causes'. Select the best heading.",
-        "a": "<span class='pat-step1'>Analyze: Paragraph defines and corrects misconceptions about colorblindness.</span> <span class='pat-step2'>Compare headings: 'ii' represents the definition.</span> <span class='pat-step3'>Correct heading: 'ii. What Is Colorblindness?'. 'i' is a distractor.</span>"
-      }
-    ]
-  },
-  {
-    "number": 6,
-    "title": "Making Predictions (General Training)",
-    "note": "Saves Time in GT Reading. Identify text types (ads, schedules, forms) to predict where key details are placed.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>Identify the text format immediately (e.g., advertisement, course descriptions, employee handbook).</li>\n        <li>Predict the layout: advertisements have price/location at the bottom; handbooks have bulleted policies.</li>\n        <li>Focus your search based on layout predictions.</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>text type</b></td>\n          <td>Noun Phrase</td>\n          <td>jenis teks / format dokumen</td>\n          <td>Bentuk fisik dokumen seperti selebaran, brosur, jadwal, atau panduan kerja.</td>\n        </tr>\n        <tr>\n          <td><b>course descriptions</b></td>\n          <td>Noun Phrase</td>\n          <td>deskripsi kursus / mata pelajaran</td>\n          <td>Teks yang merinci nama kelas, jadwal, nama pengajar, dan buku wajib.</td>\n        </tr>\n      </table>\n    ",
-    "items": [
-      {
-        "q": "You see a document with headers: 'Beginning French, Intermediate French, Advanced Spanish' along with times like '4:00-6:00 p.m.' and names like 'Mr. Sato'. Predict the text type.",
-        "a": "<span class='pat-step1'>Examine elements: Class names, times, names of people.</span> <span class='pat-step2'>Identify:</span> <span class='pat-step3'>This is a Course Description / Class Schedule text type.</span>"
-      }
-    ]
-  },
-  {
-    "number": 7,
-    "title": "Scanning for Specific Details (General Training)",
-    "note": "For Fact-Finding Questions. Look for numbers, hours, contacts, or names without reading paragraphs.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>Use scanning techniques to search for exact facts in advertisements, job postings, or catalogs.</li>\n        <li>Ignore adjectives and side sentences; keep your eyes focused on finding punctuation, digits, or capitalized nouns.</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>opening hours</b></td>\n          <td>Noun Phrase</td>\n          <td>jam buka / jam operasional</td>\n          <td>Jadwal kerja instansi, penting untuk soal-soal pencarian fakta di GT Reading Section 1.</td>\n        </tr>\n        <tr>\n          <td><b>contact details</b></td>\n          <td>Noun Phrase</td>\n          <td>informasi kontak</td>\n          <td>Nomor telepon, email, atau alamat kantor untuk melakukan pendaftaran.</td>\n        </tr>\n      </table>\n    ",
-    "items": [
-      {
-        "q": "Ad text: 'locker rooms are closed every Wednesday afternoon. Nonmembers may purchase a one-day pass.' Question: 'When can you not access the locker rooms?' Scan for the answer.",
-        "a": "<span class='pat-step1'>Locate keywords: 'locker rooms', 'closed'.</span> <span class='pat-step2'>Scan and find: 'closed every Wednesday afternoon'.</span> <span class='pat-step3'>Answer: Wednesday afternoon.</span>"
-      }
-    ]
-  },
-  {
-    "number": 8,
-    "title": "Skimming for the Main Idea (General Training)",
-    "note": "Essential for Quick Comprehension. Skim short notices or company announcements to extract the core policy.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>Read headings, subheadings, and bullet points first.</li>\n        <li>Skim the first and last sentence of each policy paragraph to understand company rules quickly.</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>employee handbook</b></td>\n          <td>Noun Phrase</td>\n          <td>buku panduan karyawan</td>\n          <td>Kumpulan aturan/kebijakan resmi perusahaan untuk staf.</td>\n        </tr>\n        <tr>\n          <td><b>volunteer program</b></td>\n          <td>Noun Phrase</td>\n          <td>program sukarelawan / sosial</td>\n          <td>Program bantuan sosial tempat karyawan bekerja sukarela tanpa dibayar.</td>\n        </tr>\n      </table>\n    ",
-    "items": [
-      {
-        "q": "A notice heading: 'Voluntary Work Policy'. Paragraph: 'Full-time employees who have been with the company for six months may take one day of paid leave per month for volunteer work.' What is the core rule?",
-        "a": "<span class='pat-step1'>Skim heading: Volunteer policy.</span> <span class='pat-step2'>Skim details: 6 months tenure required, 1 day paid leave per month.</span> <span class='pat-step3'>Core message: Eligible employees get paid leave to do volunteer work.</span>"
-      }
-    ]
-  },
-  {
-    "number": 9,
-    "title": "Recognizing Synonyms and Paraphrase",
-    "note": "Underlies All Reading Questions. Match question keywords to synonyms used in the text to locate the correct answers.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>Understand that IELTS rarely uses identical words in both questions and texts.</li>\n        <li>Translate nouns, verbs, and adjectives in the question into their synonyms before scanning the text.</li>\n        <li>Practice mapping common synonym pairs (e.g., *permit* = *allow*, *children* = *kids/infants*).</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>paraphrase</b></td>\n          <td>Noun / Verb</td>\n          <td>parafrase / menyatakan ulang</td>\n          <td>Menyusun kembali kalimat dengan kata-kata berbeda namun maknanya tetap sama.</td>\n        </tr>\n        <tr>\n          <td><b>synonym mapping</b></td>\n          <td>Noun Phrase</td>\n          <td>pemetaan kata sepadan</td>\n          <td>Mencatat padanan kata antara soal dan bacaan untuk memverifikasi kebenaran jawaban.</td>\n        </tr>\n      </table>\n    ",
-    "items": [
-      {
-        "q": "Question: 'Who is eligible to participate?' Text: 'Adults age 18 and over only are permitted in the pool.' Match synonyms.",
-        "a": "<span class='pat-step1'>Compare: 'eligible' in question maps to 'permitted' in text.</span> <span class='pat-step2'>Match: 'Who' maps to 'Adults age 18 and over'.</span> <span class='pat-step3'>Answer: Adults aged 18 and older.</span>"
-      }
-    ]
-  },
-  {
-    "number": 10,
-    "title": "Recognizing Chronological Sequence",
-    "note": "For Flowchart & Timeline Questions. Use sequence words and dates to track the historical order of events.",
-    "details": "\n      <b>Strategy & Method:</b>\n      <ul>\n        <li>Identify timeline markers (dates, centuries) and sequence words (*first, subsequently, thereafter, finally*).</li>\n        <li>Draw a mental timeline to sequence developments in historical or scientific passages.</li>\n        <li>Watch out for sentences that mention a later event first (e.g., 'Before colonization, Arab traders brought glass beads. Prior to that, Phoenicians brought them.').</li>\n      </ul>\n      <b>Key Vocabulary & Patterns:</b>\n      <table>\n        <tr>\n          <th>English Pattern</th>\n          <th>Type / Role</th>\n          <th>Arti (Indonesian)</th>\n          <th>Usage Context &amp; Explanation</th>\n        </tr>\n        <tr>\n          <td><b>sequence marker</b></td>\n          <td>Noun Phrase</td>\n          <td>penanda urutan / kronologi</td>\n          <td>Kata transisi seperti *then, next, later, initially* yang menunjukkan alur waktu.</td>\n        </tr>\n        <tr>\n          <td><b>chronological order</b></td>\n          <td>Noun Phrase</td>\n          <td>urutan kronologis / waktu</td>\n          <td>Urutan peristiwa mulai dari kejadian pertama hingga paling akhir.</td>\n        </tr>\n      </table>\n    ",
-    "items": [
-      {
-        "q": "Text: 'Before the Europeans arrived, Arab traders brought glass beads. Prior to them, Phoenician mariners brought cargoes of beads.' Sequence the traders chronologically.",
-        "a": "<span class='pat-step1'>Analyze timeline: 'Prior to them' means Phoenicians came before Arabs.</span> <span class='pat-step2'>Identify Europeans: Arrived last.</span> <span class='pat-step3'>Sequence: 1. Phoenicians (first) -> 2. Arab traders -> 3. Europeans (last).</span>"
-      }
-    ]
-  }
-]
+{
+  "skills": [
+    {
+      "number": 1,
+      "title": "Using the First Paragraph to Make Predictions",
+      "note": "Protects Reading Speed & Comprehension. Skim the introductory paragraph to identify the thesis statement and predict the passage theme.",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Always read the first paragraph (introduction) first. It introduces the main topic and context of the passage.</li>\n          <li>Locate the <b>Thesis Statement</b>\u2014usually the first or last sentence of the introduction\u2014which states the main point of the entire text.</li>\n          <li>Use this thesis to predict the overall layout, content, and arguments that will follow in the body paragraphs.</li>\n        </ul>\n        <b>Key Vocabulary & Patterns:</b>\n        <table>\n          <tr>\n            <th>English Pattern</th>\n            <th>Type / Role</th>\n            <th>Arti (Indonesian)</th>\n            <th>Usage Context &amp; Explanation</th>\n          </tr>\n          <tr>\n            <td><b>thesis statement</b></td>\n            <td>Noun Phrase</td>\n            <td>pernyataan tesis / ide pokok</td>\n            <td>Kalimat kunci yang merangkum inti seluruh bacaan. Biasanya ada di akhir paragraf pertama.</td>\n          </tr>\n          <tr>\n            <td><b>make predictions</b></td>\n            <td>Verb Phrase</td>\n            <td>membuat prediksi / perkiraan</td>\n            <td>Menebak isi paragraf berikutnya berdasarkan kalimat pengantar untuk menghemat waktu baca.</td>\n          </tr>\n        </table>\n      ",
+      "items": [
+        {
+          "q": "Identify the thesis statement: 'Observations of different species of birds, both in the wild and in captivity, have shown a great deal of evidence of high levels of avian intelligence.' What is the predicted topic?",
+          "a": "<span class='pat-step1'>Thesis statement is the entire sentence.</span> <span class='pat-step2'>The predicted topic is:</span> <span class='pat-step3'>The passage will describe scientific experiments and behavior proving how smart birds are.</span>"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Using the Topic Sentence to Make Predictions",
+      "note": "Aids Skimming. Read the first sentence of each body paragraph to find its topic sentence and predict the sub-details.",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>The <b>Topic Sentence</b> is the first sentence of a body paragraph and expresses its main idea.</li>\n          <li>If the first sentence is not the topic sentence, read the second or last sentence.</li>\n          <li>Predict what supporting details (examples, facts, stats) will appear in the rest of the paragraph.</li>\n        </ul>\n      ",
+      "items": [
+        {
+          "q": "Identify the topic sentence: 'To combat excessive thoughts and impulses, most OCD sufferers perform certain repetitive rituals that they believe will relieve their anxiety.' Predict the paragraph's details.",
+          "a": "<span class='pat-step1'>Topic sentence: First sentence.</span> <span class='pat-step2'>Prediction:</span> <span class='pat-step3'>The paragraph will detail the specific repetitive rituals (checking, washing, counting) performed by OCD sufferers.</span>"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Looking for Supporting Details",
+      "note": "Crucial for Detail-Matching Questions. Identify facts, statistics, examples, or quotes that back up the topic sentence.",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Supporting details are the 'meat' of the paragraph\u2014they prove the topic sentence.</li>\n          <li>Look for types of evidence: statistics (numbers), names, scientific facts, historical dates, or examples.</li>\n        </ul>\n      ",
+      "items": [
+        {
+          "q": "In a paragraph about Zulu beadwork being communication: 'Beads are used to make items for personal adornment, home decoration, and as a language to send status messages.' What are the supporting details?",
+          "a": "<span class='pat-step1'>Main idea: Zulu beadwork is a form of communication.</span> <span class='pat-step2'>Supporting details:</span> <span class='pat-step3'>1) Items for personal adornment. 2) Home decoration. 3) Language to send status/relationship messages.</span>"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Using Key Words",
+      "note": "Core Scanning Skill. Circle key nouns, verbs, dates, and names in the questions, then locate them or their synonyms in the passage.",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Do not read the passage word-for-word first. Go to the questions, circle <b>Key Words</b> (nouns, names, dates, numbers).</li>\n          <li>Scan the text quickly by running your eyes over it looking for these keywords or their synonyms/paraphrases.</li>\n        </ul>\n      ",
+      "items": [
+        {
+          "q": "Question: 'On what date did Portuguese explorers arrive in KwaZulu-Natal?' What are the keywords to scan?",
+          "a": "<span class='pat-step1'>Keywords: 'Portuguese explorers', 'arrive', 'KwaZulu-Natal'.</span> <span class='pat-step2'>Scan the text for these words or dates like '1497'.</span> <span class='pat-step3'>Found sentence: 'Portuguese explorers gave this region when they arrived in 1497.' Answer: 1497.</span>"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Matching Headings to Paragraphs",
+      "note": "Common Reading Question. Identify the core theme of each paragraph to select the correct heading from a list.",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Read the paragraph's topic sentence and concluding sentence to grasp the core theme.</li>\n          <li>Watch out for <b>distractors</b>\u2014headings that contain words from the paragraph but do not represent the main idea.</li>\n        </ul>\n      ",
+      "items": [
+        {
+          "q": "Paragraph A discusses how people think colorblindness means seeing no color, but explains it is actually difficulty distinguishing shades. Headings options: 'i. Complete Blindness', 'ii. What Is Colorblindness?', 'iii. Genetic Causes'. Select the best heading.",
+          "a": "<span class='pat-step1'>Analyze: Paragraph defines and corrects misconceptions about colorblindness.</span> <span class='pat-step2'>Compare headings: 'ii' represents the definition.</span> <span class='pat-step3'>Correct heading: 'ii. What Is Colorblindness?'. 'i' is a distractor.</span>"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Making Predictions (General Training)",
+      "note": "Saves Time in GT Reading. Identify text types (ads, schedules, forms) to predict where key details are placed.",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Identify the text format immediately (e.g., advertisement, course descriptions, employee handbook).</li>\n          <li>Predict the layout: advertisements have price/location at the bottom; handbooks have bulleted policies.</li>\n        </ul>\n      ",
+      "items": [
+        {
+          "q": "You see a document with headers: 'Beginning French, Intermediate French, Advanced Spanish' along with times like '4:00-6:00 p.m.' and Mr. Sato. Predict the text type.",
+          "a": "<span class='pat-step1'>Examine elements: Class names, times, names of people.</span> <span class='pat-step2'>Identify:</span> <span class='pat-step3'>This is a Course Description / Class Schedule text type.</span>"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Scanning for Specific Details (General Training)",
+      "note": "For Fact-Finding Questions. Look for numbers, hours, contacts, or names without reading paragraphs.",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Use scanning techniques to search for exact facts in advertisements, job postings, or catalogs.</li>\n          <li>Ignore adjectives and side sentences; keep your eyes focused on finding punctuation, digits, or capitalized nouns.</li>\n        </ul>\n      ",
+      "items": [
+        {
+          "q": "Ad text: 'locker rooms are closed every Wednesday afternoon. Nonmembers may purchase a one-day pass.' Question: 'When can you not access the locker rooms?' Scan for the answer.",
+          "a": "<span class='pat-step1'>Locate keywords: 'locker rooms', 'closed'.</span> <span class='pat-step2'>Scan and find: 'closed every Wednesday afternoon'.</span> <span class='pat-step3'>Answer: Wednesday afternoon.</span>"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "Skimming for the Main Idea (General Training)",
+      "note": "Essential for Quick Comprehension. Skim short notices or company announcements to extract the core policy.",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Read headings, subheadings, and bullet points first.</li>\n          <li>Skim the first and last sentence of each policy paragraph to understand company rules quickly.</li>\n        </ul>\n      ",
+      "items": [
+        {
+          "q": "A notice heading: 'Voluntary Work Policy'. Paragraph: 'Full-time employees who have been with the company for six months may take one day of paid leave per month for volunteer work.' What is the core rule?",
+          "a": "<span class='pat-step1'>Skim heading: Volunteer policy.</span> <span class='pat-step2'>Skim details: 6 months tenure required, 1 day paid leave per month.</span> <span class='pat-step3'>Core message: Eligible employees get paid leave to do volunteer work.</span>"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "Recognizing Synonyms and Paraphrase",
+      "note": "Underlies All Reading Questions. Match question keywords to synonyms used in the text to locate the correct answers.",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Understand that IELTS rarely uses identical words in both questions and texts.</li>\n          <li>Translate nouns, verbs, and adjectives in the question into their synonyms before scanning the text.</li>\n        </ul>\n      ",
+      "items": [
+        {
+          "q": "Question: 'Who is eligible to participate?' Text: 'Adults age 18 and over only are permitted in the pool.' Match synonyms.",
+          "a": "<span class='pat-step1'>Compare: 'eligible' in question maps to 'permitted' in text.</span> <span class='pat-step2'>Match: 'Who' maps to 'Adults age 18 and over'.</span> <span class='pat-step3'>Answer: Adults aged 18 and older.</span>"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": "Recognizing Chronological Sequence",
+      "note": "For Flowchart & Timeline Questions. Use sequence words and dates to track the historical order of events.",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Identify timeline markers (dates, centuries) and sequence words (*first, subsequently, thereafter, finally*).</li>\n          <li>Draw a mental timeline to sequence developments in historical or scientific passages.</li>\n        </ul>\n      ",
+      "items": [
+        {
+          "q": "Text: 'Before the Europeans arrived, Arab traders brought glass beads. Prior to them, Phoenician mariners brought cargoes of beads.' Sequence the traders chronologically.",
+          "a": "<span class='pat-step1'>Analyze timeline: 'Prior to them' means Phoenicians came before Arabs.</span> <span class='pat-step2'>Identify Europeans: Arrived last.</span> <span class='pat-step3'>Sequence: 1. Phoenicians (first) -> 2. Arab traders -> 3. Europeans (last).</span>"
+        }
+      ]
+    }
+  ],
+  "passages": [
+    {
+      "title": "The Spread of Wildfires",
+      "text": "The spread of wildfire is a natural phenomenon that occurs throughout the world and is especially common in forested areas of North America, Australia, and Europe. Locations that are prone to wildfires are generally hot and dry. To gain a clear understanding of how wildfires spread, it is necessary to analyze what it takes to both create and control these fires.<br><br>First, a spark is required. This spark can come from a natural source like a lightning strike, or from human negligence such as an unattended campfire. Once ignited, the fire requires fuel, which is usually dry brush, leaves, and trees. The rate at which the fire expands is heavily influenced by wind speed and terrain slope.",
+      "qas": [
+        {
+          "q": "According to the passage, what are two main sources of ignition for wildfires?",
+          "a": "<b>Lightning strikes</b> (natural source) and <b>human negligence</b> (unattended campfires)."
+        },
+        {
+          "q": "What climatic conditions make areas susceptible to wildfires?",
+          "a": "Hot and dry conditions."
+        }
+      ]
+    },
+    {
+      "title": "Zulu Beadwork: status and communication",
+      "text": "In the Zulu nation, beadwork is a primary means of communication. The beadwork consists of different color combinations. Zulu girls make beadwork items for themselves and their friends. They also make beadwork items for the boys they like. In particular, the color and design of Zulu beadwork communicate specific messages about a person's status and feelings.<br><br>For instance, a triangle with the apex pointing downward signifies an unmarried man, while two triangles that form an hourglass shape signify a married man. Married women wear items with two triangles that form a diamond shape.",
+      "qas": [
+        {
+          "q": "What design shape represents a married woman?",
+          "a": "Two triangles forming a <b>diamond shape</b>."
+        },
+        {
+          "q": "What is the primary function of Zulu beadwork color combinations?",
+          "a": "To communicate specific messages about a person's status and feelings."
+        }
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "accumulate",
+      "pos": "Verb",
+      "translation": "menumpuk / bertambah",
+      "example": "As water drips through this layer, it leaches out minerals which accumulate below in the subsoil."
+    },
+    {
+      "word": "compensate",
+      "pos": "Verb",
+      "translation": "mengimbangi / menutupi",
+      "example": "If one X chromosome carries the defective gene, the other one naturally compensates."
+    },
+    {
+      "word": "differentiate",
+      "pos": "Verb",
+      "translation": "membedakan",
+      "example": "A baby's cones do not begin to differentiate between colors until four months of age."
+    },
+    {
+      "word": "negligence",
+      "pos": "Noun",
+      "translation": "kelalaian / kecerobohan",
+      "example": "Many forest fires are started due to human negligence like campfire sparks."
+    },
+    {
+      "word": "predominant",
+      "pos": "Adjective",
+      "translation": "mendominasi / utama",
+      "example": "Although colorblindness is predominant in males, it can still affect females."
+    }
+  ]
+}
