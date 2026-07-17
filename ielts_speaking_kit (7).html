@@ -81,17 +81,40 @@
   h1{font-size:34px;margin:6px 0 4px;font-weight:400;}
   .sub{color:var(--ink-soft);font-size:14px;font-style:italic;transition:color 0.3s ease;}
 
-  .view-switch{display:flex;gap:8px;margin-bottom:24px;}
+  .view-switch {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--paper);
+    padding: 14px 0 12px 0;
+    margin: 0 0 20px 0;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    gap: 8px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
   .view-btn{
     flex:1;font-family:'Courier New',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;
-    padding:12px 14px;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;border-radius:3px;text-align:center;
+    padding: 10px 14px;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;border-radius:3px;text-align:center;
     transition:background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
   }
   .view-btn.active{background:var(--ink);color:var(--paper);}
   .view{display:none;}
   .view.active{display:block;}
 
-  .controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+  .controls {
+    position: sticky;
+    top: 61px;
+    z-index: 99;
+    background: var(--paper);
+    padding: 10px 0;
+    margin: 0 0 20px 0;
+    border-bottom: 1px dashed var(--rule);
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
   .controls input[type=text]{
     flex:1;min-width:180px;font-family:'Courier New',monospace;font-size:13px;
     padding:9px 12px;border:1px solid var(--rule);background:var(--card);color:var(--ink);border-radius:3px;
