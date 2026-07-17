@@ -545,10 +545,50 @@
     .part-title{font-size:15.5px;}
     .part-num{font-size:10.5px;padding:2px 6px;}
   }
+
+  /* Global Navigation */
+  .global-nav {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 12px;
+  }
+  .global-nav a {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--ink-soft);
+    padding: 6px 12px;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+  }
+  .global-nav a:hover {
+    color: var(--ink);
+    background: rgba(0,0,0,0.04);
+  }
+  body.dark-mode .global-nav a:hover {
+    background: rgba(255,255,255,0.04);
+  }
+  .global-nav a.active {
+    color: var(--paper);
+    background: var(--ink);
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
+  <!-- Global Navigation -->
+  <div class="global-nav">
+    <a href="index.html" class="active">Speaking</a>
+    <a href="reading.html">Reading</a>
+    <a href="listening.html">Listening</a>
+    <a href="writing.html">Writing</a>
+  </div>
+
 
   <header>
     <div>

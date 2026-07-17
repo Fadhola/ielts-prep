@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Listening — Practice Kit</title>
+<style>
+  :root{
+    --paper:#eee7d8;
+    --ink:#22303f;
+    --ink-soft:#5a6b7a;
+    --rule:#c9bfa4;
+    --tab-1:#8a5a3f;
+    --tab-2:#3f6e5e;
+    --tab-3:#4a5a8a;
+    --card:#f7f3e8;
+    --err:#b23a3a;
+    --vocab:#3f5e8a;
+    --idiom:#7a3f6e;
+    --good:#2f7a4f;
+    --gen:#8a8578;
+  }
+  
+  body.dark-mode {
+    --paper:#1b1913;
+    --ink:#ede8dc;
+    --ink-soft:#a29988;
+    --rule:#4d4637;
+    --tab-1:#b88363;
+    --tab-2:#569681;
+    --tab-3:#6d7da8;
+    --card:#242017;
+    --err:#d95f5f;
+    --vocab:#6997d3;
+    --idiom:#b56ba7;
+    --good:#4eaf75;
+    --gen:#a29e92;
+  }
+
+  *{box-sizing:border-box;}
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--paper);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--rule);
+    border-radius: 5px;
+    border: 2px solid var(--paper);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--ink-soft);
+  }
+  
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Georgia','Iowan Old Style',serif;
+    padding:32px 16px 80px;
+    min-height:100vh;
+    transition:background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .wrap{max-width:820px;margin:0 auto;}
+  
+  /* Global Navigation */
+  .global-nav {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 12px;
+  }
+  .global-nav a {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--ink-soft);
+    padding: 6px 12px;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+  }
+  .global-nav a:hover {
+    color: var(--ink);
+    background: rgba(0,0,0,0.04);
+  }
+  body.dark-mode .global-nav a:hover {
+    background: rgba(255,255,255,0.04);
+  }
+  .global-nav a.active {
+    color: var(--paper);
+    background: var(--ink);
+  }
+
+  header{
+    border-bottom:3px double var(--ink);
+    padding-bottom:18px;
+    margin-bottom:24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:16px;
+    transition:border-color 0.3s ease;
+  }
+  
+  .kicker{font-family:'Courier New',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);transition:color 0.3s ease;}
+  h1{font-size:34px;margin:6px 0 4px;font-weight:400;}
+  .sub{color:var(--ink-soft);font-size:14px;font-style:italic;transition:color 0.3s ease;}
+
+  .mode-toggle{
+    font-family:'Courier New',monospace;font-size:11px;background:none;border:1px solid var(--ink);
+    color:var(--ink);padding:6px 10px;cursor:pointer;border-radius:3px;
+    transition:background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .mode-toggle:hover{background:rgba(0,0,0,.05);}
+  body.dark-mode .mode-toggle:hover{background:rgba(255,255,255,.05);}
+
+  .view-switch {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--paper);
+    padding: 14px 0 12px 0;
+    margin: 0 0 20px 0;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    gap: 8px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  .view-btn{
+    flex:1;font-family:'Courier New',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    padding: 10px 14px;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;border-radius:3px;text-align:center;
+    transition:background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
+  .view-btn.active{background:var(--ink);color:var(--paper);}
+
+  .controls {
+    position: sticky;
+    top: 61px;
+    z-index: 99;
+    background: var(--paper);
+    padding: 10px 0;
+    margin: 0 0 20px 0;
+    border-bottom: 1px dashed var(--rule);
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  .controls input[type=text]{
+    flex:1;min-width:180px;font-family:'Courier New',monospace;font-size:13px;
+    padding:9px 12px;border:1px solid var(--rule);background:var(--card);color:var(--ink);border-radius:3px;
+    transition:background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  .controls input[type=text]:focus{
+    outline:none;
+    border-color:var(--ink);
+  }
+
+  .cue-card, .band-card{
+    border:1px solid var(--rule);background:var(--card);margin-bottom:14px;border-radius:3px;overflow:hidden;
+    transition:background-color 0.3s ease, border-color 0.3s ease;
+  }
+  .skill-card-head{
+    padding:11px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:15px;border-bottom:1px solid transparent;
+    transition:background-color 0.3s ease, border-color 0.3s ease;
+  }
+  .skill-card-head:hover{background:rgba(0,0,0,.03);}
+  body.dark-mode .skill-card-head:hover{background:rgba(255,255,255,.03);}
+  
+  .cue-card.skill-card.open .skill-card-head{
+    border-bottom-color:var(--rule);
+  }
+  
+  .skill-body-wrapper {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    padding: 0 16px;
+  }
+  .cue-card.skill-card.open .skill-body-wrapper {
+    max-height: 2000px;
+    opacity: 1;
+    padding-bottom: 16px;
+  }
+
+  .caret{font-family:'Courier New',monospace;font-size:12px;color:var(--ink-soft);transition:transform .2s ease, color 0.3s ease;}
+  .cue-card.skill-card.open .caret{transform:rotate(90deg);}
+
+  .skill-num{
+    font-family:'Courier New',monospace;font-size:12px;font-weight:bold;padding:2px 8px;border-radius:2px;color:var(--paper);
+    background: var(--tab-3);
+  }
+  .skill-criterion{
+    font-family:'Courier New',monospace;font-size:10.5px;color:var(--ink-soft);border:1px solid var(--rule);padding:1px 6px;border-radius:2px;
+  }
+
+  ol.qlist{list-style:none;counter-reset:q;margin:0;padding:12px 16px 14px;}
+  ol.qlist li{
+    counter-increment:q;position:relative;padding:8px 0 8px 30px;font-size:14.5px;line-height:1.55;border-bottom:1px dashed var(--rule);
+    transition:border-color 0.3s ease;
+  }
+  ol.qlist li:last-child{border-bottom:none;}
+  ol.qlist li::before{content:counter(q,decimal-leading-zero);position:absolute;left:0;top:8px;font-family:'Courier New',monospace;font-size:11px;color:var(--ink-soft);}
+
+  .qa-row{display:flex;justify-content:space-between;align-items:center;gap:10px;}
+  .qa-q{flex:1;}
+  .ans-toggle{
+    flex-shrink:0;
+    font-family:'Courier New',monospace;font-size:10.5px;letter-spacing:.03em;text-transform:uppercase;
+    color:var(--tab-3);background:none;border:1px solid var(--tab-3);border-radius:11px;
+    padding:5px 10px;cursor:pointer;
+    transition:background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .ans-toggle:hover{background:rgba(74,90,138,.08);}
+  .ans-toggle.open{background:var(--tab-3);color:var(--paper);}
+  
+  .ans-box{
+    display:block;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, padding 0.3s ease, margin 0.3s ease;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    background:rgba(255,255,255,.5);border-left:3px solid var(--tab-3);
+    font-size:13.5px;line-height:1.6;
+  }
+  body.dark-mode .ans-box{
+    background:rgba(0,0,0,.25);
+  }
+  .ans-box.open {
+    max-height: 1200px;
+    opacity: 1;
+    padding: 10px 12px;
+    margin-top: 8px;
+  }
+  .ans-box .ex-label{
+    display:block;font-family:'Courier New',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--tab-3);margin-bottom:5px;
+  }
+
+  .tip{
+    font-size:13.5px;line-height:1.55;font-style:italic;color:var(--ink-soft);
+    margin:12px 0 16px;padding:0 8px;border-left:2px solid var(--rule);
+  }
+
+  .skill-details{
+    margin:14px 0 18px;font-size:14.2px;line-height:1.65;
+    border-top:1px dashed var(--rule);border-bottom:1px dashed var(--rule);
+    padding:14px 6px;
+  }
+  .skill-details ul {
+    margin: 8px 0;
+    padding-left: 20px;
+  }
+  .skill-details li {
+    margin-bottom: 6px;
+  }
+
+  .hidden-by-search{display:none !important;}
+  .count{font-family:'Courier New',monospace;font-size:11px;color:var(--ink-soft);margin-bottom:14px;}
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 13px;
+  }
+  th, td {
+    border: 1px solid var(--rule);
+    padding: 8px 10px;
+    text-align: left;
+  }
+  th {
+    background: rgba(0,0,0,0.03);
+    font-weight: bold;
+  }
+  body.dark-mode th {
+    background: rgba(255,255,255,0.03);
+  }
+
+  footer{
+    font-family:'Courier New',monospace;font-size:11px;color:var(--ink-soft);
+    border-top:1px solid var(--rule);padding-top:16px;margin-top:60px;
+    text-align:center;line-height:1.6;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <!-- Global Navigation -->
+  <div class="global-nav">
+    <a href="index.html" id="nav-speaking">Speaking</a>
+    <a href="reading.html" id="nav-reading">Reading</a>
+    <a href="listening.html" id="nav-listening">Listening</a>
+    <a href="writing.html" id="nav-writing">Writing</a>
+  </div>
+
+  <header>
+    <div>
+      <div class="kicker">IELTS Study Kit</div>
+      <h1>Listening Skills</h1>
+      <div class="sub">Structured methods, practice questions, and answer keys</div>
+    </div>
+    <button class="mode-toggle" id="dark-btn" onclick="toggleDarkMode()">DARK MODE</button>
+  </header>
+
+  <div class="view-switch">
+    <div class="view-btn active">Listening Guide</div>
+  </div>
+
+  <div class="controls">
+    <input type="text" id="search" placeholder="cari skill atau keyword..." oninput="filterSkills()">
+  </div>
+
+  <div class="count" id="count"></div>
+
+  <div id="skills-list"></div>
+
+  <footer>
+    Answer Keys and reference materials parsed directly from Barron's IELTS textbook. Toggle Dark Mode above for comfort.
+  </footer>
+</div>
+
+<script>
+const SKILLS_DATA = [
+  {
+    "number": 1,
+    "title": "Making Assumptions",
+    "note": "Barron's Book Page 130 \u2022 Method & Strategy Guide",
+    "details": "Graphic D <br>Introduction <br>Topic [he appearance of Sanditon Beach before and after the construction of <br>Body <br>Comparison 1 selinL SF =i\\e).s1/a) m[alsrs)\u00ae e444 e\\ ein) e/a) e.silere iarereia,a; &s scale e)ie, wie 'oxeholecaietela e/\u00ab,0\\elejalsialele/biele \u00abe\\eelus e/s/oreale(nraisiaiety pis ee 6rbie eceels cleie see leve aie sie 6 o eile e.siaire <br>Supporting Detail 1 <br>Supporting Detail 2 <br>Supporting Detail 3 <br>Comparison 2 POP H Hemme ema e ener a ener ne rere re rere renee renee e eae es een ee essere eEsH Heese EE ee Eee HEHE Hee EE reese eesseneessness <br>SUP OLR Petals Somer Meee hence eth: Sat Moh SHIM Me tcce, UE Se see, Cate Ake ee ee <br>SEL ORLA POLL oie ee maa tani ake ie cena hare nears teh a ah ee <br>Supporting Detail 3 \\..2 asec ret ety et iris everson ach eee as ew. Pete nage Noes pees eos eee <br>WRITING MODULE 131<br><br>Begin your report with a brief introduction. The introduction states the topic and <br>summarizes the ideas you will discuss in the report. <br>The first sentence of your introduction is the topic sentence. It tells what the graphic <br>is about. The next sentences tell what comparisons you will make. Use the topic and <br>comparisons from your outline to write your introduction. <br>Look at these notes and introduction for the sample task in Skill 3 (page 126). <br>Notes <br>Topic Housing costs in rural, urban, and suburban areas in two different years <br>Comparison1 The average cost of housing in rural, urban, and suburban areas <br>Comparison 2 _ The average cost of housing in 2005 and 2015 <br>Introduction <br>The bar graph shows the average cost of housing in rural, urban, and suburban areas in <br>2005 and 2015. Housing costs were different in each of the areas. However, they rose <br>significantly in all three areas in the time period shown on the graph. <br>u The first sentence of the paragraph is the topic sentence. <br>m The second sentence, Housing costs were different in each of the areas, corre- <br>sponds to Comparison 1. <br>m The third sentence, However, they rose significantly in all three areas in the time <br>period shown on the graph, corresponds to Comparison 2. <br>Look at these notes and introduction for Graphic A in Skill 1 (page 123). <br>Notes <br>Topic How much time and money customers spend at three types of restaurants <br>Comparison1 The average cost of meals in three types of restaurants <br>Comparison 2 _ The average time eating in three types of restaurants <br>Introduction <br>The table shows how much time and money customers spend on average at three <br>different types of restaurants. The cost of a meal in each of the three restaurants is <br>significantly different. There is also a significant difference in the time spent eating. <br>m The first sentence of the paragraph is the topic sentence. <br>m The second sentence, The cost of a meal in each of the three restaurants is signifi- <br>cantly different, corresponds to Comparison 1. <br>= The third sentence, There is also a significant difference in the time spent eating, <br>corresponds to Comparison 2. <br>132 IELTS",
+    "items": []
+  },
+  {
+    "number": 2,
+    "title": "Understanding Numbers",
+    "note": "Barron's Book Page 132 \u2022 Method & Strategy Guide",
+    "details": "",
+    "items": [
+      {
+        "q": "PRACTICE Look at these notes and introductions for Graphics B, C, and D in Skill 1 ( pages 123-124). Choose",
+        "a": "the correct sentence to complete each introduction. <br>Graphic B <br>The bar graphs show per pupil spending as well as the percentage of students who <br>passed a test in the Riverdale Public School System in 2000-2015. ..............ccccccsesees <br>The percentage of students who passed the test also went down. <br>A Pupils in the school system spent more per year. <br>B One hundred percent of students in the school system took the test. <br>C Per pupil spending went down noticeably in that time period. <br>Graphic C <br>Topic Careers chosen by women graduating from Aberforth University <br>Comparison 1 Percentage of female graduates choosing different professions <br>eee rere ee eee eee ee eee ee rs <br>Comparison2 Fercentage of female graduates choosing different. professions <br>The pie charts show the different careers chosen by women graduating from Aberforth <br>University in 1990 and 2015. In 1990, well over half the graduates chose humanities <br>CALGCTS: 5 1 atone pact e<. <br>A In 2015, the choices were more evenly distributed among different types of careers. <br>B Only 30% chose careers in medicine or engineering. <br>C Fewer women graduated from Aberforth University in 2015. <br>Graphic D <br>Comparison1 2anditon Beach before airport was built <br>Comparison2 2anditon Beach after airport was built <br>The diagram illustrates the appearance of Sanditon Beach before and after the <br>EQUStIUCHON OF AM AIT PON. ces: 710243.057:c0e bee After the airport was built, the town <br>looked quite different. <br>A Before the airport was built, there was high unemployment in the town. <br>B The airport looked very modern and clean. <br>C Originally, it looked like a quiet town with few buildings. <br>WRITING MODULE 133<br><br>134 <br>Skill 6\u2014Writing the Paragraphs <br>After you write the introduction, write one paragraph for each of the comparisons. <br>Follow your outline. For the main idea of each paragraph, write one sentence that <br>summarizes the comparison. Then write one or two sentences for each supporting <br>detail. <br>Look at this part of the outline for Graphic B in Skill 1 (page 123). Then read the <br>paragraph that follows. Notice how it follows the outline. <br>Outline <br>Comparison 1 Spending per pupil in 2000-2015 <br>Supporting Detail1 spending in 2000 <br>Supporting Detail 2 spending drop in 2005, 2010, 2015 <br>Supporting Detail 3 difference in spending, 2000 and 2015 <br>Paragraph <br>There was a significant drop in per pupil spending between 2000 and 2015. The school <br>system spent $12,000 per pupil in 2000. This dropped to $10,000 in 2005. There was <br>a smaller drop in 2010 and another drop in 2015. In that year, per pupil spending was <br>$4,000 less than it had been 15 years earlier. <br>The first sentence is the main idea and corresponds to Comparison 1. The second sen- <br>tence corresponds to Supporting Detail 1. The third and fourth sentences correspond <br>to Supporting Detail 2, and the fifth sentence corresponds to Supporting Detail 3. <br>OETA IU Nol co Km col mal diate B=] ofol0] ae] \u00a2-]e) at <br>ee aes ree. increase <br>increased growth <br>it grew sharp <br>fell steadily <br>dropped decrease sharply <br>declined drop significantly <br>| decreased decline slightly <br>When you write the paragraphs, use words from the table above to describe trends. <br>Look at this example. <br>Ticket sales on the Western Railroad rose during the four months shown on the graph. In April, 5,000 tickets were sold. There was a sharp rise in sales between then and May, when 10,000 tickets were sold. Sales remained steady through June, then their sales increased slightly, to just under 12,000 tickets in July. <br>IELTS"
+      }
+    ]
+  },
+  {
+    "number": 3,
+    "title": "Understanding the Alphabet",
+    "note": "Barron's Book Page 134 \u2022 Method & Strategy Guide",
+    "details": "",
+    "items": [
+      {
+        "q": "PRACTICE 1",
+        "a": "Use words from the table on page 134 to complete the paragraph below. <br>Ticket sales on the Norfolk Railroad, on the other hand, (1) See OS ee ee Ee and fell during <br>the same time period. There was a slight (2) ....................000. between April and May, from <br>just under 8,000 sales to around 9,000. There was another (3) ..........0c.-0ccccceeeee. in sales <br>between May and June, to 10,000 tickets sold. Then there was a (4) .......0.cccccccceeeeerees drop <br>between June and July, to around 5,000 sales."
+      },
+      {
+        "q": "PRACTICE 2",
+        "a": "Use the outlines to write paragraphs for Graphics C and D in Skill 1 (pages 123-124). <br>Graphic C <br>Comparison1 Fercentage of female graduates choosing different. professions <br>Supporting Detail] @ducation and the arts <br>Supporting Detail2 9cience-related careers <br>Supporting Detail3 9 Managetnent <br>Comparison2 Fercentage of female graduates choosing different professions <br>Supporting Detail1 \u00a2ducation and the arts <br>Supporting Detail2 9cience-related careers <br>Supporting Detail3 Management <br>WRITING MODULE 135<br><br>Graphic D <br>Comparison! 24atditon Beach before airport was built SPOT meee ewe erent wee ater arate eee eeneesceseseeeeesseseseseeeees <br>Supporting Detail1 One. HODET 98 S20) eae ORRIN a nt ee en cra na <br>Supporting Detail 2 houses: VES ats Ais ay cone th Aer Oe AU I eae ean <br>Supporting Details\" ohe road a) ne ON) og ne eile ae <br>DOUG UOC OCC TOOT CICNICIICN OOOO OICINOIICNICOIO OOO OCOOSCO OOOO OOSIOCOOOOOmOnOOOOCOOncnnrinricritcrricry <br>i9f9/lgm)\u00a2\\\u00a2) oie ejuiaishaleie) si o\\n(\u00a2/s,s\\6\\si950in/@)s|e\\e\\e}e\\m\\4\\s/0)8)0(e\\s]m (6/0 /0/0)\u00a2\\s\\eial\u00a2 ole \\e e\\sia( dials e\\e)9/@ s/uiw piel! sie/e\\eis ala w\\a'e/6\\efelalele/a\\=\\s\\a\\6\\e)n1p|6/4\\s]5\\e]ote)a\\ nieia uieieldisalsid/sielsielalaislerstclaietaie <br>rele sie/akejalese\\eie\\eie\\e'yi)6\\e\\\u00a2\\e\\s\\0\\s\\s (aie) 4)8 6 '8/\u00a2/8/6 (8/01 8/\u00a250)0 16/6 |inle se \\4\\e!v\\els\\ele\\siu\\e\\6/0;y\\o\\s\\e/\u20ac\\e\\m nin ale] b\\elelsiels\\elsiaisisieis/n/eie'elaiaialetels'eleeleleisieis/aiv #is'alciais)aistalelalelaia,a\\niciaiomtare <br>Comparison2 ahditon Beach after the airport was built Sieh ei@i4 fe) @ a\\eis\\eisis) ose\\e o\\e/m/e\\nie\\e\\e\\dierale\u00a2ie/s|970\\0/0\\e\\01d (ele \\eie|m(e\\ale( (en @[0)0)\u00a5) 6160/80 8'e (aime a\\0\\8)a\\sis) e\\a\\e/0/6)e) 01hie\\e)/6\\4/alein\\uie'alainiaiaiaiala cletelelalurerelelataainiata <br>Supporting Detail, 1: HEWL0Ad 5.5) 1\u00bb dine Sete Se ae) Pn ee <br>Supporting Detail2 fewhotels and dock TRA HAR ERP RCRRE Deiter ooh asi <br>Supporting Detail3 Nouses moved <br>SESAME AIPLSSIESL\u00ae, 4'SLE #01 8) #16; 14/0, 4:8 le. Sheie)e; j\u00a2)ajah0) e)2 0/0 wta/e/e)e\\e/8)elsiejeie aiala\\s/e/s;e\\e.a/\u00a2/a\\ m\\aia(e)a(Aial0/6. o(@{d\\elole 4 ave\\a]p'aieia/aimlwiniaig)a/averatuate aieialetera aie ninin Ceeteoecemate <br>SEAS EO DONAS SESNS BI Sebi <p aici ets) tie/ bie) a\\pe) Sin\\e\\A' 8) 64 Wis|ei6'eI6)e/\u00a2\\21e)aiele!s7e.0)\\\u00a2(u)6i0)e;n(0/\u00ab|e)s)0\\a 0/e|6ia;e!a, a\\a'6/6!a\\e;9{e\\8)o\\a\\mieta\u2019elaYain | 6\\a{0.6 41 6\\al eralsioia ain teinleelaarararcreTaeTe TD <br>ce <br>= Llu <br>> <br>\u2014_ an O <br>< ~e <br>eR Se reb tae el sar ocr 2 spe Te hel Sieieles8 eiese: 9) She/e/e)e eye oie ieee! sh9aieie, \u20ac\\s'Sue) Sv Aisle) a\\aieleVelnja\\ers/s\\lejatoyelvlacs a/s\\olahuln q(ale)einia\u2018eieleoiaie/olajs/eaiaaicts stete aiere sjetaieinee cision <br>136 IELTS"
+      }
+    ]
+  },
+  {
+    "number": 4,
+    "title": "Distinguishing Similar Sounds",
+    "note": "Barron's Book Page 136 \u2022 Method & Strategy Guide",
+    "details": "In the introduction, you state the comparisons that you will discuss in your report. The <br>conclusion is similar. You conclude your report by making a general statement about <br>the comparisons. <br>Words and Phrases for Generalizing <br>in general <br>generally <br>overall <br>on the whole <br>all in all <br>Look at this introduction and conclusion from the first sample report in Skill 4 <br>(page 128). <br>Introduction <br>The bar graph shows the average cost of housing in rural, urban, and suburban areas in <br>2005 and 2015. Housing costs were different in each of the areas. However, they rose <br>significantly in all three areas in the time period shown on the graph. <br>Conclusion <br>Overall, average housing costs in urban and suburban areas remained higher than in <br>rural areas, but they rose significantly more in the time period shown on the graph. <br>The introduction states the comparisons\u2014housing costs in different areas and housing <br>costs over time. <br>The conclusion makes a general statement about these comparisons\u2014that costs were <br>higher in some areas and that costs in these areas rose significantly over time. <br>Look at this introduction and conclusion from the second sample report in Skill 4 <br>(page 129). <br>Introduction <br>The table shows how much time and money customers spend on average at three <br>different types of restaurants. The cost of a meal in each of the three restaurants is <br>significantly different. There is also a significant difference in the time spent eating. <br>Conclusion <br>In general, customers who spend less on food also spend less time eating, while those <br>who spend more money on restaurant meals also spend more time eating them. <br>The introduction states the comparisons\u2014the costs of meals and the time spent eating <br>in different restaurants. <br>The conclusion makes a general statement about these comparisons\u2014that in some <br>restaurants people spend both less time and money, whereas in others they spend <br>both more time and money. <br>WRITING MODULE 137<br><br>138",
+    "items": [
+      {
+        "q": "PRACTICE 1",
+        "a": "Write a conclusion for each of the following reports about graphics B, C, and D in Skill 1 <br>(pages 123-124). <br>Graphic B <br>The bar graphs show per pupil spending as well as the percentage of students who passed a test <br>in the Riverdale Public School System in 2000-2015. Per pupil spending went down noticeably <br>in that time period. The percentage of students who passed the test also went down. <br>There was a significant drop in per pupil spending between 2000 and 2015. The school system <br>spent $12,000 per pupil in 2000. This dropped to $10,000 in 2005. There was a smaller drop in <br>2010 and another drop in 2015. In that year, per pupil spending was $4,000 less than it had been <br>15 years earlier. <br>In the same time period, there was also a drop in the percentage of students who passed the <br>reading and math test. In 2000, just over 85% percent of students passed the test. This dropped <br>to 85% in 2005 and to just under 85% in 2010. There was another slight drop in 2015, but the <br>percentage was still above 80%. <br>Graphic C <br>The pie charts show the different careers chosen by women graduating from Aberforth University <br>in 1990 and 2015. In 1990, well over half the graduates chose humanities careers. In 2015, the <br>choices were more evenly distributed among different types of careers. <br>In 1990, the majority of female graduates at Aberforth chose careers in the humanities. Forty <br>percent chose education and 25% chose the arts. Thirty percent chose science-related careers <br>(medicine and engineering). Meanwhile, just 10% of female graduates chose careers in <br>management. <br>In 2015, there was a more even distribution of career types chosen. The number of women choos- <br>ing careers in the humanities dropped, with 25% choosing education and 15% choosing the arts. At the same time, interest in science-related careers had risen to 40%. Interest in manage- <br>ment had doubled, with 20% of female graduates choosing that type of career. <br>IELTS"
+      }
+    ]
+  },
+  {
+    "number": 5,
+    "title": "Listening for Descriptions",
+    "note": "Barron's Book Page 138 \u2022 Method & Strategy Guide",
+    "details": "Graphic D <br>The diagram illustrates the appearance of Sanditon Beach before and after the construction of <br>an airport. Originally, it looked like a quiet town with few buildings. After the airport was built, <br>the town looked quite different. | <br>Before the airport was constructed, the town had few buildings. There was just one hotel on <br>the beach. There were also a few houses further down the shore. There was one road, which ran <br>along the beach behind the buildings. <br>The town looked very different after the construction of the airport. A new road was built <br>between the airport and the beach. Several new hotels were built along the beach. There was <br>a new dock, too. The houses that had been on the beach were moved to a place away from the <br>beach area.",
+    "items": [
+      {
+        "q": "PRACTICE 2",
+        "a": "Make an outline and write a report in response to the following task. Be sure to include a <br>conclusion. <br>You should spend about 20 minutes on this task. <br>The charts below show how average middle-income families spent <br>their household budget in two different years. <br>Summarize the information by selecting and reporting the main fea- <br>tures, and make comparisons where relevant. <br>Write at least 150 words. <br>Household Budget Allocation\u2014Middle Income <br>ee Housing <br>[__] Food/Clothes <br>Vacations/Leisure <br>2012 2015 <br>WRITING MODULE 139<br><br>TASK 1\u2014GENERAL TRAINING WRITING <br>NOTE <br>If you are studying for the Academic exam, go to Skill 15 (page 159). <br>Skill 8\u2014Determining the Task <br>In Writing Task 1 on the General Training exam, you will be asked to write a letter in <br>response to a situation. You will see a description of the situation and three points <br>which you must address in your letter. You may be asked to <br>m describe a place, a thing, or a problem <br>@ explain a reason <br>a ask for help or advice <br>m Suggest a solution to a problem <br>mw make a complaint or <br>@ make an invitation <br>You must do what the task asks you to do. <br>You recently ordered an item of clothing through a store\u2019s website. When <br>you received it, you discovered that it was the wrong size and color. <br>Write a letter to the store manager. In your /etter, <br>\u00b0 describe the item you ordered <br>* explain what was wrong with the item you received <br>* say what you would like the manager to do <br>Write at least 150 words. <br>You do NOT need to write any addresses. <br>Begin your letter as follows: <br>140 IELTS"
+      }
+    ]
+  },
+  {
+    "number": 6,
+    "title": "Listening for Time",
+    "note": "Barron's Book Page 140 \u2022 Method & Strategy Guide",
+    "details": "",
+    "items": [
+      {
+        "q": "PRACTICE Read the following tasks and determine what each one asks you to do. Choose two actions from",
+        "a": "the list for each task and write them on the lines. You may use any action more than once. <br>Describe a place Describe a problem Suggest a solution <br>Describe a thing Make an invitation Ask for help <br>TaskA <br>You are moving to a new city and are looking for a place to live there. <br>Write a letter to a friend who lives in that city. In your /etter, <br>\u00a2 explain why you are moving <br>\u00a2 describe the kind of place you would like to live in <br>\u00a2 ask your friend for advice about finding a place to live <br>You recently ate at a restaurant. When you got home, you realized you had left your <br>jacket behind. <br>Write a letter to the restaurant manager. /n your letter, <br>* explain how and when you Jost your jacket <br>\u00a2 describe your jacket <br>* say what you would like the manager to do to help you find it <br>You are bothered by the amount of trash in your local park. <br>Write a letter to the head of the city parks department. In your letter, <br>\u00b0 describe the problem with the trash <br>\u00a2 explain why it is a problem <br>\u00a2 say what you think the city should do <br>You are planning a big party to celebrate a special event. <br>Write a letter to a friend. In your /etter, <br>\u00a2 explain why you are giving the party <br>\u00a2 describe the place where the party will be held <br>* say why you want your friend to come to the party <br>WRITING MODULE 141<br><br>Skill 9\u2014Determining the Topic <br>Writing Task 1 begins with a brief description of a situation. This tells you the topic of <br>the letter you will write. <br>Complaining about trash in the park <br>Moving to a new city <br>Buying clothes for a party <br>="
+      },
+      {
+        "q": "PRACTICE Choose the correct topic for each of the tasks in Skill 8 (page 141) and write it on the correspond-",
+        "a": "<< ing line below. You will not use all the topics. om <br>ul a <br>tu Task Ady ckic eh RR die TEL nhac adn Le LO SN PR Seen \u00a9 ol <br>a Task B = ASIC Bi, eda\u2019 sabes anne akg ae ee Saves neta eees oe SER ateals SeeaE Se ae USE ose Se CSTE eae es <br>| 7, = ask Crna, \u00ab aamnateetastots sutra incthsesonndocsndoorcuntedetawhens on mare rae ae ae ee <br>uu Tesi Da athe Saas pits ee eee ME IRS ae te ee <br>\u2014 oO Topics <br>= =~ (ee) <br>a Ee <br>Visiting a friend <br>Planning a party <br>Recommending a restaurant <br>Looking for a lost jacket <br>142 IELTS<br><br>Skill 1O\u2014Brainstorming Ideas <br>In Writing Task 1, you will be given three points. You must address all three points in <br>your letter. Before you write, take a minute to brainstorm. Think of different ways you <br>could respond to each of the points. Then choose one idea for each point. Remember, <br>there is no one correct way to respond. You just have to address all three of the points <br>in a way that makes sense."
+      },
+      {
+        "q": "PRACTICE Look at the tasks in Skill 8 (page 141). Brainstorm a short list of ideas for addressing each point",
+        "a": "- neach of the tasks. The lists have been started for you <br>1 TaskA <br>A Explain why you are moving. <br>| want to live closer to my family. <br>B_ Describe the kind of place you would like to live. <br>near stores and schools <br>C Ask your friend for advice about finding a place to live. <br>suggest some neighborhoods <br>2 TaskB <br>A Explain how and when you lost your jacket. <br>I left it on my chair at dinner last night. <br>WRITING MODULE 143<br><br>B_ Describe your jacket. <br>dark blue, gilk SOR Meme e eee w ere rae rere ener arses essere rseearas eee esee sees ses eee reese asesee ees eesseeesEs Hes Sse eeerseseeseseereeseeesesees <br>PRR eee eee re me ear e eee ed am reese ses e sees ee eereeEsesan er eseserereereseeEeseeseeeeteseseedeesssreseserecceperseseesesouens <br>@))416i 6) p\\c)\\0//8\\0)6\\a\\0)e/9i\u00a2ie)e)eis) \u00a2{e\\e\\n)/s\\e10!8)0/0\\u\\n\\eis\\s\\s!@\\e/a\\9\\e\\6/s)914\\6/0)\\8\\e1a\\e\\s\\e/b|s|0'0\\e\\0/0'6 0/0/90] 101s) e+e ai 6)e/e1a\\n\\ale]s}n\\wisis\\s\u2019n/ pine) a) nip) aie s]sis)eis/e(ele/siaielelaieleieisie/eleibiuteretatatal <br>C Say what you would like the manager to do to help you find it. <br>look for it in the coat room SiS cleh abe, H Giese) sis To\\e\\4) sis 'e\\ s/s \\s\\oie/eieieisisiviae a) 4\\0)o'ele 8 sin im/9\\e\\6!o(0\\e\\ale\\a)e/ 6) e/aj\\e!s(e/e\\ \u00a9) \u20ac/@\\ 6/6] 6\\elsioleiu|ulo.ehe \u20ac)a\\eia/ala\\e[s/o (eis) tiela]ois\\e's\\cfa/aldieteleielelaja: elelalaiarsimiavaleleiesiatorele <br>S/S Si aisheie/eie|e steheseieielal tis .e\\eveieP)e\\e\\u\\slaia\\e\\e\\eie/eieie/eieieiejeivieieleis 6\\0.0\\y\\e[e\\a\\e(e\\e\\mie\\e 6/u/b\\e'e\\e1b\\ei@/a) elvis ola\u2019) ei \u00a5ie)sipiptsrathialaly aleleials\\ntelalalalnteiniatalalelelsiteyeisiataia ie tate revere <br>3. Task C <br>A Describe the problem with the trash. <br>the sidewalks and grass are covered with trash <br>2) <br>ok <br>Zz <br>~ <br>oe <br>a <br>lu <br>7 w \u2014! <br>\u2014 ~ <br>(oe) <br>\u2014 <br>= <br>li <br>= lu <br>> <br>_\u2014 ok. <br>\u00a9 <br>< <br><< <br>2) <br>< Re <br>144 IELTS<br><br>4 Task D <br>A Explain why you are giving the party. <br>It's my birthday. <br>B_ Describe the place where the party will be held. <br>a country club <br>C Say why you want your friend to come to the party. <br>You are a special family friend <br>maine oosisisiw\\ein a sss salsa) meine a (s/alh a in\\a (pp ew vleie's 0|s.u eile ele \u00a9ip/eie\\e vie e010 0's \\c\\e\\bie[s)dleiev e.e(6)0 0 leleisic e's sles 9 0 0b /o/aie sivuerbrelele.eie leis see s)e)e shejeleie\u00a2 ej\u00a5 14,010 s\\w im aly, <br>2 <br>vr <br>jiu <br>ut <br><= <br>Qa <br>WRITING MODULE 145"
+      }
+    ]
+  },
+  {
+    "number": 7,
+    "title": "Listening for Frequency",
+    "note": "Barron's Book Page 145 \u2022 Method & Strategy Guide",
+    "details": "146 <br>Plan your letter by making an outline. Start with the topic and the ideas you have <br>chosen for each point. Then add supporting details to support your ideas. Write 2-3 <br>supporting details for each idea. <br>Read this task and outline. Then compare the outline with the letter that follows it. <br>You recently ordered an item of clothing through a store\u2019s website. When you <br>received it, you discovered that it was not the same item that you had ordered. <br>Write a letter to the store manager. In your /etter, <br>* describe the item you ordered <br>* explain what was wrong with the item you received <br>fis * say what you would like the manager to do <br>Outline <br>Introduction <br>Topic Problem with an order <br>Body <br>Point 1 Winter coat <br>Supporting Detail 1 wool with silk lining <br>Supporting Detail 2 came in several colors <br>Supporting Detail 3 dark green/size 12 <br>Point 2 Received wrong coat <br>Supporting Detail 1 wrong size and color <br>Supporting Detail 2 bright red/size 8 <br>Supporting Detail 3 can\u2019t wear it <br>Point 3 Want compensation <br>Supporting Detail 1 another coat <br>Supporting Detail 2 a large discount <br>Dear Manager, <br>| am writing about a problem with an item | recently ordered from your store\u2019s <br>website. | ordered a winter coat, but the one | received was the wrong size and color. | think your company should compensate me for the coat as well as for my <br>disappointment. <br>Last week, | ordered a winter coat from your website. It was a wool coat lined with silk, and it came in several colors. | ordered it in dark green, size 12. <br>When | received my order, | was disappointed to discover that the size and color were wrong. Your company sent me a bright red coat in size 8. This coat is too small and the color is too bright for me to wear. <br>| would like your company to compensate me for the coat. Please send me another coat in the right size and color. | think you should also give me a large discount on my next order to make up for my disappointment. <br>| hope you agree with my solution to this problem. | look forward to receiving my new coat. <br>Sincerely, <br>Marcus Wells <br>IELTS",
+    "items": []
+  },
+  {
+    "number": 8,
+    "title": "Listening for Similar Meanings",
+    "note": "Barron's Book Page 146 \u2022 Method & Strategy Guide",
+    "details": "",
+    "items": [
+      {
+        "q": "PRACTICE 1",
+        "a": "Look at the outline for Task A in Skill 8 (page 141) and read the letter that follows it. Complete <br>the missing parts of the outline. <br>Introduction <br>Sa eGR oe i a Mets nuts ew suliea inant Ansan <br>Body <br>Darr C9] Open ete Maen wee. 0, wiaast es i haard\\: <br>Supporting Detail 1 e2OONNG 1Or A Wile ea atetces vast ast <br>SETI POLele LIE CALL me meee ee ee en rR Be rn SRN eee dhe ae odes <br>Supporting Detail3 Excited about working ab ACME oo cecccccseecsssesesteessee <br>EPONEED EM ener ee Ran eee chee feck vent star gee om iauama rots a aise ne GaN <br>SUPPOLtinge Detail] me el ae Pee hE Bee ae er Oe ne aoe <br>Supporting Detail 2 PEO OU eee tne ste et Ph Coen Neen ee et yas ee <br>Pointaqep Me ding an apartment Ae hnstalisuewede <br>eibejibis ive! ES V1 IP ee Paaat er otce ued R ep oe SRR Rise tien ta cnr tener errioa eR SUS: Ge eMerLe Setter tse <br>SupparungTetail 2: OW IMG ArOUNA 6) 8 oi fis arabe unui meagre <br>SiETa) re) g ei 0a WTS TT) OL Se PO 2 gage ne geeee senate Rena ira cee ocean Nbr naGnie: trerneannrence tne <br>Dear Marjorie, | <br>| wanted to let you know that | will be moving to your city soon. | got a new job there. <br>| will need to find a place to live, and | hope you can help me with that. <br>| got a fantastic job with the Acme Company, located in your city. You know that <br>| have been looking for a new job for a while. | have been unhappy with my job here <br>because the salary is low and the work is boring. So | am excited to be starting at Acme <br>next month. <br>| need to find an apartment soon. It doesn\u2019t have to be large. The important thing is <br>that | want to live close to my job. | would like to be able to walk to work, if possible. <br>| hope you can help me find an apartment. You know a lot about the city, so maybe <br>you can suggest some nice neighborhoods near Acme. It would be great if you could <br>show me around the area. | will call you soon so we can talk about it. <br>Thank you in advance for your help. Talk to you soon! <br>Your friend, <br>Marty <br>WRITING MODULE 147"
+      }
+    ]
+  },
+  {
+    "number": 9,
+    "title": "Listening for Emotions",
+    "note": "Barron's Book Page 147 \u2022 Method & Strategy Guide",
+    "details": "",
+    "items": [
+      {
+        "q": "PRACTICE 2",
+        "a": "Complete the outlines for Tasks B, C, and D in Skill 8 (page 141). Use your ideas from the practice <br>for Skill 10 (page 143). Include 2-3 supporting details for each point. <br>Task B <br>Introduction <br>Topic Looking for a lost jacket Ch i oe i i i i i i i i i i ie ee ee Se eee ee ae ri <br>Supporting Detail Uo ciiicas.csipas.coeyss os bsanle ecopeancnoesueee cod Me ee <br>Supporting Detail 2 > sack aetsuces acest cossgueisswnnibex easteeeeeteh eee ee <br>Supporting Details Gene so ea cee ee eee i oot al jets Aan RES eee ae eee Ree <br>Point 2 sop wastesvince Stich de net \u00abx wslagntiorgd maple ta oadee Goecbrwati see oa oes adeoeas obo eee <br>Supporting Detail 17 %....;:.1e08 eae UE ibeausol <br>Supporting Detail Qo sin 7 anon geatte rs uisakadts eee ee ne <br>Supporting Detail 3.0 $0: jet ruengedtecssareeatyctek eee ne <br>= rd <br>J <br><L m <br>lu <br>LL <br>9 <br>oo <br>= <br>= af <br>= <br>= ee <br>ee oO. <br><< <br>xs pt <br>oa <br>BOING 3 ee occa saa h es essence ee ee eee igoiteaat aiden sie yedetaels Ree Re <br>supporting Detail | O74 ts, dasues stu toned tohesseegee e-aachoe a! gt eae <br>Supporting Detatl Qo 0.5.5 .st aieuecsdtea:eucdcacton eke ee, ee ee ee eee <br>Supporting Detail 3 <br>Task C <br>Introduction <br>Topic Complaining about trash in park <br>(5/6 Wein e/e(w 0 eisieluislejete(alelieicie <br>148 IELTS<br><br>Supporting Detail 1 <br>Supporting Detail 2 <br>Supporting Detail 3 <br>Task D <br>Introduction <br>Topic Flanning a party <br>Body <br>Point 1 <br>Supporting Detail 1 eee meee eee emcee eee eee eee eres sere sees es ees esseseser Hessen ee sesereeseereesesersrereeresresesees <br>Supporting Detail 2 <br>Supporting Detail 3 <br>Se raeayaicicie e atptaie tales /dislalis cletelereiateisisia sis (s/e/als)0)sruiwielsl aiia\u2019sie (ule (elevelelelels|b/o(s sib 1o/sis/e \u00ab1816 ase /eiolsoie/e\\cuele) aie/ahecale aie e/eie.0 oreo eceleiv eels: se vieleleselerelsieieieleleiei eis age <br>Supporting Detail Wee e rece or- sera tee enrie eye ageeerrrer tape ety hoes ucstas sve sceseuatahaee ene ec os ae <br>Supporting Detail 2 ..50..0.cc.ceeesccccececesesssnnecesenennecessnpeenecessveneoerersensecsessrseernaragecnanezts <br>Supporting Detail 3 ...........ccccccccceeeeteeneeneee tee eeetesertntseeeeeeeeenetnteeeseeetenenatees viene <br>pL yr he henge oo acta A iste Sais ane ais aeicled eine Ota war eidallaw ocr Sn nein gaia a sera <br>Supporting Detail Vo o...01. cise esc cet ecestaeee cece nnsetannreeenenserncettpuenees ne ceca enentas <br>Supporting Detail 27 20.4. syseettesstteta are ctenvans \u00abasebs haddnaetnera ees shes eeae vaisubrssesaeeoRacydereancaest <br>Supporting Detatl 3 jac: ctcste ngce cant eessest-teon Maer vncrre cap oansnenarsacttntsen tes cro en sae sas sousdaes <br>WRITING MODULE 149"
+      }
+    ]
+  },
+  {
+    "number": 10,
+    "title": "Listening for an Explanation",
+    "note": "Barron's Book Page 149 \u2022 Method & Strategy Guide",
+    "details": "a <br><< <br>zZ <br>= ~ <br>4) - <br>it <br>= Lu > iu <br>- Oo <br><< <br><< <br>| 2) <br><< <br>a <br>150 <br>Begin your letter with a greeting followed by a brief introduction. The instructions on <br>the test might provide the greeting: <br>Begin your letter as follows: <br>Dear Sir or Madam <br>Or, the instructions might simply say: <br>Begin your letter as follows: <br>Dear zane ; <br>In this case, you must provide a title and last name if the letter is formal, that is, <br>a business letter to someone you don\u2019t know or don\u2019t know well. In some cases, you <br>can use the person\u2019s job title in place of a name. An example of this is if you are <br>writing to a store manager about something that happened while you were in the <br>store. If the letter is informal, that is, to a personal acquaintance or a relative, use a <br>first name only. It doesn\u2019t matter what name you use. You can use your own name or <br>a friend\u2019s name, if you like, or just make one up. \u2018 <br>Following the greeting, write a brief introduction. The introduction states the <br>topic and summarizes the ideas you will discuss in the letter. <br>The first sentence of the introduction is the topic sentence. It tells what the letter <br>is about. Begin the sentence with a phrase such as the following: <br>! want to let you know... <br>! want to inform you... <br>! thought you should know... <br>! thought you\u2019d be interested... <br>lam writing about... <br>!am writing to request... <br>! would like to ask... <br>Then briefly explain the topic of the letter. Look at these topics and topic sentences <br>from the sample letters in Skill 11 (pages 146-147) <br>Topic Problem with an order <br>Topic Sentence <br>Topic <br>Topic Sentence <br>IELTS",
+    "items": [
+      {
+        "q": "PRACTICE 1",
+        "a": "Write topic sentences for Tasks B, C, and D in Skill 8 (page 141). The topics are shown below. <br>Task B <br>Topic Looking for a lost jacket <br>Task C <br>Topic Complaining about trash in the park <br>Topic Sentence <br>Task D <br>Topic Planning a party <br>POTN SCENE ETC Cert ee erent a ieee Metta Gee Peedi needa nace eerie Got eet a eho une nae ed oday warn ee <br>When you write your outline, you choose an idea for addressing each of the three points in the <br>task. In your introduction, you summarize those ideas. <br>Look at these notes and introduction for the first sample letter in Skill 11 (page 146). <br>Notes <br>Topic Problem with an order <br>Introduction <br>lam writing about a problem with an item I recently ordered from your store's website. I ordered <br>a winter coat, but the one I received was the wrong size and color. I think your company should <br>compensate me for the coat as well as for my disappointment. <br>a The first sentence of the paragraph is the topic sentence. <br>= The second sentence, I ordered a winter coat, but the one I received was the wrong size <br>and color, corresponds to points 1 and 2 in the notes. <br>a The third sentence, I think your company should compensate me for the coat as well as <br>for my disappointment, corresponds to point 3 in the notes. <br>WRITING MODULE 151"
+      }
+    ]
+  },
+  {
+    "number": 11,
+    "title": "Listening for Classifications",
+    "note": "Barron's Book Page 151 \u2022 Method & Strategy Guide",
+    "details": "Lu <br>152 <br>Look at these notes and introduction for the second sample letter in Skill 11 (page 147). <br>Notes <br>Topic (Moving Co-a Mew city SOS) ae er eee ne <br>Point 1LoNew Job lo tar ee ene 8 4g A ees, <br>Introduction <br>I wanted to let you know that I will be moving to your city soon. I got a new job there. I will need <br>to find a place to live, and I hope you can help me with that. <br>u The first sentence of the paragraph is the topic sentence. <br>m The second sentence, J got a new job there, corresponds to point 1 in the notes. <br>a The third sentence, J will need to find a place to live, and I hope you can help me with <br>that, corresponds to points 2 and 3 in the notes.",
+    "items": [
+      {
+        "q": "PRACTICE 2",
+        "a": "Look at these notes and introductions for Tasks B, C, and D in Skill 8 (page 141). Choose the <br>correct sentence to complete each introduction. <br>Task B <br>{am writing about a jacket I lost at your restaurant. ............6.cccccccceceeeeeceecceccccccce.. <br>It is a light spring jacket, and I would like to ask you to let me know if you find it. <br>Al always enjoy dinner at your restaurant. <br>B [left it there last night. <br>C [paid a lot of money for my jacket. <br>IELTS<br><br>Task C <br>Cee creer cece reese eseseecivevevesecene <br>T want to inform you about a problem with trash in City Park. The trash cans <br>are always overflowing with trash and this is an unclean, unsafe, and unpleasant <br>SHUUIALLO Dipennee aee tec he Ome ee coed See ale <br>A However, I have an idea for a solution to this problem. <br>B No one wants to use the park anymore. <br>C There is too much trash in the park. <br>Task D <br>I want to let you know about a party I am planning for next month. <br>Oe ee ae ee ee eee The party will be held at my parent\u2019s county <br>club and since you are such a good friend, I hope you will come. <br>A Ireally need some help with organizing the party. <br>B I feel so old. <br>C lam celebrating because I will turn 30 years old. <br>WRITING MODULE 153"
+      }
+    ]
+  },
+  {
+    "number": 12,
+    "title": "Listening for Comparisons and Contrasts",
+    "note": "Barron's Book Page 153 \u2022 Method & Strategy Guide",
+    "details": "a <br>dle \u2018a <br>uu > <br>f oO =< <br>\u00a9 72) <br>tt <br>154 <br>After you write the introduction, write one paragraph for each of the points in the <br>task. Follow your outline. Write one sentence for your main one idea and one sen- <br>tence for each supporting detail. <br>Look at this part of the outline for Task B in Skill 8 (page 141). Then read the para- <br>graph that follows. Notice how it follows the outline. <br>Outline <br>Point 1 /eft jacket at restaurant last night <br>Supporting Detail 1 hung on back of chair <br>Supporting Detail 2 forgot to take it with me <br>Supporting Detail 3 warm night <br>Paragraph <br>/ left my jacket at your restaurant when | was there for dinner last night. | hung it on <br>the back of my chair when | sat down. Then | forgot to take it home with me. The night <br>was warm so | didn\u2019t miss it. <br>The first sentence corresponds to the idea /eft jacket at restaurant last night. The sec- <br>ond sentence corresponds to Supporting Detail 1. The third sentence corresponds to <br>Supporting Detail 2, and the fourth sentence corresponds to Supporting Detail 3.",
+    "items": [
+      {
+        "q": "PRACTICE Use the outlines to write paragraphs for Tasks B and C in Skill 8 (, page 141).",
+        "a": "Task B <br>Supporting Detail 1 Call me at work <br>Supporting Detail 2! will pick it up <br>1S}$iS(8\\6)0,a(eja\\e(e\\\u00a5ie(aieiw aieimnleie/eieinyele\u2018ernin plaice <br>IELTS<br><br>Task C <br>DOIUIUICIOCIOICOI ICICI OCICS iC iii iii ick iar ici airs <br>Supporting Detail3 people will use trash cane. <br>Eiatal clatare ciciais nial claretssicluinisioleisialelele sible s\\0l-<\\s le (wie a(slelvisio/q\\s)s\\s/sie\\n'6's\\s\\n'v\\e\\n)e.nieie/e)e.elel0'0.610,0.9 010 speieleieiejeieeielve ese)s'*)0)\u00a5 16:8 eie ee <br>EXTRA"
+      },
+      {
+        "q": "PRACTICE See en i ay",
+        "a": "Use the outlines you wrote in Skill 11"
+      },
+      {
+        "q": "PRACTICE 2 (pages 148-149) to write paragraphs for Tasks",
+        "a": "B,C, and D. <br>WRITING MODULE 155"
+      }
+    ]
+  },
+  {
+    "number": 13,
+    "title": "Listening for Negative Meaning",
+    "note": "Barron's Book Page 155 \u2022 Method & Strategy Guide",
+    "details": "= <br>tu <br>_ lu <br>1 <br>= <br>= <br>uw <br>i f oO <br>= =< Dn es <br>a <br>156 <br>End your letter with a brief conclusion suggesting an action, conveying a feeling, or <br>thanking the reader, depending on the topic of the letter. <br>Here are some ways to conclude the letter. <br>If the letter asks for advice or help, you can write <br>Thank you for your advice. <br>Thank you in advance for your help. <br>Let me know if you can help me. <br>If the letter contains an invitation, you can write <br>! hope you can accept my invitation. <br>! look forward to seeing you. <br>Please let me know if you will be able to join us. <br>If the letter suggests some solutions to a problem, you can write <br>Let me know what you think of my ideas. <br>| hope we can agree on a solution to these problems. <br>! hope you are willing to accept my solution. <br>Then write a signature. If the letter is toa friend, you can sign with Your friend or <br>Best wishes. <br>If the letter is to someone you don\u2019t know personally, such as a store manager or <br>landlord, sign with Sincerely.",
+    "items": [
+      {
+        "q": "PRACTICE 1",
+        "a": "Choose the best conclusion for each of the following letters. <br>Dear Manager, <br>Iam writing about a jacket I lost at your restaurant. I left it there last night. It is a light <br>spring jacket, and I would like to ask you to let me know if you find it. <br>I left my jacket at your restaurant when I was there for dinner last night. I hung it on <br>the back of my chair when I sat down. Then I forgot to take it home with me. The night was <br>warm so I didn't miss it. <br>It is a light spring jacket. The color is beige, and it has brown trim on the collar. It is made of cotton. There are two side pockets, and they are probably empty. <br>Please let me know if you find my jacket. If you do, you can call me at my work number: 555-1212. Twill come by the restaurant and pick up the jacket as soon as I hear from you. i <br>A Thank you in advance for your help. <br>B [hope you are willing to accept my solution. <br>C I look forward to seeing you soon. <br>IELTS<br><br>Dear Sir or Madam, <br>IT want to inform you about a problem with trash in City Park. The trash cans are always <br>overflowing with trash and this is an unclean, unsafe, and unpleasant situation. However, I <br>have an idea for a solution to this problem. <br>The trash cans in the park are always overflowing. Trash spills on the grass and side- <br>walks around the cans. On windy days, it gets blown all around the park, and this makes <br>the problem even worse. <br>This creates an unsafe, unclean, and unpleasant situation. For one thing, it attracts rats, <br>which carry disease. In addition, things like leftover soda and melted ice cream spill all <br>over the sidewalks, making them very dirty. It is not nice to walk through a park covered <br>with dirty trash. <br>This is a serious problem, but I think it can be solved by having trash trucks pick up the <br>trash daily. There is a lot of trash in the park, so I think it is enough to justify a daily pick <br>up. If the trash cans are emptied daily, then the park will look nicer. A prettier park will <br>encourage people to use the trash cans instead of throwing their trash on the ground. <br>2 <br>A Let me know which dates are best for you. <br>B Let me know what you think of my idea. <br>C Thank youso much for your help. <br>Dear Sandy, <br>I want to let you know about a party Iam planning for next month. Lam celebrating <br>because I will turn 30 years old. The party will be held at my parent\u2019s county club, and since <br>you are such a good friend, I hope you will come. <br>Iam so excited to be celebrating my 30th birthday. I think this is a really important <br>birthday. I really want to have my friends with me to celebrate. <br>I\u2019ve decided to hold the party at the Green Valley Country Club. My parents are members, <br>and they suggested it as a good place for a party. I will rent their large party room, which <br>is very nicely furnished. There are also gardens just outside, which we can enjoy if the <br>weather is nice. <br>Iam telling you about this because you are one of my best friends. This party just <br>wouldn't be the same without you. I really hope you can be there to celebrate with me. <br>A Let me know what you think of my idea. <br>B [hope you can accept my invitation. <br>C Thank you very much for your advice. <br>WRITING MODULE 157"
+      },
+      {
+        "q": "PRACTICE 2",
+        "a": "Make an outline and write a complete letter for the following task. Be sure to include a <br>conclusion. <br>You should spend about 20 minutes on this task. <br>You live near a university and would like to earn some extra money by renting a room in <br>your apartment to a student. <br>Write a letter to the university housing office. In your letter, <br>e introduce yourself <br>* explain why your apartment would be a good living place for a student <br>\u00a2 describe the room you have for rent <br>Write at least 150 words. <br>You do NOT need to write any addresses. <br>Begin your letter as follows: <br>Dear Sir or Madam, <br>oO <br>i wm or <br>= iu = <br>Lui => <br>= <br>{) <br>= <2) <br>158 IELTS"
+      }
+    ]
+  },
+  {
+    "number": 14,
+    "title": "Listening for Chronology",
+    "note": "Barron's Book Page 158 \u2022 Method & Strategy Guide",
+    "details": "TASK 2\u2014GENERAL TRAINING AND ACADEMIC WRITING <br>In Writing Task 2, you will write an essay expressing and supporting an Opinion. You <br>will be asked to write about your opinion in one of the following ways: <br>agree or disagree <br>describe advantages and disadvantages <br>discuss two points of view and give your own <br>suggest solutions to a problem <br>answer two questions <br>You must do what the task asks you to do.",
+    "items": [
+      {
+        "q": "PRACTICE Read the following tasks and determine what each one asks you to do. Choose your answers",
+        "a": "from the list above and write them on the lines. <br>Some people believe that success means earning a lot of money. Others believe that <br>success is defined by personal happiness. <br>Discuss both these views and give your own opinion. <br>Smoking tobacco is becoming increasingly popular among young people, with <br>potentially serious effects on their health. <br>Explain some reasons for this problem and suggest some possible solutions. <br>More and more fathers are taking a break from their careers so that they can stay home <br>and take care of their children while their wives work. This is better for the family than <br>having both parents work full time. <br>To what extent do you agree or disagree with this opinion? <br>These days, children have easy access to home computers, tablet computers, and <br>smartphones, and many spend a large part of their free time using these devices. <br>Discuss the advantages and disadvantages of this situation and give your own opinion. <br>WRITING MODULE <br>\\ <br>159<br><br>160 <br>Most schools offer some type of physical education classes to their students. <br>Why is physical education important? Should physical education classes be required or <br>optional? <br>Skill 16\u2014Developing a Thesis Statement <br>A thesis statement states what your essay is about. Begin your planning by writing a <br>thesis statement that presents your ideas and addresses the task. Your thesis state- <br>ment will help you organize your writing. <br>Look at these thesis statements for Task A in Skill 15 (page 159). <br>1 While there are people whose biggest goal is to become wealthy, there are others <br>who feel that personal happiness is more important and | agree with this point of <br>view. <br>2 Wealth is one way to define success, but | agree more With those people who <br>measure success by their degree of personal happiness. <br>3 / think the most successful people are those who earn a lot of money. <br>The task asks the writer to: Discuss both these views and give your own opinion. <br>Statements 1 and 2 both address the task. They mention both the views stated in the <br>task as well as the writer\u2019s opinion. <br>Statement 3 does not address the task. It explains the writer\u2019s opinion about suc- <br>cess. However, it does not mention both of the points of view stated in the task."
+      },
+      {
+        "q": "PRACTICE Choose the best thesis statement for Tasks B, C, D, and E in Skill 15 (pages 159-160).",
+        "a": "1 TaskB <br>A The best way to solve the problem of smoking among youth is to make it illegal for minors. <br>B Smoking is enjoying widespread popularity among youth for a variety of reasons; however, there are solutions. <br>C The reasons that young people choose to smoke are not very good ones, and I believe this is a serious problem. <br>2 TaskC <br>A Men who give up their careers in order to care for their children are often very happy. <br>B Some women earn enough money to support their families, and then their husbands don't have to work. <br>C Many fathers give up their jobs in order to take care of their homes and families, but I don't agree that this is the best choice they can make. <br>IELTS<br><br>3 TaskD <br>A [think one of the biggest advantages of computers is that they give children access to <br>an infinite amount of information. <br>B Children who learn to use computers from a very early age will have a lot of advan- <br>tages in their lives. <br>C Computers have become an integral part of children\u2019s lives, and this situation has <br>both advantages and disadvantages. <br>4 TaskE <br>A Physical education gives children the opportunity to learn different sports and to be <br>physically active, but I think it is up to each family to decide whether or not their child <br>needs to participate in these classes. <br>B Physical education classes teach children the importance of staying fit as well as giv- <br>ing them a restful break from their academic studies. <br>C Schools should require students to participate in physical education classes at least <br>two times a week. <br>Skill 17\u2014Organizing Your Writing <br>Your thesis statement tells what your essay is about. Now you have to support it with <br>main ideas and details. You should have two or three main ideas to support your thesis <br>and two or three details to support each main idea. <br>You can use a concept map to organize your ideas. Follow these steps to organize <br>your writing. <br>1. READ THE TASK. <br>More and more fathers are taking a break from their careers so that they can stay <br>home and take care of their children while their wives work. This is better for the <br>family than having both parents work full time. <br>To what extent do you agree or disagree with this opinion? <br>2. DETERMINE THE TASK. Agree or disagree. <br>3. WRITE A THESIS STATEMENT. Many fathers give up their jobs in order to take care <br>of their homes and families, but | don\u2019t agree that this is the best choice they can <br>make. <br>WRITING MODULE 161"
+      }
+    ]
+  }
+];
+
+// Dark Mode logic
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+  const isDark = document.body.classList.contains('dark-mode');
+  localStorage.setItem('dark-mode', isDark);
+  document.getElementById('dark-btn').textContent = isDark ? 'LIGHT MODE' : 'DARK MODE';
+}
+
+// Initialize dark mode
+if (localStorage.getItem('dark-mode') === 'true') {
+  document.body.classList.add('dark-mode');
+  document.getElementById('dark-btn').textContent = 'LIGHT MODE';
+}
+
+// Set active navigation tab
+const activeNav = 'nav-' + 'listening';
+document.getElementById(activeNav).classList.add('active');
+
+function escapeAttribute(str) {
+  if (!str) return '';
+  return str
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+    .trim();
+}
+
+function toggleSkill(headEl) {
+  headEl.parentElement.classList.toggle('open');
+}
+
+function toggleAnswer(event, btnEl) {
+  event.stopPropagation();
+  const box = btnEl.parentElement.nextElementSibling;
+  box.classList.toggle('open');
+  btnEl.classList.toggle('open');
+  btnEl.textContent = btnEl.classList.contains('open') ? 'Hide details' : 'Show details';
+}
+
+function renderSkillsList() {
+  const listEl = document.getElementById('skills-list');
+  listEl.innerHTML = SKILLS_DATA.map(s => {
+    const safeBody = escapeAttribute(s.note + ' ' + s.details);
+    const itemsHtml = s.items.map((item, i) => `
+      <li>
+        <div class="qa-row">
+          <span class="qa-q"><b>${item.q}</b></span>
+          <button class="ans-toggle" onclick="toggleAnswer(event, this)">Show details</button>
+        </div>
+        <div class="ans-box">
+          <span class="ex-label">Answer Key / Explanation</span>
+          <div>${item.a}</div>
+        </div>
+      </li>
+    `).join('');
+    
+    return `
+      <div class="cue-card skill-card" data-title="${s.title.toLowerCase()}" data-body="${safeBody.toLowerCase()}">
+        <div class="skill-card-head" onclick="toggleSkill(this)" style="cursor:pointer;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span class="skill-num">SKILL ${s.number}</span>
+            <strong>${s.title}</strong>
+          </div>
+          <span class="caret">▶</span>
+        </div>
+        <div class="skill-body-wrapper">
+          <p class="tip" style="margin-top:14px;">${s.note}</p>
+          <div class="skill-details">
+            ${s.details}
+          </div>
+          <ol class="qlist" style="padding-top:0; padding-bottom:0;">
+            ${itemsHtml}
+          </ol>
+        </div>
+      </div>
+    `;
+  }).join('');
+  
+  filterSkills();
+}
+
+function filterSkills() {
+  const query = document.getElementById('search').value.trim().toLowerCase();
+  let count = 0;
+  
+  document.querySelectorAll('.skill-card').forEach(card => {
+    const title = card.getAttribute('data-title');
+    const body = card.getAttribute('data-body');
+    const match = !query || title.includes(query) || body.includes(query);
+    
+    if (match) {
+      card.classList.remove('hidden-by-search');
+      count++;
+    } else {
+      card.classList.add('hidden-by-search');
+    }
+  });
+  
+  document.getElementById('count').textContent = `${count} skills shown`;
+}
+
+// Initial load
+renderSkillsList();
+</script>
+</body>
+</html>
