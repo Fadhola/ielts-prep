@@ -4,7 +4,7 @@
       "number": 1,
       "title": "Determining the Task (Task 1 Academic)",
       "note": "Initial Phase. Analyze the chart, graph, table, or map to identify what key information you must summarize.",
-      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Read the prompt carefully to see what graphic is presented (bar chart, line graph, table, or diagram).</li>\n          <li>Identify the time period (past, present, or future) to select the correct grammatical verb tenses.</li>\n        </ul>\n      ",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Read the prompt carefully to see what graphic is presented (bar chart, line graph, pie chart, table, or diagram).</li>\n          <li>Identify the time period (past, present, or future) to select the correct grammatical verb tenses.</li>\n          <li>Look for the units of measurement (percentages, millions of dollars, tons) to report figures accurately.</li>\n        </ul>\n      ",
       "items": [
         {
           "q": "Prompt: 'The bar chart shows average spending per pupil in 2000-2015.' What is the task and tense?",
@@ -28,7 +28,7 @@
       "number": 3,
       "title": "Making Comparisons (Task 1 Academic)",
       "note": "Scores Task Achievement. Group similar data together and highlight the highest, lowest, or most dramatic trends.",
-      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Do not list every data point sequentially. Group data into high, medium, and low categories.</li>\n          <li>Use comparative structures (*higher than, double, in contrast, similarly*).</li>\n        </ul>\n      ",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Do not list every data point sequentially. Group data into high, medium, and low categories.</li>\n          <li>Use comparative structures (*higher than, double, in contrast, similarly*).</li>\n          <li>Highlight the peak (highest point) and the trough (lowest point).</li>\n        </ul>\n      ",
       "items": [
         {
           "q": "Chart data: Cafeteria spending was $50 per student in 2000, and fell to $10 in 2015. Write a comparison sentence.",
@@ -40,7 +40,7 @@
       "number": 4,
       "title": "Making an Outline (Task 1 Academic)",
       "note": "Organizes Paragraph Structure. Plan a 4-paragraph layout: 1) Introduction, 2) Overview, 3) Body 1, 4) Body 2.",
-      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li><b>Paragraph 1:</b> Introduction (Paraphrase the prompt).</li>\n          <li><b>Paragraph 2:</b> Overview (Describe 2-3 major overall trends without writing specific data figures).</li>\n          <li><b>Paragraph 3 & 4:</b> Body Paragraphs (detailed comparative data).</li>\n        </ul>\n      ",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Never start writing without planning. Spend 2-3 minutes outlining.</li>\n          <li><b>Paragraph 1:</b> Introduction (Paraphrase the prompt).</li>\n          <li><b>Paragraph 2:</b> Overview (Describe 2-3 major overall trends without writing specific data figures).</li>\n          <li><b>Paragraph 3:</b> Body Paragraph 1 (Detail first category or trend).</li>\n          <li><b>Paragraph 4:</b> Body Paragraph 2 (Detail second category or trend).</li>\n        </ul>\n      ",
       "items": [
         {
           "q": "Create an outline structure for a line graph showing sales of books and e-books over 10 years.",
@@ -52,7 +52,7 @@
       "number": 5,
       "title": "Writing the Introduction (Task 1 Academic)",
       "note": "First Impression. Paraphrase the prompt using synonyms and state what the graphic compares.",
-      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Paraphrase the original sentence. Replace words like *gives information about* with *provides data on*.</li>\n        </ul>\n      ",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Paraphrase the original sentence. Replace words like *gives information about* with *provides data on*.</li>\n          <li>Include the geographical area (e.g., in the UK) and the timeframe (e.g., between 2005 and 2010).</li>\n        </ul>\n      ",
       "items": [
         {
           "q": "Prompt: 'The chart shows the number of tourists visiting three different cities in Europe from 2010 to 2020.' Write the introduction.",
@@ -64,7 +64,7 @@
       "number": 6,
       "title": "Writing the Paragraphs (Task 1 Academic)",
       "note": "Body Paragraph Development. Report detailed data points, values, and trends accurately with cohesive transition markers.",
-      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Use transition words to compare data groups (*in terms of, regarding, as for*).</li>\n        </ul>\n      ",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Use transition words to compare data groups (*in terms of, regarding, as for, on the other hand*).</li>\n          <li>Present exact data values in brackets or using prepositions (e.g., \"...stood at 45% in 2008\").</li>\n          <li>Vary your vocabulary for describing change (*dropped, fell, surged, plateaued*).</li>\n        </ul>\n      ",
       "items": [
         {
           "q": "Write a body paragraph sentence stating that school library spending was at 15% in 2000, then rose to 35% in 2010.",
@@ -76,10 +76,10 @@
       "number": 7,
       "title": "Writing the Conclusion (Task 1 Academic)",
       "note": "Completes Task 1. Restate the main overview trend clearly and briefly in 1-2 final sentences.",
-      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Summarize the core takeaways. Note that a formal 'Conclusion' is optional if you already have an Overview.</li>\n        </ul>\n      ",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Summarize the core takeaways. Note that a formal 'Conclusion' is optional if you already have an Overview, but a short summary sentence wraps up the essay nicely.</li>\n          <li>Do not introduce any new numbers or data points in the concluding sentence.</li>\n        </ul>\n      ",
       "items": [
         {
-          "q": "Write a concluding sentence for a chart showing a clear transition from fossil fuels to renewable energy.",
+          "q": "Write a concluding sentence for a chart showing a transition from fossil fuels to renewable energy.",
           "a": "<span class='pat-step1'>Identify major shift: Fossil fuels down, renewables up.</span> <span class='pat-step2'>Avoid numbers.</span> <span class='pat-step3'>Write: 'In conclusion, the data shows a major shift in national power generation, with clean energy sources gradually replacing fossil fuels over the period.'</span>"
         }
       ]
@@ -88,23 +88,23 @@
       "number": 8,
       "title": "Determining the Task (Task 1 General Training)",
       "note": "For GT Letters. Identify if the letter is formal, semi-formal, or informal, and check the 3 bullet points you must cover.",
-      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Determine the letter tone: <b>Formal</b> (to a landlord, employer), <b>Informal</b> (to a friend).</li>\n          <li>Address the 3 bullet prompts in detail to score Band 7+.</li>\n        </ul>\n      ",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Determine the letter tone: <b>Formal</b> (to a landlord, employer, company), <b>Informal</b> (to a friend, family member).</li>\n          <li>Address style: Formal letters start with \"Dear Sir or Madam\"; informal start with \"Dear [Friend's Name]\".</li>\n          <li>Highlight the 3 bullet prompts. You must write at least 50 words on EACH bullet to score Band 7+.</li>\n        </ul>\n      ",
       "items": [
         {
-          "q": "Prompt: 'Write a letter to your landlord complaining about a leak. Explain the problem, tell him what needs fixing, and request action.' Determine the tone.",
-          "a": "<span class='pat-step1'>Tone: Formal (communication with landlord).</span> <span class='pat-step2'>Opening: 'Dear Sir/Madam'.</span> <span class='pat-step3'>Statement of purpose: 'I am writing to bring to your attention a serious water leakage problem in my apartment.'</span>"
+          "q": "Prompt: 'Write a letter to your landlord complaining about a leak. Explain the problem, tell him what needs fixing, and request action.' Determine the tone and opening.",
+          "a": "<span class='pat-step1'>Tone: Formal (communication with landlord).</span> <span class='pat-step2'>Opening: 'Dear Mr. [Landlord's Surname]' or 'Dear Sir/Madam'.</span> <span class='pat-step3'>Statement of purpose: 'I am writing to bring to your attention a serious water leakage problem in my apartment.'</span>"
         }
       ]
     },
     {
       "number": 9,
       "title": "Determining the Topic (Task 1 General Training)",
-      "note": "Brainstorming context. Establish the background story (who, what, where) to make the letter sound natural.",
-      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Create a believable background story to build cohesive paragraphs.</li>\n        </ul>\n      ",
+      "note": "Brainstorming context. Establish the background story (who, what, where) to make the letter sound natural and cohesive.",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Create a believable background story. If complaining about a noisy neighbor, decide what noise (e.g., playing drums late at night).</li>\n          <li>Structure your letter around this scenario so it reads logically.</li>\n        </ul>\n      ",
       "items": [
         {
           "q": "Brainstorm details for: 'Write a letter to a manager complaining about bad customer service at a restaurant.'",
-          "a": "<span class='pat-step1'>Identify who: Waiter was rude.</span> <span class='pat-step2'>Identify what: Food served cold.</span> <span class='pat-step3'>Identify where/when: Friday night at the downtown branch.</span>"
+          "a": "<span class='pat-step1'>Identify who: Waiter was rude.</span> <span class='pat-step2'>Identify what: Food served cold, waiter ignored requests.</span> <span class='pat-step3'>Identify where/when: Friday night at the downtown branch. Use these details to build your letter paragraph.</span>"
         }
       ]
     },
@@ -112,7 +112,7 @@
       "number": 10,
       "title": "Brainstorming Ideas (Task 1 General Training)",
       "note": "Letter Details. Generate specific request details, dates, and names for each of the letter's 3 prompts.",
-      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Generate realistic details: dates, exact times, items, prices.</li>\n        </ul>\n      ",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Generate realistic details for your requests: dates, exact times, items, prices.</li>\n          <li>For informal letters, use conversational, friendly anecdotes. For formal, keep descriptions precise and transactional.</li>\n        </ul>\n      ",
       "items": [
         {
           "q": "Write a request sentence to a company asking for a full refund for a broken laptop.",
@@ -124,11 +124,11 @@
       "number": 11,
       "title": "Making an Outline (Task 1 General Training)",
       "note": "GT Letter Structure. Outline a 5-part layout: 1) Salutation, 2) Purpose, 3) Bullet Points coverage, 4) Sign-off.",
-      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Structure: Salutation -> Purpose -> Body Prompts -> Formal/Informal Sign-off.</li>\n        </ul>\n      ",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Salutation: \"Dear Sir/Madam\" (formal) vs \"Dear John\" (informal).</li>\n          <li>Paragraph 1: Statement of purpose.</li>\n          <li>Paragraph 2 & 3: Address the 3 bullet prompts in detail.</li>\n          <li>Sign-off: \"Yours faithfully\" (formal, recipient unknown) vs \"Yours sincerely\" (formal, recipient known) vs \"Best wishes\" (informal).</li>\n        </ul>\n      ",
       "items": [
         {
           "q": "Draft the outline of an informal letter inviting a friend to a weekend camping trip.",
-          "a": "<span class='pat-step1'>Salutation: 'Dear Mark,'. Purpose: Invite him to camp next weekend.</span> <span class='pat-step2'>Details: Explain location, packing list, travel plan.</span> <span class='pat-step3'>Sign-off: 'Warmly,' followed by your name.</span>"
+          "a": "<span class='pat-step1'>Salutation: 'Dear Mark,'. Purpose: Invite him to camp next weekend.</span> <span class='pat-step2'>Details: Explain location (Rocky Mountains), packing list, travel plan.</span> <span class='pat-step3'>Sign-off: 'Warmly,' or 'Best wishes,' followed by your name.</span>"
         }
       ]
     },
@@ -136,7 +136,7 @@
       "number": 12,
       "title": "Writing the Introduction (Task 1 General Training)",
       "note": "Letter Opening. Learn the standard opening phrases to state your letter's objective immediately.",
-      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Open formal letters with: 'I am writing to complain about...', 'I am writing to inquire about...'.</li>\n        </ul>\n      ",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Open formal letters with: \"I am writing to complain about...\", \"I am writing to inquire about...\", \"I am writing to express my dissatisfaction with...\".</li>\n          <li>Open informal letters with: \"I hope you are doing well.\", \"It was great to hear from you.\"</li>\n        </ul>\n      ",
       "items": [
         {
           "q": "Write a formal introduction for a letter requesting a change of work shift.",
@@ -148,7 +148,7 @@
       "number": 13,
       "title": "Writing the Paragraphs (Task 1 General Training)",
       "note": "GT Body development. Use appropriate formal or informal cohesive links to detail your story.",
-      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Use paragraphs to separate different topics. Use cohesive words (*Furthermore, Consequently*).</li>\n        </ul>\n      ",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Use paragraphs to separate different topics (1 paragraph for explaining the situation, 1 for your request).</li>\n          <li>Use formal transition words: *Furthermore, Consequently, However, In light of this*.</li>\n        </ul>\n      ",
       "items": [
         {
           "q": "Write a complaint paragraph detailing a broken heating system in winter.",
@@ -160,7 +160,7 @@
       "number": 14,
       "title": "Writing the Conclusion (Task 1 General Training)",
       "note": "Letter Closing. Request a specific action or response, and sign off using the correct greeting.",
-      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>End with a call to action: 'I appreciate your prompt attention to this matter.'</li>\n        </ul>\n      ",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>End with a call to action: \"I urge you to look into this matter immediately\", \"Please let me know if this date works for you\".</li>\n          <li>Ensure your sign-off aligns with your salutation.</li>\n        </ul>\n      ",
       "items": [
         {
           "q": "Write a concluding paragraph for a complaint letter to a hotel manager.",
@@ -172,7 +172,7 @@
       "number": 15,
       "title": "Determining the Task (Task 2 Essay)",
       "note": "Essay Core. Identify the essay type: Agree/Disagree, Discussion (Both views), Problem/Solution, or Double Question.",
-      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Analyze essay keywords to identify the essay type and layout requirements.</li>\n        </ul>\n      ",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Analyze the essay question keywords. \"To what extent do you agree?\" is an Agree/Disagree essay. \"Discuss both views and give your opinion\" requires balancing both sides.</li>\n          <li>Highlight the core topics to ensure you do not wander off-topic (which drops your Task Response score to Band 5).</li>\n        </ul>\n      ",
       "items": [
         {
           "q": "Prompt: 'Some people think university education should be free. Others argue that students should pay tuition. Discuss both views.' Determine the essay type and task.",
@@ -184,7 +184,7 @@
       "number": 16,
       "title": "Developing a Thesis Statement (Task 2)",
       "note": "Scores Coherence & Cohesion. Write a 1-sentence answer to the essay prompt to present your position clearly.",
-      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>The thesis statement must answer the prompt directly and show your main stance.</li>\n        </ul>\n      ",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>The <b>Thesis Statement</b> is the most important sentence in your essay. It must answer the prompt directly and show your main stance.</li>\n          <li>Place the thesis statement at the end of your introductory paragraph.</li>\n        </ul>\n      ",
       "items": [
         {
           "q": "Write a thesis statement for: 'Should homework be banned in schools?' (Position: Ban it).",
@@ -196,11 +196,11 @@
       "number": 17,
       "title": "Organizing Your Writing (Task 2)",
       "note": "Essay Layout. Plan a 4-paragraph layout: 1) Intro, 2) Body 1 (argument A), 3) Body 2 (argument B), 4) Conclusion.",
-      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Stick to a clean 4-paragraph layout. Plan cohesion transitions.</li>\n        </ul>\n      ",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Stick to a clean 4-paragraph layout. It provides the best structure for balancing arguments and finishing within the 40-minute limit.</li>\n          <li>Use paragraph indentations or double line breaks to demarcate sections clearly.</li>\n        </ul>\n      ",
       "items": [
         {
           "q": "Draft the outline of an Agree/Disagree essay about whether public transport should be free.",
-          "a": "<span class='pat-step1'>Para 1: Intro + thesis (strongly agree).</span> <span class='pat-step2'>Para 2: Body 1 (environmental benefits). Para 3: Body 3 (social benefits).</span> <span class='pat-step3'>Para 4: Conclusion (restate position).</span>"
+          "a": "<span class='pat-step1'>Para 1: Intro + thesis (strongly agree).</span> <span class='pat-step2'>Para 2: Body 1 (environmental benefits - cuts emissions). Para 3: Body 3 (social benefits - helps low-income workers).</span> <span class='pat-step3'>Para 4: Conclusion (restate position).</span>"
         }
       ]
     },
@@ -208,11 +208,11 @@
       "number": 18,
       "title": "Writing the Introduction (Task 2)",
       "note": "Essay Opening. Paraphrase the prompt in 1-2 sentences and end with your clear thesis statement.",
-      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Sentence 1: Background (paraphrase topic). Sentence 2: Thesis statement.</li>\n        </ul>\n      ",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Sentence 1: Background sentence (paraphrase the general topic prompt).</li>\n          <li>Sentence 2: Thesis statement (your direct response/opinion).</li>\n          <li>Avoid using template sentences like \"This essay will discuss...\" as they sound generic and lower your lexical resource score.</li>\n        </ul>\n      ",
       "items": [
         {
           "q": "Write an introduction for: 'Governments should invest in art rather than science.' (Disagree).",
-          "a": "<span class='pat-step1'>Paraphrase topic: It is often argued whether state funding should prioritize artistic projects over scientific research.</span> <span class='pat-step2'>Thesis: I disagree and believe scientific funding is far more critical.</span> <span class='pat-step3'>Intro: 'It is often argued that state budgets should prioritize the arts over scientific research. In my opinion, I strongly disagree with this view, as scientific advancements play a far more vital role in national development.'</span>"
+          "a": "<span class='pat-step1'>Paraphrase topic: It is often argued whether state funding should prioritize artistic projects over scientific research.</span> <span class='pat-step2'>Thesis: I disagree and believe scientific funding is far more critical for society.</span> <span class='pat-step3'>Intro: 'It is often argued that state budgets should prioritize the arts over scientific research. In my opinion, I strongly disagree with this view, as scientific advancements play a far more vital role in national development.'</span>"
         }
       ]
     },
@@ -220,7 +220,7 @@
       "number": 19,
       "title": "Writing the Paragraphs (Task 2)",
       "note": "Body Paragraph Logic. Build each paragraph using the PEEL method: Point, Explanation, Example, Link.",
-      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li><b>PEEL Method:</b> Point -> Explanation -> Example -> Link back to thesis.</li>\n        </ul>\n      ",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li><b>Point:</b> State the main argument sentence.</li>\n          <li><b>Explanation:</b> Explain why/how (2-3 sentences).</li>\n          <li><b>Example:</b> Give a concrete example (from studies, news, or history).</li>\n          <li><b>Link:</b> Wrap up by linking back to your main thesis position.</li>\n        </ul>\n      ",
       "items": [
         {
           "q": "Write a body paragraph point showing that online education is flexible, using PEEL.",
@@ -232,7 +232,7 @@
       "number": 20,
       "title": "Writing the Conclusion (Task 2)",
       "note": "Completes Essay. Summarize the main points and restate your thesis in 2 final sentences.",
-      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Summarize main arguments and restate your opinion clearly. Do not introduce new topics.</li>\n        </ul>\n      ",
+      "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Summarize: Restate your main arguments from Body 1 & 2 in a fresh way (paraphrased).</li>\n          <li>Opinion: Restate your final stance clearly.</li>\n          <li>Never introduce a completely new idea or argument in the conclusion.</li>\n        </ul>\n      ",
       "items": [
         {
           "q": "Write a conclusion for an essay arguing that technology has made us more isolated.",
@@ -243,20 +243,40 @@
   ],
   "templates": [
     {
-      "name": "Task 2: Agree/Disagree Essay Outline",
-      "structure": "<b>Introduction:</b> Paraphrase prompt + Thesis statement (e.g., 'I completely agree with this view...').<br><b>Body Paragraph 1:</b> Point 1 (First reason supporting your view with explanation & example).<br><b>Body Paragraph 2:</b> Point 2 (Second reason supporting your view with explanation & example).<br><b>Conclusion:</b> Restate opinion + summarize main points."
+      "name": "Template 1: Agree / Disagree (Opinion) Essay Outline",
+      "structure": "\n        <b>Introduction:</b><br>\n        1. <i>Paraphrase Statement:</i> State the controversial topic in your own words (e.g., 'Some assert that...').<br>\n        2. <i>Thesis Statement:</i> State your clear position (e.g., 'I completely agree with this proposal because...').<br><br>\n        <b>Body Paragraph 1 (Reason 1):</b><br>\n        - <i>Point:</i> State the first reason supporting your position.<br>\n        - <i>Explain:</i> Elaborate on how/why this is the case.<br>\n        - <i>Example:</i> Give a concrete instance or study proving your point.<br>\n        - <i>Link:</i> Re-align back to your thesis.<br><br>\n        <b>Body Paragraph 2 (Reason 2):</b><br>\n        - <i>Point:</i> State the second reason (e.g., 'Furthermore, it is clear that...').<br>\n        - <i>Explain:</i> Elaborate and provide logical support.<br>\n        - <i>Example:</i> Give a factual example.<br>\n        - <i>Link:</i> Re-align.<br><br>\n        <b>Conclusion:</b><br>\n        - <i>Restatement:</i> Summarize the two main points in one sentence.<br>\n        - <i>Final Stance:</i> Firmly reiterate your overall opinion.\n      "
     },
     {
-      "name": "Task 1 Academic: Line Graph Description Structure",
-      "structure": "<b>Introduction:</b> Paraphrase graph title using synonyms.<br><b>Overview:</b> State the general trend (e.g., 'Overall, sales of e-books rose sharply, whereas physical book sales dropped over the period.').<br><b>Body Paragraph 1:</b> Specific details of physical books (include numbers/dates).<br><b>Body Paragraph 2:</b> Specific details of e-books (include numbers/dates)."
+      "name": "Template 2: Discussion (Discuss Both Views + Opinion) Outline",
+      "structure": "\n        <b>Introduction:</b><br>\n        1. <i>Paraphrase Statement:</i> Acknowledge that people have differing views on the topic.<br>\n        2. <i>Thesis Statement:</i> State your own position and briefly outline both sides.<br><br>\n        <b>Body Paragraph 1 (View A - Opposing side):</b><br>\n        - <i>Point:</i> Explain why some people support the first view.<br>\n        - <i>Detail:</i> Provide their logical reasons.<br>\n        - <i>Example:</i> Highlight an example of View A in practice.<br><br>\n        <b>Body Paragraph 2 (View B - Your supported side):</b><br>\n        - <i>Point:</i> Explain the arguments for the second view.<br>\n        - <i>Detail:</i> Explain why this view is stronger.<br>\n        - <i>Example:</i> Provide an example showing the benefits.<br><br>\n        <b>Conclusion:</b><br>\n        - <i>Summary:</i> Re-state that both sides have valid points, but firmly conclude in favor of your opinion.\n      "
+    },
+    {
+      "name": "Template 3: Task 1 Academic Line Graph / Chart Report",
+      "structure": "\n        <b>Paragraph 1: Introduction</b><br>\n        - <i>Sentence:</i> Paraphrase the graph prompt (e.g., 'The line graph depicts the volume of... between [Year] and [Year] in [Location].'). Include units.<br><br>\n        <b>Paragraph 2: Overview</b><br>\n        - <i>Sentence 1:</i> Identify the main overall trend (e.g., 'Overall, the sales of [Product A] experienced an upward trend, whereas [Product B] dropped.').<br>\n        - <i>Sentence 2:</i> Highlight the peak or the most dramatic change. *Do not write specific numbers here.*<br><br>\n        <b>Paragraph 3: Body Paragraph 1 (Category A Detail)</b><br>\n        - Report starting numbers, progress, and end points for the first category. Group similar trends together.<br><br>\n        <b>Paragraph 4: Body Paragraph 2 (Category B Detail)</b><br>\n        - Contrast the first category with the second category. Mention exact numbers and years in brackets or using 'stood at' or 'rose to'.\n      "
+    },
+    {
+      "name": "Template 4: Task 1 GT Formal Complaint Letter Layout",
+      "structure": "\n        <b>Salutation:</b> Dear Sir or Madam, (or Dear Mr./Ms. [Surname] if known)<br><br>\n        <b>Paragraph 1: Purpose of the letter</b><br>\n        - State clearly why you are writing (e.g., 'I am writing to bring to your attention a serious issue regarding...').<br><br>\n        <b>Paragraph 2: Detailed explanation of the problem (Bullet 1 & 2)</b><br>\n        - Outline the exact problem, when it occurred, and how it is affecting you (e.g., 'The central heating system has failed, resulting in freezing...').<br><br>\n        <b>Paragraph 3: Proposed solution and action request (Bullet 3)</b><br>\n        - State what action you expect (e.g., 'Therefore, I request that a technician be dispatched immediately...').<br><br>\n        <b>Sign-off & Closing:</b><br>\n        - I look forward to your prompt response.<br>\n        - Yours faithfully, (use if starting Dear Sir/Madam) OR Yours sincerely, (use if you know their name)<br>\n        - [Your Name]\n      "
     }
   ],
   "samples": [
     {
-      "title": "Task 2 Band 9 Essay: Free University Tuition",
+      "title": "Sample 1 (Task 2): Discussion Essay - Free University Tuition",
       "prompt": "Some people think that university education should be free for all students. Discuss both views and give your opinion.",
       "essay": "It is often argued whether higher education should be fully funded by governments or paid for by the students themselves. In my opinion, while tertiary education is expensive, making it free is crucial for social mobility and national economic development.<br><br>On the one hand, tuition fees ensure that universities are well-funded. When students pay, institutions have more capital to invest in top-tier research facilities and recruit high-quality professors. For instance, in countries with high tuition like the US, universities dominate global research rankings. However, this system excludes talented low-income youth.<br><br>On the other hand, free university education promotes equal opportunity. If access depends solely on academic merit rather than financial wealth, society benefits from a highly skilled workforce. For example, Scandinavian countries offer free tuition and have high levels of innovation. To sum up, I believe that university education should be free, as the long-term societal and economic benefits far outweigh the funding costs.",
-      "commentary": "Band 9.0 Analysis: The essay discusses both views in detail. Coherence is high with clear paragraph transitions (*On the one hand, However, On the other hand, To sum up*). Lexical resource is sophisticated (*tertiary education, social mobility, academic merit*)."
+      "commentary": "<b>Band 9.0 Evaluation & Analysis:</b><br><ul><li><b>Task Response:</b> Completely addresses both sides of the argument and gives a clear opinion. Ideas are fully developed with examples.</li><li><b>Coherence & Cohesion:</b> Paragraphs flow logically. Uses transition markers (*On the one hand, Conversely, For instance, To sum up*) effectively.</li><li><b>Lexical Resource:</b> High-quality vocabulary used accurately (*tertiary education, social mobility, academic merit, innovate*).</li><li><b>Grammar:</b> Error-free range of structures including conditionals and relative clauses.</li></ul>"
+    },
+    {
+      "title": "Sample 2 (Task 1 Academic): Bar Chart Report - Pupil Expenditures",
+      "prompt": "The bar chart compares the average annual expenditure per pupil in three different school levels in the UK between 2000 and 2015.",
+      "essay": "The bar chart illustrates the average annual spending per student across primary, secondary, and tertiary levels of education in the United Kingdom over a fifteen-year period from 2000 to 2015.<br><br>Overall, it is clear that secondary schools received the highest funding per pupil throughout the entire period, while primary schools consistently received the lowest. Additionally, expenditures for primary and secondary education experienced overall growth, whereas spending on tertiary education declined.<br><br>Regarding primary education, average spending stood at \u00a33,000 per pupil in 2000, before rising steadily to reach \u00a34,500 in 2015. Similarly, funding for secondary school pupils climbed from \u00a35,000 in 2000 to peak at \u00a36,800 in 2010, before leveling off at \u00a36,500 at the end of the period.<br><br>In contrast, tertiary education saw a different trend. Spending initially stood at \u00a36,000 per student in 2000, which was higher than primary levels. However, it subsequently fell to \u00a34,800 in 2010, before registering a minor recovery to end at \u00a35,200 in 2015.",
+      "commentary": "<b>Band 9.0 Evaluation & Analysis:</b><br><ul><li><b>Task Achievement:</b> Accurate overview statement summarizing major trends. Key comparisons are made with precise numbers and years.</li><li><b>Cohesion:</b> Paragraph structures are logical. Transitions like *Overall*, *Similarly*, *In contrast*, and *Subsequently* guide the reader.</li><li><b>Vocabulary:</b> High precision (*per student, expenditure, leveled off, minor recovery*).</li></ul>"
+    },
+    {
+      "title": "Sample 3 (Task 1 GT): Formal Complaint Letter - Water Leak",
+      "prompt": "Write a letter to your landlord complaining about a water leak in your apartment. Explain the problem, tell him what needs fixing, and request action.",
+      "essay": "Dear Mr. Davies,<br><br>I am writing to bring to your immediate attention a serious water leakage issue in the kitchen of my apartment, which is Unit 4B.<br><br>The leak began yesterday afternoon, following heavy rainfall. Water is actively dripping from the ceiling directly above the stove area, causing significant pooling on the floor. Furthermore, the dampness is causing the plaster on the ceiling to crack and peel, which poses a safety hazard. I have had to turn off the overhead light fixtures in the kitchen to prevent an electrical short-circuit.<br><br>Therefore, I request that you dispatch a professional plumber to repair the roof or pipes immediately to prevent further structural damage. I also request your approval to have the kitchen ceiling replastered once the leak is sealed.<br><br>I look forward to your prompt response and action on this matter.<br><br>Yours sincerely,<br>James Kingston",
+      "commentary": "<b>Band 9.0 Evaluation & Analysis:</b><br><ul><li><b>Task Achievement:</b> Covers all three bullet points in detail. Tone is consistently formal and polite.</li><li><b>Coherence:</b> Divided into three distinct paragraphs matching the purpose, detail, and request layout.</li><li><b>Vocabulary:</b> Appropriate formal letters vocabulary (*bring to your attention, significant pooling, safety hazard, dispatch*).</li></ul>"
     }
   ]
 }

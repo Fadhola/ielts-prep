@@ -58,7 +58,7 @@
   body{
     margin:0;background:var(--paper);color:var(--ink);
     font-family:'Georgia','Iowan Old Style',serif;
-    padding:32px 16px 80px;
+    padding:80px 16px 80px;
     min-height:100vh;
     transition:background-color 0.3s ease, color 0.3s ease;
   }
@@ -67,12 +67,25 @@
   
   /* Global Navigation */
   .global-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    z-index: 1000;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 8px;
-    margin-bottom: 24px;
+    background: rgba(238, 230, 216, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--rule);
-    padding-bottom: 12px;
+    padding: 0 16px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  body.dark-mode .global-nav {
+    background: rgba(27, 25, 19, 0.85);
   }
   .global-nav a {
     font-family: 'Courier New', monospace;
@@ -122,7 +135,7 @@
 
   .view-switch {
     position: sticky;
-    top: 0;
+    top: 56px;
     z-index: 100;
     background: var(--paper);
     padding: 14px 0 12px 0;
@@ -141,7 +154,7 @@
 
   .controls {
     position: sticky;
-    top: 61px;
+    top: 118px;
     z-index: 99;
     background: var(--paper);
     padding: 10px 0;
@@ -196,9 +209,6 @@
   .skill-num{
     font-family:'Courier New',monospace;font-size:12px;font-weight:bold;padding:2px 8px;border-radius:2px;color:var(--paper);
     background: var(--tab-3);
-  }
-  .skill-criterion{
-    font-family:'Courier New',monospace;font-size:10.5px;color:var(--ink-soft);border:1px solid var(--rule);padding:1px 6px;border-radius:2px;
   }
 
   ol.qlist{list-style:none;counter-reset:q;margin:0;padding:12px 16px 14px;}
@@ -326,6 +336,32 @@
     border-top:1px solid var(--rule);padding-top:16px;margin-top:60px;
     text-align:center;line-height:1.6;
   }
+
+  /* Step-by-Step Highlight Styling */
+  .pat-step1 {
+    color: var(--tab-1);
+    font-weight: bold;
+  }
+  .pat-step2 {
+    color: var(--tab-2);
+    font-weight: bold;
+  }
+  .pat-step3 {
+    color: var(--tab-3);
+    font-weight: bold;
+  }
+
+  @media (max-width: 600px){
+    body{padding:72px 12px 60px;}
+    h1{font-size:26px;}
+    .sub{font-size:13px;}
+    .kicker{font-size:10px;}
+    .view-switch{flex-direction:column;}
+    .view-btn{padding:11px 12px;font-size:11px;}
+    .controls{flex-direction:column;}
+    .controls input[type=text]{width:100%;}
+    .controls .tab-btn{flex:1 1 auto;text-align:center;}
+  }
 </style>
 </head>
 <body>
@@ -366,58 +402,116 @@
   <div id="view-extra_2" class="section-view">
     
     <div class="passage-block">
-      <div class="passage-title">The Spread of Wildfires</div>
-      <div class="passage-text">The spread of wildfire is a natural phenomenon that occurs throughout the world and is especially common in forested areas of North America, Australia, and Europe. Locations that are prone to wildfires are generally hot and dry. To gain a clear understanding of how wildfires spread, it is necessary to analyze what it takes to both create and control these fires.<br><br>First, a spark is required. This spark can come from a natural source like a lightning strike, or from human negligence such as an unattended campfire. Once ignited, the fire requires fuel, which is usually dry brush, leaves, and trees. The rate at which the fire expands is heavily influenced by wind speed and terrain slope.</div>
+      <div class="passage-title">Passage 1: Avian Intelligence & Adaptability</div>
+      <div class="passage-text">Observations of different species of birds, both in the wild and in captivity, have shown a great deal of evidence of high levels of avian intelligence. For years, scientists believed that only primates were capable of complex tool construction and problem solving. However, recent experiments with New Caledonian crows have shattered this biological assumption. These birds have been observed bending straight pieces of wire to manufacture hooks, which they subsequently use to retrieve food from narrow chambers.<br><br>In addition to tool-making, cognitive mapping has been observed in species of migratory birds. The birds navigate thousands of miles with remarkable precision by mapping star clusters and the Earth's magnetic fields, adjusting their trajectory based on real-time weather anomalies.</div>
       <div style="font-family:'Courier New', monospace; font-size:11px; text-transform:uppercase; color:var(--ink-soft); margin-bottom:12px; font-weight:bold;">Questions &amp; Answers</div>
       
         <div style="margin-bottom: 12px; border-bottom: 1px dashed var(--rule); padding-bottom: 8px;">
           <div class="qa-row">
-            <span class="qa-q"><b>Q: According to the passage, what are two main sources of ignition for wildfires?</b></span>
+            <span class="qa-q"><b>Q: What physical actions performed by New Caledonian crows demonstrate cognitive problem-solving?</b></span>
             <button class="ans-toggle" onclick="toggleAnswer(event, this)">Show details</button>
           </div>
           <div class="ans-box">
             <span class="ex-label">Answer Explanation</span>
-            <div><b>Lightning strikes</b> (natural source) and <b>human negligence</b> (unattended campfires).</div>
+            <div>Manufacturing hooks by <b>bending straight wire</b> to retrieve food from chambers.</div>
           </div>
         </div>
         
         <div style="margin-bottom: 12px; border-bottom: 1px dashed var(--rule); padding-bottom: 8px;">
           <div class="qa-row">
-            <span class="qa-q"><b>Q: What climatic conditions make areas susceptible to wildfires?</b></span>
+            <span class="qa-q"><b>Q: What natural elements do migratory birds map to navigate accurately?</b></span>
             <button class="ans-toggle" onclick="toggleAnswer(event, this)">Show details</button>
           </div>
           <div class="ans-box">
             <span class="ex-label">Answer Explanation</span>
-            <div>Hot and dry conditions.</div>
+            <div><b>Star clusters</b> and the <b>Earth's magnetic fields</b>.</div>
           </div>
         </div>
         
     </div>
     
     <div class="passage-block">
-      <div class="passage-title">Zulu Beadwork: status and communication</div>
-      <div class="passage-text">In the Zulu nation, beadwork is a primary means of communication. The beadwork consists of different color combinations. Zulu girls make beadwork items for themselves and their friends. They also make beadwork items for the boys they like. In particular, the color and design of Zulu beadwork communicate specific messages about a person's status and feelings.<br><br>For instance, a triangle with the apex pointing downward signifies an unmarried man, while two triangles that form an hourglass shape signify a married man. Married women wear items with two triangles that form a diamond shape.</div>
+      <div class="passage-title">Passage 2: The Pathophysiology of OCD</div>
+      <div class="passage-text">Obsessive-compulsive disorder (OCD) is a clinically diagnosed anxiety disorder characterized by distressing and intrusive thoughts, known as obsessions. To combat these excessive impulses, most OCD sufferers perform repetitive, time-consuming rituals (compulsions) that they believe will temporarily relieve their intense anxiety. These rituals can include compulsive washing, meticulous checking, or repetitive counting.<br><br>Neurological research reveals that OCD is linked to communication malfunctions between the frontal lobe of the brain and the deeper basal ganglia. Specifically, the brain's filtering mechanism fails to dismiss non-essential warning signals, causing the patient to experience an ongoing state of emergency.</div>
       <div style="font-family:'Courier New', monospace; font-size:11px; text-transform:uppercase; color:var(--ink-soft); margin-bottom:12px; font-weight:bold;">Questions &amp; Answers</div>
       
         <div style="margin-bottom: 12px; border-bottom: 1px dashed var(--rule); padding-bottom: 8px;">
           <div class="qa-row">
-            <span class="qa-q"><b>Q: What design shape represents a married woman?</b></span>
+            <span class="qa-q"><b>Q: According to the text, what is the primary purpose of compulsive rituals?</b></span>
             <button class="ans-toggle" onclick="toggleAnswer(event, this)">Show details</button>
           </div>
           <div class="ans-box">
             <span class="ex-label">Answer Explanation</span>
-            <div>Two triangles forming a <b>diamond shape</b>.</div>
+            <div>To <b>temporarily relieve intense anxiety</b> caused by excessive thoughts or impulses.</div>
           </div>
         </div>
         
         <div style="margin-bottom: 12px; border-bottom: 1px dashed var(--rule); padding-bottom: 8px;">
           <div class="qa-row">
-            <span class="qa-q"><b>Q: What is the primary function of Zulu beadwork color combinations?</b></span>
+            <span class="qa-q"><b>Q: What specific brain areas have communication failures in OCD patients?</b></span>
             <button class="ans-toggle" onclick="toggleAnswer(event, this)">Show details</button>
           </div>
           <div class="ans-box">
             <span class="ex-label">Answer Explanation</span>
-            <div>To communicate specific messages about a person's status and feelings.</div>
+            <div>The connection between the <b>frontal lobe</b> and the <b>basal ganglia</b>.</div>
+          </div>
+        </div>
+        
+    </div>
+    
+    <div class="passage-block">
+      <div class="passage-title">Passage 3: Zulu Beadwork as a Form of Communication</div>
+      <div class="passage-text">In the Zulu nation of Southern Africa, beadwork has long served as a primary medium for social communication and cultural expression. Historically, Zulu girls hand-crafted beadwork items for themselves, their peer groups, and the young men they admired. The elaborate colors and geometric layouts of the beads communicate specific messages regarding a person's marital status, intentions, and emotional feelings.<br><br>Geometric shapes act as a structured code. For example, a single triangle with the apex pointing downward denotes an unmarried man. Conversely, two triangles connected apex-to-apex in an hourglass shape symbolize a married man, while married women wear beadwork featuring triangles forming a diamond shape.</div>
+      <div style="font-family:'Courier New', monospace; font-size:11px; text-transform:uppercase; color:var(--ink-soft); margin-bottom:12px; font-weight:bold;">Questions &amp; Answers</div>
+      
+        <div style="margin-bottom: 12px; border-bottom: 1px dashed var(--rule); padding-bottom: 8px;">
+          <div class="qa-row">
+            <span class="qa-q"><b>Q: What geometric symbol indicates that a Zulu man is unmarried?</b></span>
+            <button class="ans-toggle" onclick="toggleAnswer(event, this)">Show details</button>
+          </div>
+          <div class="ans-box">
+            <span class="ex-label">Answer Explanation</span>
+            <div>A single triangle with the <b>apex pointing downward</b>.</div>
+          </div>
+        </div>
+        
+        <div style="margin-bottom: 12px; border-bottom: 1px dashed var(--rule); padding-bottom: 8px;">
+          <div class="qa-row">
+            <span class="qa-q"><b>Q: Who historically crafted the beadwork items in Zulu society?</b></span>
+            <button class="ans-toggle" onclick="toggleAnswer(event, this)">Show details</button>
+          </div>
+          <div class="ans-box">
+            <span class="ex-label">Answer Explanation</span>
+            <div>Zulu girls.</div>
+          </div>
+        </div>
+        
+    </div>
+    
+    <div class="passage-block">
+      <div class="passage-title">Passage 4: The Trade & History of Glass Beads</div>
+      <div class="passage-text">The history of KwaZulu-Natal was shaped by maritime trade networks. Long before European explorers arrived in Southern Africa in 1497, Arab merchants had established trade routes along the east coast. They traded glass beads manufactured in Egypt and India for African gold, ivory, and skins. Prior to the Arab traders, Phoenician mariners are believed to have introduced early glass cargoes to local ports.<br><br>When Portuguese explorer Vasco da Gama arrived on Christmas Day in 1497, he named the area Natal ('Christmas' in Portuguese). The subsequent influx of European trade beads altered traditional Zulu bead designs, as new colors and uniform sizes became widely accessible.</div>
+      <div style="font-family:'Courier New', monospace; font-size:11px; text-transform:uppercase; color:var(--ink-soft); margin-bottom:12px; font-weight:bold;">Questions &amp; Answers</div>
+      
+        <div style="margin-bottom: 12px; border-bottom: 1px dashed var(--rule); padding-bottom: 8px;">
+          <div class="qa-row">
+            <span class="qa-q"><b>Q: According to the passage, when did European explorers first arrive in Natal?</b></span>
+            <button class="ans-toggle" onclick="toggleAnswer(event, this)">Show details</button>
+          </div>
+          <div class="ans-box">
+            <span class="ex-label">Answer Explanation</span>
+            <div>In <b>1497</b> (specifically on Christmas Day, led by Vasco da Gama).</div>
+          </div>
+        </div>
+        
+        <div style="margin-bottom: 12px; border-bottom: 1px dashed var(--rule); padding-bottom: 8px;">
+          <div class="qa-row">
+            <span class="qa-q"><b>Q: What items did Arab merchants trade in exchange for glass beads?</b></span>
+            <button class="ans-toggle" onclick="toggleAnswer(event, this)">Show details</button>
+          </div>
+          <div class="ans-box">
+            <span class="ex-label">Answer Explanation</span>
+            <div>They exchanged glass beads for <b>gold, ivory, and animal skins</b>.</div>
           </div>
         </div>
         
@@ -442,31 +536,61 @@
       <tr>
         <td><b>accumulate</b> (Verb)</td>
         <td><i>menumpuk / bertambah</i></td>
-        <td>As water drips through this layer, it leaches out minerals which accumulate below in the subsoil.</td>
+        <td>Over centuries, layers of volcanic ash accumulate and form nutrient-rich subsoil.</td>
       </tr>
     
       <tr>
         <td><b>compensate</b> (Verb)</td>
         <td><i>mengimbangi / menutupi</i></td>
-        <td>If one X chromosome carries the defective gene, the other one naturally compensates.</td>
+        <td>The female bird must search for food, while the male compensates by guarding the nest.</td>
       </tr>
     
       <tr>
         <td><b>differentiate</b> (Verb)</td>
         <td><i>membedakan</i></td>
-        <td>A baby's cones do not begin to differentiate between colors until four months of age.</td>
+        <td>Crows can easily differentiate between friendly humans and potential threats.</td>
       </tr>
     
       <tr>
         <td><b>negligence</b> (Noun)</td>
         <td><i>kelalaian / kecerobohan</i></td>
-        <td>Many forest fires are started due to human negligence like campfire sparks.</td>
+        <td>The wildfire was not started by lightning, but by human negligence near the camp.</td>
       </tr>
     
       <tr>
         <td><b>predominant</b> (Adjective)</td>
         <td><i>mendominasi / utama</i></td>
-        <td>Although colorblindness is predominant in males, it can still affect females.</td>
+        <td>Red and blue are the predominant colors in Zulu beadwork indicating affection.</td>
+      </tr>
+    
+      <tr>
+        <td><b>alleviate</b> (Verb)</td>
+        <td><i>meredakan / meringankan</i></td>
+        <td>Rituals performed by OCD patients temporarily alleviate their spike in anxiety.</td>
+      </tr>
+    
+      <tr>
+        <td><b>scrutiny</b> (Noun)</td>
+        <td><i>pemeriksaan cermat / teliti</i></td>
+        <td>Scientific theories regarding avian cognitive mapping must undergo rigorous peer scrutiny.</td>
+      </tr>
+    
+      <tr>
+        <td><b>subsequent</b> (Adjective)</td>
+        <td><i>berikutnya / sesudah itu</i></td>
+        <td>The initial experiment failed, but subsequent trials proved highly successful.</td>
+      </tr>
+    
+      <tr>
+        <td><b>empirical</b> (Adjective)</td>
+        <td><i>empiris / berdasarkan bukti</i></td>
+        <td>Researchers require empirical evidence rather than assumptions to validate cognitive claims.</td>
+      </tr>
+    
+      <tr>
+        <td><b>deviate</b> (Verb)</td>
+        <td><i>menyimpang</i></td>
+        <td>Migratory birds rarely deviate from their traditional seasonal flight paths.</td>
       </tr>
     
     </tbody>
@@ -486,7 +610,7 @@ const SKILLS_DATA = [
     "number": 1,
     "title": "Using the First Paragraph to Make Predictions",
     "note": "Protects Reading Speed & Comprehension. Skim the introductory paragraph to identify the thesis statement and predict the passage theme.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Always read the first paragraph (introduction) first. It introduces the main topic and context of the passage.</li>\n          <li>Locate the <b>Thesis Statement</b>\u2014usually the first or last sentence of the introduction\u2014which states the main point of the entire text.</li>\n          <li>Use this thesis to predict the overall layout, content, and arguments that will follow in the body paragraphs.</li>\n        </ul>\n        <b>Key Vocabulary & Patterns:</b>\n        <table>\n          <tr>\n            <th>English Pattern</th>\n            <th>Type / Role</th>\n            <th>Arti (Indonesian)</th>\n            <th>Usage Context &amp; Explanation</th>\n          </tr>\n          <tr>\n            <td><b>thesis statement</b></td>\n            <td>Noun Phrase</td>\n            <td>pernyataan tesis / ide pokok</td>\n            <td>Kalimat kunci yang merangkum inti seluruh bacaan. Biasanya ada di akhir paragraf pertama.</td>\n          </tr>\n          <tr>\n            <td><b>make predictions</b></td>\n            <td>Verb Phrase</td>\n            <td>membuat prediksi / perkiraan</td>\n            <td>Menebak isi paragraf berikutnya berdasarkan kalimat pengantar untuk menghemat waktu baca.</td>\n          </tr>\n        </table>\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Always read the first paragraph (introduction) first. It introduces the main topic and context of the passage.</li>\n          <li>Locate the <b>Thesis Statement</b>\u2014usually the first or last sentence of the introduction\u2014which states the main point of the entire text.</li>\n          <li>Use this thesis to predict the overall layout, content, and arguments that will follow in the body paragraphs.</li>\n        </ul>\n        <b>Key Vocabulary & Patterns:</b>\n        <table>\n          <tr>\n            <th>English Pattern</th>\n            <th>Type / Role</th>\n            <th>Arti (Indonesian)</th>\n            <th>Usage Context &amp; Explanation</th>\n          </tr>\n          <tr>\n            <td><b>thesis statement</b></td>\n            <td>Noun Phrase</td>\n            <td>pernyataan tesis / ide pokok</td>\n            <td>Kalimat kunci yang merangkum inti seluruh bacaan. Biasanya ada di akhir paragraf pertama.</td>\n          </tr>\n          <tr>\n            <td><b>make predictions</b></td>\n            <td>Verb Phrase</td>\n            <td>membuat prediksi / perkiraan</td>\n            <td>Menebak isi paragraf berikutnya berdasarkan kalimat pengantar untuk menghemat waktu baca.</td>\n          </tr>\n          <tr>\n            <td><b>introductory paragraph</b></td>\n            <td>Noun Phrase</td>\n            <td>paragraf pembuka / pengantar</td>\n            <td>Paragraf pertama yang membangun latar belakang topik (background context).</td>\n          </tr>\n        </table>\n      ",
     "items": [
       {
         "q": "Identify the thesis statement: 'Observations of different species of birds, both in the wild and in captivity, have shown a great deal of evidence of high levels of avian intelligence.' What is the predicted topic?",
@@ -498,7 +622,7 @@ const SKILLS_DATA = [
     "number": 2,
     "title": "Using the Topic Sentence to Make Predictions",
     "note": "Aids Skimming. Read the first sentence of each body paragraph to find its topic sentence and predict the sub-details.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>The <b>Topic Sentence</b> is the first sentence of a body paragraph and expresses its main idea.</li>\n          <li>If the first sentence is not the topic sentence, read the second or last sentence.</li>\n          <li>Predict what supporting details (examples, facts, stats) will appear in the rest of the paragraph.</li>\n        </ul>\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>The <b>Topic Sentence</b> is the first sentence of a body paragraph and expresses its main idea.</li>\n          <li>If the first sentence is not the topic sentence, read the second or last sentence.</li>\n          <li>Predict what supporting details (examples, facts, stats) will appear in the rest of the paragraph.</li>\n        </ul>\n        <b>Key Vocabulary & Patterns:</b>\n        <table>\n          <tr>\n            <th>English Pattern</th>\n            <th>Type / Role</th>\n            <th>Arti (Indonesian)</th>\n            <th>Usage Context &amp; Explanation</th>\n          </tr>\n          <tr>\n            <td><b>topic sentence</b></td>\n            <td>Noun Phrase</td>\n            <td>kalimat topik / ide pokok paragraf</td>\n            <td>Kalimat utama di awal paragraf yang mengontrol seluruh isi paragraf tersebut.</td>\n          </tr>\n          <tr>\n            <td><b>body paragraph</b></td>\n            <td>Noun Phrase</td>\n            <td>paragraf isi / paragraf utama</td>\n            <td>Paragraf setelah pendahuluan yang mengembangkan poin-poin tesis.</td>\n          </tr>\n        </table>\n      ",
     "items": [
       {
         "q": "Identify the topic sentence: 'To combat excessive thoughts and impulses, most OCD sufferers perform certain repetitive rituals that they believe will relieve their anxiety.' Predict the paragraph's details.",
@@ -510,7 +634,7 @@ const SKILLS_DATA = [
     "number": 3,
     "title": "Looking for Supporting Details",
     "note": "Crucial for Detail-Matching Questions. Identify facts, statistics, examples, or quotes that back up the topic sentence.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Supporting details are the 'meat' of the paragraph\u2014they prove the topic sentence.</li>\n          <li>Look for types of evidence: statistics (numbers), names, scientific facts, historical dates, or examples.</li>\n        </ul>\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Supporting details are the 'meat' of the paragraph\u2014they prove the topic sentence.</li>\n          <li>Look for types of evidence: statistics (numbers), names, scientific facts, historical dates, or examples.</li>\n          <li>Map these details back to the main topic sentence to confirm your understanding.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "In a paragraph about Zulu beadwork being communication: 'Beads are used to make items for personal adornment, home decoration, and as a language to send status messages.' What are the supporting details?",
@@ -522,7 +646,7 @@ const SKILLS_DATA = [
     "number": 4,
     "title": "Using Key Words",
     "note": "Core Scanning Skill. Circle key nouns, verbs, dates, and names in the questions, then locate them or their synonyms in the passage.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Do not read the passage word-for-word first. Go to the questions, circle <b>Key Words</b> (nouns, names, dates, numbers).</li>\n          <li>Scan the text quickly by running your eyes over it looking for these keywords or their synonyms/paraphrases.</li>\n        </ul>\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Do not read the passage word-for-word first. Go to the questions, circle <b>Key Words</b> (nouns, names, dates, numbers).</li>\n          <li>Scan the text quickly by running your eyes over it looking for these keywords or their synonyms/paraphrases.</li>\n          <li>When found, read closely (intensive reading) the surrounding sentences to extract the answer.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Question: 'On what date did Portuguese explorers arrive in KwaZulu-Natal?' What are the keywords to scan?",
@@ -534,7 +658,7 @@ const SKILLS_DATA = [
     "number": 5,
     "title": "Matching Headings to Paragraphs",
     "note": "Common Reading Question. Identify the core theme of each paragraph to select the correct heading from a list.",
-    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Read the paragraph's topic sentence and concluding sentence to grasp the core theme.</li>\n          <li>Watch out for <b>distractors</b>\u2014headings that contain words from the paragraph but do not represent the main idea.</li>\n        </ul>\n      ",
+    "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Read the paragraph's topic sentence and concluding sentence to grasp the core theme.</li>\n          <li>Watch out for <b>distractors</b>\u2014headings that contain words from the paragraph but do not represent the main idea.</li>\n          <li>Cross out headings as you use them to narrow down choices.</li>\n        </ul>\n      ",
     "items": [
       {
         "q": "Paragraph A discusses how people think colorblindness means seeing no color, but explains it is actually difficulty distinguishing shades. Headings options: 'i. Complete Blindness', 'ii. What Is Colorblindness?', 'iii. Genetic Causes'. Select the best heading.",
@@ -549,7 +673,7 @@ const SKILLS_DATA = [
     "details": "\n        <b>Strategy & Method:</b>\n        <ul>\n          <li>Identify the text format immediately (e.g., advertisement, course descriptions, employee handbook).</li>\n          <li>Predict the layout: advertisements have price/location at the bottom; handbooks have bulleted policies.</li>\n        </ul>\n      ",
     "items": [
       {
-        "q": "You see a document with headers: 'Beginning French, Intermediate French, Advanced Spanish' along with times like '4:00-6:00 p.m.' and Mr. Sato. Predict the text type.",
+        "q": "You see a document with headers: 'Beginning French, Intermediate French, Advanced Spanish' along with times like '4:00-6:00 p.m.' and names like 'Mr. Sato'. Predict the text type.",
         "a": "<span class='pat-step1'>Examine elements: Class names, times, names of people.</span> <span class='pat-step2'>Identify:</span> <span class='pat-step3'>This is a Course Description / Class Schedule text type.</span>"
       }
     ]

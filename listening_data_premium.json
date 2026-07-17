@@ -171,14 +171,24 @@
   ],
   "audioscripts": [
     {
-      "title": "Model Test 1: Real Estate Rental Inquiry",
-      "transcript": "<b>Agent:</b> Good morning. How may I help you?<br><b>Client:</b> Yes, I was wondering, do you have any one-bedroom apartments available?<br><b>Agent:</b> Yes we do. May I have your name?<br><b>Client:</b> Yes, James Kingston. That's K-I-N-G-S-T-O-N.<br><b>Agent:</b> And your phone number?<br><b>Client:</b> My home phone is 721-0584, and work is 721-1127.<br><b>Agent:</b> Great. Do you need parking?<br><b>Client:</b> Yes, I need a garage parking space, and some storage area in the basement.",
-      "notes": "Key Details: James's name is spelled K-I-N-G-S-T-O-N. Work number is 721-1127. Renter needs parking and basement storage."
+      "title": "Part 1 Dialogue: Apartment Rental & Client Intake",
+      "transcript": "<b>Agent:</b> Good morning, elite real estate solutions. How may I assist you today?<br><b>Client:</b> Yes, hello. I was calling to inquire if you have any one-bedroom flats available in the downtown sector?<br><b>Agent:</b> We certainly do. I have two spacious apartments facing the central park. May I take down your full name first?<br><b>Client:</b> Yes, it is James Kingston. I will spell that for you: K-I-N-G-S-T-O-N.<br><b>Agent:</b> Thank you, James. And what is your primary contact number?<br><b>Client:</b> My home phone is 721-0584, but I am usually at the office. You can reach me there at 721-1127. That is double one-two-seven at the end.<br><b>Agent:</b> Got it. Do you require parking or basement storage?<br><b>Client:</b> Yes, I definitely need a secure garage space for my car, and a lockable storage cage in the basement.",
+      "notes": "Spelling Key: K-I-N-G-S-T-O-N. Key Numbers: Work phone is 721-1127. Renter requests a garage parking space and basement storage."
     },
     {
-      "title": "Model Test 2: Lecture on Hunter-Gatherer Societies",
-      "transcript": "<b>Lecturer:</b> Good evening. Today we'll discuss hunter-gatherer societies. Before twelve thousand years ago, all humans lived as hunter-gatherers. Today they still exist in the Arctic, desert areas, and tropical rainforests. The first difference between hunter-gatherers and farming societies is that hunter-gatherers are nomadic\u2014they travel from place to place. In contrast, farmers are sedentary; they stay in one place to harvest crops. Second, hunter-gatherer populations are smaller and their social structure is egalitarian, lacking a strict hierarchy.",
-      "notes": "Key Details: Nomadic vs Sedentary lifestyle. Egalitarian social structure due to lack of surplus food storage."
+      "title": "Part 2 Monologue: Campus Library Orientation Tour",
+      "transcript": "<b>Guide:</b> Welcome to the university library orientation. The library is closed every Wednesday morning for staff training, but open at all other times. On the corner of our entry street, you will notice the student grocery store. Directly facing it, across from the grocery store, is our printing and binding office. Next to the printing office is the library's main clothing repository and locker area where you must deposit all bags. For a low monthly fee of five pounds, you can also rent a private research cubicle on the third floor.",
+      "notes": "Relative Directions: Printing office is across from grocery store. Locker area is next to the printing office. Schedule: Closed Wednesday mornings."
+    },
+    {
+      "title": "Part 3 Group Discussion: Final Thesis Project Outline",
+      "transcript": "<b>Professor:</b> So, Sarah, how is your final biology project coming along? You look a bit nervous.<br><b>Sarah:</b> (Sighs) Well, I was extremely anxious when I began reading the guidelines last week. But after discussing it with Tom, I feel much more relieved. My study compares the behavior of crows and chimps.<br><b>Professor:</b> Excellent. Remember, chimps are highly social, whereas crows are more solitary tool-users. Your project must classify the behaviors into three categories: tool manufacturing, communication signals, and nesting styles.",
+      "notes": "Emotions: Initially anxious, now relieved. Contrast: Chimps are social whereas crows are solitary. Classification categories: Tool manufacturing, communication signals, and nesting styles."
+    },
+    {
+      "title": "Part 4 Lecture: The Evolution of Hunter-Gatherer Societies",
+      "transcript": "<b>Lecturer:</b> Good afternoon. Today we examine early social structures. Initially, humans survived as nomadic bands, traveling constantly to follow migrating herds. Subsequently, with the discovery of grain storage, they established sedentary settlements. As a result of this sedentary transition, populations grew rapidly, leading to the rise of specialized labor and social hierarchies that replaced the original egalitarian system.",
+      "notes": "Chronology Order: Nomadic bands -> Grain storage discovery -> Sedentary settlements. Cause-and-Effect: Sedentary transition caused population growth, leading to hierarchies."
     }
   ],
   "vocabulary": [
@@ -186,31 +196,61 @@
       "word": "den",
       "pos": "Noun",
       "translation": "ruang santai / ruang kerja",
-      "example": "Would you prefer a simple one-bedroom, or a one-bedroom with a den for a study?"
+      "example": "This townhouse has a large bedroom and a small den, ideal for set up a desk."
     },
     {
       "word": "deposit",
       "pos": "Noun",
       "translation": "uang jaminan / dp",
-      "example": "I'll need a small security deposit to hold the apartment for you."
+      "example": "You must pay a security deposit equivalent to one month's rent before moving in."
     },
     {
       "word": "laundromat",
       "pos": "Noun",
       "translation": "binatu otomatis / tempat cuci umum",
-      "example": "The unit does not have a washing machine, so you will have to use a laundromat."
+      "example": "Since the flat lacks laundry hookups, I use the local laundromat down the block."
     },
     {
       "word": "nomadic",
       "pos": "Adjective",
       "translation": "nomaden / berkelana",
-      "example": "Hunter-gatherers are nomadic and move from place to place to find food."
+      "example": "Nomadic tribes migrated constantly to seek fresh water and pasture."
     },
     {
       "word": "sedentary",
       "pos": "Adjective",
       "translation": "menetap",
-      "example": "In contrast to nomadic tribes, farming communities are sedentary."
+      "example": "Developing agriculture allowed humans to abandon a nomadic life for a sedentary one."
+    },
+    {
+      "word": "syllabus",
+      "pos": "Noun",
+      "translation": "silabus / rancangan studi",
+      "example": "The professor handed out the course syllabus detailing the weekly readings."
+    },
+    {
+      "word": "auditorium",
+      "pos": "Noun",
+      "translation": "auditorium / aula besar",
+      "example": "The orientation lecture will be held in the main university auditorium at 9:00 a.m."
+    },
+    {
+      "word": "hesitation",
+      "pos": "Noun",
+      "translation": "keragu-raguan",
+      "example": "Any hesitation or long pause in your speech will lower your fluency band score."
+    },
+    {
+      "word": "pitch",
+      "pos": "Noun",
+      "translation": "tinggi rendah suara / nada",
+      "example": "Varying your vocal pitch helps convey enthusiasm and emotion clearly."
+    },
+    {
+      "word": "registration",
+      "pos": "Noun",
+      "translation": "pendaftaran / registrasi",
+      "example": "The registration desk is located on the ground floor of the administration building."
     }
   ]
 }

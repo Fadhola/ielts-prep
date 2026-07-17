@@ -58,7 +58,7 @@
   body{
     margin:0;background:var(--paper);color:var(--ink);
     font-family:'Georgia','Iowan Old Style',serif;
-    padding:32px 16px 80px;
+    padding:80px 16px 80px;
     min-height:100vh;
     transition:background-color 0.3s ease, color 0.3s ease;
   }
@@ -67,12 +67,25 @@
   
   /* Global Navigation */
   .global-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    z-index: 1000;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 8px;
-    margin-bottom: 24px;
+    background: rgba(238, 230, 216, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--rule);
-    padding-bottom: 12px;
+    padding: 0 16px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  body.dark-mode .global-nav {
+    background: rgba(27, 25, 19, 0.85);
   }
   .global-nav a {
     font-family: 'Courier New', monospace;
@@ -122,7 +135,7 @@
 
   .view-switch {
     position: sticky;
-    top: 0;
+    top: 56px;
     z-index: 100;
     background: var(--paper);
     padding: 14px 0 12px 0;
@@ -141,7 +154,7 @@
 
   .controls {
     position: sticky;
-    top: 61px;
+    top: 118px;
     z-index: 99;
     background: var(--paper);
     padding: 10px 0;
@@ -196,9 +209,6 @@
   .skill-num{
     font-family:'Courier New',monospace;font-size:12px;font-weight:bold;padding:2px 8px;border-radius:2px;color:var(--paper);
     background: var(--tab-3);
-  }
-  .skill-criterion{
-    font-family:'Courier New',monospace;font-size:10.5px;color:var(--ink-soft);border:1px solid var(--rule);padding:1px 6px;border-radius:2px;
   }
 
   ol.qlist{list-style:none;counter-reset:q;margin:0;padding:12px 16px 14px;}
@@ -326,6 +336,32 @@
     border-top:1px solid var(--rule);padding-top:16px;margin-top:60px;
     text-align:center;line-height:1.6;
   }
+
+  /* Step-by-Step Highlight Styling */
+  .pat-step1 {
+    color: var(--tab-1);
+    font-weight: bold;
+  }
+  .pat-step2 {
+    color: var(--tab-2);
+    font-weight: bold;
+  }
+  .pat-step3 {
+    color: var(--tab-3);
+    font-weight: bold;
+  }
+
+  @media (max-width: 600px){
+    body{padding:72px 12px 60px;}
+    h1{font-size:26px;}
+    .sub{font-size:13px;}
+    .kicker{font-size:10px;}
+    .view-switch{flex-direction:column;}
+    .view-btn{padding:11px 12px;font-size:11px;}
+    .controls{flex-direction:column;}
+    .controls input[type=text]{width:100%;}
+    .controls .tab-btn{flex:1 1 auto;text-align:center;}
+  }
 </style>
 </head>
 <body>
@@ -366,19 +402,35 @@
   <div id="view-extra_2" class="section-view">
     
     <div class="passage-block">
-      <div class="passage-title">Model Test 1: Real Estate Rental Inquiry</div>
+      <div class="passage-title">Part 1 Dialogue: Apartment Rental & Client Intake</div>
       <div class="passage-text" style="font-family: 'Courier New', monospace; font-size: 13.5px; background: rgba(0,0,0,0.02); padding: 12px; border-left: 2px solid var(--tab-3);">
-        <b>Agent:</b> Good morning. How may I help you?<br><b>Client:</b> Yes, I was wondering, do you have any one-bedroom apartments available?<br><b>Agent:</b> Yes we do. May I have your name?<br><b>Client:</b> Yes, James Kingston. That's K-I-N-G-S-T-O-N.<br><b>Agent:</b> And your phone number?<br><b>Client:</b> My home phone is 721-0584, and work is 721-1127.<br><b>Agent:</b> Great. Do you need parking?<br><b>Client:</b> Yes, I need a garage parking space, and some storage area in the basement.
+        <b>Agent:</b> Good morning, elite real estate solutions. How may I assist you today?<br><b>Client:</b> Yes, hello. I was calling to inquire if you have any one-bedroom flats available in the downtown sector?<br><b>Agent:</b> We certainly do. I have two spacious apartments facing the central park. May I take down your full name first?<br><b>Client:</b> Yes, it is James Kingston. I will spell that for you: K-I-N-G-S-T-O-N.<br><b>Agent:</b> Thank you, James. And what is your primary contact number?<br><b>Client:</b> My home phone is 721-0584, but I am usually at the office. You can reach me there at 721-1127. That is double one-two-seven at the end.<br><b>Agent:</b> Got it. Do you require parking or basement storage?<br><b>Client:</b> Yes, I definitely need a secure garage space for my car, and a lockable storage cage in the basement.
       </div>
-      <div class="tip" style="margin-top: 12px;">Key Details: James's name is spelled K-I-N-G-S-T-O-N. Work number is 721-1127. Renter needs parking and basement storage.</div>
+      <div class="tip" style="margin-top: 12px;">Spelling Key: K-I-N-G-S-T-O-N. Key Numbers: Work phone is 721-1127. Renter requests a garage parking space and basement storage.</div>
     </div>
     
     <div class="passage-block">
-      <div class="passage-title">Model Test 2: Lecture on Hunter-Gatherer Societies</div>
+      <div class="passage-title">Part 2 Monologue: Campus Library Orientation Tour</div>
       <div class="passage-text" style="font-family: 'Courier New', monospace; font-size: 13.5px; background: rgba(0,0,0,0.02); padding: 12px; border-left: 2px solid var(--tab-3);">
-        <b>Lecturer:</b> Good evening. Today we'll discuss hunter-gatherer societies. Before twelve thousand years ago, all humans lived as hunter-gatherers. Today they still exist in the Arctic, desert areas, and tropical rainforests. The first difference between hunter-gatherers and farming societies is that hunter-gatherers are nomadic—they travel from place to place. In contrast, farmers are sedentary; they stay in one place to harvest crops. Second, hunter-gatherer populations are smaller and their social structure is egalitarian, lacking a strict hierarchy.
+        <b>Guide:</b> Welcome to the university library orientation. The library is closed every Wednesday morning for staff training, but open at all other times. On the corner of our entry street, you will notice the student grocery store. Directly facing it, across from the grocery store, is our printing and binding office. Next to the printing office is the library's main clothing repository and locker area where you must deposit all bags. For a low monthly fee of five pounds, you can also rent a private research cubicle on the third floor.
       </div>
-      <div class="tip" style="margin-top: 12px;">Key Details: Nomadic vs Sedentary lifestyle. Egalitarian social structure due to lack of surplus food storage.</div>
+      <div class="tip" style="margin-top: 12px;">Relative Directions: Printing office is across from grocery store. Locker area is next to the printing office. Schedule: Closed Wednesday mornings.</div>
+    </div>
+    
+    <div class="passage-block">
+      <div class="passage-title">Part 3 Group Discussion: Final Thesis Project Outline</div>
+      <div class="passage-text" style="font-family: 'Courier New', monospace; font-size: 13.5px; background: rgba(0,0,0,0.02); padding: 12px; border-left: 2px solid var(--tab-3);">
+        <b>Professor:</b> So, Sarah, how is your final biology project coming along? You look a bit nervous.<br><b>Sarah:</b> (Sighs) Well, I was extremely anxious when I began reading the guidelines last week. But after discussing it with Tom, I feel much more relieved. My study compares the behavior of crows and chimps.<br><b>Professor:</b> Excellent. Remember, chimps are highly social, whereas crows are more solitary tool-users. Your project must classify the behaviors into three categories: tool manufacturing, communication signals, and nesting styles.
+      </div>
+      <div class="tip" style="margin-top: 12px;">Emotions: Initially anxious, now relieved. Contrast: Chimps are social whereas crows are solitary. Classification categories: Tool manufacturing, communication signals, and nesting styles.</div>
+    </div>
+    
+    <div class="passage-block">
+      <div class="passage-title">Part 4 Lecture: The Evolution of Hunter-Gatherer Societies</div>
+      <div class="passage-text" style="font-family: 'Courier New', monospace; font-size: 13.5px; background: rgba(0,0,0,0.02); padding: 12px; border-left: 2px solid var(--tab-3);">
+        <b>Lecturer:</b> Good afternoon. Today we examine early social structures. Initially, humans survived as nomadic bands, traveling constantly to follow migrating herds. Subsequently, with the discovery of grain storage, they established sedentary settlements. As a result of this sedentary transition, populations grew rapidly, leading to the rise of specialized labor and social hierarchies that replaced the original egalitarian system.
+      </div>
+      <div class="tip" style="margin-top: 12px;">Chronology Order: Nomadic bands -> Grain storage discovery -> Sedentary settlements. Cause-and-Effect: Sedentary transition caused population growth, leading to hierarchies.</div>
     </div>
     
   </div>
@@ -400,31 +452,61 @@
       <tr>
         <td><b>den</b> (Noun)</td>
         <td><i>ruang santai / ruang kerja</i></td>
-        <td>Would you prefer a simple one-bedroom, or a one-bedroom with a den for a study?</td>
+        <td>This townhouse has a large bedroom and a small den, ideal for set up a desk.</td>
       </tr>
     
       <tr>
         <td><b>deposit</b> (Noun)</td>
         <td><i>uang jaminan / dp</i></td>
-        <td>I'll need a small security deposit to hold the apartment for you.</td>
+        <td>You must pay a security deposit equivalent to one month's rent before moving in.</td>
       </tr>
     
       <tr>
         <td><b>laundromat</b> (Noun)</td>
         <td><i>binatu otomatis / tempat cuci umum</i></td>
-        <td>The unit does not have a washing machine, so you will have to use a laundromat.</td>
+        <td>Since the flat lacks laundry hookups, I use the local laundromat down the block.</td>
       </tr>
     
       <tr>
         <td><b>nomadic</b> (Adjective)</td>
         <td><i>nomaden / berkelana</i></td>
-        <td>Hunter-gatherers are nomadic and move from place to place to find food.</td>
+        <td>Nomadic tribes migrated constantly to seek fresh water and pasture.</td>
       </tr>
     
       <tr>
         <td><b>sedentary</b> (Adjective)</td>
         <td><i>menetap</i></td>
-        <td>In contrast to nomadic tribes, farming communities are sedentary.</td>
+        <td>Developing agriculture allowed humans to abandon a nomadic life for a sedentary one.</td>
+      </tr>
+    
+      <tr>
+        <td><b>syllabus</b> (Noun)</td>
+        <td><i>silabus / rancangan studi</i></td>
+        <td>The professor handed out the course syllabus detailing the weekly readings.</td>
+      </tr>
+    
+      <tr>
+        <td><b>auditorium</b> (Noun)</td>
+        <td><i>auditorium / aula besar</i></td>
+        <td>The orientation lecture will be held in the main university auditorium at 9:00 a.m.</td>
+      </tr>
+    
+      <tr>
+        <td><b>hesitation</b> (Noun)</td>
+        <td><i>keragu-raguan</i></td>
+        <td>Any hesitation or long pause in your speech will lower your fluency band score.</td>
+      </tr>
+    
+      <tr>
+        <td><b>pitch</b> (Noun)</td>
+        <td><i>tinggi rendah suara / nada</i></td>
+        <td>Varying your vocal pitch helps convey enthusiasm and emotion clearly.</td>
+      </tr>
+    
+      <tr>
+        <td><b>registration</b> (Noun)</td>
+        <td><i>pendaftaran / registrasi</i></td>
+        <td>The registration desk is located on the ground floor of the administration building.</td>
       </tr>
     
     </tbody>

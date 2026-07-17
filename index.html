@@ -59,7 +59,7 @@
   body{
     margin:0;background:var(--paper);color:var(--ink);
     font-family:'Georgia','Iowan Old Style',serif;
-    padding:32px 16px 80px;
+    padding:80px 16px 80px;
     min-height:100vh;
     transition:background-color 0.3s ease, color 0.3s ease;
   }
@@ -83,7 +83,7 @@
 
   .view-switch {
     position: sticky;
-    top: 0;
+    top: 56px;
     z-index: 100;
     background: var(--paper);
     padding: 14px 0 12px 0;
@@ -493,7 +493,7 @@
   footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--rule);font-size:12px;color:var(--ink-soft);font-style:italic;transition:border-color 0.3s ease, color 0.3s ease;}
 
   @media (max-width: 600px){
-    body{padding:20px 12px 60px;}
+    body{padding:72px 12px 60px;}
     h1{font-size:26px;}
     .sub{font-size:13px;}
     .kicker{font-size:10px;}
@@ -548,12 +548,25 @@
 
   /* Global Navigation */
   .global-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    z-index: 1000;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 8px;
-    margin-bottom: 24px;
+    background: rgba(238, 230, 216, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--rule);
-    padding-bottom: 12px;
+    padding: 0 16px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  body.dark-mode .global-nav {
+    background: rgba(27, 25, 19, 0.85);
   }
   .global-nav a {
     font-family: 'Courier New', monospace;
