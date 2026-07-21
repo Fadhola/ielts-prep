@@ -617,6 +617,7 @@
     <button class="view-btn" data-view="bank">Question Bank</button>
     <button class="view-btn" data-view="examples">Band Examples</button>
     <button class="view-btn" data-view="skills">Speaking Skills Guide (1-19)</button>
+    <button class="view-btn" data-view="antifreeze" style="border-color:var(--tab-1); color:var(--tab-1); font-weight:bold;">⚡ Anti-Freeze &amp; Yapping Kit</button>
   </div>
 
   <!-- ============ PATTERNS VIEW ============ -->
@@ -849,6 +850,173 @@
       <div id="skills-gen-list"></div>
     </div>
 
+  </div>
+
+  
+  <!-- ============ ANTI-FREEZE & YAPPING KIT VIEW ============ -->
+  <div class="view" id="view-antifreeze">
+    <div class="passage-block" style="border-left: 4px solid var(--tab-1); background: var(--card); padding: 18px 20px; border-radius: 4px; margin-bottom: 24px;">
+      <div style="font-family:'Courier New', monospace; font-size:11px; font-weight:bold; text-transform:uppercase; color:var(--tab-1); letter-spacing:.1em; margin-bottom:4px;">Masterclass &amp; Practice Generator</div>
+      <h2 style="margin: 4px 0 8px 0; font-size: 24px; font-weight: 400;">Overthinking &amp; Anti-Freeze Blueprint</h2>
+      <div style="font-size: 14px; color: var(--ink-soft); font-style: italic; line-height: 1.6;">
+        Solusi taktis untuk menghentikan kebiasaan <em>freeze</em> saat bicara, menurunkan penyaring perfeksionis (High Affective Filter), dan melatih otak agar bisa berbicara lancar 1–2 menit tanpa henti (Yapping mode).
+      </div>
+    </div>
+
+    <!-- 6 STRATEGIES ACCORDION / CARDS -->
+    <div class="part-head"><span class="part-num" style="background:var(--tab-1);">PART 1</span><span class="part-title">6 Strategi Taktis Melawan Freeze</span></div>
+
+    <!-- Card 1 -->
+    <div class="cue-card skill-card open">
+      <div class="skill-card-head" onclick="toggleSkill(this)" style="cursor:pointer;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span class="skill-num" style="background:var(--tab-1);">TEKNIK 1</span>
+          <strong>Aturan 3 Detik: Motor-Start Principle (Bicara Dulu, Pikir Sambil Jalan)</strong>
+        </div>
+        <span class="caret">▶</span>
+      </div>
+      <div class="skill-body-wrapper">
+        <p class="tip" style="margin-top:14px;">Hentikan kebiasaan menyusun 100% tata bahasa di dalam kepala sebelum bicara. Paksa suara keluar dalam 3 detik pertama!</p>
+        <div class="skill-details">
+          <b>Prinsip Otak:</b> Ketika kamu diam mencari kalimat sempurna, otak masuk ke <i>Mode Menganalisis</i> (overthinking). Dengan mengucapkan kalimat pembuka otomatis (cushion), otak dipaksa beralih ke <i>Mode Melanjutkan</i>.<br><br>
+          <b>Starter Cushions Hafalan Otomatis:</b>
+          <ul>
+            <li><span class="pat-step1">"Well, off the top of my head, I'd say..."</span></li>
+            <li><span class="pat-step2">"To be completely honest, I haven't thought about that in a while, but..."</span></li>
+            <li><span class="pat-step3">"When I think about [Topic], the first thing that comes to mind is..."</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="cue-card skill-card">
+      <div class="skill-card-head" onclick="toggleSkill(this)" style="cursor:pointer;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span class="skill-num" style="background:var(--tab-2);">TEKNIK 2</span>
+          <strong>Teknik Perspective Shift (Me vs. Others)</strong>
+        </div>
+        <span class="caret">▶</span>
+      </div>
+      <div class="skill-body-wrapper">
+        <p class="tip" style="margin-top:14px;">Kehabisan ide tentang dirimu sendiri? Pindahkan sudut pandang ke orang lain!</p>
+        <div class="skill-details">
+          <b>Cara Kerja:</b> Bicara 2 kalimat tentang pandangan pribadimu, lalu langsung kontraskan dengan pandangan generasi lain (orang tua, anak muda, atau orang umum). Ini otomatis melipatgandakan durasi bicara tanpa perlu memikirkan ide baru.<br><br>
+          <b>Contoh Penerapan:</b>
+          <div class="example" style="margin-top:8px;">
+            <span class="label">Soal: What's your hometown like?</span>
+            "For me personally, I find my hometown really peaceful and quiet. <span class="pat-step2">However, for younger people, they might find it a bit boring because there aren't many shopping malls. On the other hand, older residents like my parents absolutely love it.</span>"
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="cue-card skill-card">
+      <div class="skill-card-head" onclick="toggleSkill(this)" style="cursor:pointer;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span class="skill-num" style="background:var(--tab-3);">TEKNIK 3</span>
+          <strong>Framework "STEEP" (Generator Ide Serba Guna)</strong>
+        </div>
+        <span class="caret">▶</span>
+      </div>
+      <div class="skill-body-wrapper">
+        <p class="tip" style="margin-top:14px;">Gunakan 5 lensa ini saat kehabisan topik atau di Part 3 Discussion.</p>
+        <div class="skill-details">
+          <ul>
+            <li><b>S – Social:</b> Dampak ke masyarakat, keluarga, atau komunitas.</li>
+            <li><b>T – Technological:</b> Dampak HP, internet, atau modernisasi.</li>
+            <li><b>E – Economic:</b> Dampak ke uang, biaya hidup, atau bisnis.</li>
+            <li><b>E – Environmental:</b> Dampak ke cuaca, polusi, atau pemandangan.</li>
+            <li><b>P – Personal:</b> Dampak ke perasaan, tingkat stres, atau kesehatan.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="cue-card skill-card">
+      <div class="skill-card-head" onclick="toggleSkill(this)" style="cursor:pointer;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span class="skill-num" style="background:var(--tab-1);">TEKNIK 4</span>
+          <strong>Aturan Banal 80% (Turunkan Filter Perfeksionis)</strong>
+        </div>
+        <span class="caret">▶</span>
+      </div>
+      <div class="skill-body-wrapper">
+        <p class="tip" style="margin-top:14px;">Terima ide pertama yang paling sederhana (banal), lalu tingkatkan kosa katanya sambil berjalan.</p>
+        <div class="skill-details">
+          <b>In-Flight Upgrade Contoh:</b>
+          <br>Ide pertama di kepala: <i>"Magelang has lots of trees."</i>
+          <br><b>Ucapkan dan tingkatkan:</b> <span class="pat-step1">"Magelang has a lot of trees..."</span> <span class="pat-step3">"...or to put it more accurately, it is surrounded by abundant greenery."</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="cue-card skill-card">
+      <div class="skill-card-head" onclick="toggleSkill(this)" style="cursor:pointer;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span class="skill-num" style="background:var(--tab-2);">TEKNIK 5</span>
+          <strong>Native Filler Cushions (Bantalan Waktu Berpikir)</strong>
+        </div>
+        <span class="caret">▶</span>
+      </div>
+      <div class="skill-body-wrapper">
+        <p class="tip" style="margin-top:14px;">Ganti hening 5 detik dengan ungkapan jeda alami ini agar skor Fluency tidak anjlok.</p>
+        <div class="skill-details">
+          <table>
+            <thead>
+              <tr><th>Kondisi Otak</th><th>Ungkapan Jeda Alami (Ucapkan Ini!)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Mencari Ide</td><td><i>"Let me see..." / "How should I put this..."</i></td></tr>
+              <tr><td>Mencari Vocabulary/Grammar</td><td><i>"What I mean by that is..." / "In other words..."</i></td></tr>
+              <tr><td>Beralih Topik / Alasan</td><td><i>"On top of that..." / "Having said that..."</i></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- INTERACTIVE YAPPING GENERATOR & TIMER -->
+    <div class="part-head" style="margin-top:34px;"><span class="part-num" style="background:var(--good);">PART 2</span><span class="part-title">Interactive Yapping Practice Generator</span></div>
+
+    <div class="passage-block" style="background:var(--card); border:1px solid var(--rule); padding:20px; border-radius:4px; margin-bottom:24px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px;">
+        <span style="font-family:'Courier New', monospace; font-size:12px; font-weight:bold; text-transform:uppercase; color:var(--good);">Solo Yapping Challenge (2-Min Non-Stop)</span>
+        <button class="tab-btn" onclick="generateRandomYappingTopic()" style="border-color:var(--good); color:var(--good);">🎲 Generate Random Topic</button>
+      </div>
+
+      <div id="yapping-topic-box" style="background:rgba(255,255,255,0.5); border-left:4px solid var(--good); padding:16px; margin-bottom:16px; border-radius:2px;">
+        <div style="font-size:12px; font-family:'Courier New', monospace; text-transform:uppercase; color:var(--ink-soft); margin-bottom:4px;">PROMPT LATIHAN:</div>
+        <div id="yapping-topic-title" style="font-size:18px; font-weight:bold; color:var(--ink);">Click 'Generate Random Topic' to start!</div>
+      </div>
+
+      <!-- TIMER & PROGRESS BAR -->
+      <div style="background:rgba(0,0,0,0.03); border:1px solid var(--rule); padding:16px; border-radius:4px; text-align:center; margin-bottom:16px;">
+        <div id="yapping-timer-display" style="font-family:'Courier New', monospace; font-size:42px; font-weight:bold; color:var(--ink); margin-bottom:6px;">02:00</div>
+        
+        <!-- Live Step Indicator -->
+        <div id="yapping-step-indicator" style="font-family:'Courier New', monospace; font-size:12px; font-weight:bold; color:var(--tab-1); background:rgba(0,0,0,0.04); padding:8px 12px; border-radius:3px; display:inline-block; margin-bottom:12px;">
+          STEP 1: Direct Answer &amp; Motor-Start (0s - 20s)
+        </div>
+
+        <div style="width:100%; height:8px; background:var(--rule); border-radius:4px; overflow:hidden; margin-bottom:14px;">
+          <div id="yapping-progress-bar" style="width:100%; height:100%; background:var(--good); transition:width 1s linear;"></div>
+        </div>
+
+        <div style="display:flex; justify-content:center; gap:10px;">
+          <button id="btn-start-yapping" class="tab-btn" onclick="startYappingTimer()" style="background:var(--good); color:var(--paper); border-color:var(--good);">▶ Start Practice</button>
+          <button id="btn-pause-yapping" class="tab-btn" onclick="pauseYappingTimer()" disabled>⏸ Pause</button>
+          <button id="btn-reset-yapping" class="tab-btn" onclick="resetYappingTimer()">🔄 Reset</button>
+        </div>
+      </div>
+
+      <div class="tip" style="font-size:12px;">
+        <strong>Aturan Emas Yapping:</strong> Dilarang berhenti lebih dari 2 detik! Jika kehabisan kata, gunakan starter cushion atau jelaskan benda di sekitarmu sampai ide utamamu kembali.
+      </div>
+    </div>
   </div>
 
   <footer>Answer Patterns = struktur jawaban. Question Bank = bank soal buat latihan. Band Examples = contoh + anotasi kata per level. Speaking Skills = teknik lintas-part dari buku Barron's. Toggle di atas buat pindah tab.</footer>
